@@ -13,6 +13,7 @@ export interface Project {
   imageCover: string;
   linkLive: string;
   linkRepo: string;
+  linkRepo2?: string;
   repoPrivate?: boolean;
 }
 
@@ -26,21 +27,33 @@ const BASE_PROJECTS: Omit<Project, 'shortDescription'>[] = [
       'Prisma',
       'Next.js 15',
       'Redux Toolkit',
-      'Tailwind CSS',
+      'Chart.js',
+      'Framer Motion',
+      'Zod',
       'TypeScript',
       'JWT',
     ],
     role: 'Full-Stack',
-    imageCover: '/img/p1.jpg',
-    linkLive: '#',
+    imageCover: '/img/p1.svg',
+    linkLive: 'https://accounting.jjpg.dev',
     linkRepo: 'https://github.com/jjpg-labs/accounting-server',
+    linkRepo2: 'https://github.com/jjpg95/accounting-manager',
   },
   {
     id: '2',
     title: 'Curio',
-    technologies: ['Next.js 16', 'Prisma', 'Zustand', 'TypeScript', 'PostgreSQL'],
+    technologies: [
+      'Next.js 16',
+      'Prisma',
+      'Zustand',
+      'TanStack Query',
+      'Framer Motion',
+      'next-intl',
+      'TypeScript',
+      'PostgreSQL',
+    ],
     role: 'Full-Stack',
-    imageCover: '/img/p2.jpg',
+    imageCover: '/img/p2.svg',
     linkLive: '#',
     linkRepo: 'https://github.com/jjpg-labs/curio',
     repoPrivate: true,
@@ -50,7 +63,7 @@ const BASE_PROJECTS: Omit<Project, 'shortDescription'>[] = [
     title: 'Soluciones Integrales',
     technologies: ['PHP', 'MVC', 'MySQL', 'HTML/CSS'],
     role: 'Back-End',
-    imageCover: '/img/p3.jpg',
+    imageCover: '/img/p3.svg',
     linkLive: '#',
     linkRepo: 'https://github.com/jjpg95/insurance-companies',
   },

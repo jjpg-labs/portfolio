@@ -27,14 +27,14 @@ export const dictionaries = {
         {
           name: 'Accounting Suite',
           description:
-            'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones e informes.',
-          stack: 'NestJS, Next.js 15, PostgreSQL, Prisma, Redux Toolkit.',
+            'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, presupuestos e informes diarios.',
+          stack: 'NestJS, Next.js 15, PostgreSQL, Prisma, Redux Toolkit, Chart.js.',
         },
         {
           name: 'Curio',
           description:
-            'Plataforma educativa gamificada para niños de 3–14 años con lecciones interactivas y progresión estilo videojuego.',
-          stack: 'Next.js 16, Prisma, Zustand, TypeScript.',
+            'Plataforma educativa gamificada para niños de 3–14 años con lecciones interactivas, editor de bloques y progresión estilo videojuego.',
+          stack: 'Next.js 16, Prisma, Zustand, TanStack Query, TypeScript.',
         },
         {
           name: 'Soluciones Integrales',
@@ -50,7 +50,7 @@ export const dictionaries = {
         { title: 'Back-End', skills: ['NestJS', 'Node.js', 'PHP', 'Python'] },
         {
           title: 'Front-End',
-          skills: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit'],
+          skills: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'Zustand', 'Framer Motion'],
         },
         {
           title: 'Bases de Datos & Infra',
@@ -61,13 +61,13 @@ export const dictionaries = {
     projectsPage: {
       title: 'Portafolio de Proyectos',
       subtitle:
-        'Proyectos reales: desde APIs REST con NestJS hasta plataformas full-stack con Next.js y sistemas PHP con patrón MVC.',
+        'Proyectos reales: APIs REST con NestJS, plataformas full-stack con Next.js y sistemas con patrón MVC.',
       liveBtn: 'En Vivo',
       codeBtn: 'Código',
       items: [
         {
           shortDescription:
-            'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, informes diarios, presupuestos y recurrentes.',
+            'App de contabilidad para pequeños negocios con demo en vivo en accounting.jjpg.dev. REST API en NestJS + dashboard Next.js con transacciones, informes diarios, presupuestos y recurrentes.',
         },
         {
           shortDescription:
@@ -147,14 +147,14 @@ export const dictionaries = {
         {
           name: 'Accounting Suite',
           description:
-            'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, reports, budgets and recurring entries.',
-          stack: 'NestJS, Next.js 15, PostgreSQL, Prisma, Redux Toolkit.',
+            'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, budgets, recurring entries and daily reports.',
+          stack: 'NestJS, Next.js 15, PostgreSQL, Prisma, Redux Toolkit, Chart.js.',
         },
         {
           name: 'Curio',
           description:
-            'Gamified educational platform for children aged 3–14 with interactive lessons and video-game-style progression.',
-          stack: 'Next.js 16, Prisma, Zustand, TypeScript.',
+            'Gamified educational platform for children aged 3–14 with interactive lessons, block editor, and video-game-style progression.',
+          stack: 'Next.js 16, Prisma, Zustand, TanStack Query, TypeScript.',
         },
         {
           name: 'Soluciones Integrales',
@@ -170,7 +170,7 @@ export const dictionaries = {
         { title: 'Back-End', skills: ['NestJS', 'Node.js', 'PHP', 'Python'] },
         {
           title: 'Front-End',
-          skills: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit'],
+          skills: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'Zustand', 'Framer Motion'],
         },
         {
           title: 'Databases & Infra',
@@ -181,13 +181,13 @@ export const dictionaries = {
     projectsPage: {
       title: 'Project Portfolio',
       subtitle:
-        'Real projects: from REST APIs with NestJS to full-stack platforms with Next.js and PHP MVC systems.',
+        'Real projects: REST APIs with NestJS, full-stack platforms with Next.js, and MVC systems.',
       liveBtn: 'Live Demo',
       codeBtn: 'Code',
       items: [
         {
           shortDescription:
-            'Accounting app for small businesses: NestJS REST API + Next.js dashboard with daily transactions, reports, budgets and recurring entries.',
+            'Accounting app for small businesses with live demo at accounting.jjpg.dev. NestJS REST API + Next.js dashboard with daily transactions, reports, budgets and recurring entries.',
         },
         {
           shortDescription:
