@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useLocale } from '@/app/context/LocaleContext';
 
 interface IContactForm {
   name: string;
@@ -14,6 +15,9 @@ interface IApiResponse {
 }
 
 export default function ContactForm() {
+  const { t } = useLocale();
+  const f = t.contactForm;
+
   const [formData, setFormData] = useState<IContactForm>({
     name: '',
     email: '',
@@ -27,12 +31,12 @@ export default function ContactForm() {
 
   const validate = (): boolean => {
     const newErrors: { [key: string]: string | null } = {};
-    if (!formData.name) newErrors.name = 'El nombre es requerido.';
+    if (!formData.name) newErrors.name = f.validation.name;
     if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
-      newErrors.email = 'El email no es válido.';
-    if (!formData.subject) newErrors.subject = 'El asunto es requerido.';
+      newErrors.email = f.validation.email;
+    if (!formData.subject) newErrors.subject = f.validation.subject;
     if (formData.message.length < 10)
-      newErrors.message = 'El mensaje debe tener al menos 10 caracteres.';
+      newErrors.message = f.validation.message;
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -66,7 +70,7 @@ export default function ContactForm() {
       } else {
         setStatus('error');
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
     }
   };
@@ -81,7 +85,7 @@ export default function ContactForm() {
           htmlFor="name"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
         >
-          Nombre
+          {f.name}
         </label>
         <input
           type="text"
@@ -102,7 +106,7 @@ export default function ContactForm() {
           htmlFor="email"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
         >
-          Correo Electrónico
+          {f.email}
         </label>
         <input
           type="email"
@@ -123,7 +127,7 @@ export default function ContactForm() {
           htmlFor="subject"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
         >
-          Asunto
+          {f.subject}
         </label>
         <input
           type="text"
@@ -144,7 +148,7 @@ export default function ContactForm() {
           htmlFor="message"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
         >
-          Mensaje
+          {f.message}
         </label>
         <textarea
           id="message"
@@ -163,22 +167,18 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full py-3 px-4 rounded-lg text-lg font-medium transition duration-150 ease-in-out 
-                   bg-blue-600 dark:bg-blue-700 text-white hover:bg-blue-700 dark:hover:bg-blue-600 
+        className="w-full py-3 px-4 rounded-lg text-lg font-medium transition duration-150 ease-in-out
+                   bg-blue-600 dark:bg-blue-700 text-white hover:bg-blue-700 dark:hover:bg-blue-600
                    disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
       >
-        {status === 'loading' ? 'Enviando...' : 'Enviar Mensaje'}
+        {status === 'loading' ? f.submitting : f.submit}
       </button>
 
       {status === 'success' && (
-        <p className="text-center text-green-500">
-          ¡Mensaje enviado con éxito! Te responderé pronto.
-        </p>
+        <p className="text-center text-green-500">{f.success}</p>
       )}
       {status === 'error' && (
-        <p className="text-center text-red-500">
-          Hubo un error. Por favor, intenta enviando un correo directo.
-        </p>
+        <p className="text-center text-red-500">{f.error}</p>
       )}
     </form>
   );

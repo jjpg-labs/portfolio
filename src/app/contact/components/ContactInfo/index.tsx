@@ -1,3 +1,5 @@
+'use client';
+
 import {
   EMAIL_ADDRESS,
   GITHUB_URL,
@@ -6,14 +8,16 @@ import {
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { useLocale } from '@/app/context/LocaleContext';
 
 export default function ContactInfo() {
+  const { t } = useLocale();
+  const { title, subtitle, location } = t.contactInfo;
+
   return (
     <div className="p-6 bg-blue-600 dark:bg-gray-900 text-white rounded-lg shadow-xl h-full flex flex-col justify-center">
-      <h2 className="text-3xl font-bold mb-6">Información de Contacto</h2>
-      <p className="mb-8 text-blue-100 dark:text-gray-300">
-        ¿Tienes un proyecto en mente o una propuesta interesante? ¡Hablemos!
-      </p>
+      <h2 className="text-3xl font-bold mb-6">{title}</h2>
+      <p className="mb-8 text-blue-100 dark:text-gray-300">{subtitle}</p>
 
       <div className="space-y-4 text-blue-100 dark:text-gray-300">
         <div className="flex items-center">
@@ -26,7 +30,7 @@ export default function ContactInfo() {
         </div>
         <div className="flex items-center">
           {FaMapMarkerAlt({ className: 'mr-3 text-xl' })}
-          <p>Madrid, España (Disponible Remoto)</p>
+          <p>{location}</p>
         </div>
       </div>
 

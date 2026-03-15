@@ -4,12 +4,11 @@ interface SkillCardProps {
 }
 
 export default function SkillCard({ title, skills }: SkillCardProps) {
-  const borderColor =
-    title === 'Back-End & Lógica'
-      ? 'border-blue-600'
-      : title === 'Datos & Infraestructura'
-      ? 'border-yellow-500'
-      : 'border-green-600';
+  const borderColor = title === 'Back-End'
+    ? 'border-blue-600'
+    : title === 'Front-End'
+    ? 'border-green-600'
+    : 'border-yellow-500';
 
   return (
     <div

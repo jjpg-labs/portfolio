@@ -1,5 +1,8 @@
+'use client';
+
 import ProjectCard from './components/ProjectCard';
 import { FaServer } from 'react-icons/fa';
+import { useLocale } from '@/app/context/LocaleContext';
 
 export interface Project {
   id: string;
@@ -10,49 +13,57 @@ export interface Project {
   imageCover: string;
   linkLive: string;
   linkRepo: string;
+  repoPrivate?: boolean;
 }
 
-const getProjects = () => {
-  const mockData: Project[] = [
-    {
-      id: '1',
-      title: 'E-Commerce API',
-      shortDescription:
-        'Diseño e implementación de una API RESTful escalable con autenticación basada en JWT.',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'Docker'],
-      role: 'Back-End',
-      imageCover: '/img/p1.jpg',
-      linkLive: '#',
-      linkRepo: '#',
-    },
-    {
-      id: '2',
-      title: 'Plataforma de Gestión',
-      shortDescription:
-        'Aplicación Full-Stack para el seguimiento de tareas con una UI moderna.',
-      technologies: ['Next.js', 'React', 'PostgreSQL', 'Tailwind CSS'],
-      role: 'Full-Stack',
-      imageCover: '/img/p2.jpg',
-      linkLive: '#',
-      linkRepo: '#',
-    },
-    {
-      id: '3',
-      title: 'Landing Page Animada',
-      shortDescription:
-        'Página de marketing con altas tasas de conversión y animaciones CSS optimizadas.',
-      technologies: ['React', 'TypeScript', 'Framer Motion'],
-      role: 'Front-End',
-      imageCover: '/img/p3.jpg',
-      linkLive: '#',
-      linkRepo: '#',
-    },
-  ];
-  return mockData;
-};
+const BASE_PROJECTS: Omit<Project, 'shortDescription'>[] = [
+  {
+    id: '1',
+    title: 'Accounting Suite',
+    technologies: [
+      'NestJS',
+      'PostgreSQL',
+      'Prisma',
+      'Next.js 15',
+      'Redux Toolkit',
+      'Tailwind CSS',
+      'TypeScript',
+      'JWT',
+    ],
+    role: 'Full-Stack',
+    imageCover: '/img/p1.jpg',
+    linkLive: '#',
+    linkRepo: 'https://github.com/jjpg-labs/accounting-server',
+  },
+  {
+    id: '2',
+    title: 'Curio',
+    technologies: ['Next.js 16', 'Prisma', 'Zustand', 'TypeScript', 'PostgreSQL'],
+    role: 'Full-Stack',
+    imageCover: '/img/p2.jpg',
+    linkLive: '#',
+    linkRepo: 'https://github.com/jjpg-labs/curio',
+    repoPrivate: true,
+  },
+  {
+    id: '3',
+    title: 'Soluciones Integrales',
+    technologies: ['PHP', 'MVC', 'MySQL', 'HTML/CSS'],
+    role: 'Back-End',
+    imageCover: '/img/p3.jpg',
+    linkLive: '#',
+    linkRepo: 'https://github.com/jjpg95/insurance-companies',
+  },
+];
 
 export default function ProjectsPage() {
-  const projects = getProjects();
+  const { t } = useLocale();
+  const { title, subtitle, items } = t.projectsPage;
+
+  const projects: Project[] = BASE_PROJECTS.map((base, i) => ({
+    ...base,
+    shortDescription: items[i].shortDescription,
+  }));
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors min-h-screen">
@@ -62,11 +73,10 @@ export default function ProjectsPage() {
             className: 'inline-block mr-3 text-blue-600 dark:text-blue-400',
             size: 32,
           })}
-          Portafolio de Proyectos
+          {title}
         </h1>
         <p className="text-xl text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-          Destacando sistemas escalables y eficientes. Mira el detalle de mi rol
-          en el **Back-End** de cada proyecto.
+          {subtitle}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

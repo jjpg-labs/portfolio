@@ -1,11 +1,15 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+'use client';
 
-export const GITHUB_URL = 'https://github.com/pepeju1995';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { useLocale } from '@/app/context/LocaleContext';
+
+export const GITHUB_URL = 'https://github.com/jjpg95';
 export const LINKEDIN_URL =
   'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/';
 export const EMAIL_ADDRESS = 'pepeju95@gmail.com';
 
 export const Footer = () => {
+  const { t } = useLocale();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -40,8 +44,7 @@ export const Footer = () => {
         </div>
 
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          Desarrollado con Next.js y amor | &copy; {currentYear} Jose Juan Pérez
-          González.
+          {t.footer.tagline} | &copy; {currentYear} Jose Juan Pérez González.
         </p>
       </div>
     </div>

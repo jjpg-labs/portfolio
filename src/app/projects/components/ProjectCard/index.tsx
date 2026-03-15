@@ -1,12 +1,17 @@
+'use client';
+
 import Link from 'next/link';
 import { FaCode, FaExternalLinkAlt } from 'react-icons/fa';
 import { Project } from '../../page';
+import { useLocale } from '@/app/context/LocaleContext';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { t } = useLocale();
+
   const accentClass =
     project.role === 'Back-End'
       ? 'border-blue-600 dark:border-blue-400'
@@ -15,8 +20,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div
       className={`
-        bg-white dark:bg-gray-800 rounded-lg shadow-xl 
-        hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 
+        bg-white dark:bg-gray-800 rounded-lg shadow-xl
+        hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300
         overflow-hidden border-t-4 ${accentClass}
       `}
     >
@@ -63,16 +68,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             rel="noopener noreferrer"
             className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition text-sm font-medium"
           >
-            {FaExternalLinkAlt({ className: 'mr-1' })} En Vivo
+            {FaExternalLinkAlt({ className: 'mr-1' })} {t.projectsPage.liveBtn}
           </Link>
-          <Link
-            href={project.linkRepo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition text-sm font-medium"
-          >
-            {FaCode({ className: 'mr-1' })} Código
-          </Link>
+          {!project.repoPrivate && (
+            <Link
+              href={project.linkRepo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition text-sm font-medium"
+            >
+              {FaCode({ className: 'mr-1' })} {t.projectsPage.codeBtn}
+            </Link>
+          )}
         </div>
       </div>
     </div>
