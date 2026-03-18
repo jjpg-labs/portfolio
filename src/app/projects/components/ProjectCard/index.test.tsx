@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ProjectCard from './index';
-import { Project } from '../../page';
+import { Project } from '../../ProjectsClient';
 import { LocaleProvider } from '@/app/context/LocaleContext';
 
 const mockProject: Project = {

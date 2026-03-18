@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaCode, FaExternalLinkAlt } from 'react-icons/fa';
-import { Project } from '../../page';
+import { FaCode, FaExternalLinkAlt, FaLock } from 'react-icons/fa';
+import { Project } from '../../ProjectsClient';
 import { useLocale } from '@/app/context/LocaleContext';
 
 interface ProjectCardProps {
@@ -34,6 +34,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
+        {project.repoPrivate && (
+          <span className="absolute top-2 right-2 px-2 py-1 text-xs font-semibold bg-yellow-400 text-yellow-900 rounded-full">
+            {t.projectsPage.inDevelopment}
+          </span>
+        )}
       </div>
 
       <div className="p-6">
@@ -96,6 +101,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             >
               {FaCode({ className: 'mr-1' })} {t.projectsPage.codeBtn} UI
             </Link>
+          )}
+          {project.repoPrivate && (
+            <span className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500 italic">
+              {FaLock({ size: 11, className: 'inline' })} {t.projectsPage.privateRepo}
+            </span>
           )}
         </div>
       </div>

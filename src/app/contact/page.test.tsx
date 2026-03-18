@@ -2,21 +2,42 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ContactPage from './page';
 import { EMAIL_ADDRESS } from '../components/Footer';
+import { LocaleProvider } from '@/app/context/LocaleContext';
 
 jest.mock('./components/ContactForm', () => () => (
   <div data-testid="contact-form" />
 ));
 
+jest.mock('next/link', () => ({
+  __esModule: true,
+  default: ({
+    href,
+    children,
+    ...rest
+  }: {
+    href: string;
+    children: React.ReactNode;
+    [key: string]: any;
+  }) => (
+    <a href={href} {...rest}>
+      {children}
+    </a>
+  ),
+}));
+
+const renderWithLocale = (ui: React.ReactElement) =>
+  render(<LocaleProvider>{ui}</LocaleProvider>);
+
 describe('ContactPage', () => {
   it('renders the main heading', () => {
-    render(<ContactPage />);
+    renderWithLocale(<ContactPage />);
     expect(
       screen.getByRole('heading', { name: /ponte en contacto/i })
     ).toBeInTheDocument();
   });
 
   it('renders the contact form section', () => {
-    render(<ContactPage />);
+    renderWithLocale(<ContactPage />);
     expect(
       screen.getByRole('heading', { name: /envíame un mensaje/i })
     ).toBeInTheDocument();
@@ -24,7 +45,7 @@ describe('ContactPage', () => {
   });
 
   it('renders the contact info section', () => {
-    render(<ContactPage />);
+    renderWithLocale(<ContactPage />);
     expect(
       screen.getByRole('heading', { name: /información de contacto/i })
     ).toBeInTheDocument();
@@ -37,7 +58,7 @@ describe('ContactPage', () => {
   });
 
   it('renders social links with correct aria-labels', () => {
-    render(<ContactPage />);
+    renderWithLocale(<ContactPage />);
     expect(screen.getByLabelText(/linkedin/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/github/i)).toBeInTheDocument();
   });
