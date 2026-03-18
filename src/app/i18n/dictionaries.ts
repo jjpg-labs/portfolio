@@ -64,6 +64,8 @@ export const dictionaries = {
         'Proyectos reales: APIs REST con NestJS, plataformas full-stack con Next.js y sistemas con patrón MVC.',
       liveBtn: 'En Vivo',
       codeBtn: 'Código',
+      privateRepo: 'Repositorio privado',
+      inDevelopment: 'En desarrollo',
       items: [
         {
           shortDescription:
@@ -184,6 +186,8 @@ export const dictionaries = {
         'Real projects: REST APIs with NestJS, full-stack platforms with Next.js, and MVC systems.',
       liveBtn: 'Live Demo',
       codeBtn: 'Code',
+      privateRepo: 'Private repository',
+      inDevelopment: 'In development',
       items: [
         {
           shortDescription:
