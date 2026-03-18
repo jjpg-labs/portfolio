@@ -1,6 +1,10 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import ContactForm from '.';
 import '@testing-library/jest-dom';
+import { LocaleProvider } from '@/app/context/LocaleContext';
+
+const renderWithLocale = (ui: React.ReactElement) =>
+  render(<LocaleProvider>{ui}</LocaleProvider>);
 
 describe('ContactForm', () => {
   beforeEach(() => {
@@ -8,7 +12,7 @@ describe('ContactForm', () => {
   });
 
   it('renders all form fields and submit button', () => {
-    render(<ContactForm />);
+    renderWithLocale(<ContactForm />);
     expect(screen.getByLabelText(/Nombre/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Correo Electrónico/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Asunto/i)).toBeInTheDocument();
@@ -19,7 +23,7 @@ describe('ContactForm', () => {
   });
 
   it('clears individual field error when typing', async () => {
-    render(<ContactForm />);
+    renderWithLocale(<ContactForm />);
     fireEvent.click(screen.getByRole('button', { name: /Enviar Mensaje/i }));
     const nameInput = screen.getByLabelText(/Nombre/i);
     expect(
@@ -40,7 +44,7 @@ describe('ContactForm', () => {
       })
     ) as jest.Mock;
 
-    render(<ContactForm />);
+    renderWithLocale(<ContactForm />);
     fireEvent.change(screen.getByLabelText(/Nombre/i), {
       target: { value: 'Juan' },
     });
@@ -75,7 +79,7 @@ describe('ContactForm', () => {
       })
     ) as jest.Mock;
 
-    render(<ContactForm />);
+    renderWithLocale(<ContactForm />);
     fireEvent.change(screen.getByLabelText(/Nombre/i), {
       target: { value: 'Juan' },
     });
@@ -99,7 +103,7 @@ describe('ContactForm', () => {
   it('shows error message if fetch throws', async () => {
     global.fetch = jest.fn(() => Promise.reject('Network error')) as jest.Mock;
 
-    render(<ContactForm />);
+    renderWithLocale(<ContactForm />);
     fireEvent.change(screen.getByLabelText(/Nombre/i), {
       target: { value: 'Juan' },
     });

@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Navigation } from './index';
+import { LocaleProvider } from '@/app/context/LocaleContext';
+import { ViewportProvider } from '@/app/context/ViewportContext';
 
 jest.mock('next/link', () => {
   return ({
@@ -18,6 +20,13 @@ jest.mock('next/link', () => {
   );
 });
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  default: ({ src, alt, ...rest }: { src: string; alt: string; [key: string]: any }) => (
+    <img src={src} alt={alt} {...rest} />
+  ),
+}));
+
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
 
 jest.mock('react-icons/io5', () => ({
@@ -29,14 +38,25 @@ jest.mock('../ThemeSwitch', () => ({
   ThemeSwitcher: () => <button data-testid="theme-switcher" />,
 }));
 
+jest.mock('../LanguageSwitcher', () => ({
+  LanguageSwitcher: () => <button data-testid="language-switcher" />,
+}));
+
+const renderWithProviders = (ui: React.ReactElement) =>
+  render(
+    <LocaleProvider>
+      <ViewportProvider>{ui}</ViewportProvider>
+    </LocaleProvider>
+  );
+
 describe('Navigation', () => {
   it('renders logo/name', () => {
-    render(<Navigation />);
+    renderWithProviders(<Navigation />);
     expect(screen.getByText('JJPG')).toBeInTheDocument();
   });
 
   it('renders navigation links in desktop menu', () => {
-    render(<Navigation />);
+    renderWithProviders(<Navigation />);
 
     const links = ['Inicio', 'Proyectos', 'Habilidades', 'Contacto'];
     links.forEach((linkText) => {
@@ -45,17 +65,17 @@ describe('Navigation', () => {
   });
 
   it('renders ThemeSwitcher in both mobile and desktop', () => {
-    render(<Navigation />);
+    renderWithProviders(<Navigation />);
     expect(screen.getAllByTestId('theme-switcher').length).toBeGreaterThan(0);
   });
 
   it('shows hamburger menu icon by default', () => {
-    render(<Navigation />);
+    renderWithProviders(<Navigation />);
     expect(screen.getByTestId('menu-icon')).toBeInTheDocument();
   });
 
   it('toggles mobile menu when hamburger is clicked', () => {
-    render(<Navigation />);
+    renderWithProviders(<Navigation />);
     const button = screen.getByLabelText('Toggle Navigation');
 
     expect(screen.getByTestId('menu-icon')).toBeInTheDocument();
@@ -82,7 +102,7 @@ describe('Navigation', () => {
   });
 
   it('closes mobile menu when a link is clicked', () => {
-    render(<Navigation />);
+    renderWithProviders(<Navigation />);
     const button = screen.getByLabelText('Toggle Navigation');
     fireEvent.click(button);
     const mobileLink = screen
