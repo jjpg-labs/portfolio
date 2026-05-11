@@ -69,7 +69,7 @@ export default function SkillsClient() {
         </div>
 
         <header className="mb-12">
-          <h1 className="font-serif text-display lg:text-[80px] leading-none text-text-primary">
+          <h1 className="font-serif text-h1 sm:text-display lg:text-[80px] leading-none text-text-primary">
             {title}
           </h1>
         </header>

@@ -62,7 +62,7 @@ export function SkillCard({
           return (
             <li
               key={skill.name}
-              className="grid grid-cols-[1fr_120px_80px] gap-4 items-center py-3 border-b border-border-subtle last:border-b-0"
+              className="grid grid-cols-[1fr_80px_60px] sm:grid-cols-[1fr_120px_80px] gap-3 sm:gap-4 items-center py-3 border-b border-border-subtle last:border-b-0"
             >
               <span className="font-sans text-body text-text-primary">
                 {skill.name}

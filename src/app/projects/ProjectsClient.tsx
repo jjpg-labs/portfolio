@@ -111,7 +111,7 @@ export default function ProjectsClient() {
         </div>
 
         <header className="mb-12">
-          <h1 className="font-serif text-display lg:text-[80px] leading-none text-text-primary">
+          <h1 className="font-serif text-h1 sm:text-display lg:text-[80px] leading-none text-text-primary">
             {title}
           </h1>
           <p className="font-sans text-body-lg text-text-secondary mt-4 max-w-[60ch]">

@@ -13,7 +13,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-10 gap-6 flex-wrap">
           <div>
-            <h2 className="font-serif text-[40px] lg:text-[48px] leading-tight text-text-primary">
+            <h2 className="font-serif text-[28px] sm:text-[40px] lg:text-[48px] leading-tight text-text-primary">
               {title}
             </h2>
             <p className="font-sans text-body text-text-secondary max-w-[60ch] mt-2">

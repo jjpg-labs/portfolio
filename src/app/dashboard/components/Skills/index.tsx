@@ -11,7 +11,7 @@ export default function Skills() {
     <section className="border-y border-border bg-bg-surface px-4 sm:px-8 lg:px-14 py-16 lg:py-20">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-10 gap-6 flex-wrap">
-          <h2 className="font-serif text-[40px] lg:text-[48px] leading-tight text-text-primary">
+          <h2 className="font-serif text-[28px] sm:text-[40px] lg:text-[48px] leading-tight text-text-primary">
             {title}
           </h2>
           <span className="font-mono text-mono-label uppercase text-text-muted">

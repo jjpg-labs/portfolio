@@ -35,12 +35,12 @@ export default function Header() {
           <div className="flex flex-col gap-6">
             <LiveDot label={t.hero.availability} />
 
-            <h1 className="font-serif text-[56px] sm:text-display lg:text-display-xl">
+            <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-display-xl">
               {t.hero.greeting} Jose Juan.{' '}
               <AccentWord>{t.hero.role}</AccentWord>.
             </h1>
 
-            <h2 className="font-serif text-h2 lg:text-[34px] text-text-secondary max-w-[40ch] leading-tight">
+            <h2 className="font-serif text-[20px] sm:text-h2 lg:text-[34px] text-text-secondary max-w-[40ch] leading-tight">
               {t.hero.tagline}
             </h2>
 
@@ -76,7 +76,7 @@ export default function Header() {
             </p>
           </div>
 
-          <aside className="border-y border-border py-3 self-start w-full max-w-[260px] lg:sticky lg:top-24">
+          <aside className="border-y border-border py-3 self-start w-full lg:max-w-[260px] lg:sticky lg:top-24">
             <dl className="flex flex-col">
               {COLOPHON_KEYS.map(({ term, value, accent }) => (
                 <div

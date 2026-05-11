@@ -35,7 +35,13 @@ export const metadata: Metadata = {
     'remote',
   ],
   authors: [{ name: 'Jose Juan Pérez González', url: 'https://jjpg.dev' }],
-  icons: { icon: '/breaksIcon.png' },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     url: 'https://jjpg.dev',
@@ -131,7 +137,7 @@ export default function RootLayout({ children }: ChildrenProps) {
           <LocaleProvider>
           <ViewportProvider>
             <div id="app-container" className="flex flex-col min-h-screen bg-bg-base text-text-primary">
-              <header className="sticky top-0 z-50 bg-bg-surface/80 backdrop-blur border-b border-border-subtle">
+              <header className="sticky top-0 z-50 bg-bg-surface border-b border-border-subtle">
                 <Navigation />
               </header>
 
