@@ -7,44 +7,54 @@ import './globals.css';
 import { ChildrenProps } from './types';
 import { ViewportProvider } from './context/ViewportContext';
 
+const SITE_TITLE = 'Jose Juan — Full-Stack Engineer';
+const SITE_DESCRIPTION =
+  'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL. Disponible para MVPs, mantenimiento continuo, integración de IA con Claude y consultoría técnica. Madrid, trabajo en remoto.';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://jjpg.dev'),
-  title: 'Jose Juan | Desarrollador Full-Stack',
-  description:
-    'Portafolio de Jose Juan — Experto en Back-End y desarrollo Full-Stack con Next.js, NestJS y TypeScript.',
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   keywords: [
-    'desarrollador full-stack',
-    'backend',
+    'Full-Stack Engineer',
+    'desarrollador freelance',
     'Next.js',
     'NestJS',
     'TypeScript',
-    'portfolio',
-    'Jose Juan',
+    'PostgreSQL',
+    'Prisma',
+    'SaaS',
+    'MVP',
+    'integración IA',
+    'Claude API',
+    'MCP',
+    'Madrid',
+    'España',
+    'remote',
   ],
-  authors: [{ name: 'Jose Juan', url: 'https://jjpg.dev' }],
+  authors: [{ name: 'Jose Juan Pérez González', url: 'https://jjpg.dev' }],
   icons: { icon: '/breaksIcon.png' },
   openGraph: {
     type: 'website',
     url: 'https://jjpg.dev',
-    title: 'Jose Juan | Desarrollador Full-Stack',
-    description:
-      'Portafolio de Jose Juan — Experto en Back-End y desarrollo Full-Stack.',
-    siteName: 'Jose Juan Portfolio',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    siteName: 'Jose Juan — jjpg.dev',
     locale: 'es_ES',
+    alternateLocale: 'en_US',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Jose Juan — Desarrollador Full-Stack',
+        alt: 'Jose Juan — Full-Stack Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jose Juan | Desarrollador Full-Stack',
-    description:
-      'Portafolio de Jose Juan — Experto en Back-End y desarrollo Full-Stack.',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: ['/opengraph-image'],
   },
   robots: { index: true, follow: true },
@@ -54,10 +64,38 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Jose Juan',
+  name: 'Jose Juan Pérez González',
+  alternateName: 'JJPG',
   url: 'https://jjpg.dev',
-  jobTitle: 'Full-Stack Developer',
-  sameAs: ['https://github.com/jjpg95', 'https://github.com/jjpg-labs'],
+  jobTitle: 'Full-Stack Engineer',
+  description:
+    'Full-Stack Engineer disponible para MVPs, mantenimiento continuo, integración de IA y consultoría técnica.',
+  email: 'mailto:hola@jjpg.dev',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Madrid',
+    addressCountry: 'ES',
+  },
+  knowsAbout: [
+    'Next.js',
+    'NestJS',
+    'TypeScript',
+    'React',
+    'Node.js',
+    'PostgreSQL',
+    'Prisma',
+    'Tailwind CSS',
+    'Claude API',
+    'Model Context Protocol',
+    'SaaS',
+    'REST APIs',
+  ],
+  sameAs: [
+    'https://github.com/jjpg95',
+    'https://github.com/jjpg-labs',
+    'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/',
+    'https://www.malt.es/profile/josejuanperezgonzalez',
+  ],
 };
 
 export default function RootLayout({ children }: ChildrenProps) {

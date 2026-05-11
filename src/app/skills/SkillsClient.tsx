@@ -27,9 +27,19 @@ const allSkills: Skill[] = [
   { name: 'MongoDB', level: 3, category: 'Bases de Datos' },
   { name: 'Docker', level: 3, category: 'Infraestructura' },
   { name: 'JWT / Auth', level: 4, category: 'Infraestructura' },
+  { name: 'Claude Code', level: 5, category: 'IA / LLMs' },
+  { name: 'Claude API', level: 4, category: 'IA / LLMs' },
+  { name: 'MCP (Model Context Protocol)', level: 3, category: 'IA / LLMs' },
+  { name: 'Prompt engineering', level: 4, category: 'IA / LLMs' },
 ];
 
-const CATEGORY_ORDER = ['Back-End', 'Front-End', 'Bases de Datos', 'Infraestructura'];
+const CATEGORY_ORDER = [
+  'Back-End',
+  'Front-End',
+  'Bases de Datos',
+  'Infraestructura',
+  'IA / LLMs',
+];
 
 export default function SkillsClient() {
   const { t } = useLocale();

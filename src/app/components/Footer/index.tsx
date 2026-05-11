@@ -1,12 +1,18 @@
 'use client';
 
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCalendarAlt } from 'react-icons/fa';
+import { SiMalt } from 'react-icons/si';
 import { useLocale } from '@/app/context/LocaleContext';
 
 export const GITHUB_URL = 'https://github.com/jjpg95';
 export const LINKEDIN_URL =
   'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/';
-export const EMAIL_ADDRESS = 'pepeju95@gmail.com';
+export const MALT_URL = 'https://www.malt.es/profile/josejuanperezgonzalez';
+export const EMAIL_ADDRESS =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'pepeju95@gmail.com';
+export const CALENDLY_URL =
+  process.env.NEXT_PUBLIC_CALENDLY_URL ??
+  'https://calendly.com/pepeju95/discovery-call';
 
 export const Footer = () => {
   const { t } = useLocale();
@@ -33,6 +39,24 @@ export const Footer = () => {
             className="text-gray-500 dark:text-gray-400 hover:text-blue-700 transition"
           >
             {FaLinkedin({ size: 24 })}
+          </a>
+          <a
+            href={MALT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Malt"
+            className="text-gray-500 dark:text-gray-400 hover:text-[#FC5757] transition"
+          >
+            {SiMalt({ size: 24 })}
+          </a>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Calendly"
+            className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition"
+          >
+            {FaCalendarAlt({ size: 24 })}
           </a>
           <a
             href={`mailto:${EMAIL_ADDRESS}`}

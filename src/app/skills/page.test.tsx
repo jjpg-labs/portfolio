@@ -29,11 +29,12 @@ describe('SkillsPage', () => {
 
   it('renders all skill categories', () => {
     renderWithLocale(<SkillsPage />);
-    expect(screen.getAllByTestId('skill-category')).toHaveLength(4);
+    expect(screen.getAllByTestId('skill-category')).toHaveLength(5);
     expect(screen.getByText('Back-End')).toBeInTheDocument();
     expect(screen.getByText('Front-End')).toBeInTheDocument();
     expect(screen.getByText('Bases de Datos')).toBeInTheDocument();
     expect(screen.getByText('Infraestructura')).toBeInTheDocument();
+    expect(screen.getByText('IA / LLMs')).toBeInTheDocument();
   });
 
   it('renders all skills under their categories', () => {
@@ -44,5 +45,7 @@ describe('SkillsPage', () => {
     expect(screen.getByText('Tailwind CSS')).toBeInTheDocument();
     expect(screen.getByText('PostgreSQL')).toBeInTheDocument();
     expect(screen.getByText('MongoDB')).toBeInTheDocument();
+    expect(screen.getByText('Claude Code')).toBeInTheDocument();
+    expect(screen.getByText('Claude API')).toBeInTheDocument();
   });
 });

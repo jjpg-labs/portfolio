@@ -19,7 +19,7 @@ describe('ProjectsPage', () => {
       ).toBeInTheDocument()
     );
     expect(
-      screen.getByText(/Proyectos reales: APIs REST con NestJS/i)
+      screen.getByText(/Proyectos reales: SaaS multi-tenant/i)
     ).toBeInTheDocument();
   });
 
@@ -27,10 +27,11 @@ describe('ProjectsPage', () => {
     renderWithLocale(<ProjectsPage />);
     await waitFor(() => {
       const cards = screen.getAllByTestId('project-card');
-      expect(cards).toHaveLength(3);
-      expect(cards[0]).toHaveTextContent('Accounting Suite');
-      expect(cards[1]).toHaveTextContent('Curio');
-      expect(cards[2]).toHaveTextContent('Soluciones Integrales');
+      expect(cards).toHaveLength(4);
+      expect(cards[0]).toHaveTextContent('Vereda');
+      expect(cards[1]).toHaveTextContent('Medina Roja BTT');
+      expect(cards[2]).toHaveTextContent('Accounting Suite');
+      expect(cards[3]).toHaveTextContent('Curio');
     });
   });
 });

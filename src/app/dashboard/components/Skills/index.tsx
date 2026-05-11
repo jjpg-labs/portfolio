@@ -14,7 +14,7 @@ export default function Skills() {
           {title}
         </h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {groups.map(({ title: groupTitle, skills }) => (
             <div key={groupTitle}>
               <SkillCard title={groupTitle} skills={skills as string[]} />

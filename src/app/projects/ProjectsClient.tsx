@@ -20,6 +20,40 @@ export interface Project {
 const BASE_PROJECTS: Omit<Project, 'shortDescription'>[] = [
   {
     id: '1',
+    title: 'Vereda',
+    technologies: [
+      'Next.js 16',
+      'Neon PostgreSQL',
+      'Vercel Blob',
+      'JWT',
+      'TypeScript',
+      'Tailwind 4',
+      'React 19',
+    ],
+    role: 'Full-Stack',
+    imageCover: '/img/p4.svg',
+    linkLive: '#',
+    linkRepo: 'https://github.com/jjpg-labs/vereda',
+    repoPrivate: true,
+  },
+  {
+    id: '2',
+    title: 'Medina Roja BTT',
+    technologies: [
+      'Next.js 16',
+      'Leaflet',
+      'GPX',
+      'Tailwind 4',
+      'TypeScript',
+      'React 19',
+    ],
+    role: 'Full-Stack',
+    imageCover: '/img/p5.svg',
+    linkLive: 'https://medina-roja-btt.vercel.app',
+    linkRepo: 'https://github.com/jjpg-labs/medina-roja-btt',
+  },
+  {
+    id: '3',
     title: 'Accounting Suite',
     technologies: [
       'NestJS',
@@ -40,7 +74,7 @@ const BASE_PROJECTS: Omit<Project, 'shortDescription'>[] = [
     linkRepo2: 'https://github.com/jjpg95/accounting-manager',
   },
   {
-    id: '2',
+    id: '4',
     title: 'Curio',
     technologies: [
       'Next.js 16',
@@ -57,15 +91,6 @@ const BASE_PROJECTS: Omit<Project, 'shortDescription'>[] = [
     linkLive: '#',
     linkRepo: 'https://github.com/jjpg-labs/curio',
     repoPrivate: true,
-  },
-  {
-    id: '3',
-    title: 'Soluciones Integrales',
-    technologies: ['PHP', 'MVC', 'MySQL', 'HTML/CSS'],
-    role: 'Back-End',
-    imageCover: '/img/p3.svg',
-    linkLive: '#',
-    linkRepo: 'https://github.com/jjpg95/insurance-companies',
   },
 ];
 

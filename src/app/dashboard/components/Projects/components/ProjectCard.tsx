@@ -16,7 +16,7 @@ export default function ProjectCard({
       </h4>
       <p className="text-gray-600 dark:text-gray-400 mb-4">{description}</p>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        **Foco:** {stack}.
+        <span className="font-semibold">Foco:</span> {stack}
       </p>
     </div>
   );

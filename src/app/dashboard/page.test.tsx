@@ -42,21 +42,27 @@ describe('Dashboard', () => {
       screen.getByRole('heading', { name: /hola, soy/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: /especializado en/i })
+      screen.getByRole('heading', { name: /construyo saas y dashboards/i })
     ).toBeInTheDocument();
+  });
+
+  it('renders the availability badge', () => {
+    renderWithProviders(<Dashboard />);
+    const matches = screen.getAllByText(/disponible para nuevos proyectos/i);
+    expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders the introduction paragraph', () => {
     renderWithProviders(<Dashboard />);
-    expect(screen.getByText(/4 años de experiencia/i)).toBeInTheDocument();
+    expect(screen.getByText(/4\+ años de experiencia/i)).toBeInTheDocument();
   });
 
-  it('renders the "Ver mis Proyectos" and "Contáctame" links', () => {
+  it('renders the "Ver mis Proyectos" and "Hablemos" links', () => {
     renderWithProviders(<Dashboard />);
     expect(
       screen.getByRole('link', { name: /ver mis proyectos/i })
     ).toHaveAttribute('href', '/projects');
-    expect(screen.getByRole('link', { name: /contáctame/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /hablemos/i })).toHaveAttribute(
       'href',
       '/contact'
     );

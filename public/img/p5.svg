@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160" viewBox="0 0 600 160">
+  <defs>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d1a0a"/>
+      <stop offset="50%" style="stop-color:#802916"/>
+      <stop offset="100%" style="stop-color:#c44523"/>
+    </linearGradient>
+    <linearGradient id="glow5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#f97316;stop-opacity:0.45"/>
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="160" fill="url(#grad5)"/>
+  <rect y="80" width="600" height="2" fill="url(#glow5)"/>
+  <!-- Grid lines -->
+  <line x1="0" y1="40" x2="600" y2="40" stroke="#f97316" stroke-width="0.3" stroke-opacity="0.2"/>
+  <line x1="0" y1="80" x2="600" y2="80" stroke="#f97316" stroke-width="0.3" stroke-opacity="0.2"/>
+  <line x1="0" y1="120" x2="600" y2="120" stroke="#f97316" stroke-width="0.3" stroke-opacity="0.2"/>
+  <line x1="150" y1="0" x2="150" y2="160" stroke="#f97316" stroke-width="0.3" stroke-opacity="0.2"/>
+  <line x1="300" y1="0" x2="300" y2="160" stroke="#f97316" stroke-width="0.3" stroke-opacity="0.2"/>
+  <line x1="450" y1="0" x2="450" y2="160" stroke="#f97316" stroke-width="0.3" stroke-opacity="0.2"/>
+  <!-- Decorative trail/curve -->
+  <path d="M 380 110 Q 430 80 470 95 T 560 70 L 600 80 L 600 160 L 380 160 Z" fill="#3d1a0a" fill-opacity="0.55"/>
+  <!-- Icon area: bike wheel -->
+  <rect x="24" y="28" width="44" height="44" rx="10" fill="#3d1a0a" fill-opacity="0.75"/>
+  <circle cx="46" cy="50" r="14" fill="none" stroke="#fdba74" stroke-width="2.5"/>
+  <circle cx="46" cy="50" r="2.5" fill="#fdba74"/>
+  <line x1="46" y1="36" x2="46" y2="64" stroke="#fdba74" stroke-width="1"/>
+  <line x1="32" y1="50" x2="60" y2="50" stroke="#fdba74" stroke-width="1"/>
+  <!-- Title -->
+  <text x="84" y="46" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#FFF7ED">Medina Roja BTT</text>
+  <text x="84" y="64" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#fdba74" letter-spacing="0.5">EVENT LANDING + GPX MAP</text>
+  <!-- Tech badges -->
+  <rect x="24" y="100" width="70" height="22" rx="11" fill="#3d1a0a"/>
+  <text x="59" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#fdba74" text-anchor="middle">Next.js 16</text>
+  <rect x="102" y="100" width="58" height="22" rx="11" fill="#3d1a0a"/>
+  <text x="131" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#fdba74" text-anchor="middle">Leaflet</text>
+  <rect x="168" y="100" width="42" height="22" rx="11" fill="#3d1a0a"/>
+  <text x="189" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#fdba74" text-anchor="middle">GPX</text>
+  <rect x="218" y="100" width="64" height="22" rx="11" fill="#3d1a0a"/>
+  <text x="250" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#fdba74" text-anchor="middle">Tailwind 4</text>
+  <rect x="290" y="100" width="70" height="22" rx="11" fill="#3d1a0a"/>
+  <text x="325" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#fdba74" text-anchor="middle">TypeScript</text>
+  <!-- Decorative dots -->
+  <circle cx="540" cy="30" r="2" fill="#f97316" fill-opacity="0.7"/>
+  <circle cx="560" cy="40" r="1.5" fill="#fdba74" fill-opacity="0.5"/>
+  <circle cx="525" cy="45" r="1" fill="#f97316" fill-opacity="0.6"/>
+</svg>
