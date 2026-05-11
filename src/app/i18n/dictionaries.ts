@@ -51,14 +51,17 @@ export const dictionaries = {
     dashboardSkills: {
       title: 'Tecnologías Clave y Stack Principal',
       groups: [
-        { title: 'Back-End', skills: ['NestJS', 'Node.js', 'PHP', 'Python'] },
+        {
+          title: 'Back-End',
+          skills: ['NestJS', 'Node.js', 'PHP / Symfony', 'API Platform'],
+        },
         {
           title: 'Front-End',
-          skills: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'Zustand', 'Framer Motion'],
+          skills: ['React / Next.js', 'TypeScript', 'React Admin', 'MUI', 'Tailwind CSS', 'React Native'],
         },
         {
           title: 'Bases de Datos & Infra',
-          skills: ['PostgreSQL', 'Prisma', 'MongoDB', 'Docker', 'JWT / Auth'],
+          skills: ['PostgreSQL', 'Redis', 'Docker', 'Kubernetes', 'AWS', 'Terraform'],
         },
         {
           title: 'IA / LLMs',
@@ -85,12 +88,12 @@ export const dictionaries = {
           id: 'ai',
           title: 'Integración de IA',
           summary: 'Chatbots, agentes y automatizaciones con Claude API y MCP.',
-          badge: 'Especialidad',
         },
         {
           id: 'consulting',
           title: 'Consultoría técnica',
           summary: 'Code reviews, arquitectura y decisiones de stack.',
+          badge: 'Especialidad',
         },
       ],
     },
@@ -182,7 +185,6 @@ export const dictionaries = {
           id: 'ai',
           title: 'Integración de IA',
           summary: 'Chatbots, agentes y automatizaciones con Claude API y MCP.',
-          badge: 'Especialidad',
           description:
             'Integro capacidades de IA modernas en tu producto: chatbots, agentes con herramientas, automatizaciones, RAG, generación de contenido. Trabajo con Claude API/SDK y el protocolo MCP para integraciones a medida.',
           bullets: [
@@ -200,6 +202,7 @@ export const dictionaries = {
           id: 'consulting',
           title: 'Consultoría técnica',
           summary: 'Code reviews, arquitectura y decisiones de stack.',
+          badge: 'Especialidad',
           description:
             'Sesiones de consultoría puntual: code reviews, decisiones de arquitectura, elección de stack, estrategia de refactor. Una segunda opinión senior sin compromiso continuo.',
           bullets: [
@@ -295,14 +298,17 @@ export const dictionaries = {
     dashboardSkills: {
       title: 'Key Technologies and Main Stack',
       groups: [
-        { title: 'Back-End', skills: ['NestJS', 'Node.js', 'PHP', 'Python'] },
+        {
+          title: 'Back-End',
+          skills: ['NestJS', 'Node.js', 'PHP / Symfony', 'API Platform'],
+        },
         {
           title: 'Front-End',
-          skills: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'Zustand', 'Framer Motion'],
+          skills: ['React / Next.js', 'TypeScript', 'React Admin', 'MUI', 'Tailwind CSS', 'React Native'],
         },
         {
           title: 'Databases & Infra',
-          skills: ['PostgreSQL', 'Prisma', 'MongoDB', 'Docker', 'JWT / Auth'],
+          skills: ['PostgreSQL', 'Redis', 'Docker', 'Kubernetes', 'AWS', 'Terraform'],
         },
         {
           title: 'AI / LLMs',
@@ -329,12 +335,12 @@ export const dictionaries = {
           id: 'ai',
           title: 'AI Integration',
           summary: 'Chatbots, agents and automations with Claude API and MCP.',
-          badge: 'Specialty',
         },
         {
           id: 'consulting',
           title: 'Technical Consulting',
           summary: 'Code reviews, architecture and stack decisions.',
+          badge: 'Specialty',
         },
       ],
     },
@@ -426,7 +432,6 @@ export const dictionaries = {
           id: 'ai',
           title: 'AI Integration',
           summary: 'Chatbots, agents and automations with Claude API and MCP.',
-          badge: 'Specialty',
           description:
             'I integrate modern AI capabilities into your product: chatbots, tool-using agents, automations, RAG, content generation. I work with Claude API/SDK and the MCP protocol for custom integrations.',
           bullets: [
@@ -444,6 +449,7 @@ export const dictionaries = {
           id: 'consulting',
           title: 'Technical Consulting',
           summary: 'Code reviews, architecture and stack decisions.',
+          badge: 'Specialty',
           description:
             'One-off consulting sessions: code reviews, architecture decisions, stack choice, refactor strategy. A senior second opinion without ongoing commitment.',
           bullets: [

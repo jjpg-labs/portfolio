@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { CALENDLY_URL } from '@/app/components/Footer';
 import { useLocale } from '@/app/context/LocaleContext';
 
-const TECH_CHIPS = ['NestJS', 'Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind', 'Docker'];
+const TECH_CHIPS = ['NestJS', 'Next.js', 'Symfony', 'TypeScript', 'PostgreSQL', 'AWS', 'Docker'];
 
 export default function Header() {
   const { t } = useLocale();
