@@ -61,17 +61,25 @@ export default function SkillsClient() {
   }, {});
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors min-h-screen">
+    <section className="px-4 sm:px-8 lg:px-14 py-12 lg:py-16 bg-bg-base min-h-screen">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center mb-12 text-gray-900 dark:text-gray-50">
-          {title}
-        </h1>
+        <div className="flex items-center justify-between mb-8 font-mono text-mono-label uppercase text-text-muted">
+          <span>// página · stack</span>
+          <span>Issue <span className="text-accent">02</span></span>
+        </div>
 
-        <div className="space-y-8">
-          {CATEGORY_ORDER.map((cat) =>
+        <header className="mb-12">
+          <h1 className="font-serif text-h1 sm:text-display lg:text-[80px] leading-none text-text-primary">
+            {title}
+          </h1>
+        </header>
+
+        <div className="flex flex-col">
+          {CATEGORY_ORDER.map((cat, idx) =>
             groupedSkills[cat] ? (
               <SkillCard
                 key={cat}
+                num={idx + 1}
                 category={categories[cat] ?? cat}
                 skills={groupedSkills[cat]}
                 levels={levels}

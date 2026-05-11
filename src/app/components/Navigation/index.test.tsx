@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import { Navigation } from './index';
 import { LocaleProvider } from '@/app/context/LocaleContext';
 import { ViewportProvider } from '@/app/context/ViewportContext';
@@ -20,11 +20,8 @@ jest.mock('next/link', () => {
   );
 });
 
-jest.mock('next/image', () => ({
-  __esModule: true,
-  default: ({ src, alt, ...rest }: { src: string; alt: string; [key: string]: any }) => (
-    <img src={src} alt={alt} {...rest} />
-  ),
+jest.mock('next/navigation', () => ({
+  usePathname: () => '/',
 }));
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
@@ -34,12 +31,16 @@ jest.mock('react-icons/io5', () => ({
   IoClose: (props: IconProps) => <svg data-testid="close-icon" {...props} />,
 }));
 
-jest.mock('../ThemeSwitch', () => ({
-  ThemeSwitcher: () => <button data-testid="theme-switcher" />,
+jest.mock('../Logo', () => ({
+  Logo: () => <svg data-testid="logo" />,
 }));
 
 jest.mock('../LanguageSwitcher', () => ({
   LanguageSwitcher: () => <button data-testid="language-switcher" />,
+}));
+
+jest.mock('../ThemeSwitch', () => ({
+  ThemeSwitcher: () => <button data-testid="theme-switcher" />,
 }));
 
 const renderWithProviders = (ui: React.ReactElement) =>
@@ -50,70 +51,55 @@ const renderWithProviders = (ui: React.ReactElement) =>
   );
 
 describe('Navigation', () => {
-  it('renders logo/name', () => {
+  it('renders logo and name', () => {
     renderWithProviders(<Navigation />);
-    expect(screen.getByText('JJPG')).toBeInTheDocument();
+    expect(screen.getByTestId('logo')).toBeInTheDocument();
+    expect(screen.getByText('Jose Juan Pérez')).toBeInTheDocument();
   });
 
-  it('renders navigation links in desktop menu', () => {
+  it('renders navigation links', () => {
     renderWithProviders(<Navigation />);
-
-    const links = ['Inicio', 'Proyectos', 'Habilidades', 'Contacto'];
+    const links = ['Inicio', 'Proyectos', 'Servicios', 'Habilidades', 'Contacto'];
     links.forEach((linkText) => {
       expect(screen.getAllByText(linkText).length).toBeGreaterThanOrEqual(1);
     });
   });
 
-  it('renders ThemeSwitcher in both mobile and desktop', () => {
+  it('renders the LanguageSwitcher', () => {
+    renderWithProviders(<Navigation />);
+    expect(screen.getAllByTestId('language-switcher').length).toBeGreaterThan(0);
+  });
+
+  it('renders the ThemeSwitcher', () => {
     renderWithProviders(<Navigation />);
     expect(screen.getAllByTestId('theme-switcher').length).toBeGreaterThan(0);
   });
 
-  it('shows hamburger menu icon by default', () => {
+  it('shows hamburger button', () => {
     renderWithProviders(<Navigation />);
-    expect(screen.getByTestId('menu-icon')).toBeInTheDocument();
+    expect(screen.getByLabelText('Abrir menú')).toBeInTheDocument();
   });
 
-  it('toggles mobile menu when hamburger is clicked', () => {
+  it('opens drawer when hamburger is clicked', () => {
     renderWithProviders(<Navigation />);
-    const button = screen.getByLabelText('Toggle Navigation');
-
-    expect(screen.getByTestId('menu-icon')).toBeInTheDocument();
-
-    fireEvent.click(button);
-
-    expect(screen.getByTestId('close-icon')).toBeInTheDocument();
-
-    const mobileMenu = screen
-      .getAllByText('Inicio')
-      .find((el) => el.className && el.className.includes('text-3xl'));
-    expect(mobileMenu).toBeDefined();
-    expect(mobileMenu && mobileMenu.parentElement).not.toBeNull();
-    expect(
-      mobileMenu &&
-        mobileMenu.parentElement &&
-        mobileMenu.parentElement.className
-    ).toMatch(/translate-x-0/);
-    expect(
-      mobileMenu &&
-        mobileMenu.parentElement &&
-        mobileMenu.parentElement.className
-    ).toMatch(/opacity-100/);
+    fireEvent.click(screen.getByLabelText('Abrir menú'));
+    const drawer = screen.getByRole('dialog');
+    expect(drawer.className).toMatch(/translate-x-0/);
   });
 
-  it('closes mobile menu when a link is clicked', () => {
+  it('closes drawer when X button is clicked', () => {
     renderWithProviders(<Navigation />);
-    const button = screen.getByLabelText('Toggle Navigation');
-    fireEvent.click(button);
-    const mobileLink = screen
-      .getAllByText('Proyectos')
-      .find((el) => el.className && el.className.includes('text-3xl'));
-    if (mobileLink) {
-      fireEvent.click(mobileLink);
-    } else {
-      throw new Error('Mobile link not found');
-    }
+    fireEvent.click(screen.getByLabelText('Abrir menú'));
+    fireEvent.click(screen.getByLabelText('Cerrar menú'));
+    const drawer = screen.getByRole('dialog');
+    expect(drawer.className).toMatch(/translate-x-full/);
+  });
 
-    expect(screen.getByTestId('menu-icon')).toBeInTheDocument();
+  it('closes drawer when a nav link is clicked', () => {
+    renderWithProviders(<Navigation />);
+    fireEvent.click(screen.getByLabelText('Abrir menú'));
+    const drawer = screen.getByRole('dialog');
+    fireEvent.click(within(drawer).getByText('Proyectos'));
+    expect(drawer.className).toMatch(/translate-x-full/);
   });
 });

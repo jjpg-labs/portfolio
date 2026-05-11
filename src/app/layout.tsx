@@ -3,13 +3,14 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { ThemeProvider } from './components/ThemeProvider';
 import { LocaleProvider } from './context/LocaleContext';
+import { fontSans, fontMono, fontSerif } from './fonts';
 import './globals.css';
 import { ChildrenProps } from './types';
 import { ViewportProvider } from './context/ViewportContext';
 
 const SITE_TITLE = 'Jose Juan — Full-Stack Engineer';
 const SITE_DESCRIPTION =
-  'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL. Disponible para MVPs, mantenimiento continuo, integración de IA con Claude y consultoría técnica. Madrid, trabajo en remoto.';
+  'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL. Disponible para MVPs, mantenimiento continuo, integración de IA con Claude y consultoría técnica. Almedina (Ciudad Real), trabajo en remoto.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jjpg.dev'),
@@ -28,12 +29,19 @@ export const metadata: Metadata = {
     'integración IA',
     'Claude API',
     'MCP',
-    'Madrid',
+    'Almedina',
+    'Ciudad Real',
     'España',
     'remote',
   ],
   authors: [{ name: 'Jose Juan Pérez González', url: 'https://jjpg.dev' }],
-  icons: { icon: '/breaksIcon.png' },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     url: 'https://jjpg.dev',
@@ -73,7 +81,8 @@ const jsonLd = {
   email: 'mailto:hola@jjpg.dev',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Madrid',
+    addressLocality: 'Almedina',
+    addressRegion: 'Ciudad Real',
     addressCountry: 'ES',
   },
   knowsAbout: [
@@ -114,8 +123,12 @@ const jsonLd = {
 
 export default function RootLayout({ children }: ChildrenProps) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body>
+    <html
+      lang="es"
+      className={`${fontSans.variable} ${fontMono.variable} ${fontSerif.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -123,8 +136,8 @@ export default function RootLayout({ children }: ChildrenProps) {
         <ThemeProvider>
           <LocaleProvider>
           <ViewportProvider>
-            <div id="app-container" className="flex flex-col min-h-screen">
-              <header className="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-sm shadow-md transition-colors">
+            <div id="app-container" className="flex flex-col min-h-screen bg-bg-base text-text-primary">
+              <header className="sticky top-0 z-50 bg-bg-surface border-b border-border-subtle">
                 <Navigation />
               </header>
 

@@ -8,17 +8,25 @@ export default function Skills() {
   const { title, groups } = t.dashboardSkills;
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors">
-      <div className="max-w-6xl mx-auto">
-        <h3 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-gray-50">
-          {title}
-        </h3>
+    <section className="border-y border-border bg-bg-surface px-4 sm:px-8 lg:px-14 py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-end justify-between mb-10 gap-6 flex-wrap">
+          <h2 className="font-serif text-[28px] sm:text-[40px] lg:text-[48px] leading-tight text-text-primary">
+            {title}
+          </h2>
+          <span className="font-mono text-mono-label uppercase text-text-muted">
+            // 05 — stack
+          </span>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {groups.map(({ title: groupTitle, skills }) => (
-            <div key={groupTitle}>
-              <SkillCard title={groupTitle} skills={skills as string[]} />
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {groups.map(({ title: groupTitle, skills }, idx) => (
+            <SkillCard
+              key={groupTitle}
+              num={idx + 1}
+              title={groupTitle}
+              skills={skills as string[]}
+            />
           ))}
         </div>
       </div>

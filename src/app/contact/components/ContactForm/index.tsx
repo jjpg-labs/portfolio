@@ -76,15 +76,15 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    'w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400';
+    'w-full p-3 border border-border bg-bg-elevated text-text-primary placeholder-text-muted font-sans text-body rounded-sm focus:outline-none focus:border-accent transition disabled:opacity-60 disabled:cursor-not-allowed';
+
+  const labelClass =
+    'block font-mono text-mono-label uppercase text-text-muted mb-1.5';
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label
-          htmlFor="name"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-        >
+        <label htmlFor="name" className={labelClass}>
           {f.name}
         </label>
         <input
@@ -97,15 +97,14 @@ export default function ContactForm() {
           disabled={status === 'loading'}
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+          <p className="mt-1 font-mono text-mono-label uppercase text-accent">
+            {errors.name}
+          </p>
         )}
       </div>
 
       <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-        >
+        <label htmlFor="email" className={labelClass}>
           {f.email}
         </label>
         <input
@@ -118,15 +117,14 @@ export default function ContactForm() {
           disabled={status === 'loading'}
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+          <p className="mt-1 font-mono text-mono-label uppercase text-accent">
+            {errors.email}
+          </p>
         )}
       </div>
 
       <div>
-        <label
-          htmlFor="subject"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-        >
+        <label htmlFor="subject" className={labelClass}>
           {f.subject}
         </label>
         <input
@@ -139,46 +137,50 @@ export default function ContactForm() {
           disabled={status === 'loading'}
         />
         {errors.subject && (
-          <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+          <p className="mt-1 font-mono text-mono-label uppercase text-accent">
+            {errors.subject}
+          </p>
         )}
       </div>
 
       <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-        >
+        <label htmlFor="message" className={labelClass}>
           {f.message}
         </label>
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={5}
           value={formData.message}
           onChange={handleChange}
           className={inputClass}
           disabled={status === 'loading'}
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+          <p className="mt-1 font-mono text-mono-label uppercase text-accent">
+            {errors.message}
+          </p>
         )}
       </div>
 
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full py-3 px-4 rounded-lg text-lg font-medium transition duration-150 ease-in-out
-                   bg-blue-600 dark:bg-blue-700 text-white hover:bg-blue-700 dark:hover:bg-blue-600
-                   disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+        className="w-full py-3 px-6 font-serif italic text-[20px] border-2 border-accent bg-bg-elevated text-text-primary hover:bg-accent hover:text-paper transition rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? f.submitting : f.submit}
+        <span className="font-mono ml-2">→</span>
       </button>
 
       {status === 'success' && (
-        <p className="text-center text-green-500">{f.success}</p>
+        <p className="text-center font-mono text-small uppercase tracking-mono text-accent">
+          {f.success}
+        </p>
       )}
       {status === 'error' && (
-        <p className="text-center text-red-500">{f.error}</p>
+        <p className="text-center font-mono text-small uppercase tracking-mono text-accent">
+          {f.error}
+        </p>
       )}
     </form>
   );

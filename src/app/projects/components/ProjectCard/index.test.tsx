@@ -23,11 +23,9 @@ describe('ProjectCard', () => {
     expect(screen.getByText('Test Project')).toBeInTheDocument();
   });
 
-  it('renders project role with correct color', () => {
+  it('renders project role', () => {
     renderWithLocale(<ProjectCard project={mockProject} />);
-    const role = screen.getByText('Back-End');
-    expect(role).toBeInTheDocument();
-    expect(role.className).toMatch(/text-blue-600/);
+    expect(screen.getByText('Back-End')).toBeInTheDocument();
   });
 
   it('renders project short description', () => {
@@ -64,22 +62,6 @@ describe('ProjectCard', () => {
     expect(repoLink).toHaveAttribute('href', mockProject.linkRepo);
     expect(repoLink).toHaveAttribute('target', '_blank');
     expect(repoLink).toHaveAttribute('rel', 'noopener noreferrer');
-  });
-
-  it('applies correct accent border class for Back-End role', () => {
-    renderWithLocale(<ProjectCard project={mockProject} />);
-    const roleDecoration = screen.getByTestId('role-decoration');
-    expect(roleDecoration.className).toMatch(/text-blue-600/);
-  });
-
-  it('applies correct accent border class for Front-End role', () => {
-    const frontEndProject = {
-      ...mockProject,
-      role: 'Front-End' as Project['role'],
-    };
-    renderWithLocale(<ProjectCard project={frontEndProject} />);
-    const roleDecoration = screen.getByTestId('role-decoration');
-    expect(roleDecoration.className).toMatch(/text-green-600/);
   });
 
   it('does not render live link when linkLive is #', () => {

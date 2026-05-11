@@ -9,19 +9,27 @@ export default function Projects() {
   const { title, subtitle, seeAll, items } = t.dashboardProjects;
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 text-center bg-white dark:bg-gray-800 transition-colors">
-      <div className="max-w-6xl mx-auto">
-        <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-50">
-          {title}
-        </h3>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-10">
-          {subtitle}
-        </p>
+    <section className="px-4 sm:px-8 lg:px-14 py-16 lg:py-20 bg-bg-base">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-end justify-between mb-10 gap-6 flex-wrap">
+          <div>
+            <h2 className="font-serif text-[28px] sm:text-[40px] lg:text-[48px] leading-tight text-text-primary">
+              {title}
+            </h2>
+            <p className="font-sans text-body text-text-secondary max-w-[60ch] mt-2">
+              {subtitle}
+            </p>
+          </div>
+          <span className="font-mono text-mono-label uppercase text-text-muted">
+            // 03 — proyectos
+          </span>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {items.map(({ name, description, stack }) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {items.map(({ name, description, stack }, idx) => (
             <ProjectCard
               key={name}
+              num={idx + 1}
               name={name}
               description={description}
               stack={stack}
@@ -29,12 +37,15 @@ export default function Projects() {
           ))}
         </div>
 
-        <Link
-          href="/projects"
-          className="mt-12 inline-block bg-gray-800 text-white py-3 px-8 rounded-lg text-lg font-medium hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 transition"
-        >
-          {seeAll} &rarr;
-        </Link>
+        <div className="mt-10 flex justify-end">
+          <Link
+            href="/projects"
+            className="font-serif italic text-[20px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition"
+          >
+            {seeAll}
+            <span className="font-mono text-accent ml-2">→</span>
+          </Link>
+        </div>
       </div>
     </section>
   );

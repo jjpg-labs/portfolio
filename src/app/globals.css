@@ -2,34 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definición de variables CSS */
-:root {
-  font-family: 'Roboto', sans-serif;
-  --primary-bg: #fae8d0; /* Fondo Claro */
-  --secondary-text: #000; /* Texto Claro */
+/* =========================================================================
+   jjpg.dev — Brand Refresh · Direction B (Issue)
+   ========================================================================= */
+
+@layer base {
+  :root {
+    /* Surfaces (Light = canonical) */
+    --bg-base:        #F4F1EA;
+    --bg-surface:     #FBF8F1;
+    --bg-elevated:    #FFFFFF;
+
+    /* Borders */
+    --border-subtle:  #E2DCCC;
+    --border-default: #D9D3C2;
+    --border-strong:  #C9C2AE;
+
+    /* Text */
+    --text-primary:   #0E1014;
+    --text-secondary: #3F4248;
+    --text-muted:     #6B6E76;
+
+    /* Accent (single saturated colour) */
+    --accent:         #FF5C2E;
+    --accent-hover:   #E84B1F;
+    --accent-soft:    #FF7A52;
+    --accent-tint:    rgba(255, 92, 46, 0.10);
+    --accent-ring:    rgba(255, 92, 46, 0.22);
+
+    /* Status (unified into accent) */
+    --status-live:    var(--accent);
+
+    /* Logo primitives */
+    --ink:            #0E1014;
+    --paper:          #E6E6E6;
+
+    /* Radii */
+    --radius-xs:  2px;
+    --radius-sm:  4px;
+    --radius-md:  6px;
+    --radius-lg:  12px;
+    --radius-full: 9999px;
+
+    /* Shadow */
+    --shadow-1: 0 1px 2px rgba(14, 16, 20, 0.06);
+    --shadow-2: 0 4px 12px rgba(14, 16, 20, 0.08);
+    --shadow-3: 0 12px 32px rgba(14, 16, 20, 0.12);
+
+    /* Motion */
+    --pulse-duration: 1.8s;
+  }
+
+  .dark {
+    --bg-base:        #0E1014;
+    --bg-surface:     #15171C;
+    --bg-elevated:    #1B1D22;
+
+    --border-subtle:  #23262C;
+    --border-default: #2C2F36;
+    --border-strong:  #3A3E46;
+
+    --text-primary:   #E6E6E6;
+    --text-secondary: #B6B8BE;
+    --text-muted:     #8A8B90;
+
+    --accent-tint:    rgba(255, 92, 46, 0.10);
+    --accent-ring:    rgba(255, 92, 46, 0.22);
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --shadow-3: 0 12px 32px rgba(0, 0, 0, 0.7);
+  }
+
+  html {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background: var(--bg-base);
+    color: var(--text-primary);
+  }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
 }
 
-/* Modo Oscuro (la clase 'dark' la añade next-themes al <html>) */
-.dark {
-  --primary-bg: #111827; /* Fondo Oscuro (ej: gris muy oscuro) */
-  --secondary-text: #fff; /* Texto Oscuro */
+/* =========================================================================
+   Motion · pulse "live" dot
+   ========================================================================= */
+@keyframes pulse-live {
+  0%, 100% { box-shadow: 0 0 0 3px var(--accent-ring); }
+  50%      { box-shadow: 0 0 0 6px rgba(255, 92, 46, 0.06); }
 }
 
-body {
-  /* Usamos las variables para que el color de fondo cambie automáticamente */
-  background-color: var(--primary-bg);
-  color: var(--secondary-text);
-  list-style: none;
-  /* Transición para un cambio de color suave */
-  transition: background-color 0.3s ease, color 0.3s ease;
+.pulse-live {
+  animation: pulse-live var(--pulse-duration) ease-in-out infinite;
 }
 
-/* Estilos de las secciones (puedes usar clases de Tailwind, pero aquí dejo tus bases) */
-section {
-  /* Si necesitas que las secciones cambien, también deberás usar dark:bg-X */
-  /* background-color: #DBBF4D; */
-  padding: 2em 4em;
+@media (prefers-reduced-motion: reduce) {
+  .pulse-live { animation: none; }
 }
 
-/* El resto de estilos que definiste se trasladarán mejor a los componentes usando Tailwind */
-/* header, nav, .mainMenu, .footer ya no se usan directamente gracias a Tailwind y los componentes */
+/* =========================================================================
+   Display heading helper · serif italic accent word
+   ========================================================================= */
+.accent-word {
+  font-family: var(--font-serif), 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}

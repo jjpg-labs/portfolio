@@ -18,7 +18,7 @@ export const dictionaries = {
       role: 'Full-Stack Engineer',
       tagline: 'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL.',
       description:
-        'Diseño y entrego aplicaciones completas para equipos que necesitan avanzar rápido sin renunciar a la calidad. 4+ años de experiencia construyendo APIs REST, dashboards multi-tenant, integraciones complejas y arquitecturas escalables. Madrid, trabajo en remoto. Disponible para MVPs, mantenimiento continuo y consultoría puntual.',
+        'Diseño y entrego aplicaciones completas para equipos que necesitan avanzar rápido sin renunciar a la calidad. 4+ años de experiencia construyendo APIs REST, dashboards multi-tenant, integraciones complejas y arquitecturas escalables. Almedina (Ciudad Real), trabajo en remoto. Disponible para MVPs, mantenimiento continuo y consultoría puntual.',
       btnProjects: 'Ver mis Proyectos',
       btnContact: 'Hablemos',
       calendlyHint: 'o reserva 30 min de discovery call directamente',
@@ -228,7 +228,7 @@ export const dictionaries = {
     contactInfo: {
       title: 'Información de Contacto',
       subtitle: '¿Tienes un proyecto en mente o una propuesta interesante? ¡Hablemos!',
-      location: 'Madrid, España (Disponible Remoto)',
+      location: 'Almedina, Ciudad Real (Disponible Remoto)',
     },
     contactForm: {
       name: 'Nombre',
@@ -265,7 +265,7 @@ export const dictionaries = {
       role: 'Full-Stack Engineer',
       tagline: 'I build modern SaaS apps and dashboards with Next.js, NestJS and PostgreSQL.',
       description:
-        'I design and ship end-to-end applications for teams that need to move fast without compromising on quality. 4+ years building REST APIs, multi-tenant dashboards, complex integrations and scalable architectures. Based in Madrid, working remotely. Available for MVPs, ongoing maintenance and on-demand consulting.',
+        'I design and ship end-to-end applications for teams that need to move fast without compromising on quality. 4+ years building REST APIs, multi-tenant dashboards, complex integrations and scalable architectures. Based in Almedina (Ciudad Real, Spain), working remotely. Available for MVPs, ongoing maintenance and on-demand consulting.',
       btnProjects: 'See my Projects',
       btnContact: "Let's talk",
       calendlyHint: 'or book a 30-min discovery call directly',
@@ -475,7 +475,7 @@ export const dictionaries = {
     contactInfo: {
       title: 'Contact Information',
       subtitle: "Have a project in mind or an interesting proposal? Let's talk!",
-      location: 'Madrid, Spain (Available Remotely)',
+      location: 'Almedina, Ciudad Real (Available Remotely)',
     },
     contactForm: {
       name: 'Name',
