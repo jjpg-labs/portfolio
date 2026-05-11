@@ -62,7 +62,7 @@ describe('Footer', () => {
     const { getByText } = renderWithLocale(<Footer />);
     const year = new Date().getFullYear();
     expect(
-      getByText(new RegExp(`© ${year} Jose Juan Pérez González.`))
+      getByText(new RegExp(`© ${year} Jose Juan Pérez González`))
     ).toBeInTheDocument();
   });
 

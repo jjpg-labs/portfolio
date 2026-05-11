@@ -21,20 +21,17 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="border-t border-border-subtle mt-16 py-10 bg-bg-surface">
+    <div className="border-t border-border-subtle py-10 bg-bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          <div className="flex flex-col gap-3">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="flex flex-col gap-2">
             <span className="font-mono text-mono-label uppercase text-text-muted">
               Issue <span className="text-accent">02</span> · jjpg.dev · {currentYear}
             </span>
             <LiveDot label={t.hero.availability} />
-            <p className="font-mono text-mono-label uppercase text-text-muted">
-              Madrid · ES · Respuesta &lt; 24h
-            </p>
           </div>
 
-          <div className="flex items-center justify-start md:justify-center gap-5">
+          <div className="flex items-center gap-5">
             <a
               href={GITHUB_URL}
               target="_blank"
@@ -42,7 +39,7 @@ export const Footer = () => {
               aria-label="GitHub"
               className="text-text-muted hover:text-text-primary transition"
             >
-              {FaGithub({ size: 22 })}
+              {FaGithub({ size: 20 })}
             </a>
             <a
               href={LINKEDIN_URL}
@@ -51,7 +48,7 @@ export const Footer = () => {
               aria-label="LinkedIn"
               className="text-text-muted hover:text-text-primary transition"
             >
-              {FaLinkedin({ size: 22 })}
+              {FaLinkedin({ size: 20 })}
             </a>
             <a
               href={MALT_URL}
@@ -60,7 +57,7 @@ export const Footer = () => {
               aria-label="Malt"
               className="text-text-muted hover:text-accent transition"
             >
-              {SiMalt({ size: 22 })}
+              {SiMalt({ size: 20 })}
             </a>
             <a
               href={CALENDLY_URL}
@@ -69,28 +66,26 @@ export const Footer = () => {
               aria-label="Calendly"
               className="text-text-muted hover:text-accent transition"
             >
-              {FaCalendarAlt({ size: 22 })}
+              {FaCalendarAlt({ size: 20 })}
             </a>
             <a
               href={`mailto:${EMAIL_ADDRESS}`}
               aria-label="Correo Electrónico"
               className="text-text-muted hover:text-accent transition"
             >
-              {FaEnvelope({ size: 22 })}
+              {FaEnvelope({ size: 20 })}
             </a>
-          </div>
-
-          <div className="flex md:justify-end items-center gap-4">
-            <span className="font-mono text-mono-label uppercase text-text-muted">
-              {t.footer.tagline}
-            </span>
+            <span aria-hidden="true" className="w-px h-5 bg-border-default mx-1" />
             <ThemeSwitcher />
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-border-subtle">
-          <p className="font-mono text-mono-label uppercase text-text-muted text-center">
-            © {currentYear} Jose Juan Pérez González. Hecho con Next.js, café y curiosidad.
+        <div className="mt-6 pt-5 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="font-mono text-mono-label uppercase text-text-muted">
+            © {currentYear} Jose Juan Pérez González
+          </p>
+          <p className="font-mono text-mono-label uppercase text-text-muted">
+            Madrid · ES · Respuesta &lt; 24h
           </p>
         </div>
       </div>
