@@ -3,6 +3,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { ThemeProvider } from './components/ThemeProvider';
 import { LocaleProvider } from './context/LocaleContext';
+import { fontSans, fontMono, fontSerif } from './fonts';
 import './globals.css';
 import { ChildrenProps } from './types';
 import { ViewportProvider } from './context/ViewportContext';
@@ -114,8 +115,12 @@ const jsonLd = {
 
 export default function RootLayout({ children }: ChildrenProps) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body>
+    <html
+      lang="es"
+      className={`${fontSans.variable} ${fontMono.variable} ${fontSerif.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -123,8 +128,8 @@ export default function RootLayout({ children }: ChildrenProps) {
         <ThemeProvider>
           <LocaleProvider>
           <ViewportProvider>
-            <div id="app-container" className="flex flex-col min-h-screen">
-              <header className="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-sm shadow-md transition-colors">
+            <div id="app-container" className="flex flex-col min-h-screen bg-bg-base text-text-primary">
+              <header className="sticky top-0 z-50 bg-bg-surface/80 backdrop-blur border-b border-border-subtle">
                 <Navigation />
               </header>
 

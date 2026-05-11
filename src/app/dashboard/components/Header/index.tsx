@@ -2,81 +2,96 @@
 
 import Link from 'next/link';
 import { CALENDLY_URL } from '@/app/components/Footer';
+import { LiveDot } from '@/app/components/LiveDot';
+import { AccentWord } from '@/app/components/AccentWord';
 import { useLocale } from '@/app/context/LocaleContext';
 
-const TECH_CHIPS = ['NestJS', 'Next.js', 'Symfony', 'TypeScript', 'PostgreSQL', 'AWS', 'Docker'];
+const COLOPHON_KEYS = [
+  { term: 'Issue', value: 'N.º 02', accent: true },
+  { term: 'Año', value: '2026' },
+  { term: 'Editor', value: 'JJPG' },
+  { term: 'Rol', value: 'FS Engineer' },
+  { term: 'Base', value: 'Madrid, ES' },
+  { term: 'Estado', value: 'Disponible', accent: true },
+  { term: 'Respuesta', value: '< 24h' },
+  { term: 'Stack', value: 'TS · Next · PG' },
+];
 
 export default function Header() {
   const { t } = useLocale();
 
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 text-center bg-white dark:bg-gray-800 shadow-xl transition-colors overflow-hidden">
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 to-transparent dark:from-blue-950/20 dark:to-transparent"
-        aria-hidden="true"
-      />
-
-      <div className="relative">
-        <div className="flex justify-center mb-6">
-          <span className="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300 border border-green-200 dark:border-green-700">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-            </span>
-            {t.hero.availability}
+    <section className="relative px-4 sm:px-8 lg:px-14 py-10 lg:py-16 bg-bg-base">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center justify-between mb-10 font-mono text-mono-label uppercase text-text-muted">
+          <span>// portada · home</span>
+          <span className="flex items-center gap-2">
+            <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-accent" />
+            En vivo desde Madrid · ES
           </span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 text-gray-900 dark:text-gray-50">
-          {t.hero.greeting}{' '}
-          <span className="text-blue-700 dark:text-blue-400">Jose Juan</span>{' '}
-          — {t.hero.role}
-        </h1>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_240px] gap-10 lg:gap-14 items-start">
+          <div className="flex flex-col gap-6">
+            <LiveDot label={t.hero.availability} />
 
-        <h2 className="text-xl sm:text-2xl font-semibold mb-8 text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-          {t.hero.tagline}
-        </h2>
+            <h1 className="font-serif text-[56px] sm:text-display lg:text-display-xl">
+              {t.hero.greeting} Jose Juan.{' '}
+              <AccentWord>{t.hero.role}</AccentWord>.
+            </h1>
 
-        <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-          {t.hero.description}
-        </p>
+            <h2 className="font-serif text-h2 lg:text-[34px] text-text-secondary max-w-[40ch] leading-tight">
+              {t.hero.tagline}
+            </h2>
 
-        <div className="flex flex-wrap justify-center gap-2 mt-8">
-          {TECH_CHIPS.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200 dark:border-blue-700"
-            >
-              {tech}
-            </span>
-          ))}
+            <p className="font-sans text-body-lg text-text-secondary max-w-[60ch]">
+              {t.hero.description}
+            </p>
+
+            <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mt-4">
+              <Link
+                href="/projects"
+                className="font-serif italic text-[22px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition w-fit"
+              >
+                {t.hero.btnProjects}
+                <span className="font-mono text-accent ml-2">→</span>
+              </Link>
+              <Link
+                href="/contact"
+                className="font-sans text-small text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
+              >
+                {t.hero.btnContact}
+              </Link>
+            </div>
+
+            <p className="font-mono text-mono-label uppercase text-text-muted mt-3">
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition"
+              >
+                {t.hero.calendlyHint} →
+              </a>
+            </p>
+          </div>
+
+          <aside className="border-y border-border py-3 self-start w-full max-w-[260px] lg:sticky lg:top-24">
+            <dl className="flex flex-col">
+              {COLOPHON_KEYS.map(({ term, value, accent }) => (
+                <div
+                  key={term}
+                  className="flex justify-between items-baseline font-mono text-mono-label uppercase py-1.5 border-b border-border-subtle last:border-b-0"
+                >
+                  <dt className="text-text-muted">{term}</dt>
+                  <dd className={accent ? 'text-accent' : 'text-text-primary'}>
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
         </div>
-
-        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-10">
-          <Link
-            href="/projects"
-            className="bg-blue-600 text-white py-3 px-8 rounded-lg text-lg font-medium hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 transition transform hover:scale-105 shadow-lg w-full sm:w-auto"
-          >
-            {t.hero.btnProjects}
-          </Link>
-          <Link
-            href="/contact"
-            className="bg-gray-200 text-gray-800 py-3 px-8 rounded-lg text-lg font-medium hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 transition border border-gray-300 dark:border-gray-600 w-full sm:w-auto"
-          >
-            {t.hero.btnContact}
-          </Link>
-        </div>
-
-        <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-dotted underline-offset-4 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            {t.hero.calendlyHint}
-          </a>
-        </p>
       </div>
     </section>
   );

@@ -20,11 +20,8 @@ jest.mock('next/link', () => {
   );
 });
 
-jest.mock('next/image', () => ({
-  __esModule: true,
-  default: ({ src, alt, ...rest }: { src: string; alt: string; [key: string]: any }) => (
-    <img src={src} alt={alt} {...rest} />
-  ),
+jest.mock('next/navigation', () => ({
+  usePathname: () => '/',
 }));
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
@@ -34,8 +31,8 @@ jest.mock('react-icons/io5', () => ({
   IoClose: (props: IconProps) => <svg data-testid="close-icon" {...props} />,
 }));
 
-jest.mock('../ThemeSwitch', () => ({
-  ThemeSwitcher: () => <button data-testid="theme-switcher" />,
+jest.mock('../Logo', () => ({
+  Logo: () => <svg data-testid="logo" />,
 }));
 
 jest.mock('../LanguageSwitcher', () => ({
@@ -50,23 +47,24 @@ const renderWithProviders = (ui: React.ReactElement) =>
   );
 
 describe('Navigation', () => {
-  it('renders logo/name', () => {
+  it('renders logo and name', () => {
     renderWithProviders(<Navigation />);
-    expect(screen.getByText('JJPG')).toBeInTheDocument();
+    expect(screen.getByTestId('logo')).toBeInTheDocument();
+    expect(screen.getByText('Jose Juan Pérez')).toBeInTheDocument();
   });
 
   it('renders navigation links in desktop menu', () => {
     renderWithProviders(<Navigation />);
 
-    const links = ['Inicio', 'Proyectos', 'Habilidades', 'Contacto'];
+    const links = ['Inicio', 'Proyectos', 'Servicios', 'Habilidades', 'Contacto'];
     links.forEach((linkText) => {
       expect(screen.getAllByText(linkText).length).toBeGreaterThanOrEqual(1);
     });
   });
 
-  it('renders ThemeSwitcher in both mobile and desktop', () => {
+  it('renders the LanguageSwitcher', () => {
     renderWithProviders(<Navigation />);
-    expect(screen.getAllByTestId('theme-switcher').length).toBeGreaterThan(0);
+    expect(screen.getAllByTestId('language-switcher').length).toBeGreaterThan(0);
   });
 
   it('shows hamburger menu icon by default', () => {

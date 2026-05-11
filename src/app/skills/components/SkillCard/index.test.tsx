@@ -21,26 +21,31 @@ describe('SkillCard', () => {
     });
   });
 
-  it('applies correct accent color for Front-End category', () => {
-    const { container } = render(
-      <SkillCard category="Front-End" skills={skills} />
-    );
-    expect(container.firstChild).toHaveClass('border-green-600');
+  it('renders the section number when provided', () => {
+    render(<SkillCard category="Front-End" skills={skills} num={2} />);
+    expect(screen.getByText('02')).toBeInTheDocument();
   });
 
-  it('applies correct accent color for Databases category', () => {
-    const dbSkills = [{ name: 'PostgreSQL', level: 4, category: 'Databases' }];
-    const { container } = render(
-      <SkillCard category="Databases" skills={dbSkills} />
-    );
-    expect(container.firstChild).toHaveClass('border-yellow-500');
+  it('renders default level labels per skill level', () => {
+    render(<SkillCard category="Front-End" skills={skills} />);
+    expect(screen.getByText('Avanzado')).toBeInTheDocument();
+    expect(screen.getByText('Experto')).toBeInTheDocument();
+    expect(screen.getByText('Intermedio')).toBeInTheDocument();
   });
 
-  it('applies default accent color for unknown category', () => {
-    const otherSkills = [{ name: 'Docker', level: 2, category: 'DevOps' }];
-    const { container } = render(
-      <SkillCard category="DevOps" skills={otherSkills} />
+  it('uses custom level labels when provided', () => {
+    render(
+      <SkillCard
+        category="Front-End"
+        skills={[{ name: 'React', level: 5, category: 'Front-End' }]}
+        levels={{
+          expert: 'Expert',
+          advanced: 'Advanced',
+          intermediate: 'Intermediate',
+          basic: 'Basic',
+        }}
+      />
     );
-    expect(container.firstChild).toHaveClass('border-blue-600');
+    expect(screen.getByText('Expert')).toBeInTheDocument();
   });
 });

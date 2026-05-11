@@ -1,11 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { FaCheck } from 'react-icons/fa';
-import { IconType } from 'react-icons';
 
 interface ServiceCardProps {
-  icon: IconType;
+  num: number;
   title: string;
   description: string;
   bullets: string[];
@@ -17,7 +15,7 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({
-  icon: Icon,
+  num,
   title,
   description,
   bullets,
@@ -27,66 +25,75 @@ export default function ServiceCard({
   ctaText,
   badge,
 }: ServiceCardProps) {
+  const numLabel = String(num).padStart(2, '0');
   const featured = Boolean(badge);
+
   return (
-    <div
-      className={`relative bg-white dark:bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-shadow p-8 flex flex-col border ${
-        featured
-          ? 'border-blue-500 dark:border-blue-400 ring-2 ring-blue-500/20'
-          : 'border-gray-100 dark:border-gray-700'
+    <article
+      className={`grid grid-cols-1 lg:grid-cols-[64px_1fr_200px] gap-6 lg:gap-10 py-10 lg:py-14 border-t ${
+        featured ? 'border-accent' : 'border-border'
       }`}
     >
-      {badge && (
-        <span className="absolute -top-3 right-6 px-3 py-1 text-xs font-semibold rounded-full bg-blue-600 text-white shadow-md">
-          {badge}
+      <div>
+        <span className="font-mono text-small tracking-mono-wide text-text-muted">
+          {numLabel}
         </span>
-      )}
-      <div className="flex items-center mb-5">
-        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 mr-4">
-          {Icon({ size: 22 })}
-        </div>
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-50">
-          {title}
-        </h3>
       </div>
 
-      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-        {description}
-      </p>
+      <div className="flex flex-col gap-5">
+        {badge && (
+          <span className="flex items-center gap-1.5 font-mono text-mono-label uppercase text-accent">
+            <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-accent" />
+            {badge}
+          </span>
+        )}
 
-      <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
-        {includesLabel}
-      </p>
-      <ul className="space-y-2 mb-6 flex-grow">
-        {bullets.map((bullet) => (
-          <li
-            key={bullet}
-            className="flex items-start text-sm text-gray-700 dark:text-gray-300"
-          >
-            <span className="text-blue-600 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0">
-              {FaCheck({ size: 12 })}
-            </span>
-            <span>{bullet}</span>
-          </li>
-        ))}
-      </ul>
+        <h2 className="font-serif text-[32px] lg:text-[38px] leading-tight text-text-primary">
+          {title}
+        </h2>
 
-      <div className="pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between gap-4">
+        <p className="font-sans text-body-lg text-text-secondary leading-relaxed max-w-[60ch]">
+          {description}
+        </p>
+
         <div>
-          <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
-            {formatLabel}
+          <p className="font-mono text-mono-label uppercase text-text-muted mb-3">
+            {includesLabel}
           </p>
-          <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
-            {formatValue}
-          </p>
+          <ul className="flex flex-col gap-2">
+            {bullets.map((bullet) => (
+              <li
+                key={bullet}
+                className="flex items-baseline gap-3 font-sans text-body text-text-secondary"
+              >
+                <span aria-hidden="true" className="text-accent">·</span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
         </div>
+
         <Link
           href="/contact"
-          className="bg-blue-600 text-white py-2 px-5 rounded-lg text-sm font-medium hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 transition shadow"
+          className="font-serif italic text-[20px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition w-fit mt-2"
         >
           {ctaText}
+          <span className="font-mono text-accent ml-2">→</span>
         </Link>
       </div>
-    </div>
+
+      <aside className="border-t lg:border-t-0 lg:border-l border-border pt-4 lg:pt-0 lg:pl-6">
+        <dl className="flex flex-col gap-3">
+          <div className="flex flex-col">
+            <dt className="font-mono text-mono-label uppercase text-text-muted">
+              {formatLabel}
+            </dt>
+            <dd className="font-serif text-[20px] text-text-primary leading-tight mt-1">
+              {formatValue}
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </article>
   );
 }

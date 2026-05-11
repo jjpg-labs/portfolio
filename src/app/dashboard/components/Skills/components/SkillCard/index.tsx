@@ -1,25 +1,29 @@
 interface SkillCardProps {
+  num: number;
   title: string;
   skills: string[];
 }
 
-export default function SkillCard({ title, skills }: SkillCardProps) {
-  const borderColor = title === 'Back-End'
-    ? 'border-blue-600'
-    : title === 'Front-End'
-    ? 'border-green-600'
-    : 'border-yellow-500';
+export default function SkillCard({ num, title, skills }: SkillCardProps) {
+  const numLabel = String(num).padStart(2, '0');
 
   return (
-    <div
-      className={`p-6 border-l-4 shadow-md bg-white dark:bg-gray-800 rounded-lg transition-colors ${borderColor}`}
-    >
-      <h4 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-        {title}
-      </h4>
-      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 font-medium space-y-2">
+    <div className="flex flex-col">
+      <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-border">
+        <span className="font-mono text-mono-label uppercase text-text-muted">
+          {numLabel}
+        </span>
+        <h3 className="font-serif text-[22px] text-text-primary">{title}</h3>
+      </div>
+      <ul className="flex flex-col gap-1.5">
         {skills.map((skill) => (
-          <li key={skill}>{skill}</li>
+          <li
+            key={skill}
+            className="font-sans text-small text-text-secondary flex items-baseline gap-2"
+          >
+            <span aria-hidden="true" className="text-accent">·</span>
+            {skill}
+          </li>
         ))}
       </ul>
     </div>

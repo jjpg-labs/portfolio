@@ -1,17 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { FaRocket, FaWrench, FaBrain, FaLightbulb } from 'react-icons/fa';
-import { IconType } from 'react-icons';
 import ServiceCard from './components/ServiceCard';
+import { CALENDLY_URL } from '@/app/components/Footer';
 import { useLocale } from '@/app/context/LocaleContext';
-
-const PACKAGE_ICONS: Record<string, IconType> = {
-  mvp: FaRocket,
-  retainer: FaWrench,
-  ai: FaBrain,
-  consulting: FaLightbulb,
-};
 
 export default function ServicesClient() {
   const { t } = useLocale();
@@ -19,41 +11,57 @@ export default function ServicesClient() {
     t.servicesPage;
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors min-h-screen">
+    <section className="px-4 sm:px-8 lg:px-14 py-12 lg:py-16 bg-bg-base min-h-screen">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center mb-4 text-gray-900 dark:text-gray-50">
-          {title}
-        </h1>
-        <p className="text-xl text-center text-gray-600 dark:text-gray-400 mb-14 max-w-3xl mx-auto">
-          {subtitle}
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {packages.map((pkg) => (
-            <ServiceCard
-              key={pkg.id}
-              icon={PACKAGE_ICONS[pkg.id]}
-              title={pkg.title}
-              description={pkg.description}
-              bullets={pkg.bullets}
-              formatLabel={pkg.formatLabel}
-              formatValue={pkg.formatValue}
-              includesLabel={includesLabel}
-              ctaText={ctaText}
-              badge={'badge' in pkg ? (pkg as { badge?: string }).badge : undefined}
-            />
-          ))}
+        <div className="flex items-center justify-between mb-8 font-mono text-mono-label uppercase text-text-muted">
+          <span>// página · servicios</span>
+          <span>Issue <span className="text-accent">02</span></span>
         </div>
 
-        <p className="text-center text-gray-600 dark:text-gray-400 mt-14 text-lg">
-          {ctaFootnote}{' '}
-          <Link
-            href="/contact"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+        <header className="mb-14">
+          <h1 className="font-serif text-display lg:text-[80px] leading-none text-text-primary">
+            {title}
+          </h1>
+          <p className="font-sans text-body-lg text-text-secondary mt-4 max-w-[58ch]">
+            {subtitle}
+          </p>
+        </header>
+
+        <div className="flex flex-col">
+          {packages.map((pkg, idx) => {
+            const badge =
+              'badge' in pkg ? (pkg as { badge?: string }).badge : undefined;
+            return (
+              <ServiceCard
+                key={pkg.id}
+                num={idx + 1}
+                title={pkg.title}
+                description={pkg.description}
+                bullets={pkg.bullets}
+                formatLabel={pkg.formatLabel}
+                formatValue={pkg.formatValue}
+                includesLabel={includesLabel}
+                ctaText={ctaText}
+                badge={badge}
+              />
+            );
+          })}
+        </div>
+
+        <div className="mt-16 pt-10 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <p className="font-sans text-body text-text-secondary max-w-[40ch]">
+            {ctaFootnote}
+          </p>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-serif italic text-[22px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition w-fit"
           >
             {ctaText}
-          </Link>
-        </p>
+            <span className="font-mono text-accent ml-2">→</span>
+          </a>
+        </div>
       </div>
     </section>
   );
