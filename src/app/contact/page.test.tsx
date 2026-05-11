@@ -53,7 +53,7 @@ describe('ContactPage', () => {
       screen.getByText(/¿tienes un proyecto en mente/i)
     ).toBeInTheDocument();
     expect(screen.getByText(EMAIL_ADDRESS)).toBeInTheDocument();
-    expect(screen.getByText(/madrid, españa/i)).toBeInTheDocument();
+    expect(screen.getByText(/almedina, ciudad real/i)).toBeInTheDocument();
   });
 
   it('renders social links with correct aria-labels', () => {

@@ -11,7 +11,7 @@ const COLOPHON_KEYS = [
   { term: 'Año', value: '2026' },
   { term: 'Editor', value: 'JJPG' },
   { term: 'Rol', value: 'FS Engineer' },
-  { term: 'Base', value: 'Madrid, ES' },
+  { term: 'Base', value: 'Almedina, ES' },
   { term: 'Estado', value: 'Disponible', accent: true },
   { term: 'Respuesta', value: '< 24h' },
   { term: 'Stack', value: 'TS · Next · PG' },
@@ -27,7 +27,7 @@ export default function Header() {
           <span>// portada · home</span>
           <span className="flex items-center gap-2">
             <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-accent" />
-            En vivo desde Madrid · ES
+            En vivo desde Almedina · ES
           </span>
         </div>
 

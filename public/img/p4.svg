@@ -1,46 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160" viewBox="0 0 600 160">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
   <defs>
-    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a3d2e"/>
-      <stop offset="50%" style="stop-color:#1a6b46"/>
-      <stop offset="100%" style="stop-color:#2d9968"/>
-    </linearGradient>
-    <linearGradient id="glow4" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0"/>
-      <stop offset="50%" style="stop-color:#34d399;stop-opacity:0.45"/>
-      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0"/>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0E1014"/>
+      <stop offset="100%" stop-color="#15171C"/>
     </linearGradient>
   </defs>
-  <rect width="600" height="160" fill="url(#grad4)"/>
-  <rect y="80" width="600" height="2" fill="url(#glow4)"/>
-  <!-- Grid lines -->
-  <line x1="0" y1="40" x2="600" y2="40" stroke="#34d399" stroke-width="0.3" stroke-opacity="0.2"/>
-  <line x1="0" y1="80" x2="600" y2="80" stroke="#34d399" stroke-width="0.3" stroke-opacity="0.2"/>
-  <line x1="0" y1="120" x2="600" y2="120" stroke="#34d399" stroke-width="0.3" stroke-opacity="0.2"/>
-  <line x1="150" y1="0" x2="150" y2="160" stroke="#34d399" stroke-width="0.3" stroke-opacity="0.2"/>
-  <line x1="300" y1="0" x2="300" y2="160" stroke="#34d399" stroke-width="0.3" stroke-opacity="0.2"/>
-  <line x1="450" y1="0" x2="450" y2="160" stroke="#34d399" stroke-width="0.3" stroke-opacity="0.2"/>
-  <!-- Decorative mountain/path silhouette -->
-  <path d="M 380 100 L 430 60 L 470 80 L 510 50 L 560 75 L 600 65 L 600 160 L 380 160 Z" fill="#0a3d2e" fill-opacity="0.5"/>
-  <!-- Icon area -->
-  <rect x="24" y="28" width="44" height="44" rx="10" fill="#0a3d2e" fill-opacity="0.7"/>
-  <path d="M 35 60 L 46 38 L 57 60 Z" fill="#6ee7b7"/>
+
+  <rect width="600" height="450" fill="url(#bg4)"/>
+
+  <!-- Top meta strip -->
+  <line x1="0" y1="56" x2="600" y2="56" stroke="#23262C"/>
+  <text x="24" y="36" font-family="ui-monospace, monospace" font-size="11" fill="#8A8B90" letter-spacing="2.2">// p4 · vereda</text>
+  <text x="576" y="36" font-family="ui-monospace, monospace" font-size="11" fill="#FF5C2E" letter-spacing="2.2" text-anchor="end">ISSUE 02</text>
+
+  <!-- Icon -->
+  <path d="M 300 145 L 270 195 L 330 195 Z" fill="#FF5C2E"/>
+  <path d="M 280 195 L 256 240 L 304 240 Z" fill="#E6E6E6" opacity="0.85"/>
+  <path d="M 320 195 L 296 240 L 344 240 Z" fill="#E6E6E6" opacity="0.55"/>
+
   <!-- Title -->
-  <text x="84" y="46" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#ECFDF5">Vereda</text>
-  <text x="84" y="64" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#6ee7b7" letter-spacing="0.5">EVENT MANAGEMENT SAAS</text>
-  <!-- Tech badges -->
-  <rect x="24" y="100" width="70" height="22" rx="11" fill="#0a3d2e"/>
-  <text x="59" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#6ee7b7" text-anchor="middle">Next.js 16</text>
-  <rect x="102" y="100" width="50" height="22" rx="11" fill="#0a3d2e"/>
-  <text x="127" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#6ee7b7" text-anchor="middle">Neon</text>
-  <rect x="160" y="100" width="56" height="22" rx="11" fill="#0a3d2e"/>
-  <text x="188" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#6ee7b7" text-anchor="middle">Vercel</text>
-  <rect x="224" y="100" width="70" height="22" rx="11" fill="#0a3d2e"/>
-  <text x="259" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#6ee7b7" text-anchor="middle">TypeScript</text>
-  <rect x="302" y="100" width="40" height="22" rx="11" fill="#0a3d2e"/>
-  <text x="322" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#6ee7b7" text-anchor="middle">JWT</text>
-  <!-- Decorative dots -->
-  <circle cx="540" cy="30" r="2" fill="#34d399" fill-opacity="0.7"/>
-  <circle cx="560" cy="40" r="1.5" fill="#6ee7b7" fill-opacity="0.5"/>
-  <circle cx="525" cy="45" r="1" fill="#34d399" fill-opacity="0.6"/>
+  <text x="300" y="295" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="60" fill="#E6E6E6" text-anchor="middle">Vereda</text>
+  <text x="300" y="332" font-family="ui-monospace, monospace" font-size="11" fill="#8A8B90" letter-spacing="2.4" text-anchor="middle">SAAS · MULTI-TENANT</text>
+
+  <!-- Tech footer -->
+  <line x1="0" y1="394" x2="600" y2="394" stroke="#23262C"/>
+  <text x="24" y="420" font-family="ui-monospace, monospace" font-size="10.5" fill="#8A8B90" letter-spacing="1.6">NEXT.JS 16 · NEON · VERCEL BLOB · JWT</text>
+  <text x="576" y="420" font-family="ui-monospace, monospace" font-size="10.5" fill="#6B6E76" letter-spacing="1.6" text-anchor="end">2026</text>
 </svg>

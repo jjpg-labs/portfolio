@@ -10,7 +10,7 @@ import { ViewportProvider } from './context/ViewportContext';
 
 const SITE_TITLE = 'Jose Juan — Full-Stack Engineer';
 const SITE_DESCRIPTION =
-  'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL. Disponible para MVPs, mantenimiento continuo, integración de IA con Claude y consultoría técnica. Madrid, trabajo en remoto.';
+  'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL. Disponible para MVPs, mantenimiento continuo, integración de IA con Claude y consultoría técnica. Almedina (Ciudad Real), trabajo en remoto.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jjpg.dev'),
@@ -29,7 +29,8 @@ export const metadata: Metadata = {
     'integración IA',
     'Claude API',
     'MCP',
-    'Madrid',
+    'Almedina',
+    'Ciudad Real',
     'España',
     'remote',
   ],
@@ -74,7 +75,8 @@ const jsonLd = {
   email: 'mailto:hola@jjpg.dev',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Madrid',
+    addressLocality: 'Almedina',
+    addressRegion: 'Ciudad Real',
     addressCountry: 'ES',
   },
   knowsAbout: [

@@ -85,7 +85,7 @@ export const Footer = () => {
             © {currentYear} Jose Juan Pérez González
           </p>
           <p className="font-mono text-mono-label uppercase text-text-muted">
-            Madrid · ES · Respuesta &lt; 24h
+            Almedina · ES · Respuesta &lt; 24h
           </p>
         </div>
       </div>
