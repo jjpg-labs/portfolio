@@ -125,22 +125,31 @@ describe('BackToTop', () => {
     expect(scrollToMock).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
   });
 
-  it('uses behavior: auto when prefers-reduced-motion is set', () => {
+  it('uses behavior: instant when prefers-reduced-motion is set', () => {
     setReducedMotion(true);
     render(<BackToTop />);
 
     fireEvent.click(getButton());
 
-    expect(scrollToMock).toHaveBeenCalledWith({ top: 0, behavior: 'auto' });
+    expect(scrollToMock).toHaveBeenCalledWith({ top: 0, behavior: 'instant' });
   });
 
-  it('removes the scroll listener on unmount', () => {
+  it('registers the scroll listener as passive and removes it on unmount', () => {
+    const addSpy = jest.spyOn(window, 'addEventListener');
     const removeSpy = jest.spyOn(window, 'removeEventListener');
     const { unmount } = render(<BackToTop />);
 
+    const addCall = addSpy.mock.calls.find(([event]) => event === 'scroll');
+    expect(addCall).toBeDefined();
+    expect(addCall?.[2]).toEqual({ passive: true });
+
     unmount();
 
-    expect(removeSpy).toHaveBeenCalledWith('scroll', expect.any(Function));
+    const removeCall = removeSpy.mock.calls.find(([event]) => event === 'scroll');
+    expect(removeCall).toBeDefined();
+    expect(removeCall?.[1]).toBe(addCall?.[1]);
+
+    addSpy.mockRestore();
     removeSpy.mockRestore();
   });
 });

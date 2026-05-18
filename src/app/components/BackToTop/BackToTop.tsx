@@ -40,7 +40,7 @@ export function BackToTop() {
 
     window.scrollTo({
       top: 0,
-      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      behavior: prefersReducedMotion ? 'instant' : 'smooth',
     });
   };
 
@@ -55,7 +55,7 @@ export function BackToTop() {
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
-      {FaArrowUp({ size: 18 })}
+      {FaArrowUp({ size: 18, 'aria-hidden': true })}
     </button>
   );
 }
