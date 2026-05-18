@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { ThemeProvider } from './components/ThemeProvider';
+import { BackToTop } from './components/BackToTop';
 import { LocaleProvider } from './context/LocaleContext';
 import { fontSans, fontMono, fontSerif } from './fonts';
 import './globals.css';
@@ -147,6 +148,7 @@ export default function RootLayout({ children }: ChildrenProps) {
                 <Footer />
               </footer>
             </div>
+            <BackToTop />
           </ViewportProvider>
           </LocaleProvider>
         </ThemeProvider>
