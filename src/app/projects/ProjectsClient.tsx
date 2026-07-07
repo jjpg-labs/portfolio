@@ -18,6 +18,25 @@ export interface Project {
 
 const BASE_PROJECTS: Omit<Project, 'shortDescription'>[] = [
   {
+    id: '5',
+    title: 'Nexfit',
+    technologies: [
+      'NestJS',
+      'Next.js 16',
+      'Expo / React Native',
+      'PostgreSQL',
+      'Prisma',
+      'Cloudflare R2',
+      'Redux Toolkit',
+      'TypeScript',
+    ],
+    role: 'Full-Stack',
+    imageCover: '/img/p3.svg',
+    linkLive: '#',
+    linkRepo: 'https://github.com/jjpg-labs/nexfit-web',
+    repoPrivate: true,
+  },
+  {
     id: '1',
     title: 'Vereda',
     technologies: [

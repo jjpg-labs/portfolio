@@ -29,22 +29,28 @@ export const dictionaries = {
       seeAll: 'Ver Todos los Proyectos',
       items: [
         {
-          name: 'Vereda',
+          name: 'Nexfit',
           description:
-            'SaaS no-code para organizadores de eventos deportivos: web pública, panel admin, dominio propio. Multi-tenant.',
-          stack: 'Next.js 16, Neon PostgreSQL, Vercel Blob, JWT, TypeScript.',
-        },
-        {
-          name: 'Medina Roja BTT',
-          description:
-            'Landing oficial del II Desafío BTT (4 jul 2026, 450 plazas, 2 modalidades): info del evento y recorridos GPX en mapa interactivo.',
-          stack: 'Next.js 16, Leaflet, GPX, Tailwind 4, TypeScript.',
+            'SaaS para entrenadores y nutricionistas: panel web, app móvil offline-first y API REST. Clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso.',
+          stack: 'NestJS, Next.js 16, Expo/React Native, PostgreSQL, Prisma, Cloudflare R2.',
         },
         {
           name: 'Accounting Suite',
           description:
             'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, presupuestos e informes diarios.',
           stack: 'NestJS, Next.js 15, PostgreSQL, Prisma, Redux Toolkit, Chart.js.',
+        },
+        {
+          name: 'Vereda',
+          description:
+            'SaaS no-code para organizadores de eventos deportivos: web pública, panel admin, dominio propio. Multi-tenant.',
+          stack: 'Next.js 16, Neon PostgreSQL, Vercel Blob, JWT, TypeScript.',
+        },
+        {
+          name: 'Curio',
+          description:
+            'Plataforma educativa gamificada para niños 3–14: aprenden a programar con lecciones interactivas, retos, logros y progresión estilo videojuego.',
+          stack: 'Next.js 16, Prisma, PostgreSQL, Zustand, TanStack Query.',
         },
       ],
     },
@@ -106,6 +112,10 @@ export const dictionaries = {
       privateRepo: 'Repositorio privado',
       inDevelopment: 'En desarrollo',
       items: [
+        {
+          shortDescription:
+            'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en Railway + Neon + Cloudflare R2.',
+        },
         {
           shortDescription:
             'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Arquitectura serverless con Neon + Vercel Blob.',
@@ -276,22 +286,28 @@ export const dictionaries = {
       seeAll: 'See All Projects',
       items: [
         {
-          name: 'Vereda',
+          name: 'Nexfit',
           description:
-            'No-code SaaS for sports event organizers: public event website, admin panel and custom domain. Multi-tenant.',
-          stack: 'Next.js 16, Neon PostgreSQL, Vercel Blob, JWT, TypeScript.',
-        },
-        {
-          name: 'Medina Roja BTT',
-          description:
-            'Official landing for a mountain bike challenge (Jul 4, 2026, 450 spots, 2 routes): event info and GPX trails on interactive map.',
-          stack: 'Next.js 16, Leaflet, GPX, Tailwind 4, TypeScript.',
+            'SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app and REST API. Clients, training and nutrition plans, check-ins and progress tracking.',
+          stack: 'NestJS, Next.js 16, Expo/React Native, PostgreSQL, Prisma, Cloudflare R2.',
         },
         {
           name: 'Accounting Suite',
           description:
             'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, budgets, recurring entries and daily reports.',
           stack: 'NestJS, Next.js 15, PostgreSQL, Prisma, Redux Toolkit, Chart.js.',
+        },
+        {
+          name: 'Vereda',
+          description:
+            'No-code SaaS for sports event organizers: public event website, admin panel and custom domain. Multi-tenant.',
+          stack: 'Next.js 16, Neon PostgreSQL, Vercel Blob, JWT, TypeScript.',
+        },
+        {
+          name: 'Curio',
+          description:
+            'Gamified educational platform for children aged 3–14: they learn to code through interactive lessons, challenges, achievements and video-game-style progression.',
+          stack: 'Next.js 16, Prisma, PostgreSQL, Zustand, TanStack Query.',
         },
       ],
     },
@@ -353,6 +369,10 @@ export const dictionaries = {
       privateRepo: 'Private repository',
       inDevelopment: 'In development',
       items: [
+        {
+          shortDescription:
+            'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on Railway + Neon + Cloudflare R2.',
+        },
         {
           shortDescription:
             'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Serverless architecture with Neon + Vercel Blob.',
