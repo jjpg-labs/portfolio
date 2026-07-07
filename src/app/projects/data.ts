@@ -114,6 +114,16 @@ export const PROJECTS: ProjectMeta[] = [
     linkLive: 'https://medina-roja-btt.vercel.app',
     linkRepo: 'https://github.com/jjpg-labs/medina-roja-btt',
     status: 'live-demo',
+    screenshots: [
+      {
+        src: '/img/shots/medina-1.webp',
+        alt: 'Portada del II Desafío Medina Roja BTT: hero del evento con fecha y CTA de inscripción',
+      },
+      {
+        src: '/img/shots/medina-2.webp',
+        alt: 'Recorrido del evento: rutas GPX (30 y 50 km) sobre mapa Leaflet interactivo',
+      },
+    ],
   },
   {
     id: 'accounting',

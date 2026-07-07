@@ -21,14 +21,16 @@
     /* Text */
     --text-primary:   #0E1014;
     --text-secondary: #3F4248;
-    --text-muted:     #6B6E76;
+    --text-muted:     #5F626A;
 
-    /* Accent (single saturated colour) */
+    /* Accent (single saturated colour) — used for FILLS/borders */
     --accent:         #FF5C2E;
     --accent-hover:   #E84B1F;
     --accent-soft:    #FF7A52;
     --accent-tint:    rgba(255, 92, 46, 0.10);
     --accent-ring:    rgba(255, 92, 46, 0.22);
+    /* Accent for TEXT on light surfaces — darker so it clears WCAG AA (4.6:1) */
+    --accent-ink:     #C63A0A;
 
     /* Status (unified into accent) */
     --status-live:    var(--accent);
@@ -36,6 +38,7 @@
     /* Logo primitives */
     --ink:            #0E1014;
     --paper:          #E6E6E6;
+    --logo-bg:        #0E1014; /* dark tile behind the mark on the paper theme */
 
     /* Radii */
     --radius-xs:  2px;
@@ -66,8 +69,13 @@
     --text-secondary: #B6B8BE;
     --text-muted:     #8A8B90;
 
+    /* On dark surfaces the bright accent already clears AA (~6:1) */
+    --accent-ink:     #FF5C2E;
     --accent-tint:    rgba(255, 92, 46, 0.10);
     --accent-ring:    rgba(255, 92, 46, 0.22);
+
+    /* On dark, drop the tile so the mark sits cleanly on the surface (no faint box) */
+    --logo-bg:        transparent;
 
     --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
     --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.6);
@@ -94,7 +102,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-ink);
     outline-offset: 2px;
     border-radius: var(--radius-xs);
   }
@@ -123,14 +131,14 @@
   font-family: var(--font-serif), 'Times New Roman', serif;
   font-style: italic;
   font-weight: 400;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 /* =========================================================================
    Signature · accent underline drawn once under the hero accent word
    ========================================================================= */
 .accent-underline {
-  background-image: linear-gradient(var(--accent), var(--accent));
+  background-image: linear-gradient(var(--accent-ink), var(--accent-ink));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 0% 2px;

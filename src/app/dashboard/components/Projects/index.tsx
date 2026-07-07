@@ -36,6 +36,7 @@ export default function Projects() {
             <ProjectCard
               key={project.id}
               num={idx + 1}
+              coverNum={project.imageCover.match(/p(\d+)\.svg/)?.[1] ?? ''}
               name={project.title}
               description={copy[project.id]?.home ?? ''}
               stack={project.technologies.join(', ')}

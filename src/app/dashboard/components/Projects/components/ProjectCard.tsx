@@ -1,5 +1,6 @@
 interface ProjectCardProps {
   num: number;
+  coverNum?: string;
   name: string;
   description: string;
   stack: string;
@@ -8,18 +9,20 @@ interface ProjectCardProps {
 
 export default function ProjectCard({
   num,
+  coverNum,
   name,
   description,
   stack,
   status,
 }: ProjectCardProps) {
   const numLabel = String(num).padStart(2, '0');
+  const slug = name.toLowerCase().replace(/\s+/g, '-');
 
   return (
     <article className="border border-border rounded-md overflow-hidden bg-bg-surface flex flex-col hover:border-border-strong transition-colors">
       <div className="flex items-center justify-between px-4 pt-3 pb-2 border-b border-border-subtle">
         <span className="font-mono text-mono-label uppercase text-text-muted">
-          // p{num} · {name.toLowerCase().replace(/\s+/g, '-')}
+          // {coverNum ? `p${coverNum} · ` : ''}{slug}
         </span>
         <span className="font-mono text-mono-label uppercase text-text-muted">
           {numLabel}

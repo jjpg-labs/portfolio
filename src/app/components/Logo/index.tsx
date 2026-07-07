@@ -22,7 +22,7 @@ export function Logo({ size = 'md', className = '' }: LogoProps) {
       role="img"
       aria-label="jjpg-labs"
     >
-      <rect x="0" y="0" width="460" height="460" fill="var(--ink)" rx="6" />
+      <rect x="0" y="0" width="460" height="460" fill="var(--logo-bg)" rx="6" />
       <g>
         <rect x="206.531" y="92.000" width="46.939" height="46.939" fill="var(--paper)" />
         <rect x="263.796" y="92.000" width="46.939" height="46.939" fill="var(--paper)" />

@@ -79,7 +79,8 @@ export const dictionaries = {
       medina: {
         home: 'Landing oficial del II Desafío Medina Roja BTT: información del evento y recorridos GPX en mapa interactivo.',
         full: 'Landing oficial del II Desafío Medina Roja BTT (450 plazas, 2 modalidades, 4 jul 2026). Información del evento, recorridos GPX renderizados en mapa Leaflet interactivo, desplegado en Vercel.',
-        outcome: '',
+        outcome:
+          'Un evento de BTT sin web propia → landing oficial en producción con recorridos GPX en mapa interactivo, información y contacto.',
       },
       accounting: {
         home: 'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, presupuestos, movimientos recurrentes e informes diarios.',
@@ -360,7 +361,8 @@ export const dictionaries = {
       medina: {
         home: 'Official landing for the II Medina Roja BTT challenge: event info and GPX routes on an interactive map.',
         full: 'Official landing site for the II Medina Roja BTT mountain bike challenge (450 spots, 2 routes, Jul 4, 2026). Event info, interactive GPX track viewer with Leaflet, deployed on Vercel.',
-        outcome: '',
+        outcome:
+          'A mountain-bike event with no site of its own → an official landing in production with GPX routes on an interactive map, info and contact.',
       },
       accounting: {
         home: 'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, budgets, recurring entries and daily reports.',

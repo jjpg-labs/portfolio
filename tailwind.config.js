@@ -34,6 +34,18 @@ module.exports = {
         paper: 'var(--paper)',
       },
 
+      // Accent TEXT uses the AA-safe ink token (dark on light, bright on dark);
+      // bg-accent / border-accent keep the vivid #FF5C2E fill.
+      textColor: {
+        accent: {
+          DEFAULT: 'var(--accent-ink)',
+          hover: 'var(--accent-hover)',
+          soft: 'var(--accent-soft)',
+          tint: 'var(--accent-tint)',
+          ring: 'var(--accent-ring)',
+        },
+      },
+
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         serif: ['var(--font-serif)', 'Times New Roman', 'serif'],

@@ -78,7 +78,7 @@ const jsonLd = {
   jobTitle: 'Full-Stack Engineer',
   description:
     'Full-Stack Engineer disponible para MVPs, mantenimiento continuo, integración de IA y consultoría técnica.',
-  email: 'mailto:hola@jjpg.dev',
+  email: 'mailto:jose@jjpg.dev',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Almedina',

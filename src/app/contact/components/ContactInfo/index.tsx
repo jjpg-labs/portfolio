@@ -16,7 +16,7 @@ export default function ContactInfo() {
   const { title, subtitle, location } = t.contactInfo;
 
   return (
-    <aside className="flex flex-col gap-8 border border-border rounded-md bg-bg-surface p-8">
+    <aside className="flex flex-col gap-8 border border-border rounded-md bg-bg-surface p-8 self-start">
       <div>
         <span className="font-mono text-mono-label uppercase text-text-muted">
           {t.ui.contactMarker}

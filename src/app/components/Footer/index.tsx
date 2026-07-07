@@ -11,7 +11,7 @@ export const LINKEDIN_URL =
   'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/';
 export const MALT_URL = 'https://www.malt.es/profile/josejuanperezgonzalez';
 export const EMAIL_ADDRESS =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'pepeju95@gmail.com';
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'jose@jjpg.dev';
 export const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ??
   'https://calendly.com/pepeju95/discovery-call';
