@@ -27,11 +27,12 @@ describe('ProjectsPage', () => {
     renderWithLocale(<ProjectsPage />);
     await waitFor(() => {
       const cards = screen.getAllByTestId('project-card');
-      expect(cards).toHaveLength(4);
-      expect(cards[0]).toHaveTextContent('Vereda');
-      expect(cards[1]).toHaveTextContent('Medina Roja BTT');
-      expect(cards[2]).toHaveTextContent('Accounting Suite');
-      expect(cards[3]).toHaveTextContent('Curio');
+      expect(cards).toHaveLength(5);
+      expect(cards[0]).toHaveTextContent('Nexfit');
+      expect(cards[1]).toHaveTextContent('Vereda');
+      expect(cards[2]).toHaveTextContent('Medina Roja BTT');
+      expect(cards[3]).toHaveTextContent('Accounting Suite');
+      expect(cards[4]).toHaveTextContent('Curio');
     });
   });
 });

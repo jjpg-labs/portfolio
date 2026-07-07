@@ -12,6 +12,7 @@ const mockProject: Project = {
   linkRepo: 'https://github.com/example/repo',
   id: 'test-id',
   imageCover: '/img/test.jpg',
+  status: 'beta',
 };
 
 const renderWithLocale = (ui: React.ReactElement) =>
@@ -44,7 +45,7 @@ describe('ProjectCard', () => {
 
   it('renders project cover image', () => {
     renderWithLocale(<ProjectCard project={mockProject} />);
-    const img = screen.getByRole('img', { name: 'Test Project' });
+    const img = screen.getByRole('img', { name: /Test Project/ });
     expect(img).toBeInTheDocument();
   });
 

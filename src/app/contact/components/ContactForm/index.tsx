@@ -11,7 +11,8 @@ interface IContactForm {
 }
 interface IApiResponse {
   success: boolean;
-  message: string;
+  message?: string;
+  error?: string;
 }
 
 export default function ContactForm() {
@@ -76,7 +77,7 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    'w-full p-3 border border-border bg-bg-elevated text-text-primary placeholder-text-muted font-sans text-body rounded-sm focus:outline-none focus:border-accent transition disabled:opacity-60 disabled:cursor-not-allowed';
+    'w-full p-3 border border-border bg-bg-elevated text-text-primary placeholder-text-muted font-sans text-body rounded-sm focus:border-accent transition disabled:opacity-60 disabled:cursor-not-allowed';
 
   const labelClass =
     'block font-mono text-mono-label uppercase text-text-muted mb-1.5';
@@ -95,9 +96,15 @@ export default function ContactForm() {
           onChange={handleChange}
           className={inputClass}
           disabled={status === 'loading'}
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? 'name-error' : undefined}
         />
         {errors.name && (
-          <p className="mt-1 font-mono text-mono-label uppercase text-accent">
+          <p
+            id="name-error"
+            role="alert"
+            className="mt-1 font-mono text-mono-label uppercase text-accent"
+          >
             {errors.name}
           </p>
         )}
@@ -115,9 +122,15 @@ export default function ContactForm() {
           onChange={handleChange}
           className={inputClass}
           disabled={status === 'loading'}
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? 'email-error' : undefined}
         />
         {errors.email && (
-          <p className="mt-1 font-mono text-mono-label uppercase text-accent">
+          <p
+            id="email-error"
+            role="alert"
+            className="mt-1 font-mono text-mono-label uppercase text-accent"
+          >
             {errors.email}
           </p>
         )}
@@ -135,9 +148,15 @@ export default function ContactForm() {
           onChange={handleChange}
           className={inputClass}
           disabled={status === 'loading'}
+          aria-invalid={!!errors.subject}
+          aria-describedby={errors.subject ? 'subject-error' : undefined}
         />
         {errors.subject && (
-          <p className="mt-1 font-mono text-mono-label uppercase text-accent">
+          <p
+            id="subject-error"
+            role="alert"
+            className="mt-1 font-mono text-mono-label uppercase text-accent"
+          >
             {errors.subject}
           </p>
         )}
@@ -155,9 +174,15 @@ export default function ContactForm() {
           onChange={handleChange}
           className={inputClass}
           disabled={status === 'loading'}
+          aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? 'message-error' : undefined}
         />
         {errors.message && (
-          <p className="mt-1 font-mono text-mono-label uppercase text-accent">
+          <p
+            id="message-error"
+            role="alert"
+            className="mt-1 font-mono text-mono-label uppercase text-accent"
+          >
             {errors.message}
           </p>
         )}
@@ -172,16 +197,18 @@ export default function ContactForm() {
         <span className="font-mono ml-2">→</span>
       </button>
 
-      {status === 'success' && (
-        <p className="text-center font-mono text-small uppercase tracking-mono text-accent">
-          {f.success}
-        </p>
-      )}
-      {status === 'error' && (
-        <p className="text-center font-mono text-small uppercase tracking-mono text-accent">
-          {f.error}
-        </p>
-      )}
+      <div role="status" aria-live="polite" className="min-h-[1.25rem]">
+        {status === 'success' && (
+          <p className="text-center font-mono text-small uppercase tracking-mono text-accent">
+            {f.success}
+          </p>
+        )}
+        {status === 'error' && (
+          <p className="text-center font-mono text-small uppercase tracking-mono text-accent">
+            {f.error}
+          </p>
+        )}
+      </div>
     </form>
   );
 }

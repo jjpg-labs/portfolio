@@ -12,6 +12,41 @@ export const dictionaries = {
     footer: {
       tagline: 'Desarrollado con Next.js y amor',
     },
+    ui: {
+      metaHome: '// portada · home',
+      metaProjects: '// página · proyectos',
+      metaServices: '// página · servicios',
+      metaSkills: '// página · stack',
+      metaContact: '// página · contacto',
+      homeSecProjects: '// 03 — proyectos',
+      homeSecServices: '// 04 — índice',
+      homeSecSkills: '// 05 — stack',
+      discoveryCall: '// discovery call',
+      form: '// formulario',
+      menu: '// menú',
+      contactMarker: '// contacto',
+      heroLive: 'En vivo desde Almedina · ES',
+      issue: 'Issue',
+      ctaContact: 'Hablemos',
+    },
+    a11y: {
+      home: 'jjpg.dev — Inicio',
+      openMenu: 'Abrir menú',
+      closeMenu: 'Cerrar menú',
+      navMenu: 'Menú de navegación',
+      toDark: 'Cambiar a modo Oscuro',
+      toLight: 'Cambiar a modo Claro',
+    },
+    colophon: {
+      year: 'Año',
+      editor: 'Editor',
+      role: 'Rol',
+      base: 'Base',
+      status: 'Estado',
+      response: 'Respuesta',
+      stack: 'Stack',
+      available: 'Disponible',
+    },
     hero: {
       availability: 'Disponible para nuevos proyectos',
       greeting: 'Hola, soy',
@@ -27,32 +62,36 @@ export const dictionaries = {
       title: 'Mis Proyectos Más Recientes',
       subtitle: 'Échale un vistazo a las soluciones que he diseñado y construido.',
       seeAll: 'Ver Todos los Proyectos',
-      items: [
-        {
-          name: 'Nexfit',
-          description:
-            'SaaS para entrenadores y nutricionistas: panel web, app móvil offline-first y API REST. Clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso.',
-          stack: 'NestJS, Next.js 16, Expo/React Native, PostgreSQL, Prisma, Cloudflare R2.',
-        },
-        {
-          name: 'Accounting Suite',
-          description:
-            'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, presupuestos e informes diarios.',
-          stack: 'NestJS, Next.js 15, PostgreSQL, Prisma, Redux Toolkit, Chart.js.',
-        },
-        {
-          name: 'Vereda',
-          description:
-            'SaaS no-code para organizadores de eventos deportivos: web pública, panel admin, dominio propio. Multi-tenant.',
-          stack: 'Next.js 16, Neon PostgreSQL, Vercel Blob, JWT, TypeScript.',
-        },
-        {
-          name: 'Curio',
-          description:
-            'Plataforma educativa gamificada para niños 3–14: aprenden a programar con lecciones interactivas, retos, logros y progresión estilo videojuego.',
-          stack: 'Next.js 16, Prisma, PostgreSQL, Zustand, TanStack Query.',
-        },
-      ],
+    },
+    projectCopy: {
+      nexfit: {
+        home: 'SaaS para entrenadores personales y nutricionistas: panel web, app móvil offline-first y API REST. Clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso.',
+        full: 'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en Railway + Neon + Cloudflare R2.',
+        outcome:
+          'Entrenadores gestionando clientes en hojas de cálculo → plataforma multi-repo con app móvil offline-first que centraliza planes, check-ins y progreso.',
+      },
+      vereda: {
+        home: 'SaaS no-code para organizadores de pruebas deportivas: web pública, panel admin, dominio propio. Multi-tenant.',
+        full: 'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Arquitectura serverless con Neon + Vercel Blob.',
+        outcome:
+          'Organizadores montando webs de eventos a mano → SaaS no-code multi-tenant con web pública y panel propio en minutos.',
+      },
+      medina: {
+        home: 'Landing oficial del II Desafío Medina Roja BTT: información del evento y recorridos GPX en mapa interactivo.',
+        full: 'Landing oficial del II Desafío Medina Roja BTT (450 plazas, 2 modalidades, 4 jul 2026). Información del evento, recorridos GPX renderizados en mapa Leaflet interactivo, desplegado en Vercel.',
+        outcome: '',
+      },
+      accounting: {
+        home: 'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, presupuestos, movimientos recurrentes e informes diarios.',
+        full: 'App de contabilidad para pequeños negocios con demo en vivo en accounting.jjpg.dev. REST API en NestJS + dashboard Next.js con transacciones, informes diarios, presupuestos y movimientos recurrentes.',
+        outcome:
+          'Pequeños negocios sin visibilidad de su día a día contable → dashboard con demo en vivo: transacciones, informes, presupuestos y recurrentes.',
+      },
+      curio: {
+        home: 'Plataforma educativa gamificada para niños 3–14: aprenden a programar con lecciones interactivas, retos, logros y progresión estilo videojuego.',
+        full: 'Plataforma educativa gamificada para niños de 3–14 años: lecciones interactivas, desafíos, logros y progresión estilo videojuego.',
+        outcome: '',
+      },
     },
     dashboardSkills: {
       title: 'Tecnologías Clave y Stack Principal',
@@ -83,22 +122,22 @@ export const dictionaries = {
         {
           id: 'mvp',
           title: 'Desarrollo de MVP',
-          summary: 'Aplicaciones full-stack de cero, listas para producción.',
+          summary: 'De idea a MVP en producción en 2–8 semanas.',
         },
         {
           id: 'retainer',
           title: 'Mantenimiento continuo',
-          summary: 'Soporte y evolución mensual de tu producto.',
+          summary: 'Tu producto mantenido y evolucionando cada mes.',
         },
         {
           id: 'ai',
           title: 'Integración de IA',
-          summary: 'Chatbots, agentes y automatizaciones con Claude API y MCP.',
+          summary: 'IA que aporta valor real: chatbots, agentes y automatizaciones con Claude.',
         },
         {
           id: 'consulting',
           title: 'Consultoría técnica',
-          summary: 'Code reviews, arquitectura y decisiones de stack.',
+          summary: 'Criterio senior para tus decisiones de arquitectura y stack.',
           badge: 'Especialidad',
         },
       ],
@@ -110,29 +149,14 @@ export const dictionaries = {
       liveBtn: 'En Vivo',
       codeBtn: 'Código',
       privateRepo: 'Repositorio privado',
-      inDevelopment: 'En desarrollo',
-      items: [
-        {
-          shortDescription:
-            'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en Railway + Neon + Cloudflare R2.',
-        },
-        {
-          shortDescription:
-            'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Arquitectura serverless con Neon + Vercel Blob.',
-        },
-        {
-          shortDescription:
-            'Landing oficial del II Desafío Medina Roja BTT (450 plazas, 2 modalidades, 4 jul 2026). Información del evento, recorridos GPX renderizados en mapa Leaflet interactivo, desplegado en Vercel.',
-        },
-        {
-          shortDescription:
-            'App de contabilidad para pequeños negocios con demo en vivo en accounting.jjpg.dev. REST API en NestJS + dashboard Next.js con transacciones, informes diarios, presupuestos y recurrentes.',
-        },
-        {
-          shortDescription:
-            'Plataforma educativa gamificada para niños de 3–14 años: lecciones interactivas, desafíos, logros y progresión estilo videojuego.',
-        },
-      ],
+      outcomeLabel: 'Reto → Resultado',
+      shotsLabel: 'Ver capturas',
+      status: {
+        beta: 'Beta',
+        inDev: 'En desarrollo',
+        liveDemo: 'Demo en vivo',
+        production: 'En producción',
+      },
     },
     skillsPage: {
       title: 'Mi Stack Tecnológico',
@@ -160,7 +184,7 @@ export const dictionaries = {
         {
           id: 'mvp',
           title: 'Desarrollo de MVP',
-          summary: 'Aplicaciones full-stack de cero, listas para producción.',
+          summary: 'De idea a MVP en producción en 2–8 semanas.',
           description:
             'Diseño y construyo aplicaciones completas desde cero, listas para producción en pocas semanas. Ideal para founders y startups que quieren validar una idea o lanzar producto sin contratar un equipo.',
           bullets: [
@@ -177,7 +201,7 @@ export const dictionaries = {
         {
           id: 'retainer',
           title: 'Mantenimiento continuo',
-          summary: 'Soporte y evolución mensual de tu producto.',
+          summary: 'Tu producto mantenido y evolucionando cada mes.',
           description:
             'Mantenimiento y evolución continua de aplicaciones existentes. Para equipos sin desarrollo interno o productos que crecen y necesitan atención dedicada cada mes.',
           bullets: [
@@ -194,7 +218,7 @@ export const dictionaries = {
         {
           id: 'ai',
           title: 'Integración de IA',
-          summary: 'Chatbots, agentes y automatizaciones con Claude API y MCP.',
+          summary: 'IA que aporta valor real: chatbots, agentes y automatizaciones con Claude.',
           description:
             'Integro capacidades de IA modernas en tu producto: chatbots, agentes con herramientas, automatizaciones, RAG, generación de contenido. Trabajo con Claude API/SDK y el protocolo MCP para integraciones a medida.',
           bullets: [
@@ -211,7 +235,7 @@ export const dictionaries = {
         {
           id: 'consulting',
           title: 'Consultoría técnica',
-          summary: 'Code reviews, arquitectura y decisiones de stack.',
+          summary: 'Criterio senior para tus decisiones de arquitectura y stack.',
           badge: 'Especialidad',
           description:
             'Sesiones de consultoría puntual: code reviews, decisiones de arquitectura, elección de stack, estrategia de refactor. Una segunda opinión senior sin compromiso continuo.',
@@ -248,7 +272,7 @@ export const dictionaries = {
       submit: 'Enviar Mensaje',
       submitting: 'Enviando...',
       success: '¡Mensaje enviado con éxito! Te responderé pronto.',
-      error: 'Hubo un error. Por favor, intenta enviando un correo directo.',
+      error: 'Hubo un error. Por favor, intenta enviar un correo directo.',
       validation: {
         name: 'El nombre es requerido.',
         email: 'El email no es válido.',
@@ -269,6 +293,41 @@ export const dictionaries = {
     footer: {
       tagline: 'Built with Next.js and love',
     },
+    ui: {
+      metaHome: '// cover · home',
+      metaProjects: '// page · projects',
+      metaServices: '// page · services',
+      metaSkills: '// page · stack',
+      metaContact: '// page · contact',
+      homeSecProjects: '// 03 — projects',
+      homeSecServices: '// 04 — index',
+      homeSecSkills: '// 05 — stack',
+      discoveryCall: '// discovery call',
+      form: '// form',
+      menu: '// menu',
+      contactMarker: '// contact',
+      heroLive: 'Live from Almedina · ES',
+      issue: 'Issue',
+      ctaContact: "Let's talk",
+    },
+    a11y: {
+      home: 'jjpg.dev — Home',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      navMenu: 'Navigation menu',
+      toDark: 'Switch to dark mode',
+      toLight: 'Switch to light mode',
+    },
+    colophon: {
+      year: 'Year',
+      editor: 'Editor',
+      role: 'Role',
+      base: 'Based',
+      status: 'Status',
+      response: 'Response',
+      stack: 'Stack',
+      available: 'Available',
+    },
     hero: {
       availability: 'Available for new projects',
       greeting: "Hi, I'm",
@@ -284,32 +343,36 @@ export const dictionaries = {
       title: 'My Latest Projects',
       subtitle: 'Take a look at the solutions I have designed and built.',
       seeAll: 'See All Projects',
-      items: [
-        {
-          name: 'Nexfit',
-          description:
-            'SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app and REST API. Clients, training and nutrition plans, check-ins and progress tracking.',
-          stack: 'NestJS, Next.js 16, Expo/React Native, PostgreSQL, Prisma, Cloudflare R2.',
-        },
-        {
-          name: 'Accounting Suite',
-          description:
-            'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, budgets, recurring entries and daily reports.',
-          stack: 'NestJS, Next.js 15, PostgreSQL, Prisma, Redux Toolkit, Chart.js.',
-        },
-        {
-          name: 'Vereda',
-          description:
-            'No-code SaaS for sports event organizers: public event website, admin panel and custom domain. Multi-tenant.',
-          stack: 'Next.js 16, Neon PostgreSQL, Vercel Blob, JWT, TypeScript.',
-        },
-        {
-          name: 'Curio',
-          description:
-            'Gamified educational platform for children aged 3–14: they learn to code through interactive lessons, challenges, achievements and video-game-style progression.',
-          stack: 'Next.js 16, Prisma, PostgreSQL, Zustand, TanStack Query.',
-        },
-      ],
+    },
+    projectCopy: {
+      nexfit: {
+        home: 'SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app and REST API. Clients, training and nutrition plans, check-ins and progress tracking.',
+        full: 'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on Railway + Neon + Cloudflare R2.',
+        outcome:
+          'Trainers managing clients in spreadsheets → a multi-repo platform with an offline-first mobile app that centralizes plans, check-ins and progress.',
+      },
+      vereda: {
+        home: 'No-code SaaS for sports event organizers: public website, admin panel, custom domain. Multi-tenant.',
+        full: 'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Serverless architecture with Neon + Vercel Blob.',
+        outcome:
+          'Organizers hand-building event sites → a no-code multi-tenant SaaS with a public site and their own panel in minutes.',
+      },
+      medina: {
+        home: 'Official landing for the II Medina Roja BTT challenge: event info and GPX routes on an interactive map.',
+        full: 'Official landing site for the II Medina Roja BTT mountain bike challenge (450 spots, 2 routes, Jul 4, 2026). Event info, interactive GPX track viewer with Leaflet, deployed on Vercel.',
+        outcome: '',
+      },
+      accounting: {
+        home: 'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, budgets, recurring entries and daily reports.',
+        full: 'Accounting app for small businesses with a live demo at accounting.jjpg.dev. NestJS REST API + Next.js dashboard with daily reports, transactions, budgets and recurring entries.',
+        outcome:
+          'Small businesses with no visibility into their day-to-day books → a dashboard with a live demo: transactions, reports, budgets and recurring entries.',
+      },
+      curio: {
+        home: 'Gamified educational platform for children aged 3–14: they learn to code through interactive lessons, challenges, achievements and video-game-style progression.',
+        full: 'Gamified educational platform for children aged 3–14: interactive lessons, challenges, achievements and video-game-style progression.',
+        outcome: '',
+      },
     },
     dashboardSkills: {
       title: 'Key Technologies and Main Stack',
@@ -340,22 +403,22 @@ export const dictionaries = {
         {
           id: 'mvp',
           title: 'MVP Development',
-          summary: 'Full-stack apps from scratch, production-ready.',
+          summary: 'From idea to a production MVP in 2–8 weeks.',
         },
         {
           id: 'retainer',
           title: 'Ongoing Maintenance',
-          summary: 'Monthly support and product evolution.',
+          summary: 'Your product maintained and evolving every month.',
         },
         {
           id: 'ai',
           title: 'AI Integration',
-          summary: 'Chatbots, agents and automations with Claude API and MCP.',
+          summary: 'AI that adds real value: chatbots, agents and automations with Claude.',
         },
         {
           id: 'consulting',
           title: 'Technical Consulting',
-          summary: 'Code reviews, architecture and stack decisions.',
+          summary: 'Senior judgment for your architecture and stack decisions.',
           badge: 'Specialty',
         },
       ],
@@ -367,29 +430,14 @@ export const dictionaries = {
       liveBtn: 'Live Demo',
       codeBtn: 'Code',
       privateRepo: 'Private repository',
-      inDevelopment: 'In development',
-      items: [
-        {
-          shortDescription:
-            'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on Railway + Neon + Cloudflare R2.',
-        },
-        {
-          shortDescription:
-            'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Serverless architecture with Neon + Vercel Blob.',
-        },
-        {
-          shortDescription:
-            'Official landing site for the II Medina Roja BTT mountain bike challenge (450 spots, 2 routes, Jul 4, 2026). Event info, interactive GPX track viewer with Leaflet, deployed on Vercel.',
-        },
-        {
-          shortDescription:
-            'Accounting app for small businesses with live demo at accounting.jjpg.dev. NestJS REST API + Next.js dashboard with daily transactions, reports, budgets and recurring entries.',
-        },
-        {
-          shortDescription:
-            'Gamified educational platform for children aged 3–14: interactive lessons, challenges, achievements and video-game-style progression.',
-        },
-      ],
+      outcomeLabel: 'Problem → Result',
+      shotsLabel: 'View screenshots',
+      status: {
+        beta: 'Beta',
+        inDev: 'In development',
+        liveDemo: 'Live demo',
+        production: 'In production',
+      },
     },
     skillsPage: {
       title: 'My Tech Stack',
@@ -417,7 +465,7 @@ export const dictionaries = {
         {
           id: 'mvp',
           title: 'MVP Development',
-          summary: 'Full-stack apps from scratch, production-ready.',
+          summary: 'From idea to a production MVP in 2–8 weeks.',
           description:
             'I design and build complete applications from scratch, production-ready in a few weeks. Ideal for founders and startups who want to validate an idea or launch a product without hiring a full team.',
           bullets: [
@@ -434,7 +482,7 @@ export const dictionaries = {
         {
           id: 'retainer',
           title: 'Ongoing Maintenance',
-          summary: 'Monthly support and product evolution.',
+          summary: 'Your product maintained and evolving every month.',
           description:
             'Ongoing maintenance and evolution of existing applications. For teams without internal dev capacity or growing products that need dedicated attention each month.',
           bullets: [
@@ -451,7 +499,7 @@ export const dictionaries = {
         {
           id: 'ai',
           title: 'AI Integration',
-          summary: 'Chatbots, agents and automations with Claude API and MCP.',
+          summary: 'AI that adds real value: chatbots, agents and automations with Claude.',
           description:
             'I integrate modern AI capabilities into your product: chatbots, tool-using agents, automations, RAG, content generation. I work with Claude API/SDK and the MCP protocol for custom integrations.',
           bullets: [
@@ -468,7 +516,7 @@ export const dictionaries = {
         {
           id: 'consulting',
           title: 'Technical Consulting',
-          summary: 'Code reviews, architecture and stack decisions.',
+          summary: 'Senior judgment for your architecture and stack decisions.',
           badge: 'Specialty',
           description:
             'One-off consulting sessions: code reviews, architecture decisions, stack choice, refactor strategy. A senior second opinion without ongoing commitment.',
@@ -477,7 +525,7 @@ export const dictionaries = {
             'Documented technical code review',
             'Prioritized recommendations document',
             'Technical roadmap when applicable',
-            'Implementation accompaniment (optional)',
+            'Hands-on support during implementation (optional)',
           ],
           formatLabel: 'Format',
           formatValue: 'One-off sessions',

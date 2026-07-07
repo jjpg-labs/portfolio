@@ -21,7 +21,7 @@ export default function Services() {
             </p>
           </div>
           <span className="font-mono text-mono-label uppercase text-text-muted">
-            // 04 — índice
+            {t.ui.homeSecServices}
           </span>
         </div>
 

@@ -13,8 +13,10 @@ export default function ContactClient() {
     <section className="px-4 sm:px-8 lg:px-14 py-12 lg:py-16 bg-bg-base min-h-screen">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-8 font-mono text-mono-label uppercase text-text-muted">
-          <span>// página · contacto</span>
-          <span>Issue <span className="text-accent">02</span></span>
+          <span>{t.ui.metaContact}</span>
+          <span>
+            {t.ui.issue} <span className="text-accent">02</span>
+          </span>
         </div>
 
         <header className="mb-12">
@@ -36,7 +38,7 @@ export default function ContactClient() {
               </div>
               <div>
                 <span className="font-mono text-mono-label uppercase text-accent group-hover:text-paper transition">
-                  // discovery call
+                  {t.ui.discoveryCall}
                 </span>
                 <h2 className="font-serif text-[24px] sm:text-[30px] leading-tight text-text-primary group-hover:text-paper transition mt-1">
                   {t.contactPage.calendlyTitle}
@@ -57,7 +59,7 @@ export default function ContactClient() {
           <div>
             <div className="mb-6">
               <span className="font-mono text-mono-label uppercase text-text-muted">
-                // formulario
+                {t.ui.form}
               </span>
               <h2 className="font-serif text-[28px] lg:text-[34px] leading-tight text-text-primary mt-2">
                 {t.contactPage.formTitle}

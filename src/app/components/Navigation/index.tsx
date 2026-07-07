@@ -45,7 +45,7 @@ export const Navigation = () => {
       <Link
         href="/"
         className="flex items-center gap-3 group"
-        aria-label="jjpg.dev — Inicio"
+        aria-label={t.a11y.home}
       >
         <Logo size="sm" />
         <span className="hidden sm:flex flex-col leading-tight">
@@ -65,7 +65,7 @@ export const Navigation = () => {
         <button
           onClick={() => setIsOpen(true)}
           className="text-text-secondary hover:text-text-primary p-2 rounded-sm transition"
-          aria-label="Abrir menú"
+          aria-label={t.a11y.openMenu}
         >
           {IoMenu({ size: 26 })}
         </button>
@@ -89,6 +89,12 @@ export const Navigation = () => {
             </Link>
           );
         })}
+        <Link
+          href="/contact"
+          className="font-serif italic text-[17px] px-4 py-1.5 rounded-sm bg-accent text-paper hover:bg-accent-hover transition-colors"
+        >
+          {t.ui.ctaContact}
+        </Link>
         <LanguageSwitcher />
         <ThemeSwitcher />
       </div>
@@ -106,7 +112,7 @@ export const Navigation = () => {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Menú de navegación"
+        aria-label={t.a11y.navMenu}
         className={`
           fixed top-0 right-0 h-screen w-72 bg-bg-surface border-l border-border
           flex flex-col transition-transform duration-300 ease-in-out z-50
@@ -116,12 +122,12 @@ export const Navigation = () => {
       >
         <div className="flex items-center justify-between px-6 py-4 border-b border-border-subtle">
           <span className="font-mono text-mono-label uppercase text-text-muted">
-            // menú
+            {t.ui.menu}
           </span>
           <button
             onClick={closeMenu}
             className="text-text-secondary hover:text-text-primary p-1.5 rounded-sm transition"
-            aria-label="Cerrar menú"
+            aria-label={t.a11y.closeMenu}
           >
             {IoClose({ size: 22 })}
           </button>

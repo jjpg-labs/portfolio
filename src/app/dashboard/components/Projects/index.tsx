@@ -3,10 +3,16 @@
 import Link from 'next/link';
 import ProjectCard from './components/ProjectCard';
 import { useLocale } from '@/app/context/LocaleContext';
+import { FEATURED_PROJECTS, STATUS_LABEL_KEY } from '@/app/projects/data';
 
 export default function Projects() {
   const { t } = useLocale();
-  const { title, subtitle, seeAll, items } = t.dashboardProjects;
+  const { title, subtitle, seeAll } = t.dashboardProjects;
+  const copy = t.projectCopy as Record<
+    string,
+    { home: string; full: string; outcome: string }
+  >;
+  const statusLabels = t.projectsPage.status;
 
   return (
     <section className="px-4 sm:px-8 lg:px-14 py-16 lg:py-20 bg-bg-base">
@@ -21,18 +27,19 @@ export default function Projects() {
             </p>
           </div>
           <span className="font-mono text-mono-label uppercase text-text-muted">
-            // 03 — proyectos
+            {t.ui.homeSecProjects}
           </span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {items.map(({ name, description, stack }, idx) => (
+          {FEATURED_PROJECTS.map((project, idx) => (
             <ProjectCard
-              key={name}
+              key={project.id}
               num={idx + 1}
-              name={name}
-              description={description}
-              stack={stack}
+              name={project.title}
+              description={copy[project.id]?.home ?? ''}
+              stack={project.technologies.join(', ')}
+              status={statusLabels[STATUS_LABEL_KEY[project.status]]}
             />
           ))}
         </div>

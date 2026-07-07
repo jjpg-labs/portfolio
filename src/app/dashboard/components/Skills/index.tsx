@@ -15,7 +15,7 @@ export default function Skills() {
             {title}
           </h2>
           <span className="font-mono text-mono-label uppercase text-text-muted">
-            // 05 — stack
+            {t.ui.homeSecSkills}
           </span>
         </div>
 

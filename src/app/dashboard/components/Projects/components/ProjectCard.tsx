@@ -3,6 +3,7 @@ interface ProjectCardProps {
   name: string;
   description: string;
   stack: string;
+  status: string;
 }
 
 export default function ProjectCard({
@@ -10,6 +11,7 @@ export default function ProjectCard({
   name,
   description,
   stack,
+  status,
 }: ProjectCardProps) {
   const numLabel = String(num).padStart(2, '0');
 
@@ -25,9 +27,14 @@ export default function ProjectCard({
       </div>
 
       <div className="px-4 py-5 flex-1 flex flex-col gap-3">
-        <h3 className="font-serif text-[26px] leading-tight text-text-primary">
-          {name}
-        </h3>
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-serif text-[26px] leading-tight text-text-primary">
+            {name}
+          </h3>
+          <span className="shrink-0 mt-1 font-mono text-mono-label uppercase text-accent border border-accent/40 rounded-xs px-2 py-0.5">
+            {status}
+          </span>
+        </div>
         <p className="font-sans text-small text-text-secondary leading-relaxed">
           {description}
         </p>

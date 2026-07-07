@@ -19,7 +19,7 @@ export default function ContactInfo() {
     <aside className="flex flex-col gap-8 border border-border rounded-md bg-bg-surface p-8">
       <div>
         <span className="font-mono text-mono-label uppercase text-text-muted">
-          // contacto
+          {t.ui.contactMarker}
         </span>
         <h2 className="font-serif text-[28px] lg:text-[34px] leading-tight text-text-primary mt-2">
           {title}

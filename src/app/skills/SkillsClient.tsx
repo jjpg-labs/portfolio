@@ -64,8 +64,10 @@ export default function SkillsClient() {
     <section className="px-4 sm:px-8 lg:px-14 py-12 lg:py-16 bg-bg-base min-h-screen">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-8 font-mono text-mono-label uppercase text-text-muted">
-          <span>// página · stack</span>
-          <span>Issue <span className="text-accent">02</span></span>
+          <span>{t.ui.metaSkills}</span>
+          <span>
+            {t.ui.issue} <span className="text-accent">02</span>
+          </span>
         </div>
 
         <header className="mb-12">

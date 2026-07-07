@@ -5,6 +5,15 @@ export const alt = 'Jose Juan — Full-Stack Engineer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
+// Shared visual language with the project covers (public/img/p1–p5.svg):
+// dark editorial ground, hairlines, mono labels, a single #FF5C2E accent.
+const INK = '#0E1014';
+const INK_2 = '#15171C';
+const PAPER = '#E6E6E6';
+const MUTED = '#8A8B90';
+const HAIR = '#23262C';
+const ACCENT = '#FF5C2E';
+
 export default function Image() {
   return new ImageResponse(
     (
@@ -14,92 +23,112 @@ export default function Image() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
-          fontFamily: 'sans-serif',
-          padding: 80,
+          background: `linear-gradient(160deg, ${INK} 0%, ${INK_2} 100%)`,
+          padding: '56px 64px',
+          justifyContent: 'space-between',
         }}
       >
+        {/* Top meta strip */}
         <div
           style={{
             display: 'flex',
+            justifyContent: 'space-between',
             alignItems: 'center',
-            gap: 12,
-            padding: '8px 20px',
-            borderRadius: 999,
-            background: 'rgba(74, 222, 128, 0.15)',
-            border: '1px solid rgba(74, 222, 128, 0.4)',
-            color: '#4ade80',
-            fontSize: 20,
-            fontWeight: 500,
-            marginBottom: 36,
+            paddingBottom: 20,
+            borderBottom: `1px solid ${HAIR}`,
+            fontSize: 22,
+            letterSpacing: 4,
+            color: MUTED,
           }}
         >
-          <div
-            style={{
-              width: 10,
-              height: 10,
-              borderRadius: 999,
-              background: '#4ade80',
-            }}
-          />
-          Disponible para nuevos proyectos
+          <div style={{ display: 'flex' }}>// jjpg.dev · portfolio</div>
+          <div style={{ display: 'flex', color: ACCENT }}>DISPONIBLE</div>
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 12,
-            textAlign: 'center',
-          }}
-        >
+        {/* Center block */}
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div
             style={{
-              fontSize: 84,
-              fontWeight: 800,
-              color: '#f8fafc',
-              letterSpacing: '-2px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 14,
+              marginBottom: 28,
+            }}
+          >
+            <div
+              style={{
+                width: 12,
+                height: 12,
+                borderRadius: 999,
+                background: ACCENT,
+              }}
+            />
+            <div
+              style={{
+                display: 'flex',
+                fontSize: 24,
+                letterSpacing: 1,
+                color: PAPER,
+              }}
+            >
+              Disponible para nuevos proyectos
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 120,
+              fontWeight: 700,
               lineHeight: 1,
+              letterSpacing: -3,
+              color: PAPER,
             }}
           >
             Jose Juan
           </div>
           <div
             style={{
-              fontSize: 40,
-              fontWeight: 600,
-              color: '#60a5fa',
-              letterSpacing: '0.5px',
+              display: 'flex',
+              fontSize: 52,
+              fontStyle: 'italic',
+              color: ACCENT,
+              marginTop: 12,
             }}
           >
             Full-Stack Engineer
           </div>
           <div
             style={{
-              fontSize: 24,
-              color: '#cbd5e1',
-              marginTop: 16,
+              display: 'flex',
+              fontSize: 28,
+              color: '#B6B8BE',
+              marginTop: 26,
               maxWidth: 900,
               lineHeight: 1.4,
             }}
           >
-            SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL
+            SaaS, dashboards e integración de IA con Next.js, NestJS y PostgreSQL.
           </div>
         </div>
 
+        {/* Bottom meta strip */}
         <div
           style={{
-            position: 'absolute',
-            bottom: 60,
-            fontSize: 22,
-            color: '#94a3b8',
-            letterSpacing: '0.5px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingTop: 20,
+            borderTop: `1px solid ${HAIR}`,
+            fontSize: 20,
+            letterSpacing: 2.5,
+            color: MUTED,
           }}
         >
-          jjpg.dev
+          <div style={{ display: 'flex' }}>
+            NEXT.JS · NESTJS · POSTGRESQL · CLAUDE API
+          </div>
+          <div style={{ display: 'flex', color: PAPER }}>jjpg.dev</div>
         </div>
       </div>
     ),
