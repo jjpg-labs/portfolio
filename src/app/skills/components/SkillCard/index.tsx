@@ -62,12 +62,19 @@ export function SkillCard({
           return (
             <li
               key={skill.name}
-              className="grid grid-cols-[1fr_80px_60px] sm:grid-cols-[1fr_120px_80px] gap-3 sm:gap-4 items-center py-3 border-b border-border-subtle last:border-b-0"
+              className="flex items-center gap-3 sm:gap-4 py-3 border-b border-border-subtle last:border-b-0"
             >
-              <span className="font-sans text-body text-text-primary">
+              <span className="font-sans text-body text-text-primary shrink-0">
                 {skill.name}
               </span>
-              <span className="flex items-center gap-1" aria-hidden="true">
+              <span
+                aria-hidden="true"
+                className="flex-1 h-0 self-center border-b border-dotted border-border min-w-4"
+              />
+              <span
+                className="flex items-center gap-1 w-[80px] sm:w-[120px] shrink-0"
+                aria-hidden="true"
+              >
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span
                     key={i}
@@ -77,7 +84,7 @@ export function SkillCard({
                   />
                 ))}
               </span>
-              <span className="font-mono text-mono-label uppercase text-text-muted text-right">
+              <span className="font-mono text-mono-label uppercase text-text-muted text-right w-[64px] sm:w-[80px] shrink-0">
                 {label}
               </span>
             </li>

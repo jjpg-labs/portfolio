@@ -40,11 +40,11 @@ describe('SkillsPage', () => {
   it('renders all skills under their categories', () => {
     renderWithLocale(<SkillsPage />);
     expect(screen.getByText('Node.js')).toBeInTheDocument();
-    expect(screen.getByText('Python')).toBeInTheDocument();
+    expect(screen.getByText('NestJS')).toBeInTheDocument();
     expect(screen.getByText('React / Next.js')).toBeInTheDocument();
     expect(screen.getByText('Tailwind CSS')).toBeInTheDocument();
     expect(screen.getByText('PostgreSQL')).toBeInTheDocument();
-    expect(screen.getByText('MongoDB')).toBeInTheDocument();
+    expect(screen.getByText('Prisma')).toBeInTheDocument();
     expect(screen.getByText('Claude Code')).toBeInTheDocument();
     expect(screen.getByText('Claude API')).toBeInTheDocument();
   });
