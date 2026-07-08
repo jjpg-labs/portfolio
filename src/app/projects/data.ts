@@ -142,7 +142,7 @@ export const PROJECTS: ProjectMeta[] = [
     ],
     role: 'Full-Stack',
     imageCover: '/img/p1.svg',
-    linkLive: 'https://accounting.jjpg.dev',
+    linkLive: 'https://demo.accounting.jjpg.dev',
     linkRepo: 'https://github.com/jjpg-labs/accounting-server',
     linkRepo2: 'https://github.com/jjpg95/accounting-manager',
     status: 'live-demo',

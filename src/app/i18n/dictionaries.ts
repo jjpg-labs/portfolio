@@ -84,7 +84,7 @@ export const dictionaries = {
       },
       accounting: {
         home: 'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, presupuestos, movimientos recurrentes e informes diarios.',
-        full: 'App de contabilidad para pequeños negocios con demo en vivo en accounting.jjpg.dev. REST API en NestJS + dashboard Next.js con transacciones, informes diarios, presupuestos y movimientos recurrentes.',
+        full: 'App de contabilidad para pequeños negocios con demo en vivo (solo lectura) en demo.accounting.jjpg.dev. REST API en NestJS + dashboard Next.js con transacciones, informes diarios, presupuestos y movimientos recurrentes.',
         outcome:
           'Pequeños negocios sin visibilidad de su día a día contable → dashboard con demo en vivo: transacciones, informes, presupuestos y recurrentes.',
       },
@@ -366,7 +366,7 @@ export const dictionaries = {
       },
       accounting: {
         home: 'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, budgets, recurring entries and daily reports.',
-        full: 'Accounting app for small businesses with a live demo at accounting.jjpg.dev. NestJS REST API + Next.js dashboard with daily reports, transactions, budgets and recurring entries.',
+        full: 'Accounting app for small businesses with a read-only live demo at demo.accounting.jjpg.dev. NestJS REST API + Next.js dashboard with daily reports, transactions, budgets and recurring entries.',
         outcome:
           'Small businesses with no visibility into their day-to-day books → a dashboard with a live demo: transactions, reports, budgets and recurring entries.',
       },
