@@ -24,7 +24,7 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
       <div className="relative aspect-[4/3] bg-ink overflow-hidden">
         <Image
           src={project.imageCover}
-          alt={`Portada del proyecto ${project.title}`}
+          alt={`${p.coverAlt} ${project.title}`}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

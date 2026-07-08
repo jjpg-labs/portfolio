@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { IoClose, IoChevronBack, IoChevronForward } from 'react-icons/io5';
 import type { ProjectScreenshot } from '../../data';
+import { useLocale } from '@/app/context/LocaleContext';
 
 interface ProjectShotsProps {
   screenshots: ProjectScreenshot[];
@@ -16,6 +17,7 @@ export default function ProjectShots({
   title,
   label,
 }: ProjectShotsProps) {
+  const { t } = useLocale();
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
@@ -121,7 +123,7 @@ export default function ProjectShots({
               <button
                 type="button"
                 onClick={close}
-                aria-label="Cerrar"
+                aria-label={t.a11y.shotClose}
                 className="p-2 rounded-full text-paper hover:text-accent transition-colors"
               >
                 {IoClose({ size: 22 })}
@@ -143,7 +145,7 @@ export default function ProjectShots({
                 <button
                   type="button"
                   onClick={prev}
-                  aria-label="Anterior"
+                  aria-label={t.a11y.shotPrev}
                   className="p-2 rounded-full text-paper hover:text-accent transition-colors"
                 >
                   {IoChevronBack({ size: 22 })}
@@ -151,7 +153,7 @@ export default function ProjectShots({
                 <button
                   type="button"
                   onClick={next}
-                  aria-label="Siguiente"
+                  aria-label={t.a11y.shotNext}
                   className="p-2 rounded-full text-paper hover:text-accent transition-colors"
                 >
                   {IoChevronForward({ size: 22 })}
