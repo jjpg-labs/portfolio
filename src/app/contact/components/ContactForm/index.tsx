@@ -8,6 +8,9 @@ interface IContactForm {
   email: string;
   subject: string;
   message: string;
+  // Honeypot: hidden from real users, only bots fill it. Sent to the API so the
+  // server can silently drop bot submissions. See the hidden field below.
+  company: string;
 }
 interface IApiResponse {
   success: boolean;
@@ -24,6 +27,7 @@ export default function ContactForm() {
     email: '',
     subject: '',
     message: '',
+    company: '',
   });
   const [status, setStatus] = useState<
     'idle' | 'loading' | 'success' | 'error'
@@ -67,7 +71,13 @@ export default function ContactForm() {
 
       if (data.success) {
         setStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          company: '',
+        });
       } else {
         setStatus('error');
       }
@@ -84,6 +94,40 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/*
+        Honeypot. Real users never see or focus this: it's pulled off-screen
+        (NOT display:none, which smarter bots skip), hidden from assistive tech
+        via aria-hidden, and removed from the tab order with tabIndex=-1. Bots
+        that auto-fill every field will populate `company`; the API then returns
+        a silent 200 without sending an email. Intentionally not i18n copy — it
+        must stay invisible to humans in every locale.
+      */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          width: '1px',
+          height: '1px',
+          padding: 0,
+          margin: '-1px',
+          overflow: 'hidden',
+          clip: 'rect(0, 0, 0, 0)',
+          whiteSpace: 'nowrap',
+          border: 0,
+        }}
+      >
+        <label htmlFor="company">Company</label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData.company}
+          onChange={handleChange}
+        />
+      </div>
+
       <div>
         <label htmlFor="name" className={labelClass}>
           {f.name}
