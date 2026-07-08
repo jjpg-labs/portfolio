@@ -1,7 +1,11 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { BackToTop } from './BackToTop';
+import { LocaleProvider } from '@/app/context/LocaleContext';
 import '@testing-library/jest-dom';
-import { SVGProps, FC } from 'react';
+import { SVGProps, FC, ReactElement } from 'react';
+
+const renderWithLocale = (ui: ReactElement) =>
+  render(<LocaleProvider>{ui}</LocaleProvider>);
 
 interface IconProps extends SVGProps<SVGSVGElement> {}
 
@@ -74,13 +78,13 @@ describe('BackToTop', () => {
   const getButton = () => screen.getByLabelText('Volver al inicio');
 
   it('renders a button with the expected aria-label', () => {
-    render(<BackToTop />);
+    renderWithLocale(<BackToTop />);
     expect(getButton()).toBeInTheDocument();
     expect(getButton().tagName).toBe('BUTTON');
   });
 
   it('is hidden initially (opacity-0 + non-interactive)', () => {
-    render(<BackToTop />);
+    renderWithLocale(<BackToTop />);
     const button = getButton();
     expect(button).toHaveClass('opacity-0');
     expect(button).toHaveClass('pointer-events-none');
@@ -88,7 +92,7 @@ describe('BackToTop', () => {
   });
 
   it('becomes visible after scrolling past 400px', () => {
-    render(<BackToTop />);
+    renderWithLocale(<BackToTop />);
     const button = getButton();
     expect(button).toHaveClass('opacity-0');
 
@@ -104,7 +108,7 @@ describe('BackToTop', () => {
   });
 
   it('stays hidden when scrollY is below the threshold', () => {
-    render(<BackToTop />);
+    renderWithLocale(<BackToTop />);
     const button = getButton();
 
     setScroll(200);
@@ -117,7 +121,7 @@ describe('BackToTop', () => {
   });
 
   it('calls window.scrollTo with smooth behavior on click', () => {
-    render(<BackToTop />);
+    renderWithLocale(<BackToTop />);
 
     fireEvent.click(getButton());
 
@@ -127,7 +131,7 @@ describe('BackToTop', () => {
 
   it('uses behavior: instant when prefers-reduced-motion is set', () => {
     setReducedMotion(true);
-    render(<BackToTop />);
+    renderWithLocale(<BackToTop />);
 
     fireEvent.click(getButton());
 
@@ -137,7 +141,7 @@ describe('BackToTop', () => {
   it('registers the scroll listener as passive and removes it on unmount', () => {
     const addSpy = jest.spyOn(window, 'addEventListener');
     const removeSpy = jest.spyOn(window, 'removeEventListener');
-    const { unmount } = render(<BackToTop />);
+    const { unmount } = renderWithLocale(<BackToTop />);
 
     const addCall = addSpy.mock.calls.find(([event]) => event === 'scroll');
     expect(addCall).toBeDefined();

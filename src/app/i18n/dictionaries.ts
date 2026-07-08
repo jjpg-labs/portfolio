@@ -36,6 +36,12 @@ export const dictionaries = {
       navMenu: 'Menú de navegación',
       toDark: 'Cambiar a modo Oscuro',
       toLight: 'Cambiar a modo Claro',
+      switchLanguage: 'Cambiar idioma',
+      backToTop: 'Volver al inicio',
+      email: 'Correo Electrónico',
+      shotClose: 'Cerrar',
+      shotPrev: 'Anterior',
+      shotNext: 'Siguiente',
     },
     colophon: {
       year: 'Año',
@@ -152,6 +158,7 @@ export const dictionaries = {
       privateRepo: 'Repositorio privado',
       outcomeLabel: 'Reto → Resultado',
       shotsLabel: 'Ver capturas',
+      coverAlt: 'Portada del proyecto',
       status: {
         beta: 'Beta',
         inDev: 'En desarrollo',
@@ -318,6 +325,12 @@ export const dictionaries = {
       navMenu: 'Navigation menu',
       toDark: 'Switch to dark mode',
       toLight: 'Switch to light mode',
+      switchLanguage: 'Switch language',
+      backToTop: 'Back to top',
+      email: 'Email',
+      shotClose: 'Close',
+      shotPrev: 'Previous',
+      shotNext: 'Next',
     },
     colophon: {
       year: 'Year',
@@ -434,6 +447,7 @@ export const dictionaries = {
       privateRepo: 'Private repository',
       outcomeLabel: 'Problem → Result',
       shotsLabel: 'View screenshots',
+      coverAlt: 'Cover of',
       status: {
         beta: 'Beta',
         inDev: 'In development',

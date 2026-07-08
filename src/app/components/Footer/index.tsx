@@ -70,7 +70,7 @@ export const Footer = () => {
             </a>
             <a
               href={`mailto:${EMAIL_ADDRESS}`}
-              aria-label="Correo Electrónico"
+              aria-label={t.a11y.email}
               className="text-text-muted hover:text-accent transition"
             >
               {FaEnvelope({ size: 20 })}

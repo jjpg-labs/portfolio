@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { IoMenu, IoClose } from 'react-icons/io5';
@@ -15,6 +15,10 @@ export const Navigation = () => {
   const { isDesktop } = useViewport();
   const { t } = useLocale();
   const pathname = usePathname();
+  const drawerRef = useRef<HTMLDivElement | null>(null);
+
+  // The drawer is only interactive when open on a non-desktop viewport.
+  const drawerOpen = isOpen && !isDesktop;
 
   const navItems = [
     { name: t.nav.home, href: '/' },
@@ -36,6 +40,14 @@ export const Navigation = () => {
       document.body.style.overflow = 'auto';
     };
   }, [isOpen, isDesktop]);
+
+  // Take the closed drawer out of the focus order + accessibility tree so its
+  // off-screen links aren't tabbable/announced. `inert` (set imperatively, since
+  // @types/react 18 has no JSX prop for it) leaves the translate animation intact.
+  useEffect(() => {
+    const el = drawerRef.current;
+    if (el) el.inert = !drawerOpen;
+  }, [drawerOpen]);
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname?.startsWith(href);
@@ -100,7 +112,7 @@ export const Navigation = () => {
       </div>
 
       {/* Backdrop */}
-      {isOpen && !isDesktop && (
+      {drawerOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40"
           onClick={closeMenu}
@@ -110,13 +122,14 @@ export const Navigation = () => {
 
       {/* Drawer lateral */}
       <div
+        ref={drawerRef}
         role="dialog"
         aria-modal="true"
         aria-label={t.a11y.navMenu}
         className={`
           fixed top-0 right-0 h-screen w-72 bg-bg-surface border-l border-border
           flex flex-col transition-transform duration-300 ease-in-out z-50
-          ${isOpen && !isDesktop ? 'translate-x-0' : 'translate-x-full'}
+          ${drawerOpen ? 'translate-x-0' : 'translate-x-full'}
           lg:hidden
         `}
       >
