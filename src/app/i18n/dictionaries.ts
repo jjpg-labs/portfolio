@@ -102,24 +102,15 @@ export const dictionaries = {
     },
     dashboardSkills: {
       title: 'Tecnologías Clave y Stack Principal',
-      groups: [
-        {
-          title: 'Back-End',
-          skills: ['NestJS', 'Node.js', 'PHP / Symfony', 'API Platform'],
-        },
-        {
-          title: 'Front-End',
-          skills: ['React / Next.js', 'TypeScript', 'React Admin', 'MUI', 'Tailwind CSS', 'React Native'],
-        },
-        {
-          title: 'Bases de Datos & Infra',
-          skills: ['PostgreSQL', 'Redis', 'Docker', 'Kubernetes', 'AWS', 'Terraform'],
-        },
-        {
-          title: 'IA / LLMs',
-          skills: ['Claude Code', 'Claude API', 'MCP', 'Prompt engineering'],
-        },
-      ],
+      // Only the translatable group titles live here; the skill lists are
+      // derived from the single source of truth in `skills/data.ts`
+      // (`SKILL_PREVIEW_GROUPS`), keyed by these ids.
+      groupTitles: {
+        'back-end': 'Back-End',
+        'front-end': 'Front-End',
+        'db-infra': 'Bases de Datos & Infra',
+        'ai-llms': 'IA / LLMs',
+      } as Record<string, string>,
     },
     dashboardServices: {
       title: 'Cómo trabajamos juntos',
@@ -391,24 +382,15 @@ export const dictionaries = {
     },
     dashboardSkills: {
       title: 'Key Technologies and Main Stack',
-      groups: [
-        {
-          title: 'Back-End',
-          skills: ['NestJS', 'Node.js', 'PHP / Symfony', 'API Platform'],
-        },
-        {
-          title: 'Front-End',
-          skills: ['React / Next.js', 'TypeScript', 'React Admin', 'MUI', 'Tailwind CSS', 'React Native'],
-        },
-        {
-          title: 'Databases & Infra',
-          skills: ['PostgreSQL', 'Redis', 'Docker', 'Kubernetes', 'AWS', 'Terraform'],
-        },
-        {
-          title: 'AI / LLMs',
-          skills: ['Claude Code', 'Claude API', 'MCP', 'Prompt engineering'],
-        },
-      ],
+      // Only the translatable group titles live here; the skill lists are
+      // derived from the single source of truth in `skills/data.ts`
+      // (`SKILL_PREVIEW_GROUPS`), keyed by these ids.
+      groupTitles: {
+        'back-end': 'Back-End',
+        'front-end': 'Front-End',
+        'db-infra': 'Databases & Infra',
+        'ai-llms': 'AI / LLMs',
+      } as Record<string, string>,
     },
     dashboardServices: {
       title: 'How we can work together',
