@@ -7,8 +7,11 @@ import {
   validateContactPayload,
 } from './guard';
 
-const TO_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'pepeju95@gmail.com';
+// Where contact-form submissions land. Server-only (no NEXT_PUBLIC prefix): this
+// is a delivery target, not something the browser needs. Defaults to the same
+// address the site publicly announces (Footer mailto + JSON-LD) so leads never
+// diverge from what a visitor sees.
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? 'jose@jjpg.dev';
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? 'onboarding@resend.dev';
 
 // Cap the raw body before parsing. The largest legit payload is ~2.5KB
