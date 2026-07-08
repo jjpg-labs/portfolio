@@ -2,10 +2,11 @@
 
 import SkillCard from './components/SkillCard';
 import { useLocale } from '@/app/context/LocaleContext';
+import { SKILL_PREVIEW_GROUPS } from '@/app/skills/data';
 
 export default function Skills() {
   const { t } = useLocale();
-  const { title, groups } = t.dashboardSkills;
+  const { title, groupTitles } = t.dashboardSkills;
 
   return (
     <section className="border-y border-border bg-bg-surface px-4 sm:px-8 lg:px-14 py-16 lg:py-20">
@@ -20,12 +21,12 @@ export default function Skills() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-          {groups.map(({ title: groupTitle, skills }, idx) => (
+          {SKILL_PREVIEW_GROUPS.map((group, idx) => (
             <SkillCard
-              key={groupTitle}
+              key={group.id}
               num={idx + 1}
-              title={groupTitle}
-              skills={skills as string[]}
+              title={groupTitles[group.id] ?? group.id}
+              skills={group.skills}
             />
           ))}
         </div>

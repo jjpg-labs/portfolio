@@ -2,58 +2,13 @@
 
 import { SkillCard } from './components/SkillCard';
 import { useLocale } from '@/app/context/LocaleContext';
-
-interface Skill {
-  name: string;
-  level: number;
-  category: string;
-}
-
-// "Experto" is reserved for the core stack (NestJS, React/Next, TypeScript,
-// PostgreSQL); everything else is Avanzado/Intermedio so each level reads as
-// earned. Low-signal libs were trimmed to keep the list focused.
-const allSkills: Skill[] = [
-  { name: 'NestJS', level: 5, category: 'Back-End' },
-  { name: 'Node.js', level: 4, category: 'Back-End' },
-  { name: 'PHP', level: 4, category: 'Back-End' },
-  { name: 'Symfony', level: 4, category: 'Back-End' },
-  { name: 'API Platform', level: 4, category: 'Back-End' },
-  { name: 'React / Next.js', level: 5, category: 'Front-End' },
-  { name: 'TypeScript', level: 5, category: 'Front-End' },
-  { name: 'React Admin', level: 4, category: 'Front-End' },
-  { name: 'Tailwind CSS', level: 4, category: 'Front-End' },
-  { name: 'React Native / NativeWind', level: 3, category: 'Front-End' },
-  { name: 'Zustand', level: 4, category: 'Front-End' },
-  { name: 'TanStack Query', level: 3, category: 'Front-End' },
-  { name: 'Zod', level: 4, category: 'Front-End' },
-  { name: 'PostgreSQL', level: 5, category: 'Bases de Datos' },
-  { name: 'Prisma', level: 4, category: 'Bases de Datos' },
-  { name: 'Redis', level: 3, category: 'Bases de Datos' },
-  { name: 'Docker', level: 4, category: 'Infraestructura' },
-  { name: 'Kubernetes', level: 3, category: 'Infraestructura' },
-  { name: 'AWS (EKS, RDS, S3)', level: 3, category: 'Infraestructura' },
-  { name: 'Terraform', level: 3, category: 'Infraestructura' },
-  { name: 'Playwright', level: 4, category: 'Infraestructura' },
-  { name: 'JWT / Auth', level: 4, category: 'Infraestructura' },
-  { name: 'Claude Code', level: 4, category: 'IA / LLMs' },
-  { name: 'Claude API', level: 4, category: 'IA / LLMs' },
-  { name: 'MCP (Model Context Protocol)', level: 3, category: 'IA / LLMs' },
-  { name: 'Prompt engineering', level: 4, category: 'IA / LLMs' },
-];
-
-const CATEGORY_ORDER = [
-  'Back-End',
-  'Front-End',
-  'Bases de Datos',
-  'Infraestructura',
-  'IA / LLMs',
-];
+import { SKILLS, SKILL_CATEGORY_ORDER, type Skill } from './data';
 
 export default function SkillsClient() {
   const { t } = useLocale();
   const { title, categories, levels } = t.skillsPage;
 
-  const groupedSkills = allSkills.reduce<Record<string, Skill[]>>((acc, skill) => {
+  const groupedSkills = SKILLS.reduce<Record<string, Skill[]>>((acc, skill) => {
     (acc[skill.category] = acc[skill.category] || []).push(skill);
     return acc;
   }, {});
@@ -75,7 +30,7 @@ export default function SkillsClient() {
         </header>
 
         <div className="flex flex-col">
-          {CATEGORY_ORDER.map((cat, idx) =>
+          {SKILL_CATEGORY_ORDER.map((cat, idx) =>
             groupedSkills[cat] ? (
               <SkillCard
                 key={cat}
