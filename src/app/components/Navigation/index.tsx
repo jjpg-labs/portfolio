@@ -79,7 +79,7 @@ export const Navigation = () => {
           className="text-text-secondary hover:text-text-primary p-2 rounded-sm transition"
           aria-label={t.a11y.openMenu}
         >
-          {IoMenu({ size: 26 })}
+          <IoMenu size={26} />
         </button>
       </div>
 
@@ -142,7 +142,7 @@ export const Navigation = () => {
             className="text-text-secondary hover:text-text-primary p-1.5 rounded-sm transition"
             aria-label={t.a11y.closeMenu}
           >
-            {IoClose({ size: 22 })}
+            <IoClose size={22} />
           </button>
         </div>
 

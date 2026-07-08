@@ -92,7 +92,7 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-serif italic text-[16px] text-text-primary hover:text-accent transition"
             >
-              {FaExternalLinkAlt({ size: 12 })} {p.liveBtn}
+              <FaExternalLinkAlt size={12} /> {p.liveBtn}
             </Link>
           )}
           {!project.repoPrivate && (
@@ -102,7 +102,7 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-mono text-small text-text-secondary hover:text-text-primary transition"
             >
-              {FaCode({ size: 12 })} {p.codeBtn}
+              <FaCode size={12} /> {p.codeBtn}
             </Link>
           )}
           {!project.repoPrivate && project.linkRepo2 && (
@@ -112,12 +112,12 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-mono text-small text-text-secondary hover:text-text-primary transition"
             >
-              {FaCode({ size: 12 })} {p.codeBtn} UI
+              <FaCode size={12} /> {p.codeBtn} UI
             </Link>
           )}
           {project.repoPrivate && (
             <span className="flex items-center gap-1.5 font-mono text-mono-label uppercase text-text-muted">
-              {FaLock({ size: 10 })} {p.privateRepo}
+              <FaLock size={10} /> {p.privateRepo}
             </span>
           )}
         </div>

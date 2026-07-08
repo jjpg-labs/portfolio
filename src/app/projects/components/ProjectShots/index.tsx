@@ -126,7 +126,7 @@ export default function ProjectShots({
                 aria-label={t.a11y.shotClose}
                 className="p-2 rounded-full text-paper hover:text-accent transition-colors"
               >
-                {IoClose({ size: 22 })}
+                <IoClose size={22} />
               </button>
             </div>
 
@@ -148,7 +148,7 @@ export default function ProjectShots({
                   aria-label={t.a11y.shotPrev}
                   className="p-2 rounded-full text-paper hover:text-accent transition-colors"
                 >
-                  {IoChevronBack({ size: 22 })}
+                  <IoChevronBack size={22} />
                 </button>
                 <button
                   type="button"
@@ -156,7 +156,7 @@ export default function ProjectShots({
                   aria-label={t.a11y.shotNext}
                   className="p-2 rounded-full text-paper hover:text-accent transition-colors"
                 >
-                  {IoChevronForward({ size: 22 })}
+                  <IoChevronForward size={22} />
                 </button>
               </div>
             )}
