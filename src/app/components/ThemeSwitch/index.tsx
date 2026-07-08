@@ -25,9 +25,11 @@ export function ThemeSwitcher() {
       title={label}
       aria-label={label}
     >
-      {isDark
-        ? IoSunnyOutline({ size: 20, 'aria-hidden': true })
-        : IoMoonOutline({ size: 20, 'aria-hidden': true })}
+      {isDark ? (
+        <IoSunnyOutline size={20} aria-hidden />
+      ) : (
+        <IoMoonOutline size={20} aria-hidden />
+      )}
     </button>
   );
 }

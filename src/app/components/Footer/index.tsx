@@ -39,7 +39,7 @@ export const Footer = () => {
               aria-label="GitHub"
               className="text-text-muted hover:text-text-primary transition"
             >
-              {FaGithub({ size: 20 })}
+              <FaGithub size={20} />
             </a>
             <a
               href={LINKEDIN_URL}
@@ -48,7 +48,7 @@ export const Footer = () => {
               aria-label="LinkedIn"
               className="text-text-muted hover:text-text-primary transition"
             >
-              {FaLinkedin({ size: 20 })}
+              <FaLinkedin size={20} />
             </a>
             <a
               href={MALT_URL}
@@ -57,7 +57,7 @@ export const Footer = () => {
               aria-label="Malt"
               className="text-text-muted hover:text-accent transition"
             >
-              {SiMalt({ size: 20 })}
+              <SiMalt size={20} />
             </a>
             <a
               href={CALENDLY_URL}
@@ -66,14 +66,14 @@ export const Footer = () => {
               aria-label="Calendly"
               className="text-text-muted hover:text-accent transition"
             >
-              {FaCalendarAlt({ size: 20 })}
+              <FaCalendarAlt size={20} />
             </a>
             <a
               href={`mailto:${EMAIL_ADDRESS}`}
               aria-label={t.a11y.email}
               className="text-text-muted hover:text-accent transition"
             >
-              {FaEnvelope({ size: 20 })}
+              <FaEnvelope size={20} />
             </a>
             <span aria-hidden="true" className="w-px h-5 bg-border-default mx-1" />
             <ThemeSwitcher />

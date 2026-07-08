@@ -57,7 +57,7 @@ export function BackToTop() {
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
-      {FaArrowUp({ size: 18, 'aria-hidden': true })}
+      <FaArrowUp size={18} aria-hidden />
     </button>
   );
 }

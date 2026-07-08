@@ -34,7 +34,7 @@ export default function ContactClient() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-start gap-4">
               <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-md bg-accent text-paper flex-shrink-0">
-                {FaCalendarAlt({ size: 20 })}
+                <FaCalendarAlt size={20} />
               </div>
               <div>
                 <span className="font-mono text-mono-label uppercase text-accent group-hover:text-paper transition">

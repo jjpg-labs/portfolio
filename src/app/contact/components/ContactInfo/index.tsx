@@ -48,7 +48,7 @@ export default function ContactInfo() {
             Base
           </dt>
           <dd className="flex items-center gap-2 font-sans text-body text-text-primary">
-            {FaMapMarkerAlt({ size: 12, className: 'text-accent' })}
+            <FaMapMarkerAlt size={12} className="text-accent" />
             {location}
           </dd>
         </div>
@@ -68,7 +68,7 @@ export default function ContactInfo() {
           aria-label="LinkedIn"
           className="text-text-muted hover:text-text-primary transition"
         >
-          {FaLinkedin({ size: 22 })}
+          <FaLinkedin size={22} />
         </Link>
         <Link
           href={GITHUB_URL}
@@ -77,7 +77,7 @@ export default function ContactInfo() {
           aria-label="GitHub"
           className="text-text-muted hover:text-text-primary transition"
         >
-          {FaGithub({ size: 22 })}
+          <FaGithub size={22} />
         </Link>
         <Link
           href={MALT_URL}
@@ -86,14 +86,14 @@ export default function ContactInfo() {
           aria-label="Malt"
           className="text-text-muted hover:text-accent transition"
         >
-          {SiMalt({ size: 22 })}
+          <SiMalt size={22} />
         </Link>
         <Link
           href={`mailto:${EMAIL_ADDRESS}`}
           aria-label={t.a11y.email}
           className="text-text-muted hover:text-accent transition"
         >
-          {FaEnvelope({ size: 22 })}
+          <FaEnvelope size={22} />
         </Link>
       </div>
     </aside>
