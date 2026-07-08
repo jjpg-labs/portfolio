@@ -30,12 +30,15 @@ export async function POST(req: Request) {
     );
   }
 
-  // Layer 2 — origin/referer allowlist.
+  // Layer 2 — origin/referer check. Same-origin (candidate host === request
+  // Host) always passes, so the form's own POST works from apex/www/Vercel
+  // previews; the allowlist is a fallback for deliberate cross-origin origins.
   if (
     !checkOrigin(
       req.headers.get('origin'),
       req.headers.get('referer'),
       allowedOrigins(),
+      req.headers.get('host'),
     )
   ) {
     return NextResponse.json(

@@ -153,6 +153,55 @@ describe('checkOrigin', () => {
   it('rejects a malformed origin value', () => {
     expect(checkOrigin('not a url', null, allowed)).toBe(false);
   });
+
+  // Same-origin hardening: candidate hostname === request Host hostname.
+  it('allows same-origin: candidate host matches the request Host', () => {
+    // A Vercel preview domain, not in the allowlist, still passes because the
+    // POST is same-origin with the request.
+    expect(
+      checkOrigin(
+        'https://portfolio-git-preview.vercel.app',
+        null,
+        allowed,
+        'portfolio-git-preview.vercel.app',
+      ),
+    ).toBe(true);
+    // apex and www each match their own Host.
+    expect(checkOrigin('https://jjpg.dev', null, [], 'jjpg.dev')).toBe(true);
+    expect(
+      checkOrigin('https://www.jjpg.dev', null, [], 'www.jjpg.dev'),
+    ).toBe(true);
+  });
+
+  it('ignores a port difference between candidate and Host', () => {
+    expect(
+      checkOrigin('https://jjpg.dev', null, [], 'jjpg.dev:443'),
+    ).toBe(true);
+  });
+
+  it('rejects a foreign origin whose host differs from the request Host', () => {
+    expect(
+      checkOrigin('https://evil.example', null, allowed, 'jjpg.dev'),
+    ).toBe(false);
+    // Even a lookalike subdomain mismatch is rejected.
+    expect(
+      checkOrigin('https://evil.jjpg.dev.attacker.com', null, [], 'jjpg.dev'),
+    ).toBe(false);
+  });
+
+  it('still honours the explicit allowlist when Host does not match', () => {
+    // Cross-origin candidate: not same-origin (Host is www), but the apex is on
+    // the allowlist, so it passes via the fallback.
+    expect(
+      checkOrigin('https://jjpg.dev', null, allowed, 'www.jjpg.dev'),
+    ).toBe(true);
+  });
+
+  it('still allows localhost even when a request Host is present', () => {
+    expect(
+      checkOrigin('http://localhost:3000', null, [], 'jjpg.dev'),
+    ).toBe(true);
+  });
 });
 
 describe('bestEffortRateLimit', () => {

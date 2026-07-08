@@ -81,16 +81,39 @@ export function isHoneypotTripped(input: unknown): boolean {
   return typeof company === 'string' && company.trim().length > 0;
 }
 
+// Extracts the hostname from a `Host` request header (`hostname` or
+// `hostname:port`), reusing URL parsing so ports/IPv6 literals are handled.
+function hostnameFromHost(hostHeader: string): string | null {
+  try {
+    return new URL(`http://${hostHeader}`).hostname;
+  } catch {
+    return null;
+  }
+}
+
 /**
- * Origin/Referer allowlist. Cheap CSRF-ish defense: browsers send `Origin` on
+ * Origin/Referer defense. Cheap CSRF-ish check: browsers send `Origin` on
  * cross-origin (and same-origin non-GET) requests, so a POST originating from an
  * unexpected site is rejected. Falls back to `Referer` when `Origin` is absent.
- * Any localhost origin is allowed so local dev on any port keeps working.
+ *
+ * A request is accepted when ANY of these hold:
+ *   1. The candidate is a localhost origin (local dev, any port).
+ *   2. Same-origin: the candidate's hostname equals the request's own `Host`
+ *      hostname (`requestHost`). This makes the form's own POST always pass no
+ *      matter which domain served it — apex, www, or a Vercel preview
+ *      (`*.vercel.app`) — without needing an allowlist entry. Compared by
+ *      hostname only, so a port on either side doesn't cause a false reject.
+ *   3. The candidate matches the explicit `allowedOrigins` allowlist (kept as a
+ *      fallback for deliberate cross-origin exceptions).
+ *
+ * A POST whose Origin/Referer host differs from the request Host and isn't in
+ * the allowlist is rejected (caller returns 403).
  */
 export function checkOrigin(
   origin: string | null,
   referer: string | null,
   allowedOrigins: string[],
+  requestHost?: string | null,
 ): boolean {
   const candidate = origin ?? referer;
   if (!candidate) return false;
@@ -105,8 +128,16 @@ export function checkOrigin(
     return false;
   }
 
+  // 1. localhost (any port) — local dev.
   if (hostname === 'localhost' || hostname === '127.0.0.1') return true;
 
+  // 2. Same-origin: candidate hostname === request Host hostname.
+  if (requestHost) {
+    const requestHostname = hostnameFromHost(requestHost);
+    if (requestHostname && requestHostname === hostname) return true;
+  }
+
+  // 3. Explicit allowlist fallback.
   return allowedOrigins.some((allowed) => {
     try {
       const a = new URL(allowed);

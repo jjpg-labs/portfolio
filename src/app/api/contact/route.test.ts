@@ -85,12 +85,30 @@ describe('POST /api/contact', () => {
     const res = await POST(
       makeRequest(validBody, {
         ip: '203.0.113.12',
-        headers: { origin: 'https://evil.example' },
+        headers: { origin: 'https://evil.example', host: 'jjpg.dev' },
       }),
     );
 
     expect(res.status).toBe(403);
     expect(mockSend).not.toHaveBeenCalled();
+  });
+
+  it('accepts a same-origin POST from a non-allowlisted host (e.g. Vercel preview)', async () => {
+    const previewHost = 'portfolio-git-preview.vercel.app';
+    const res = await POST(
+      makeRequest(validBody, {
+        ip: '203.0.113.17',
+        headers: {
+          origin: `https://${previewHost}`,
+          host: previewHost,
+        },
+      }),
+    );
+    const json = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(json.success).toBe(true);
+    expect(mockSend).toHaveBeenCalledTimes(1);
   });
 
   it('honours the honeypot: 200 success but no email sent', async () => {
