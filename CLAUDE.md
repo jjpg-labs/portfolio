@@ -48,16 +48,20 @@ The **home page** (`page.tsx`) and the standalone pages (`/projects`, `/services
 
 ```bash
 npm run dev          # Start dev server
-npm run build        # Production build (also runs lint + type-check)
+npm run build        # Production build (type-checks; does not run lint)
+npm run lint         # ESLint (flat config, ESLint 9 CLI)
 npm test             # Jest tests
 npm run test:watch   # Watch mode
 npm run test:cov     # Coverage report
 npx tsc --noEmit     # Type-check
 ```
 
-> `npm run lint` (`next lint`) is currently broken under Next 16 (the pinned
-> `eslint-config-next@15` + ESLint 9 flat-config mismatch). Lint runs as part of
-> `npm run build`; use `npx tsc --noEmit` + `npm run build` to gate changes.
+> Lint runs on the ESLint 9 CLI with a flat config (`eslint.config.mjs`):
+> `@next/eslint-plugin-next` (the `next/core-web-vitals` ruleset) +
+> `typescript-eslint`. `next lint` was removed in Next 16 and is gone, along with
+> the duplicate `standard` config and the orphan `.prettierrc`. Gate changes with
+> `npm run lint` + `npx tsc --noEmit` + `npm run build`. Hold ESLint at 9 (do not
+> bump to 10) and TypeScript at 5.
 
 The contact API build gotcha is fixed: `src/app/api/contact/route.ts` instantiates
 Resend **lazily inside `POST()`** (never at module load), so `npm run build`
