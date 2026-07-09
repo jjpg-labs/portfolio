@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import ServiceCard from './components/ServiceCard';
 import { CALENDLY_URL } from '@/app/components/Footer';
 import { useLocale } from '@/app/context/LocaleContext';
