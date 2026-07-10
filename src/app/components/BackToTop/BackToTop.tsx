@@ -53,7 +53,7 @@ export function BackToTop() {
       aria-label={t.a11y.backToTop}
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
-      className={`fixed bottom-6 right-6 z-50 p-3 rounded-full bg-accent text-paper shadow-2 hover:bg-accent-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-ring transition-opacity duration-200 ${
+      className={`fixed bottom-6 right-6 z-50 p-3 rounded-full bg-accent text-paper shadow-2 hover:bg-accent-hover focus:outline-hidden focus-visible:ring-2 focus-visible:ring-accent-ring transition-opacity duration-200 ${
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >

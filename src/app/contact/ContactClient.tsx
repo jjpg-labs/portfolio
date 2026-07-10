@@ -33,7 +33,7 @@ export default function ContactClient() {
         >
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-md bg-accent text-paper flex-shrink-0">
+              <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-md bg-accent text-paper shrink-0">
                 <FaCalendarAlt size={20} />
               </div>
               <div>
@@ -48,7 +48,7 @@ export default function ContactClient() {
                 </p>
               </div>
             </div>
-            <span className="font-serif italic text-[20px] border-b-2 border-accent group-hover:border-paper pb-1 text-text-primary group-hover:text-paper transition flex-shrink-0">
+            <span className="font-serif italic text-[20px] border-b-2 border-accent group-hover:border-paper pb-1 text-text-primary group-hover:text-paper transition shrink-0">
               {t.contactPage.calendlyCta}
               <span className="font-mono ml-2">→</span>
             </span>

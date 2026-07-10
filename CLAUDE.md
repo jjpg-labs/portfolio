@@ -14,7 +14,7 @@ Personal portfolio website showcasing projects, skills, and contact information.
 |---|---|
 | Framework | Next.js 16 (App Router) |
 | Language | TypeScript 5 |
-| Styles | Tailwind CSS 3 |
+| Styles | Tailwind CSS 4 (CSS-first `@theme` in `globals.css`) |
 | Theming | next-themes (light/dark) |
 | Icons | react-icons |
 | Testing | Jest + React Testing Library |
@@ -109,9 +109,14 @@ Standalone — no cross-repo dependencies.
 
 ### Tweak theming (paper-first · serif accent · single accent #FF5C2E)
 1. Tokens are CSS variables in `globals.css` (`:root` = light, `.dark` = dark),
-   surfaced through `tailwind.config.js`. Components use **semantic** classes
+   surfaced as Tailwind utilities through the CSS-first `@theme` block (Tailwind 4
+   has no `tailwind.config.js`). Components use **semantic** classes
    (`bg-bg-base`, `text-text-primary`, `border-border`, `text-accent`) that switch
    with the theme automatically — **avoid `dark:` variants and off-palette colors**.
+   `text-accent` maps to `--accent-ink` (AA-safe on light) via the `--text-color-*`
+   theme namespace, while `bg-accent`/`border-accent` keep the vivid `--accent` fill.
+   Theme-aware shadows use raw `--elevation-*` tokens referenced from `@theme` so the
+   `.dark` override applies (a literal in `@theme` would be inlined and lock the value).
 2. One accent only (`#FF5C2E` / `text-accent`). Display headings use `font-serif`
    (Instrument Serif); the italic accent word uses `AccentWord`.
 3. Verify **both** modes and **both** locales in the browser before merging.

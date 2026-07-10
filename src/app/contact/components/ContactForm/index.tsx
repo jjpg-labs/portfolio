@@ -241,7 +241,7 @@ export default function ContactForm() {
         <span className="font-mono ml-2">→</span>
       </button>
 
-      <div role="status" aria-live="polite" className="min-h-[1.25rem]">
+      <div role="status" aria-live="polite" className="min-h-5">
         {status === 'success' && (
           <p className="text-center font-mono text-small uppercase tracking-mono text-accent">
             {f.success}

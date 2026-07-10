@@ -141,7 +141,7 @@ export default function RootLayout({ children }: ChildrenProps) {
                 <Navigation />
               </header>
 
-              <main className="flex-grow">{children}</main>
+              <main className="grow">{children}</main>
 
               <footer>
                 <Footer />
