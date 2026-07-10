@@ -21,7 +21,7 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
 
   return (
     <article className="flex flex-col border border-border rounded-md overflow-hidden bg-bg-surface hover:border-border-strong transition-colors">
-      <div className="relative aspect-[4/3] bg-ink overflow-hidden">
+      <div className="relative aspect-4/3 bg-ink overflow-hidden">
         <Image
           src={project.imageCover}
           alt={`${p.coverAlt} ${project.title}`}
@@ -30,7 +30,7 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {numLabel && (
-          <span className="absolute bottom-3 right-3 font-mono text-mono-label uppercase text-paper/70 bg-ink/40 backdrop-blur-sm px-2 py-0.5 rounded-xs">
+          <span className="absolute bottom-3 right-3 font-mono text-mono-label uppercase text-paper/70 bg-ink/40 backdrop-blur-xs px-2 py-0.5 rounded-xs">
             {numLabel}
           </span>
         )}

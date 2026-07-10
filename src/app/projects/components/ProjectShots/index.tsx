@@ -104,7 +104,7 @@ export default function ProjectShots({
 
       {open && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-ink/80 backdrop-blur-sm"
+          className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-8 bg-ink/80 backdrop-blur-xs"
           onClick={close}
         >
           <div
@@ -114,7 +114,7 @@ export default function ProjectShots({
             aria-label={`${title} — ${current.alt}`}
             tabIndex={-1}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-4xl outline-none"
+            className="relative w-full max-w-4xl outline-hidden"
           >
             <div className="flex items-center justify-between mb-3">
               <span className="font-mono text-mono-label uppercase text-paper/80">
