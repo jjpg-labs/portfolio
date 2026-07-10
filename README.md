@@ -14,7 +14,7 @@ Live at **[jjpg.dev](https://jjpg.dev)**.
 |---|---|
 | Framework | Next.js 16 (App Router) |
 | Language | TypeScript 5 |
-| Styles | Tailwind CSS 3 (semantic design tokens as CSS variables) |
+| Styles | Tailwind CSS 4 (CSS-first `@theme`; semantic design tokens as CSS variables) |
 | Theming | next-themes (light/dark) |
 | Fonts | `next/font/google` — Geist (sans), Geist Mono, Instrument Serif |
 | Icons | react-icons |
@@ -65,14 +65,14 @@ presence, `RESEND_API_KEY=dummy npm run build` is enough.
 
 ```bash
 npx tsc --noEmit                    # type-check
+npm run lint                        # ESLint 9 (flat config)
 npm test                            # Jest suite
 RESEND_API_KEY=dummy npm run build  # production build
 ```
 
-> **Lint note:** `npm run lint` (`next lint`) is currently broken under Next 16
-> (pinned `eslint-config-next@15` + ESLint 9 flat-config mismatch — tracked in
-> issue #19). Do not run or "fix" it. Gate changes with `tsc` + `test` + `build`
-> above instead.
+> **Lint:** `npm run lint` runs on the ESLint 9 CLI with a flat config
+> (`eslint.config.mjs`) — `next lint` was removed in Next 16. It runs clean, so
+> keep it in the gate alongside `tsc` + `test` + `build`.
 
 ---
 
