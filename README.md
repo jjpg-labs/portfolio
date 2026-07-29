@@ -78,11 +78,12 @@ RESEND_API_KEY=dummy npm run build  # production build
 
 ## Deployment
 
-Deployed to **[jjpg.dev](https://jjpg.dev)** via Vercel (Next.js production
-build). Set the environment variables above in the Vercel project settings
+Deployed to **[jjpg.dev](https://jjpg.dev)** via **Coolify** (self-hosted VPS,
+Dockerfile-based Next.js standalone build; migrated from Vercel 2026-07-10). Set
+the environment variables above in Coolify's environment variables for this app
 (`RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`, and the
-`NEXT_PUBLIC_*` values) so the contact form delivers in production. A push to the
-default branch triggers a production deploy.
+`NEXT_PUBLIC_*` values as Build Variables) so the contact form delivers in
+production. A push to `main` triggers a production deploy.
 
 ---
 
