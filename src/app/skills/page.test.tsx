@@ -33,7 +33,7 @@ describe('SkillsPage', () => {
     expect(screen.getByText('Back-End')).toBeInTheDocument();
     expect(screen.getByText('Front-End')).toBeInTheDocument();
     expect(screen.getByText('Bases de Datos')).toBeInTheDocument();
-    expect(screen.getByText('Infraestructura')).toBeInTheDocument();
+    expect(screen.getByText('Infra / DevOps')).toBeInTheDocument();
     expect(screen.getByText('IA / LLMs')).toBeInTheDocument();
   });
 

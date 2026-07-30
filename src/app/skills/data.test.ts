@@ -39,9 +39,9 @@ describe('skills data — single source of truth', () => {
       'PostgreSQL',
       'Redis',
       'Docker',
-      'Kubernetes',
-      'AWS',
-      'Terraform',
+      'Coolify',
+      'Cloudflare',
+      'GitHub Actions',
     ]);
     expect(byId['ai-llms']).toEqual([
       'Claude Code',

@@ -75,7 +75,7 @@ export const PROJECTS: ProjectMeta[] = [
     technologies: [
       'Next.js 16',
       'Neon PostgreSQL',
-      'Vercel Blob',
+      'Cloudflare R2',
       'JWT',
       'TypeScript',
       'Tailwind 4',

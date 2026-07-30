@@ -59,7 +59,7 @@ export const dictionaries = {
       role: 'Full-Stack Engineer',
       tagline: 'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL.',
       description:
-        'Diseño y entrego aplicaciones completas para equipos que necesitan avanzar rápido sin renunciar a la calidad. 4+ años de experiencia construyendo APIs REST, dashboards multi-tenant, integraciones complejas y arquitecturas escalables. Almedina (Ciudad Real), trabajo en remoto. Disponible para MVPs, mantenimiento continuo y consultoría puntual.',
+        'Diseño, entrego y opero aplicaciones completas para equipos que necesitan avanzar rápido sin renunciar a la calidad. 4+ años de experiencia construyendo APIs REST, dashboards multi-tenant, integraciones complejas y arquitecturas escalables. Almedina (Ciudad Real), trabajo en remoto. Disponible para MVPs, mantenimiento continuo y consultoría puntual.',
       btnProjects: 'Ver mis Proyectos',
       btnContact: 'Hablemos',
       calendlyHint: 'o reserva 30 min de discovery call directamente',
@@ -72,13 +72,13 @@ export const dictionaries = {
     projectCopy: {
       nexfit: {
         home: 'SaaS para entrenadores personales y nutricionistas: panel web, app móvil offline-first y API REST. Clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso.',
-        full: 'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en Railway + Neon + Cloudflare R2.',
+        full: 'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado y operado en infra propia self-host (Docker · Coolify · CI/CD) con Neon + Cloudflare R2.',
         outcome:
           'Entrenadores gestionando clientes en hojas de cálculo → plataforma multi-repo con app móvil offline-first que centraliza planes, check-ins y progreso.',
       },
       vereda: {
         home: 'SaaS no-code para organizadores de pruebas deportivas: web pública, panel admin, dominio propio. Multi-tenant.',
-        full: 'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Arquitectura serverless con Neon + Vercel Blob.',
+        full: 'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Desplegada en infra propia self-host con Neon + Cloudflare R2.',
         outcome:
           'Organizadores montando webs de eventos a mano → SaaS no-code multi-tenant con web pública y panel propio en minutos.',
       },
@@ -163,7 +163,7 @@ export const dictionaries = {
         'Back-End': 'Back-End',
         'Front-End': 'Front-End',
         'Bases de Datos': 'Bases de Datos',
-        Infraestructura: 'Infraestructura',
+        Infraestructura: 'Infra / DevOps',
         'IA / LLMs': 'IA / LLMs',
       } as Record<string, string>,
       levels: {
@@ -339,7 +339,7 @@ export const dictionaries = {
       role: 'Full-Stack Engineer',
       tagline: 'I build modern SaaS apps and dashboards with Next.js, NestJS and PostgreSQL.',
       description:
-        'I design and ship end-to-end applications for teams that need to move fast without compromising on quality. 4+ years building REST APIs, multi-tenant dashboards, complex integrations and scalable architectures. Based in Almedina (Ciudad Real, Spain), working remotely. Available for MVPs, ongoing maintenance and on-demand consulting.',
+        'I design, ship and operate end-to-end applications for teams that need to move fast without compromising on quality. 4+ years building REST APIs, multi-tenant dashboards, complex integrations and scalable architectures. Based in Almedina (Ciudad Real, Spain), working remotely. Available for MVPs, ongoing maintenance and on-demand consulting.',
       btnProjects: 'See my Projects',
       btnContact: "Let's talk",
       calendlyHint: 'or book a 30-min discovery call directly',
@@ -352,13 +352,13 @@ export const dictionaries = {
     projectCopy: {
       nexfit: {
         home: 'SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app and REST API. Clients, training and nutrition plans, check-ins and progress tracking.',
-        full: 'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on Railway + Neon + Cloudflare R2.',
+        full: 'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed and operated on self-hosted infra (Docker · Coolify · CI/CD) with Neon + Cloudflare R2.',
         outcome:
           'Trainers managing clients in spreadsheets → a multi-repo platform with an offline-first mobile app that centralizes plans, check-ins and progress.',
       },
       vereda: {
         home: 'No-code SaaS for sports event organizers: public website, admin panel, custom domain. Multi-tenant.',
-        full: 'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Serverless architecture with Neon + Vercel Blob.',
+        full: 'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Deployed on self-hosted infra with Neon + Cloudflare R2.',
         outcome:
           'Organizers hand-building event sites → a no-code multi-tenant SaaS with a public site and their own panel in minutes.',
       },
@@ -443,7 +443,7 @@ export const dictionaries = {
         'Back-End': 'Back-End',
         'Front-End': 'Front-End',
         'Bases de Datos': 'Databases',
-        Infraestructura: 'Infrastructure',
+        Infraestructura: 'Infra / DevOps',
         'IA / LLMs': 'AI / LLMs',
       } as Record<string, string>,
       levels: {

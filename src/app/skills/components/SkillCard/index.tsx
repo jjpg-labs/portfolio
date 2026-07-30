@@ -64,7 +64,7 @@ export function SkillCard({
               key={skill.name}
               className="flex items-center gap-3 sm:gap-4 py-3 border-b border-border-subtle last:border-b-0"
             >
-              <span className="font-sans text-body text-text-primary shrink-0">
+              <span className="font-sans text-body text-text-primary min-w-0">
                 {skill.name}
               </span>
               <span
