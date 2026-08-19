@@ -10,9 +10,13 @@ export const LINKEDIN_URL =
   'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/';
 export const EMAIL_ADDRESS =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'jose@jjpg.dev';
+// TODO(calendly): confirm the "30min" event type slug exists in the Calendly
+// dashboard (renamed from "discovery-call" for neutral, role-agnostic
+// framing). If the real slug differs, set NEXT_PUBLIC_CALENDLY_URL in
+// production instead of editing this fallback.
 export const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ??
-  'https://calendly.com/pepeju95/discovery-call';
+  'https://calendly.com/pepeju95/30min';
 
 export const Footer = () => {
   const { t } = useLocale();
@@ -74,7 +78,7 @@ export const Footer = () => {
             © {currentYear} Jose Juan Pérez González
           </p>
           <p className="font-mono text-mono-label uppercase text-text-muted">
-            Almedina · ES · Respuesta &lt; 24h
+            {t.footer.bottomLine}
           </p>
         </div>
       </div>

@@ -11,7 +11,7 @@ import { ViewportProvider } from './context/ViewportContext';
 
 const SITE_TITLE = 'Jose Juan — Full-Stack Engineer';
 const SITE_DESCRIPTION =
-  'Full-Stack Engineer en búsqueda activa de nueva posición. Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL. 4+ años de experiencia en APIs REST, arquitecturas escalables e integración de IA con Claude. Almedina (Ciudad Real), disponible en remoto o híbrido.';
+  'Full-Stack Engineer abierto a nuevas oportunidades. Modernizo sistemas legados y diseño arquitecturas distribuidas con Node.js, React/Next.js, PHP/Symfony y PostgreSQL. 4 años y medio de experiencia construyendo y rescatando productos en producción. Almedina (Ciudad Real), disponible en remoto o híbrido.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jjpg.dev'),
@@ -19,10 +19,15 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   keywords: [
     'Full-Stack Engineer',
-    'búsqueda de empleo',
-    'open to work',
+    'sistemas legados',
+    'arquitectura de software',
     'Next.js',
     'NestJS',
+    'Symfony',
+    'GraphQL',
+    'RabbitMQ',
+    'OpenSearch',
+    'Fastify',
     'TypeScript',
     'PostgreSQL',
     'Prisma',
@@ -77,7 +82,7 @@ const jsonLd = {
   url: 'https://jjpg.dev',
   jobTitle: 'Full-Stack Engineer',
   description:
-    'Full-Stack Engineer en búsqueda activa de nueva posición. Next.js, NestJS, TypeScript, PostgreSQL e integración de IA.',
+    'Full-Stack Engineer abierto a nuevas oportunidades. Node.js, React/Next.js, PHP/Symfony, PostgreSQL y arquitecturas distribuidas.',
   email: 'mailto:jose@jjpg.dev',
   address: {
     '@type': 'PostalAddress',

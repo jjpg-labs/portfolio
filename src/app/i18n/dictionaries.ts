@@ -11,6 +11,7 @@ export const dictionaries = {
     },
     footer: {
       tagline: 'Desarrollado con Next.js y amor',
+      bottomLine: 'Almedina · ES · Exp. 4,5 años',
     },
     ui: {
       metaHome: '// portada · home',
@@ -18,6 +19,7 @@ export const dictionaries = {
       metaServices: '// página · servicios',
       metaSkills: '// página · stack',
       metaContact: '// página · contacto',
+      homeSecExperience: '// 03 — experiencia',
       homeSecServices: '// 03 — índice',
       homeSecProjects: '// 04 — proyectos',
       homeSecSkills: '// 05 — stack',
@@ -49,20 +51,58 @@ export const dictionaries = {
       role: 'Rol',
       base: 'Base',
       status: 'Estado',
-      response: 'Respuesta',
+      experience: 'Exp.',
+      experienceValue: '4,5 años',
       stack: 'Stack',
-      available: 'En búsqueda',
+      available: 'Abierto a ofertas',
     },
     hero: {
-      availability: 'En búsqueda activa de nueva posición',
+      availability: 'Abierto a nuevas oportunidades',
       greeting: 'Hola, soy',
       role: 'Full-Stack Engineer',
-      tagline: 'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL.',
+      tagline: 'Modernizo sistemas legados y diseño arquitecturas distribuidas.',
       description:
-        'Diseño y entrego aplicaciones completas, desde la arquitectura hasta producción. 4+ años de experiencia construyendo APIs REST, dashboards multi-tenant, integraciones complejas y arquitecturas escalables. Almedina (Ciudad Real), disponible para incorporación en remoto o híbrido. Busco un equipo donde aportar como Full-Stack Engineer.',
+        '4 años y medio construyendo y rescatando productos en producción: migraciones críticas con plazo, reducción de deuda técnica, arquitecturas orientadas a eventos y transiciones de stack. Trabajo con Node.js, React/Next.js, PHP/Symfony y PostgreSQL. Vivo en Almedina (Ciudad Real) y trabajo en remoto.',
       btnProjects: 'Ver mis Proyectos',
       btnContact: 'Hablemos',
+      btnCV: 'Descargar CV',
       calendlyHint: 'o agenda una entrevista de 30 min directamente',
+    },
+    experience: {
+      title: 'Experiencia Profesional',
+      subtitle: 'Equipos y productos en los que he construido y mantenido software en producción.',
+      current: 'Actualidad',
+      entries: {
+        grupie: {
+          role: 'Full Stack Developer',
+          dates: 'Dic 2025 · Actualidad',
+          bullets: [
+            'Desarrollo del producto core en PHP/Symfony y Next.js/React, incluyendo decisiones de arquitectura.',
+            'Servicios de desarrollo para clientes externos con Fastify y PostgreSQL.',
+            'Flujos de trabajo guiados por IA aplicados al ciclo de desarrollo.',
+          ],
+        },
+        theknot: {
+          role: 'Full Stack Developer',
+          dates: 'Nov 2022 · Dic 2025',
+          bullets: [
+            'Incorporación tras la adquisición, con el encargo de estabilizar el ecosistema técnico y reducir la deuda heredada.',
+            'Migración de Universal Analytics a GA4 en 2 meses, dentro del plazo límite de Google y sin pérdida de continuidad en el reporting.',
+            'Automatización de la exportación contable B2B/B2C hacia Sage 50, sustituyendo un proceso manual.',
+            'Transición de módulos críticos a React e implantación de cultura de testing con Jest y PHPUnit en un entorno sin cobertura previa.',
+            'Desde 2025, decisiones de arquitectura: integración backend con HapiJS, GraphQL y OpenSearch; resolvers en PayloadCMS con colas RabbitMQ; design system propio en Next.js.',
+          ],
+        },
+        tigloo: {
+          role: 'Full Stack Developer',
+          dates: 'Ene 2022 · Oct 2022',
+          bullets: [
+            'Mantenimiento y evolución de aplicaciones de gestión musical en PHP 5.4/5.5 con Symfony y AngularJS.',
+            'Propuse e implementé el primer pipeline de CI/CD en GitLab de la empresa, eliminando los despliegues manuales.',
+            'API para stakeholders con autenticación por tokens temporales.',
+          ],
+        },
+      } as Record<string, { role: string; dates: string; bullets: string[] }>,
     },
     dashboardProjects: {
       title: 'Mis Proyectos Más Recientes',
@@ -108,8 +148,10 @@ export const dictionaries = {
       groupTitles: {
         'back-end': 'Back-End',
         'front-end': 'Front-End',
-        'db-infra': 'Bases de Datos & Infra',
+        'db-infra': 'Datos & Infra',
+        'messaging-apis': 'Mensajería & APIs',
         'ai-llms': 'IA / LLMs',
+        notions: 'Nociones de',
       } as Record<string, string>,
     },
     dashboardServices: {
@@ -291,6 +333,7 @@ export const dictionaries = {
     },
     footer: {
       tagline: 'Built with Next.js and love',
+      bottomLine: 'Almedina, ES · Exp. 4.5 yrs',
     },
     ui: {
       metaHome: '// cover · home',
@@ -298,6 +341,7 @@ export const dictionaries = {
       metaServices: '// page · services',
       metaSkills: '// page · stack',
       metaContact: '// page · contact',
+      homeSecExperience: '// 03 — experience',
       homeSecServices: '// 03 — index',
       homeSecProjects: '// 04 — projects',
       homeSecSkills: '// 05 — stack',
@@ -329,20 +373,58 @@ export const dictionaries = {
       role: 'Role',
       base: 'Based',
       status: 'Status',
-      response: 'Response',
+      experience: 'Exp.',
+      experienceValue: '4.5 yrs',
       stack: 'Stack',
-      available: 'Open to work',
+      available: 'Open to offers',
     },
     hero: {
-      availability: 'Actively looking for a new position',
+      availability: 'Open to new opportunities',
       greeting: "Hi, I'm",
       role: 'Full-Stack Engineer',
-      tagline: 'I build modern SaaS apps and dashboards with Next.js, NestJS and PostgreSQL.',
+      tagline: 'I modernize legacy systems and design distributed architectures.',
       description:
-        'I design and ship end-to-end applications, from architecture to production. 4+ years building REST APIs, multi-tenant dashboards, complex integrations and scalable architectures. Based in Almedina (Ciudad Real, Spain), open to remote or hybrid roles. Looking for a team where I can bring my Full-Stack Engineering skills.',
+        '4.5 years building and rescuing products in production: deadline-critical migrations, technical debt reduction, event-driven architectures and stack transitions. I work with Node.js, React/Next.js, PHP/Symfony and PostgreSQL. Based in Almedina (Ciudad Real, Spain), working remotely.',
       btnProjects: 'See my Projects',
       btnContact: "Let's talk",
+      btnCV: 'Download CV',
       calendlyHint: 'or book a 30-min interview directly',
+    },
+    experience: {
+      title: 'Professional Experience',
+      subtitle: 'Teams and products where I have built and maintained software in production.',
+      current: 'Present',
+      entries: {
+        grupie: {
+          role: 'Full Stack Developer',
+          dates: 'Dec 2025 · Present',
+          bullets: [
+            'Development of the core product in PHP/Symfony and Next.js/React, including architecture decisions.',
+            'Development services for external clients using Fastify and PostgreSQL.',
+            'AI-guided workflows applied throughout the development cycle.',
+          ],
+        },
+        theknot: {
+          role: 'Full Stack Developer',
+          dates: 'Nov 2022 · Dec 2025',
+          bullets: [
+            'Joined after the acquisition, tasked with stabilizing the technical ecosystem and paying down inherited technical debt.',
+            "Migrated Universal Analytics to GA4 in 2 months, within Google's hard deadline and without any loss of reporting continuity.",
+            'Automated B2B/B2C accounting exports to Sage 50, replacing a manual process.',
+            'Transitioned critical modules to React and introduced a testing culture with Jest and PHPUnit in a codebase with no prior coverage.',
+            'Since 2025, architecture decisions: backend integration with HapiJS, GraphQL and OpenSearch; resolvers in PayloadCMS with RabbitMQ queues; in-house design system built in Next.js.',
+          ],
+        },
+        tigloo: {
+          role: 'Full Stack Developer',
+          dates: 'Jan 2022 · Oct 2022',
+          bullets: [
+            'Maintenance and evolution of music-management applications in PHP 5.4/5.5 with Symfony and AngularJS.',
+            "Proposed and implemented the company's first CI/CD pipeline on GitLab, eliminating manual deployments.",
+            'Stakeholder-facing API with temporary token authentication.',
+          ],
+        },
+      } as Record<string, { role: string; dates: string; bullets: string[] }>,
     },
     dashboardProjects: {
       title: 'My Latest Projects',
@@ -388,8 +470,10 @@ export const dictionaries = {
       groupTitles: {
         'back-end': 'Back-End',
         'front-end': 'Front-End',
-        'db-infra': 'Databases & Infra',
+        'db-infra': 'Data & Infra',
+        'messaging-apis': 'Messaging & APIs',
         'ai-llms': 'AI / LLMs',
+        notions: 'Working knowledge of',
       } as Record<string, string>,
     },
     dashboardServices: {

@@ -6,6 +6,9 @@ import { LiveDot } from '@/app/components/LiveDot';
 import { AccentWord } from '@/app/components/AccentWord';
 import { useLocale } from '@/app/context/LocaleContext';
 
+// TODO: re-enable once the real CV is uploaded to /public/cv.pdf.
+const SHOW_CV_DOWNLOAD = false;
+
 export default function Header() {
   const { t } = useLocale();
   const c = t.colophon;
@@ -17,7 +20,7 @@ export default function Header() {
     { term: c.role, value: 'FS Engineer' },
     { term: c.base, value: 'Almedina, ES' },
     { term: c.status, value: c.available, accent: true },
-    { term: c.response, value: '< 24h' },
+    { term: c.experience, value: c.experienceValue },
     { term: c.stack, value: 'TS · Next · PG' },
   ];
 
@@ -63,6 +66,15 @@ export default function Header() {
               >
                 {t.hero.btnContact}
               </Link>
+              {SHOW_CV_DOWNLOAD && (
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="font-sans text-small text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
+                >
+                  {t.hero.btnCV}
+                </a>
+              )}
             </div>
 
             <p className="font-mono text-mono-label uppercase text-text-muted mt-3">
