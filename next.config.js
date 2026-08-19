@@ -17,6 +17,19 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        // /services queda despriorizada del sitio (fuera del nav, la home y
+        // el sitemap) pero el código (page.tsx, ServicesClient, diccionario)
+        // se conserva por si se retoma más adelante. Este redirect impide
+        // que la ruta sirva contenido mientras tanto.
+        source: '/services',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
