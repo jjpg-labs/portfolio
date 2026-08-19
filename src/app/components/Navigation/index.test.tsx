@@ -59,7 +59,7 @@ describe('Navigation', () => {
 
   it('renders navigation links', () => {
     renderWithProviders(<Navigation />);
-    const links = ['Inicio', 'Proyectos', 'Servicios', 'Habilidades', 'Contacto'];
+    const links = ['Inicio', 'Proyectos', 'Habilidades', 'Contacto'];
     links.forEach((linkText) => {
       expect(screen.getAllByText(linkText).length).toBeGreaterThanOrEqual(1);
     });

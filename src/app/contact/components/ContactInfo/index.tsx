@@ -4,11 +4,9 @@ import {
   EMAIL_ADDRESS,
   GITHUB_URL,
   LINKEDIN_URL,
-  MALT_URL,
 } from '@/app/components/Footer';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import { SiMalt } from 'react-icons/si';
 import { useLocale } from '@/app/context/LocaleContext';
 
 export default function ContactInfo() {
@@ -78,15 +76,6 @@ export default function ContactInfo() {
           className="text-text-muted hover:text-text-primary transition"
         >
           <FaGithub size={22} />
-        </Link>
-        <Link
-          href={MALT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Malt"
-          className="text-text-muted hover:text-accent transition"
-        >
-          <SiMalt size={22} />
         </Link>
         <Link
           href={`mailto:${EMAIL_ADDRESS}`}

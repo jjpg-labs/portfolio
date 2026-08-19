@@ -48,7 +48,7 @@ describe('HomePage', () => {
 
   it('renders the availability badge', () => {
     renderWithProviders(<HomePage />);
-    const matches = screen.getAllByText(/disponible para nuevos proyectos/i);
+    const matches = screen.getAllByText(/en búsqueda activa de nueva posición/i);
     expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 

@@ -50,7 +50,7 @@ describe('ContactPage', () => {
       screen.getByRole('heading', { name: /información de contacto/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/¿tienes un proyecto en mente/i)
+      screen.getByText(/¿buscas un full-stack engineer/i)
     ).toBeInTheDocument();
     expect(screen.getByText(EMAIL_ADDRESS)).toBeInTheDocument();
     expect(screen.getByText(/almedina, ciudad real/i)).toBeInTheDocument();

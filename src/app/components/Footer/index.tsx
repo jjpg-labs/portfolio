@@ -1,7 +1,6 @@
 'use client';
 
 import { FaGithub, FaLinkedin, FaEnvelope, FaCalendarAlt } from 'react-icons/fa';
-import { SiMalt } from 'react-icons/si';
 import { LiveDot } from '../LiveDot';
 import { ThemeSwitcher } from '../ThemeSwitch';
 import { useLocale } from '@/app/context/LocaleContext';
@@ -9,7 +8,6 @@ import { useLocale } from '@/app/context/LocaleContext';
 export const GITHUB_URL = 'https://github.com/jjpg95';
 export const LINKEDIN_URL =
   'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/';
-export const MALT_URL = 'https://www.malt.es/profile/josejuanperezgonzalez';
 export const EMAIL_ADDRESS =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'jose@jjpg.dev';
 export const CALENDLY_URL =
@@ -49,15 +47,6 @@ export const Footer = () => {
               className="text-text-muted hover:text-text-primary transition"
             >
               <FaLinkedin size={20} />
-            </a>
-            <a
-              href={MALT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Malt"
-              className="text-text-muted hover:text-accent transition"
-            >
-              <SiMalt size={20} />
             </a>
             <a
               href={CALENDLY_URL}

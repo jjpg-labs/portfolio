@@ -11,7 +11,7 @@ import { ViewportProvider } from './context/ViewportContext';
 
 const SITE_TITLE = 'Jose Juan — Full-Stack Engineer';
 const SITE_DESCRIPTION =
-  'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL. Disponible para MVPs, mantenimiento continuo, integración de IA con Claude y consultoría técnica. Almedina (Ciudad Real), trabajo en remoto.';
+  'Full-Stack Engineer en búsqueda activa de nueva posición. Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL. 4+ años de experiencia en APIs REST, arquitecturas escalables e integración de IA con Claude. Almedina (Ciudad Real), disponible en remoto o híbrido.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jjpg.dev'),
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   keywords: [
     'Full-Stack Engineer',
-    'desarrollador freelance',
+    'búsqueda de empleo',
+    'open to work',
     'Next.js',
     'NestJS',
     'TypeScript',
     'PostgreSQL',
     'Prisma',
     'SaaS',
-    'MVP',
     'integración IA',
     'Claude API',
     'MCP',
@@ -77,7 +77,7 @@ const jsonLd = {
   url: 'https://jjpg.dev',
   jobTitle: 'Full-Stack Engineer',
   description:
-    'Full-Stack Engineer disponible para MVPs, mantenimiento continuo, integración de IA y consultoría técnica.',
+    'Full-Stack Engineer en búsqueda activa de nueva posición. Next.js, NestJS, TypeScript, PostgreSQL e integración de IA.',
   email: 'mailto:jose@jjpg.dev',
   address: {
     '@type': 'PostalAddress',
@@ -117,7 +117,6 @@ const jsonLd = {
     'https://github.com/jjpg95',
     'https://github.com/jjpg-labs',
     'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/',
-    'https://www.malt.es/profile/josejuanperezgonzalez',
   ],
 };
 
