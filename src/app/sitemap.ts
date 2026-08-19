@@ -15,12 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://jjpg.dev/services',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
       url: 'https://jjpg.dev/skills',
       lastModified: new Date(),
       changeFrequency: 'monthly',

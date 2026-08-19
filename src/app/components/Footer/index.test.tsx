@@ -6,7 +6,6 @@ import {
   Footer,
   GITHUB_URL,
   LINKEDIN_URL,
-  MALT_URL,
 } from '.';
 import { LocaleProvider } from '@/app/context/LocaleContext';
 import { SVGProps } from 'react';
@@ -28,12 +27,6 @@ jest.mock('react-icons/fa', () => ({
   ),
 }));
 
-jest.mock('react-icons/si', () => ({
-  SiMalt: (props: MockIconProps) => (
-    <svg data-testid="malt-icon" {...props} />
-  ),
-}));
-
 const renderWithLocale = (ui: React.ReactElement) =>
   render(<LocaleProvider>{ui}</LocaleProvider>);
 
@@ -44,14 +37,12 @@ describe('Footer', () => {
     expect(getByTestId('linkedin-icon')).toBeInTheDocument();
     expect(getByTestId('envelope-icon')).toBeInTheDocument();
     expect(getByTestId('calendar-icon')).toBeInTheDocument();
-    expect(getByTestId('malt-icon')).toBeInTheDocument();
   });
 
   it('renders correct links and mailto', () => {
     const { getByLabelText } = renderWithLocale(<Footer />);
     expect(getByLabelText('GitHub').getAttribute('href')).toBe(GITHUB_URL);
     expect(getByLabelText('LinkedIn').getAttribute('href')).toBe(LINKEDIN_URL);
-    expect(getByLabelText('Malt').getAttribute('href')).toBe(MALT_URL);
     expect(getByLabelText('Calendly').getAttribute('href')).toBe(CALENDLY_URL);
     expect(getByLabelText('Correo Electrónico').getAttribute('href')).toBe(
       `mailto:${EMAIL_ADDRESS}`
@@ -70,7 +61,6 @@ describe('Footer', () => {
     const { getByLabelText } = renderWithLocale(<Footer />);
     expect(getByLabelText('GitHub')).toBeInTheDocument();
     expect(getByLabelText('LinkedIn')).toBeInTheDocument();
-    expect(getByLabelText('Malt')).toBeInTheDocument();
     expect(getByLabelText('Calendly')).toBeInTheDocument();
     expect(getByLabelText('Correo Electrónico')).toBeInTheDocument();
   });

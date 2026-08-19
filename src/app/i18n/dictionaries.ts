@@ -51,18 +51,18 @@ export const dictionaries = {
       status: 'Estado',
       response: 'Respuesta',
       stack: 'Stack',
-      available: 'Disponible',
+      available: 'En búsqueda',
     },
     hero: {
-      availability: 'Disponible para nuevos proyectos',
+      availability: 'En búsqueda activa de nueva posición',
       greeting: 'Hola, soy',
       role: 'Full-Stack Engineer',
       tagline: 'Construyo SaaS y dashboards modernos con Next.js, NestJS y PostgreSQL.',
       description:
-        'Diseño y entrego aplicaciones completas para equipos que necesitan avanzar rápido sin renunciar a la calidad. 4+ años de experiencia construyendo APIs REST, dashboards multi-tenant, integraciones complejas y arquitecturas escalables. Almedina (Ciudad Real), trabajo en remoto. Disponible para MVPs, mantenimiento continuo y consultoría puntual.',
+        'Diseño y entrego aplicaciones completas, desde la arquitectura hasta producción. 4+ años de experiencia construyendo APIs REST, dashboards multi-tenant, integraciones complejas y arquitecturas escalables. Almedina (Ciudad Real), disponible para incorporación en remoto o híbrido. Busco un equipo donde aportar como Full-Stack Engineer.',
       btnProjects: 'Ver mis Proyectos',
       btnContact: 'Hablemos',
-      calendlyHint: 'o reserva 30 min de discovery call directamente',
+      calendlyHint: 'o agenda una entrevista de 30 min directamente',
     },
     dashboardProjects: {
       title: 'Mis Proyectos Más Recientes',
@@ -253,14 +253,14 @@ export const dictionaries = {
     contactPage: {
       title: 'Ponte en Contacto',
       formTitle: 'Envíame un mensaje',
-      calendlyTitle: '¿Quieres ir más rápido? Reserva una llamada',
+      calendlyTitle: '¿Prefieres hablar directamente? Reserva una llamada',
       calendlyDescription:
-        'Una discovery call de 30 minutos, gratis y sin compromiso. Hablamos de tu proyecto y vemos si encajamos.',
+        'Una llamada de 30 minutos, sin compromiso, para conocernos y ver si encajo en tu equipo.',
       calendlyCta: 'Reservar llamada',
     },
     contactInfo: {
       title: 'Información de Contacto',
-      subtitle: '¿Tienes un proyecto en mente o una propuesta interesante? ¡Hablemos!',
+      subtitle: '¿Buscas un Full-Stack Engineer para tu equipo? ¡Hablemos!',
       location: 'Almedina, Ciudad Real (Disponible Remoto)',
     },
     contactForm: {
@@ -331,18 +331,18 @@ export const dictionaries = {
       status: 'Status',
       response: 'Response',
       stack: 'Stack',
-      available: 'Available',
+      available: 'Open to work',
     },
     hero: {
-      availability: 'Available for new projects',
+      availability: 'Actively looking for a new position',
       greeting: "Hi, I'm",
       role: 'Full-Stack Engineer',
       tagline: 'I build modern SaaS apps and dashboards with Next.js, NestJS and PostgreSQL.',
       description:
-        'I design and ship end-to-end applications for teams that need to move fast without compromising on quality. 4+ years building REST APIs, multi-tenant dashboards, complex integrations and scalable architectures. Based in Almedina (Ciudad Real, Spain), working remotely. Available for MVPs, ongoing maintenance and on-demand consulting.',
+        'I design and ship end-to-end applications, from architecture to production. 4+ years building REST APIs, multi-tenant dashboards, complex integrations and scalable architectures. Based in Almedina (Ciudad Real, Spain), open to remote or hybrid roles. Looking for a team where I can bring my Full-Stack Engineering skills.',
       btnProjects: 'See my Projects',
       btnContact: "Let's talk",
-      calendlyHint: 'or book a 30-min discovery call directly',
+      calendlyHint: 'or book a 30-min interview directly',
     },
     dashboardProjects: {
       title: 'My Latest Projects',
@@ -533,14 +533,14 @@ export const dictionaries = {
     contactPage: {
       title: 'Get in Touch',
       formTitle: 'Send me a message',
-      calendlyTitle: 'Want to move faster? Book a call',
+      calendlyTitle: 'Prefer to talk directly? Book a call',
       calendlyDescription:
-        'A 30-minute discovery call, free and with no commitment. We talk about your project and see if we are a good fit.',
+        'A free, no-commitment 30-minute call to get to know each other and see if I would be a good fit for your team.',
       calendlyCta: 'Book a call',
     },
     contactInfo: {
       title: 'Contact Information',
-      subtitle: "Have a project in mind or an interesting proposal? Let's talk!",
+      subtitle: "Looking for a Full-Stack Engineer for your team? Let's talk!",
       location: 'Almedina, Ciudad Real (Available Remotely)',
     },
     contactForm: {

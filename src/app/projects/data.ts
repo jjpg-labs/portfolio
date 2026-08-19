@@ -165,7 +165,7 @@ export const PROJECTS: ProjectMeta[] = [
     linkLive: 'https://curio.jjpg.dev/demo',
     linkRepo: 'https://github.com/jjpg-labs/curio',
     repoPrivate: true,
-    status: 'in-dev',
+    status: 'live-demo',
     screenshots: [
       {
         src: '/img/shots/curio-1.webp',
