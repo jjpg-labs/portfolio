@@ -10,13 +10,13 @@ export const LINKEDIN_URL =
   'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/';
 export const EMAIL_ADDRESS =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'jose@jjpg.dev';
-// TODO(calendly): confirm the "30min" event type slug exists in the Calendly
-// dashboard (renamed from "discovery-call" for neutral, role-agnostic
-// framing). If the real slug differs, set NEXT_PUBLIC_CALENDLY_URL in
-// production instead of editing this fallback.
+// Single source of truth for the Calendly link — every place that needs it
+// (Header, Footer, ContactClient, ServicesClient) imports this constant
+// instead of hardcoding the URL. Override via NEXT_PUBLIC_CALENDLY_URL if the
+// event type slug ever changes without a code deploy.
 export const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ??
-  'https://calendly.com/pepeju95/30min';
+  'https://calendly.com/pepeju95/30-min';
 
 export const Footer = () => {
   const { t } = useLocale();
