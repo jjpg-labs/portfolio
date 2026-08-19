@@ -42,19 +42,31 @@ describe('HomePage', () => {
       screen.getByRole('heading', { name: /hola, soy/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: /construyo saas y dashboards/i })
+      screen.getByRole('heading', { name: /modernizo sistemas legados/i })
     ).toBeInTheDocument();
   });
 
   it('renders the availability badge', () => {
     renderWithProviders(<HomePage />);
-    const matches = screen.getAllByText(/en búsqueda activa de nueva posición/i);
+    const matches = screen.getAllByText(/abierto a nuevas oportunidades/i);
     expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders the introduction paragraph', () => {
     renderWithProviders(<HomePage />);
-    expect(screen.getByText(/4\+ años de experiencia/i)).toBeInTheDocument();
+    expect(screen.getByText(/4 años y medio/i)).toBeInTheDocument();
+  });
+
+  it('renders the "Experiencia Profesional" section with work history', () => {
+    renderWithProviders(<HomePage />);
+    expect(
+      screen.getByRole('heading', { name: /experiencia profesional/i })
+    ).toBeInTheDocument();
+    expect(screen.getByText('Grupie Labs')).toBeInTheDocument();
+    expect(
+      screen.getByText('The Knot Worldwide (ex Zankyou Weddings)')
+    ).toBeInTheDocument();
+    expect(screen.getByText('Tigloo')).toBeInTheDocument();
   });
 
   it('renders the "Ver mis Proyectos" and "Hablemos" links', () => {
@@ -77,7 +89,7 @@ describe('HomePage', () => {
     ).toBeInTheDocument();
     expect(screen.getByText('Back-End')).toBeInTheDocument();
     expect(screen.getByText('Front-End')).toBeInTheDocument();
-    expect(screen.getByText(/bases de datos/i)).toBeInTheDocument();
+    expect(screen.getByText(/datos & infra/i)).toBeInTheDocument();
   });
 
   it('renders the "Mis Proyectos Más Recientes" section with featured projects', () => {
