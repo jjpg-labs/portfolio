@@ -11,7 +11,7 @@ import { ViewportProvider } from './context/ViewportContext';
 
 const SITE_TITLE = 'Jose Juan — Full-Stack Engineer';
 const SITE_DESCRIPTION =
-  'Full-Stack Engineer abierto a nuevas oportunidades. Modernizo sistemas legados y diseño arquitecturas distribuidas con Node.js, React/Next.js, PHP/Symfony y PostgreSQL. 4 años y medio de experiencia construyendo y rescatando productos en producción. Almedina (Ciudad Real), disponible en remoto o híbrido.';
+  'Full Stack Developer especializado en modernización de sistemas legados y arquitecturas distribuidas. Node.js, React/Next.js, PHP/Symfony y PostgreSQL. Almedina (Ciudad Real), remoto.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jjpg.dev'),
@@ -81,8 +81,9 @@ const jsonLd = {
   alternateName: 'JJPG',
   url: 'https://jjpg.dev',
   jobTitle: 'Full-Stack Engineer',
-  description:
-    'Full-Stack Engineer abierto a nuevas oportunidades. Node.js, React/Next.js, PHP/Symfony, PostgreSQL y arquitecturas distribuidas.',
+  // Reuses SITE_DESCRIPTION so the JSON-LD blurb can't drift from the meta
+  // description/og/twitter copy above.
+  description: SITE_DESCRIPTION,
   email: 'mailto:jose@jjpg.dev',
   address: {
     '@type': 'PostalAddress',
