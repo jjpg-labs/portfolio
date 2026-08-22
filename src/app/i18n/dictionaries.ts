@@ -112,7 +112,7 @@ export const dictionaries = {
     projectCopy: {
       nexfit: {
         home: 'SaaS para entrenadores personales y nutricionistas: panel web, app móvil offline-first y API REST. Clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso.',
-        full: 'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en Railway + Neon + Cloudflare R2.',
+        full: 'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en infra propia self-host (Coolify) con PostgreSQL + Cloudflare R2.',
         outcome:
           'Entrenadores gestionando clientes en hojas de cálculo → plataforma multi-repo con app móvil offline-first que centraliza planes, check-ins y progreso.',
         stack:
@@ -120,11 +120,11 @@ export const dictionaries = {
       },
       vereda: {
         home: 'SaaS no-code para organizadores de pruebas deportivas: web pública, panel admin, dominio propio. Multi-tenant.',
-        full: 'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Arquitectura serverless con Neon + Vercel Blob.',
+        full: 'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Sobre infra propia self-host con PostgreSQL + Cloudflare R2.',
         outcome:
           'Organizadores montando webs de eventos a mano → SaaS no-code multi-tenant con web pública y panel propio en minutos.',
         stack:
-          'Multi-tenant desde el primer día: cada organizador tiene su evento, su panel y su dominio sobre la misma instancia. Serverless con Neon y Vercel Blob porque la carga de un evento se concentra en unos pocos días, así que el coste sigue al uso y no a un servidor encendido todo el año.',
+          'Multi-tenant desde el primer día: cada organizador tiene su evento, su panel y su dominio sobre la misma instancia. El enrutado se decide por el Host de la petición —ruta, subdominio o dominio propio—, así que dar de alta el dominio de un cliente no implica desplegar nada nuevo: es una entrada más apuntando al mismo sitio.',
       },
       medina: {
         home: 'Landing oficial del II Desafío Medina Roja BTT: información del evento y recorridos GPX en mapa interactivo.',
@@ -491,7 +491,7 @@ export const dictionaries = {
     projectCopy: {
       nexfit: {
         home: 'SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app and REST API. Clients, training and nutrition plans, check-ins and progress tracking.',
-        full: 'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on Railway + Neon + Cloudflare R2.',
+        full: 'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on self-hosted infra (Coolify) with PostgreSQL + Cloudflare R2.',
         outcome:
           'Trainers managing clients in spreadsheets → a multi-repo platform with an offline-first mobile app that centralizes plans, check-ins and progress.',
         stack:
@@ -499,11 +499,11 @@ export const dictionaries = {
       },
       vereda: {
         home: 'No-code SaaS for sports event organizers: public website, admin panel, custom domain. Multi-tenant.',
-        full: 'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Serverless architecture with Neon + Vercel Blob.',
+        full: 'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Running on self-hosted infra with PostgreSQL + Cloudflare R2.',
         outcome:
           'Organizers hand-building event sites → a no-code multi-tenant SaaS with a public site and their own panel in minutes.',
         stack:
-          'Multi-tenant from day one: every organizer gets their event, their panel and their domain on the same instance. Serverless with Neon and Vercel Blob because an event\'s load lands in a handful of days, so cost follows usage instead of a server left running all year.',
+          'Multi-tenant from day one: every organizer gets their event, their panel and their domain on the same instance. Routing is decided from the request Host — path, subdomain or the tenant\'s own domain — so onboarding a client domain deploys nothing new: it is one more entry pointing at the same instance.',
       },
       medina: {
         home: 'Official landing for the II Medina Roja BTT challenge: event info and GPX routes on an interactive map.',
