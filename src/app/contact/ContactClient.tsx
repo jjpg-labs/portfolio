@@ -23,6 +23,9 @@ export default function ContactClient() {
           <h1 className="font-serif text-h1 sm:text-display lg:text-[80px] leading-none text-text-primary">
             {t.contactPage.title}
           </h1>
+          <p className="font-sans text-body-lg text-text-secondary mt-4 max-w-[62ch]">
+            {t.contactPage.subtitle}
+          </p>
         </header>
 
         <a
@@ -70,6 +73,27 @@ export default function ContactClient() {
 
           <ContactInfo />
         </div>
+
+        <section className="mt-16 border-t border-border pt-10">
+          <h2 className="font-serif text-[28px] lg:text-[34px] leading-tight text-text-primary">
+            {t.contactPage.faqTitle}
+          </h2>
+          <dl className="mt-8 flex flex-col">
+            {t.contactPage.faq.map((item) => (
+              <div
+                key={item.q}
+                className="py-6 border-b border-border-subtle last:border-b-0"
+              >
+                <dt className="font-serif text-[22px] lg:text-[24px] leading-snug text-text-primary">
+                  {item.q}
+                </dt>
+                <dd className="font-sans text-body text-text-secondary leading-relaxed mt-3 max-w-[68ch]">
+                  {item.a}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </div>
     </section>
   );

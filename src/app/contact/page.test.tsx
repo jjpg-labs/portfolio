@@ -56,6 +56,29 @@ describe('ContactPage', () => {
     expect(screen.getByText(/almedina, ciudad real/i)).toBeInTheDocument();
   });
 
+  it('renders the page subtitle', () => {
+    renderWithLocale(<ContactPage />);
+    expect(
+      screen.getByText(/abierto a nuevas oportunidades como full-stack engineer/i)
+    ).toBeInTheDocument();
+  });
+
+  it('renders every FAQ entry', () => {
+    renderWithLocale(<ContactPage />);
+    expect(
+      screen.getByRole('heading', { name: /antes de que escribas/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/¿qué tipo de puesto estás buscando\?/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/¿trabajas en remoto o presencial\?/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/¿cuánto tardas en responder\?/i)
+    ).toBeInTheDocument();
+  });
+
   it('renders social links with correct aria-labels', () => {
     renderWithLocale(<ContactPage />);
     expect(screen.getByLabelText(/linkedin/i)).toBeInTheDocument();

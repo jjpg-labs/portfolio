@@ -4,9 +4,18 @@ import SkillsPage from './page';
 import { LocaleProvider } from '@/app/context/LocaleContext';
 
 jest.mock('./components/SkillCard', () => ({
-  SkillCard: ({ category, skills }: { category: string; skills: any[] }) => (
+  SkillCard: ({
+    category,
+    skills,
+    intro,
+  }: {
+    category: string;
+    skills: any[];
+    intro?: string;
+  }) => (
     <div data-testid="skill-category">
       <span>{category}</span>
+      {intro && <p data-testid="skill-intro">{intro}</p>}
       <ul>
         {skills.map((skill) => (
           <li key={skill.name}>{skill.name}</li>
@@ -35,6 +44,27 @@ describe('SkillsPage', () => {
     expect(screen.getByText('Bases de Datos')).toBeInTheDocument();
     expect(screen.getByText('Infraestructura')).toBeInTheDocument();
     expect(screen.getByText('IA / LLMs')).toBeInTheDocument();
+  });
+
+  // The prose below is what makes /skills worth indexing on its own instead of
+  // reading as a longer copy of the home preview — guard it.
+  it('renders the page subtitle', () => {
+    renderWithLocale(<SkillsPage />);
+    expect(
+      screen.getByText(/no es una lista de todo lo que he tocado/i)
+    ).toBeInTheDocument();
+  });
+
+  it('passes a context intro to every category', () => {
+    renderWithLocale(<SkillsPage />);
+    expect(screen.getAllByTestId('skill-intro')).toHaveLength(5);
+  });
+
+  it('renders the level-scale note', () => {
+    renderWithLocale(<SkillsPage />);
+    expect(
+      screen.getByRole('heading', { name: /cómo leer estos niveles/i })
+    ).toBeInTheDocument();
   });
 
   it('renders all skills under their categories', () => {

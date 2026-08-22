@@ -23,6 +23,9 @@ interface SkillCardProps {
   skills: Skill[];
   levels?: LevelLabels;
   num?: number;
+  /** Context paragraph for the category — the substance /skills adds over the
+   *  home preview, which only renders bare tag lists. */
+  intro?: string;
 }
 
 const getLevelLabel = (
@@ -40,6 +43,7 @@ export function SkillCard({
   skills,
   levels = DEFAULT_LEVELS,
   num,
+  intro,
 }: SkillCardProps) {
   const numLabel = num ? String(num).padStart(2, '0') : '';
 
@@ -55,6 +59,12 @@ export function SkillCard({
           {category}
         </h2>
       </div>
+
+      {intro && (
+        <p className="font-sans text-body text-text-secondary leading-relaxed max-w-[68ch] mb-6">
+          {intro}
+        </p>
+      )}
 
       <ul className="flex flex-col">
         {skills.map((skill) => {

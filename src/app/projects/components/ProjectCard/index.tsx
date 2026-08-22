@@ -65,6 +65,17 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
           {project.shortDescription}
         </p>
 
+        {project.stackNote && (
+          <div className="border-t border-border-subtle pt-3">
+            <span className="block font-mono text-mono-label uppercase text-text-muted mb-1">
+              {p.stackNoteLabel}
+            </span>
+            <p className="font-sans text-small text-text-secondary leading-relaxed">
+              {project.stackNote}
+            </p>
+          </div>
+        )}
+
         <div className="flex flex-wrap gap-1.5 pt-2">
           {project.technologies.map((tech) => (
             <span
@@ -89,7 +100,11 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
             <Link
               href={project.linkLive}
               target="_blank"
-              rel="noopener noreferrer"
+              rel={
+                project.liveNofollow
+                  ? 'noopener noreferrer nofollow'
+                  : 'noopener noreferrer'
+              }
               className="flex items-center gap-2 font-serif italic text-[16px] text-text-primary hover:text-accent transition"
             >
               <FaExternalLinkAlt size={12} /> {p.liveBtn}
