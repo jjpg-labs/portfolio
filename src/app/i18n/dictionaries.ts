@@ -337,7 +337,7 @@ export const dictionaries = {
       faq: [
         {
           q: '¿Qué tipo de puesto estás buscando?',
-          a: 'Full-Stack Engineer, preferiblemente donde el back pese tanto como el front. Me interesan sobre todo los equipos con sistemas heredados que hay que modernizar sin parar el negocio: migraciones con fecha límite, deuda técnica acumulada, transiciones de stack. Es lo que llevo haciendo los últimos años.',
+          a: 'Full-Stack Engineer, preferiblemente donde el backend pese tanto como el frontend. Lo que mejor sé hacer es coger un sistema que funciona pero ya no aguanta lo que le piden, entender por qué, y dejarlo en un punto donde el equipo vuelva a moverse rápido sin romper nada: migraciones con plazo, deuda técnica acumulada, transiciones de stack. Ahora mismo me atraen especialmente los equipos que van hacia arquitecturas orientadas a eventos.',
         },
         {
           q: '¿Trabajas en remoto o presencial?',
@@ -714,7 +714,7 @@ export const dictionaries = {
       faq: [
         {
           q: 'What kind of role are you looking for?',
-          a: 'Full-Stack Engineer, ideally where the back end carries as much weight as the front. I am most interested in teams with legacy systems that need modernizing without stopping the business: migrations with a deadline, accumulated technical debt, stack transitions. That is what I have been doing for the past few years.',
+          a: 'Full-Stack Engineer, ideally where the backend carries as much weight as the frontend. What I do best is take a system that works but can no longer handle what is asked of it, understand why, and leave it somewhere the team can move fast again without breaking things: migrations with a deadline, accumulated technical debt, stack transitions. Right now I am especially drawn to teams moving toward event-driven architectures.',
         },
         {
           q: 'Do you work remotely or on-site?',
