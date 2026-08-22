@@ -20,6 +20,17 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        // www.jjpg.dev had no DNS record at all, so it resolved to NXDOMAIN for
+        // anyone who typed it and Search Console kept both www variants parked
+        // in "Crawled - currently not indexed". Once the record exists and
+        // Coolify routes the host, this folds www onto the apex with a 308 so
+        // there is one canonical origin instead of two.
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.jjpg.dev' }],
+        destination: 'https://jjpg.dev/:path*',
+        permanent: true,
+      },
+      {
         // /services queda despriorizada del sitio (fuera del nav, la home y
         // el sitemap) pero el código (page.tsx, ServicesClient, diccionario)
         // se conserva por si se retoma más adelante. Este redirect impide
