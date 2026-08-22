@@ -112,7 +112,7 @@ export const dictionaries = {
     projectCopy: {
       nexfit: {
         home: 'SaaS para entrenadores personales y nutricionistas: panel web, app móvil offline-first y API REST. Clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso.',
-        full: 'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en Railway + Neon + Cloudflare R2.',
+        full: 'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en infra propia self-host (Coolify) con PostgreSQL + Cloudflare R2.',
         outcome:
           'Entrenadores gestionando clientes en hojas de cálculo → plataforma multi-repo con app móvil offline-first que centraliza planes, check-ins y progreso.',
         stack:
@@ -120,11 +120,11 @@ export const dictionaries = {
       },
       vereda: {
         home: 'SaaS no-code para organizadores de pruebas deportivas: web pública, panel admin, dominio propio. Multi-tenant.',
-        full: 'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Arquitectura serverless con Neon + Vercel Blob.',
+        full: 'Plataforma SaaS no-code para organizadores de pruebas deportivas: web pública del evento, panel de administración, dominio propio y gestión multi-tenant. Sobre infra propia self-host con PostgreSQL + Cloudflare R2.',
         outcome:
           'Organizadores montando webs de eventos a mano → SaaS no-code multi-tenant con web pública y panel propio en minutos.',
         stack:
-          'Multi-tenant desde el primer día: cada organizador tiene su evento, su panel y su dominio sobre la misma instancia. Serverless con Neon y Vercel Blob porque la carga de un evento se concentra en unos pocos días, así que el coste sigue al uso y no a un servidor encendido todo el año.',
+          'Multi-tenant desde el primer día: cada organizador tiene su evento, su panel y su dominio sobre la misma instancia. El enrutado se decide por el Host de la petición —ruta, subdominio o dominio propio—, así que dar de alta el dominio de un cliente no implica desplegar nada nuevo: es una entrada más apuntando al mismo sitio.',
       },
       medina: {
         home: 'Landing oficial del II Desafío Medina Roja BTT: información del evento y recorridos GPX en mapa interactivo.',
@@ -132,7 +132,7 @@ export const dictionaries = {
         outcome:
           'Un evento de BTT sin web propia → landing oficial en producción con recorridos GPX en mapa interactivo, información y contacto.',
         stack:
-          'El recorrido no es una imagen: son ficheros GPX reales sobre un mapa Leaflet interactivo, así que lo que ve el ciclista es el trazado que se va a rodar. Estático en Vercel, porque una landing de evento tiene que aguantar el pico del día en que se abren las inscripciones.',
+          'Los recorridos son ficheros GPX reales renderizados sobre un mapa Leaflet interactivo, no imágenes: lo que ve el ciclista es el trazado que se va a rodar. Sitio estático, desplegado en Vercel.',
       },
       accounting: {
         home: 'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, presupuestos, movimientos recurrentes e informes diarios.',
@@ -148,7 +148,7 @@ export const dictionaries = {
         outcome:
           'Enseñar a programar a un niño de 3–14 años con material escrito para adultos → una plataforma donde la lección es un juego y el progreso se ve como en uno.',
         stack:
-          'El estado de la partida (nivel, XP, racha) vive en cliente con Zustand y los datos de servidor en TanStack Query, separados a propósito: la animación de subir de nivel no debería depender de que responda la red. next-intl porque el público son niños, y a un niño de seis años no se le enseña una interfaz en un idioma que no es el suyo.',
+          'El estado de la partida —nivel, XP, racha diaria— vive en cliente con Zustand, y los datos de servidor van por TanStack Query. La interfaz está traducida con next-intl, y el contenido se adapta por tramo de edad dentro del rango de 3 a 14 años.',
       },
     },
     dashboardSkills: {
@@ -201,7 +201,7 @@ export const dictionaries = {
       codeBtn: 'Código',
       privateRepo: 'Repositorio privado',
       outcomeLabel: 'Reto → Resultado',
-      stackNoteLabel: 'Decisión técnica',
+      stackNoteLabel: 'Cómo está montado',
       shotsLabel: 'Ver capturas',
       coverAlt: 'Portada del proyecto',
       status: {
@@ -491,7 +491,7 @@ export const dictionaries = {
     projectCopy: {
       nexfit: {
         home: 'SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app and REST API. Clients, training and nutrition plans, check-ins and progress tracking.',
-        full: 'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on Railway + Neon + Cloudflare R2.',
+        full: 'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on self-hosted infra (Coolify) with PostgreSQL + Cloudflare R2.',
         outcome:
           'Trainers managing clients in spreadsheets → a multi-repo platform with an offline-first mobile app that centralizes plans, check-ins and progress.',
         stack:
@@ -499,11 +499,11 @@ export const dictionaries = {
       },
       vereda: {
         home: 'No-code SaaS for sports event organizers: public website, admin panel, custom domain. Multi-tenant.',
-        full: 'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Serverless architecture with Neon + Vercel Blob.',
+        full: 'No-code SaaS platform for sports event organizers: public event website, admin panel, custom domain and multi-tenant management. Running on self-hosted infra with PostgreSQL + Cloudflare R2.',
         outcome:
           'Organizers hand-building event sites → a no-code multi-tenant SaaS with a public site and their own panel in minutes.',
         stack:
-          'Multi-tenant from day one: every organizer gets their event, their panel and their domain on the same instance. Serverless with Neon and Vercel Blob because an event\'s load lands in a handful of days, so cost follows usage instead of a server left running all year.',
+          'Multi-tenant from day one: every organizer gets their event, their panel and their domain on the same instance. Routing is decided from the request Host — path, subdomain or the tenant\'s own domain — so onboarding a client domain deploys nothing new: it is one more entry pointing at the same instance.',
       },
       medina: {
         home: 'Official landing for the II Medina Roja BTT challenge: event info and GPX routes on an interactive map.',
@@ -511,7 +511,7 @@ export const dictionaries = {
         outcome:
           'A mountain-bike event with no site of its own → an official landing in production with GPX routes on an interactive map, info and contact.',
         stack:
-          'The route is not a picture: they are real GPX files on an interactive Leaflet map, so what a rider sees is the track they will actually ride. Static on Vercel, because an event landing has to absorb the spike on the day registration opens.',
+          'The routes are real GPX files rendered on an interactive Leaflet map, not images: what a rider sees is the track they will actually ride. Static site, deployed on Vercel.',
       },
       accounting: {
         home: 'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, budgets, recurring entries and daily reports.',
@@ -527,7 +527,7 @@ export const dictionaries = {
         outcome:
           'Teaching a 3–14-year-old to code from material written for adults → a platform where the lesson is a game and progress looks like one.',
         stack:
-          'Game state (level, XP, streak) lives on the client with Zustand and server data in TanStack Query, deliberately kept apart: a level-up animation should not wait on the network. next-intl because the audience is children, and you do not hand a six-year-old an interface in someone else\'s language.',
+          'Game state — level, XP, daily streak — lives on the client with Zustand, and server data goes through TanStack Query. The interface is translated with next-intl, and content adapts by age band within the 3-14 range.',
       },
     },
     dashboardSkills: {
@@ -580,7 +580,7 @@ export const dictionaries = {
       codeBtn: 'Code',
       privateRepo: 'Private repository',
       outcomeLabel: 'Problem → Result',
-      stackNoteLabel: 'Technical decision',
+      stackNoteLabel: 'How it is built',
       shotsLabel: 'View screenshots',
       coverAlt: 'Cover of',
       status: {
