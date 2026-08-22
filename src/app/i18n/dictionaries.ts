@@ -132,7 +132,7 @@ export const dictionaries = {
         outcome:
           'Un evento de BTT sin web propia → landing oficial en producción con recorridos GPX en mapa interactivo, información y contacto.',
         stack:
-          'El recorrido no es una imagen: son ficheros GPX reales sobre un mapa Leaflet interactivo, así que lo que ve el ciclista es el trazado que se va a rodar. Estático en Vercel, porque una landing de evento tiene que aguantar el pico del día en que se abren las inscripciones.',
+          'Los recorridos son ficheros GPX reales renderizados sobre un mapa Leaflet interactivo, no imágenes: lo que ve el ciclista es el trazado que se va a rodar. Sitio estático, desplegado en Vercel.',
       },
       accounting: {
         home: 'App de contabilidad para pequeños negocios: REST API en NestJS + dashboard Next.js con transacciones, presupuestos, movimientos recurrentes e informes diarios.',
@@ -148,7 +148,7 @@ export const dictionaries = {
         outcome:
           'Enseñar a programar a un niño de 3–14 años con material escrito para adultos → una plataforma donde la lección es un juego y el progreso se ve como en uno.',
         stack:
-          'El estado de la partida (nivel, XP, racha) vive en cliente con Zustand y los datos de servidor en TanStack Query, separados a propósito: la animación de subir de nivel no debería depender de que responda la red. next-intl porque el público son niños, y a un niño de seis años no se le enseña una interfaz en un idioma que no es el suyo.',
+          'El estado de la partida —nivel, XP, racha diaria— vive en cliente con Zustand, y los datos de servidor van por TanStack Query. La interfaz está traducida con next-intl, y el contenido se adapta por tramo de edad dentro del rango de 3 a 14 años.',
       },
     },
     dashboardSkills: {
@@ -201,7 +201,7 @@ export const dictionaries = {
       codeBtn: 'Código',
       privateRepo: 'Repositorio privado',
       outcomeLabel: 'Reto → Resultado',
-      stackNoteLabel: 'Decisión técnica',
+      stackNoteLabel: 'Cómo está montado',
       shotsLabel: 'Ver capturas',
       coverAlt: 'Portada del proyecto',
       status: {
@@ -511,7 +511,7 @@ export const dictionaries = {
         outcome:
           'A mountain-bike event with no site of its own → an official landing in production with GPX routes on an interactive map, info and contact.',
         stack:
-          'The route is not a picture: they are real GPX files on an interactive Leaflet map, so what a rider sees is the track they will actually ride. Static on Vercel, because an event landing has to absorb the spike on the day registration opens.',
+          'The routes are real GPX files rendered on an interactive Leaflet map, not images: what a rider sees is the track they will actually ride. Static site, deployed on Vercel.',
       },
       accounting: {
         home: 'Accounting app for small businesses: NestJS REST API + Next.js dashboard with transactions, budgets, recurring entries and daily reports.',
@@ -527,7 +527,7 @@ export const dictionaries = {
         outcome:
           'Teaching a 3–14-year-old to code from material written for adults → a platform where the lesson is a game and progress looks like one.',
         stack:
-          'Game state (level, XP, streak) lives on the client with Zustand and server data in TanStack Query, deliberately kept apart: a level-up animation should not wait on the network. next-intl because the audience is children, and you do not hand a six-year-old an interface in someone else\'s language.',
+          'Game state — level, XP, daily streak — lives on the client with Zustand, and server data goes through TanStack Query. The interface is translated with next-intl, and content adapts by age band within the 3-14 range.',
       },
     },
     dashboardSkills: {
@@ -580,7 +580,7 @@ export const dictionaries = {
       codeBtn: 'Code',
       privateRepo: 'Private repository',
       outcomeLabel: 'Problem → Result',
-      stackNoteLabel: 'Technical decision',
+      stackNoteLabel: 'How it is built',
       shotsLabel: 'View screenshots',
       coverAlt: 'Cover of',
       status: {

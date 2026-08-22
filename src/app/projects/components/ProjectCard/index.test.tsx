@@ -42,13 +42,13 @@ describe('ProjectCard', () => {
         project={{ ...mockProject, stackNote: 'Tres repos, una sola base.' }}
       />
     );
-    expect(screen.getByText('Decisión técnica')).toBeInTheDocument();
+    expect(screen.getByText('Cómo está montado')).toBeInTheDocument();
     expect(screen.getByText('Tres repos, una sola base.')).toBeInTheDocument();
   });
 
   it('omits the technical-decision note when absent', () => {
     renderWithLocale(<ProjectCard project={mockProject} />);
-    expect(screen.queryByText('Decisión técnica')).not.toBeInTheDocument();
+    expect(screen.queryByText('Cómo está montado')).not.toBeInTheDocument();
   });
 
   it('marks the live link nofollow when the demo is kept out of the index', () => {
