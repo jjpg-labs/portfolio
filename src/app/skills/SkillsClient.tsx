@@ -6,7 +6,8 @@ import { SKILLS, SKILL_CATEGORY_ORDER, type Skill } from './data';
 
 export default function SkillsClient() {
   const { t } = useLocale();
-  const { title, categories, levels } = t.skillsPage;
+  const { title, subtitle, categories, categoryIntros, levels, levelNote } =
+    t.skillsPage;
 
   const groupedSkills = SKILLS.reduce<Record<string, Skill[]>>((acc, skill) => {
     (acc[skill.category] = acc[skill.category] || []).push(skill);
@@ -27,6 +28,9 @@ export default function SkillsClient() {
           <h1 className="font-serif text-h1 sm:text-display lg:text-[80px] leading-none text-text-primary">
             {title}
           </h1>
+          <p className="font-sans text-body-lg text-text-secondary mt-4 max-w-[62ch]">
+            {subtitle}
+          </p>
         </header>
 
         <div className="flex flex-col">
@@ -36,12 +40,22 @@ export default function SkillsClient() {
                 key={cat}
                 num={idx + 1}
                 category={categories[cat] ?? cat}
+                intro={categoryIntros[cat]}
                 skills={groupedSkills[cat]}
                 levels={levels}
               />
             ) : null
           )}
         </div>
+
+        <aside className="mt-12 border-t border-border pt-8">
+          <h2 className="font-serif text-[24px] lg:text-[28px] text-text-primary">
+            {levelNote.title}
+          </h2>
+          <p className="font-sans text-body text-text-secondary leading-relaxed mt-3 max-w-[68ch]">
+            {levelNote.body}
+          </p>
+        </aside>
       </div>
     </section>
   );

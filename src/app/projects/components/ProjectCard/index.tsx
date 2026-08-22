@@ -65,6 +65,17 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
           {project.shortDescription}
         </p>
 
+        {project.stackNote && (
+          <div className="border-t border-border-subtle pt-3">
+            <span className="block font-mono text-mono-label uppercase text-text-muted mb-1">
+              {p.stackNoteLabel}
+            </span>
+            <p className="font-sans text-small text-text-secondary leading-relaxed">
+              {project.stackNote}
+            </p>
+          </div>
+        )}
+
         <div className="flex flex-wrap gap-1.5 pt-2">
           {project.technologies.map((tech) => (
             <span

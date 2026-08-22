@@ -7,11 +7,12 @@ import { PROJECTS, ProjectMeta } from './data';
 export interface Project extends ProjectMeta {
   shortDescription: string;
   outcome?: string;
+  stackNote?: string;
 }
 
 type ProjectCopy = Record<
   string,
-  { home: string; full: string; outcome: string }
+  { home: string; full: string; outcome: string; stack: string }
 >;
 
 export default function ProjectsClient() {
@@ -23,6 +24,7 @@ export default function ProjectsClient() {
     ...base,
     shortDescription: copy[base.id]?.full ?? '',
     outcome: copy[base.id]?.outcome || undefined,
+    stackNote: copy[base.id]?.stack || undefined,
   }));
 
   return (

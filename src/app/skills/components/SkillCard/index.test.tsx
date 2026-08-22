@@ -26,6 +26,26 @@ describe('SkillCard', () => {
     expect(screen.getByText('02')).toBeInTheDocument();
   });
 
+  it('renders the category intro when provided', () => {
+    render(
+      <SkillCard
+        category="Front-End"
+        skills={skills}
+        intro="Contexto real de la categoría."
+      />
+    );
+    expect(
+      screen.getByText('Contexto real de la categoría.')
+    ).toBeInTheDocument();
+  });
+
+  it('renders no intro paragraph when none is provided', () => {
+    const { container } = render(
+      <SkillCard category="Front-End" skills={skills} />
+    );
+    expect(container.querySelector('p')).toBeNull();
+  });
+
   it('renders default level labels per skill level', () => {
     render(<SkillCard category="Front-End" skills={skills} />);
     expect(screen.getByText('Avanzado')).toBeInTheDocument();

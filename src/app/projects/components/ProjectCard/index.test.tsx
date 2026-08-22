@@ -36,6 +36,21 @@ describe('ProjectCard', () => {
     ).toBeInTheDocument();
   });
 
+  it('renders the technical-decision note when provided', () => {
+    renderWithLocale(
+      <ProjectCard
+        project={{ ...mockProject, stackNote: 'Tres repos, una sola base.' }}
+      />
+    );
+    expect(screen.getByText('Decisión técnica')).toBeInTheDocument();
+    expect(screen.getByText('Tres repos, una sola base.')).toBeInTheDocument();
+  });
+
+  it('omits the technical-decision note when absent', () => {
+    renderWithLocale(<ProjectCard project={mockProject} />);
+    expect(screen.queryByText('Decisión técnica')).not.toBeInTheDocument();
+  });
+
   it('renders all technologies', () => {
     renderWithLocale(<ProjectCard project={mockProject} />);
     mockProject.technologies.forEach((tech) => {

@@ -11,7 +11,8 @@ import { useLocale } from '@/app/context/LocaleContext';
 
 export default function ContactInfo() {
   const { t } = useLocale();
-  const { title, subtitle, location } = t.contactInfo;
+  const { title, subtitle, location, emailLabel, baseLabel, responseLabel, responseValue } =
+    t.contactInfo;
 
   return (
     <aside className="flex flex-col gap-8 border border-border rounded-md bg-bg-surface p-8 self-start">
@@ -30,7 +31,7 @@ export default function ContactInfo() {
       <dl className="flex flex-col">
         <div className="flex justify-between items-center py-3 border-b border-border-subtle">
           <dt className="font-mono text-mono-label uppercase text-text-muted">
-            Email
+            {emailLabel}
           </dt>
           <dd>
             <a
@@ -43,7 +44,7 @@ export default function ContactInfo() {
         </div>
         <div className="flex justify-between items-center py-3 border-b border-border-subtle">
           <dt className="font-mono text-mono-label uppercase text-text-muted">
-            Base
+            {baseLabel}
           </dt>
           <dd className="flex items-center gap-2 font-sans text-body text-text-primary">
             <FaMapMarkerAlt size={12} className="text-accent" />
@@ -52,9 +53,11 @@ export default function ContactInfo() {
         </div>
         <div className="flex justify-between items-center py-3">
           <dt className="font-mono text-mono-label uppercase text-text-muted">
-            Respuesta
+            {responseLabel}
           </dt>
-          <dd className="font-sans text-body text-text-primary">&lt; 24h</dd>
+          <dd className="font-sans text-body text-text-primary">
+            {responseValue}
+          </dd>
         </div>
       </dl>
 
