@@ -27,6 +27,10 @@ export interface ProjectMeta {
   role: 'Front-End' | 'Back-End' | 'Full-Stack';
   imageCover: string;
   linkLive: string; // '#' when there is no public demo
+  // Mark the live link `rel="nofollow"`. Set it when the demo is deliberately
+  // kept out of the index, so Google stops spending crawl budget rediscovering
+  // a URL it will only report back as an error. See each usage for the reason.
+  liveNofollow?: boolean;
   linkRepo: string;
   linkRepo2?: string;
   repoPrivate?: boolean;
@@ -83,7 +87,11 @@ export const PROJECTS: ProjectMeta[] = [
     ],
     role: 'Full-Stack',
     imageCover: '/img/p4.svg',
+    // Same event as the `medina` project below, ~80% identical copy, and Vereda
+    // emits no canonical — Search Console reports it as "duplicate without a
+    // user-selected canonical". Until Vereda declares one, don't endorse it.
     linkLive: 'https://vereda.jjpg.dev/events/medina-roja',
+    liveNofollow: true,
     linkRepo: 'https://github.com/jjpg-labs/vereda',
     repoPrivate: true,
     status: 'in-dev',
@@ -142,7 +150,10 @@ export const PROJECTS: ProjectMeta[] = [
     ],
     role: 'Full-Stack',
     imageCover: '/img/p1.svg',
+    // The demo 307s straight to /login, so every crawl lands on "page with
+    // redirect". It is a read-only demo for humans, not an indexable page.
     linkLive: 'https://demo.accounting.jjpg.dev',
+    liveNofollow: true,
     linkRepo: 'https://github.com/jjpg-labs/accounting-server',
     linkRepo2: 'https://github.com/jjpg95/accounting-manager',
     status: 'live-demo',
@@ -162,7 +173,10 @@ export const PROJECTS: ProjectMeta[] = [
     ],
     role: 'Full-Stack',
     imageCover: '/img/p2.svg',
+    // curio.jjpg.dev serves `Disallow: /`, so this link is the only reason
+    // Google keeps trying it and reporting "blocked by robots.txt".
     linkLive: 'https://curio.jjpg.dev/demo',
+    liveNofollow: true,
     linkRepo: 'https://github.com/jjpg-labs/curio',
     repoPrivate: true,
     status: 'live-demo',

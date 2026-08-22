@@ -51,6 +51,24 @@ describe('ProjectCard', () => {
     expect(screen.queryByText('Decisión técnica')).not.toBeInTheDocument();
   });
 
+  it('marks the live link nofollow when the demo is kept out of the index', () => {
+    renderWithLocale(
+      <ProjectCard project={{ ...mockProject, liveNofollow: true }} />
+    );
+    expect(screen.getByRole('link', { name: /en vivo/i })).toHaveAttribute(
+      'rel',
+      'noopener noreferrer nofollow'
+    );
+  });
+
+  it('leaves the live link followable by default', () => {
+    renderWithLocale(<ProjectCard project={mockProject} />);
+    expect(screen.getByRole('link', { name: /en vivo/i })).toHaveAttribute(
+      'rel',
+      'noopener noreferrer'
+    );
+  });
+
   it('renders all technologies', () => {
     renderWithLocale(<ProjectCard project={mockProject} />);
     mockProject.technologies.forEach((tech) => {

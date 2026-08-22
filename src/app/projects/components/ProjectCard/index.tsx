@@ -100,7 +100,11 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
             <Link
               href={project.linkLive}
               target="_blank"
-              rel="noopener noreferrer"
+              rel={
+                project.liveNofollow
+                  ? 'noopener noreferrer nofollow'
+                  : 'noopener noreferrer'
+              }
               className="flex items-center gap-2 font-serif italic text-[16px] text-text-primary hover:text-accent transition"
             >
               <FaExternalLinkAlt size={12} /> {p.liveBtn}
