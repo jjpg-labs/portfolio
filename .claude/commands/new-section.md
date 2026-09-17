@@ -23,5 +23,5 @@ Update the navigation component to include a link to the new section.
 
 ### 4. Verify
 - Run `npx tsc --noEmit`
-- Check that the page renders at `localhost:3000/<sectionName>`
+- Check that the page renders at `localhost:3041/<sectionName>`
 - Verify light/dark theme works correctly

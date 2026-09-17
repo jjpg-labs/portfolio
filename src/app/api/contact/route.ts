@@ -20,7 +20,7 @@ const MAX_BODY_BYTES = 10_000;
 
 function allowedOrigins(): string[] {
   const site = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://jjpg.dev';
-  return [site, 'http://localhost:3000', 'http://127.0.0.1:3000'];
+  return [site, 'http://localhost:3041', 'http://127.0.0.1:3041'];
 }
 
 export async function POST(req: Request) {

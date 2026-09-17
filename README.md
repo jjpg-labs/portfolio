@@ -32,7 +32,7 @@ Requires Node 18+ and npm.
 
 ```bash
 npm ci          # install exact dependencies
-npm run dev     # start the dev server at http://localhost:3000
+npm run dev     # start the dev server at http://localhost:3041
 ```
 
 The home page is composed in `src/app/page.tsx` from the sections under
