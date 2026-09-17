@@ -145,7 +145,7 @@ describe('checkOrigin', () => {
   });
 
   it('always allows localhost regardless of port', () => {
-    expect(checkOrigin('http://localhost:3000', null, allowed)).toBe(true);
+    expect(checkOrigin('http://localhost:3041', null, allowed)).toBe(true);
     expect(checkOrigin('http://localhost:5173', null, allowed)).toBe(true);
     expect(checkOrigin('http://127.0.0.1:8080', null, allowed)).toBe(true);
   });
@@ -199,7 +199,7 @@ describe('checkOrigin', () => {
 
   it('still allows localhost even when a request Host is present', () => {
     expect(
-      checkOrigin('http://localhost:3000', null, [], 'jjpg.dev'),
+      checkOrigin('http://localhost:3041', null, [], 'jjpg.dev'),
     ).toBe(true);
   });
 });
