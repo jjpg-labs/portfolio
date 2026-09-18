@@ -221,7 +221,7 @@ export const dictionaries = {
         'Back-End': 'Back-End',
         'Front-End': 'Front-End',
         'Bases de Datos': 'Bases de Datos',
-        Infraestructura: 'Infraestructura',
+        Infraestructura: 'Infra / DevOps',
         'IA / LLMs': 'IA / LLMs',
       } as Record<string, string>,
       // One paragraph of real context per category. This is what makes /skills
@@ -606,7 +606,7 @@ export const dictionaries = {
         'Back-End': 'Back-End',
         'Front-End': 'Front-End',
         'Bases de Datos': 'Databases',
-        Infraestructura: 'Infrastructure',
+        Infraestructura: 'Infra / DevOps',
         'IA / LLMs': 'AI / LLMs',
       } as Record<string, string>,
       categoryIntros: {
