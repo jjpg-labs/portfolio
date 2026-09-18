@@ -36,3 +36,6 @@ next-env.d.ts
 
 # editor
 .vscode/
+
+# Claude Code local settings (per-machine, never shared)
+.claude/settings.local.json
