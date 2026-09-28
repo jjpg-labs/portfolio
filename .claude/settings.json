@@ -1,10 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run *)",
       "Bash(npx jest *)",
-      "Bash(npx tsc *)",
-      "Bash(git *)"
+      "Bash(npx tsc *)"
     ],
     "deny": [
       "Bash(rm -rf *)"
