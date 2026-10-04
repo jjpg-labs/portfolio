@@ -33,7 +33,7 @@ export default function Experience() {
             return (
               <article
                 key={entry.id}
-                className="grid grid-cols-1 lg:grid-cols-[18rem_minmax(0,1fr)] gap-x-14 gap-y-4 border-b border-border-subtle py-8 lg:py-10"
+                className="grid grid-cols-1 lg:grid-cols-[18rem_minmax(0,1fr)] gap-x-14 gap-y-4 border-b border-border-subtle last:border-b-0 py-8 lg:py-10"
               >
                 {/* Who, what and when together on the left, so a recruiter
                     reads company, role and dates in one glance. */}
