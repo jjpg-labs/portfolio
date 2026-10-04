@@ -59,10 +59,10 @@ export const dictionaries = {
     hero: {
       availability: 'Abierto a nuevas oportunidades',
       greeting: 'Hola, soy',
-      role: 'Full-Stack Engineer',
-      tagline: 'Modernizo sistemas legados y diseño arquitecturas distribuidas.',
+      role: 'Full Stack Developer',
+      tagline: 'Backend sólido, frontend en React y el testing de serie.',
       description:
-        'Casi 5 años construyendo y rescatando productos en producción: migraciones críticas con plazo, reducción de deuda técnica, arquitecturas orientadas a eventos y transiciones de stack. Trabajo con Node.js, React/Next.js, PHP/Symfony y PostgreSQL. Remoto desde España, abierto a híbrido.',
+        'Casi 5 años de experiencia en PHP/Symfony, Node.js y React/Next.js. Lo más reciente: el motor de facturación recurrente de partners, la integración de cobros SEPA con GoCardless y librerías internas de contabilidad. Antes, en un producto con más de 1M de visitas al mes: entregas con plazo cerrado (exportación contable a Sage 50, migración a GA4 en 2 meses), integración backend con GraphQL, OpenSearch y colas de RabbitMQ, y frontend en React en proyectos de varios equipos. El testing va de serie: en frontend llevé la cobertura de 0 % a más del 75 %. Remoto desde España, abierto a híbrido.',
       btnProjects: 'Ver mis Proyectos',
       btnContact: 'Hablemos',
       btnCV: 'Descargar CV',
@@ -336,7 +336,7 @@ export const dictionaries = {
     contactPage: {
       title: 'Ponte en Contacto',
       subtitle:
-        'Estoy abierto a nuevas oportunidades como Full-Stack Engineer: en remoto desde Almedina (Ciudad Real), y abierto a híbrido. Escríbeme por el formulario, por correo directo o reserva media hora en mi calendario: lo que te resulte más cómodo.',
+        'Estoy abierto a nuevas oportunidades como Full Stack Developer: en remoto desde Almedina (Ciudad Real), y abierto a híbrido. Escríbeme por el formulario, por correo directo o reserva media hora en mi calendario: lo que te resulte más cómodo.',
       formTitle: 'Envíame un mensaje',
       calendlyTitle: '¿Prefieres hablar directamente? Reserva una llamada',
       calendlyDescription:
@@ -346,7 +346,7 @@ export const dictionaries = {
       faq: [
         {
           q: '¿Qué tipo de puesto estás buscando?',
-          a: 'Full-Stack Engineer, preferiblemente donde el backend pese tanto como el frontend. Lo que mejor sé hacer es coger un sistema que funciona pero ya no aguanta lo que le piden, entender por qué, y dejarlo en un punto donde el equipo vuelva a moverse rápido sin romper nada: migraciones con plazo, deuda técnica acumulada, transiciones de stack. Ahora mismo me atraen especialmente los equipos que van hacia arquitecturas orientadas a eventos.',
+          a: 'Full Stack Developer, preferiblemente donde el backend pese tanto como el frontend. Donde más aporto es en producto que ya está en producción: entregas con plazo cerrado (la exportación contable a Sage 50, la migración a GA4 en 2 meses), integraciones de pagos y facturación, y funcionalidades completas de extremo a extremo con sus tests. Ahora mismo me atraen especialmente los equipos que van hacia arquitecturas orientadas a eventos.',
         },
         {
           q: '¿Trabajas en remoto o presencial?',
@@ -364,7 +364,7 @@ export const dictionaries = {
     },
     contactInfo: {
       title: 'Información de Contacto',
-      subtitle: '¿Buscas un Full-Stack Engineer para tu equipo? ¡Hablemos!',
+      subtitle: '¿Buscas un Full Stack Developer para tu equipo? ¡Hablemos!',
       location: 'Almedina, Ciudad Real · Remoto o híbrido',
       emailLabel: 'Email',
       baseLabel: 'Base',
@@ -447,10 +447,10 @@ export const dictionaries = {
     hero: {
       availability: 'Open to new opportunities',
       greeting: "Hi, I'm",
-      role: 'Full-Stack Engineer',
-      tagline: 'I modernize legacy systems and design distributed architectures.',
+      role: 'Full Stack Developer',
+      tagline: 'Solid backend, React frontend and testing as standard.',
       description:
-        'Nearly 5 years building and rescuing products in production: deadline-critical migrations, technical debt reduction, event-driven architectures and stack transitions. I work with Node.js, React/Next.js, PHP/Symfony and PostgreSQL. Remote from Spain, open to hybrid.',
+        'Nearly 5 years of experience in PHP/Symfony, Node.js and React/Next.js. Most recently: a recurring partner billing engine, SEPA collections with GoCardless and internal accounting libraries. Before that, on a product with over 1M monthly visits: fixed-deadline deliveries (accounting export to Sage 50, GA4 migration in 2 months), backend integration with GraphQL, OpenSearch and RabbitMQ queues, and React frontend work in multi-team projects. Testing comes as standard: on the frontend I took coverage from 0% to over 75%. Remote from Spain, open to hybrid.',
       btnProjects: 'See my Projects',
       btnContact: "Let's talk",
       btnCV: 'Download CV',
@@ -722,7 +722,7 @@ export const dictionaries = {
     contactPage: {
       title: 'Get in Touch',
       subtitle:
-        'I am open to new opportunities as a Full-Stack Engineer: remote from Almedina (Ciudad Real, Spain), and open to hybrid. Reach me through the form, by direct email, or book half an hour in my calendar — whichever suits you.',
+        'I am open to new opportunities as a Full Stack Developer: remote from Almedina (Ciudad Real, Spain), and open to hybrid. Reach me through the form, by direct email, or book half an hour in my calendar — whichever suits you.',
       formTitle: 'Send me a message',
       calendlyTitle: 'Prefer to talk directly? Book a call',
       calendlyDescription:
@@ -732,7 +732,7 @@ export const dictionaries = {
       faq: [
         {
           q: 'What kind of role are you looking for?',
-          a: 'Full-Stack Engineer, ideally where the backend carries as much weight as the frontend. What I do best is take a system that works but can no longer handle what is asked of it, understand why, and leave it somewhere the team can move fast again without breaking things: migrations with a deadline, accumulated technical debt, stack transitions. Right now I am especially drawn to teams moving toward event-driven architectures.',
+          a: 'Full Stack Developer, ideally where the backend carries as much weight as the frontend. Where I add the most is on products already in production: fixed-deadline deliveries (the accounting export to Sage 50, the GA4 migration in 2 months), payment and billing integrations, and complete features built end to end with their tests. Right now I am especially drawn to teams moving toward event-driven architectures.',
         },
         {
           q: 'Do you work remotely or on-site?',
@@ -750,7 +750,7 @@ export const dictionaries = {
     },
     contactInfo: {
       title: 'Contact Information',
-      subtitle: "Looking for a Full-Stack Engineer for your team? Let's talk!",
+      subtitle: "Looking for a Full Stack Developer for your team? Let's talk!",
       location: 'Almedina, Ciudad Real, Spain · Remote or hybrid',
       emailLabel: 'Email',
       baseLabel: 'Based in',

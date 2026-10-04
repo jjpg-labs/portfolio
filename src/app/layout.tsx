@@ -9,18 +9,16 @@ import './globals.css';
 import { ChildrenProps } from './types';
 import { ViewportProvider } from './context/ViewportContext';
 
-const SITE_TITLE = 'Jose Juan — Full-Stack Engineer';
+const SITE_TITLE = 'Jose Juan — Full Stack Developer';
 const SITE_DESCRIPTION =
-  'Full Stack Developer especializado en modernización de sistemas legados y arquitecturas distribuidas. Node.js, React/Next.js, PHP/Symfony y PostgreSQL. Almedina (Ciudad Real), remoto o híbrido.';
+  'Full Stack Developer con casi 5 años de experiencia en PHP/Symfony, Node.js, React/Next.js y PostgreSQL: facturación recurrente, cobros SEPA, integración backend con GraphQL y OpenSearch, y testing de serie. Almedina (Ciudad Real), remoto o híbrido.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jjpg.dev'),
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
   keywords: [
-    'Full-Stack Engineer',
-    'sistemas legados',
-    'arquitectura de software',
+    'Full Stack Developer',
     'Next.js',
     'NestJS',
     'Symfony',
@@ -80,7 +78,7 @@ const jsonLd = {
   name: 'Jose Juan Pérez González',
   alternateName: 'JJPG',
   url: 'https://jjpg.dev',
-  jobTitle: 'Full-Stack Engineer',
+  jobTitle: 'Full Stack Developer',
   // Reuses SITE_DESCRIPTION so the JSON-LD blurb can't drift from the meta
   // description/og/twitter copy above.
   description: SITE_DESCRIPTION,

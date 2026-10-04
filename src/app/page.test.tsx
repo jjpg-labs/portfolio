@@ -42,7 +42,7 @@ describe('HomePage', () => {
       screen.getByRole('heading', { name: /hola, soy/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: /modernizo sistemas legados/i })
+      screen.getByRole('heading', { name: /backend sólido, frontend en react/i })
     ).toBeInTheDocument();
   });
 
@@ -55,7 +55,7 @@ describe('HomePage', () => {
   it('renders the introduction paragraph', () => {
     renderWithProviders(<HomePage />);
     expect(
-      screen.getByText(/casi 5 años construyendo y rescatando/i)
+      screen.getByText(/casi 5 años de experiencia en php\/symfony/i)
     ).toBeInTheDocument();
   });
 
