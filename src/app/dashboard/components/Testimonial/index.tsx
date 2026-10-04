@@ -6,7 +6,8 @@ import { useLocale } from '@/app/context/LocaleContext';
 // twice, read just after the two companies where it happened.
 export default function Testimonial() {
   const { t } = useLocale();
-  const { marker, title, quote, name, role, note } = t.testimonial;
+  const { marker, title, quote, quoteOpen, quoteClose, name, role, note } =
+    t.testimonial;
 
   return (
     <section
@@ -26,11 +27,11 @@ export default function Testimonial() {
         <figure className="flex flex-col gap-6 max-w-[40ch]">
           <blockquote className="font-serif italic text-[28px] sm:text-[36px] lg:text-[44px] leading-[1.15] text-text-primary text-balance">
             <span aria-hidden="true" className="text-accent">
-              «
+              {quoteOpen}
             </span>
             {quote}
             <span aria-hidden="true" className="text-accent">
-              »
+              {quoteClose}
             </span>
           </blockquote>
           <figcaption className="flex flex-col gap-1 border-l-2 border-accent pl-4">

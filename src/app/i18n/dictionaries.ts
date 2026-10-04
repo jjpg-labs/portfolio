@@ -79,6 +79,8 @@ export const dictionaries = {
     // busqueda-empleo/recomendaciones.md. Not linked to Malt on purpose.
     testimonial: {
       marker: '// recomendación',
+      quoteOpen: '«',
+      quoteClose: '»',
       title: 'Recomendación',
       quote:
         'Si tuviera que volver a formar un equipo mañana, José Juan sería una de las primeras personas a las que llamaría.',
@@ -486,6 +488,8 @@ export const dictionaries = {
     },
     testimonial: {
       marker: '// recommendation',
+      quoteOpen: '“',
+      quoteClose: '”',
       title: 'Recommendation',
       quote:
         "If I had to put a team together again tomorrow, José Juan would be one of the first people I'd call.",
