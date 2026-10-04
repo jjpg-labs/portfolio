@@ -24,7 +24,7 @@ export const Footer = () => {
 
   return (
     <div className="border-t border-border-subtle py-10 bg-bg-surface">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex flex-col gap-2">
             <span className="font-mono text-mono-label uppercase text-text-muted">
