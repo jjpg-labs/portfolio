@@ -75,6 +75,17 @@ export const dictionaries = {
       ],
       calendlyHint: 'o reserva una llamada de 30 min',
     },
+    // Quoted with Roberto's permission (2026-10-04); source text in the vault,
+    // busqueda-empleo/recomendaciones.md. Not linked to Malt on purpose.
+    testimonial: {
+      marker: '// recomendación',
+      title: 'Recomendación',
+      quote:
+        'Si tuviera que volver a formar un equipo mañana, José Juan sería una de las primeras personas a las que llamaría.',
+      name: 'Roberto',
+      role: 'CTO de Grupie Labs, antes CTO de Zankyou Weddings',
+      note: 'Recomendación escrita en octubre de 2026',
+    },
     experience: {
       title: 'Experiencia Profesional',
       subtitle: 'Equipos y productos en los que he construido y mantenido software en producción.',
@@ -472,6 +483,15 @@ export const dictionaries = {
         { value: '2 months', label: "GA4 migration, within Google's deadline" },
       ],
       calendlyHint: 'or book a 30-min call',
+    },
+    testimonial: {
+      marker: '// recommendation',
+      title: 'Recommendation',
+      quote:
+        "If I had to put a team together again tomorrow, José Juan would be one of the first people I'd call.",
+      name: 'Roberto',
+      role: 'CTO at Grupie Labs, previously CTO at Zankyou Weddings',
+      note: 'Translated from Spanish · October 2026',
     },
     experience: {
       title: 'Professional Experience',

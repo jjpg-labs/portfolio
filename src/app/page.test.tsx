@@ -71,6 +71,22 @@ describe('HomePage', () => {
     expect(screen.getByText('Tigloo')).toBeInTheDocument();
   });
 
+  it("renders Roberto's recommendation right after the experience", () => {
+    renderWithProviders(<HomePage />);
+    const quote = screen.getByText(
+      /si tuviera que volver a formar un equipo mañana/i
+    );
+    const figure = quote.closest('figure') as HTMLElement;
+    expect(figure).toHaveTextContent('Roberto');
+    expect(figure).toHaveTextContent(/CTO de Grupie Labs/);
+    // Placed after the last job, before the projects.
+    expect(
+      screen
+        .getByText('Tigloo')
+        .compareDocumentPosition(quote) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
   it('renders the CV, "Contactar" and "Ver proyectos" links', () => {
     renderWithProviders(<HomePage />);
     expect(

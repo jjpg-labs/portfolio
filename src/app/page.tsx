@@ -1,5 +1,6 @@
 import Header from './dashboard/components/Header';
 import Experience from './dashboard/components/Experience';
+import Testimonial from './dashboard/components/Testimonial';
 import Skills from './dashboard/components/Skills';
 import Projects from './dashboard/components/Projects';
 
@@ -18,6 +19,8 @@ export default function HomePage() {
       <Header />
 
       <Experience />
+
+      <Testimonial />
 
       <Projects />
 
