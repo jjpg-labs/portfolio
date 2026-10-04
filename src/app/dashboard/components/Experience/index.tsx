@@ -33,45 +33,50 @@ export default function Experience() {
             return (
               <article
                 key={entry.id}
-                className="border-b border-border-subtle py-8 lg:py-10"
+                className="grid grid-cols-1 lg:grid-cols-[18rem_minmax(0,1fr)] gap-x-14 gap-y-4 border-b border-border-subtle py-8 lg:py-10"
               >
-                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 mb-4">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-mono-label uppercase text-text-muted">
-                      {numLabel}
-                    </span>
-                    <h3 className="font-serif text-[24px] sm:text-[28px] text-text-primary">
-                      {entry.company}
-                    </h3>
-                  </div>
+                {/* Who, what and when together on the left, so a recruiter
+                    reads company, role and dates in one glance. */}
+                <header className="flex flex-col gap-1.5 lg:sticky lg:top-24 lg:self-start">
                   <span className="font-mono text-mono-label uppercase text-text-muted">
-                    {copy.role} · {copy.dates}
+                    {numLabel}
                   </span>
-                </div>
+                  <h3 className="font-serif text-[24px] sm:text-[28px] leading-tight text-text-primary">
+                    {entry.company}
+                  </h3>
+                  <p className="font-sans text-body font-medium text-text-primary">
+                    {copy.role}
+                  </p>
+                  <p className="font-mono text-mono-label uppercase text-text-muted whitespace-nowrap">
+                    {copy.dates}
+                  </p>
+                </header>
 
-                <ul className="flex flex-col gap-2 mb-5 max-w-[70ch]">
-                  {copy.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="font-sans text-small text-text-secondary leading-relaxed flex items-baseline gap-2"
-                    >
-                      <span aria-hidden="true" className="text-accent">
-                        ·
+                <div>
+                  <ul className="flex flex-col gap-2.5 mb-5 max-w-[68ch]">
+                    {copy.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="font-sans text-body text-text-secondary flex items-baseline gap-2"
+                      >
+                        <span aria-hidden="true" className="text-accent">
+                          ·
+                        </span>
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {entry.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="font-mono text-mono-chip uppercase text-text-muted px-2 py-1 border border-border-subtle rounded-xs"
+                      >
+                        {tech}
                       </span>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {entry.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="font-mono text-mono-label uppercase text-text-muted px-2 py-0.5 border border-border-subtle rounded-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </article>
             );
