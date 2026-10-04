@@ -154,6 +154,25 @@ describe('POST /api/contact', () => {
     expect(mockSend).not.toHaveBeenCalled();
   });
 
+  it('returns 502 when Resend rejects the email instead of throwing', async () => {
+    // Real shape of a Resend 403 with the onboarding@resend.dev sender.
+    mockSend.mockResolvedValue({
+      data: null,
+      error: {
+        name: 'validation_error',
+        message: 'You can only send testing emails to your own email address.',
+        statusCode: 403,
+      },
+    });
+    const spy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const res = await POST(makeRequest(validBody, { ip: '203.0.113.17' }));
+    const json = await res.json();
+    spy.mockRestore();
+
+    expect(res.status).toBe(502);
+    expect(json.success).toBe(false);
+  });
+
   it('rate-limits a burst from the same IP with 429', async () => {
     const ip = '203.0.113.99';
     let last: Response | undefined;
