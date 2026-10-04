@@ -13,7 +13,14 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     id: 'grupie',
     company: 'Grupie Labs',
-    technologies: ['Symfony', 'Next.js', 'React', 'Fastify', 'PostgreSQL'],
+    technologies: [
+      'Symfony',
+      'Next.js',
+      'React',
+      'Fastify',
+      'PostgreSQL',
+      'Playwright',
+    ],
   },
   {
     id: 'theknot',
