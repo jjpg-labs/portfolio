@@ -83,6 +83,15 @@ describe('BackToTop', () => {
     expect(getButton().tagName).toBe('BUTTON');
   });
 
+  // The global :focus-visible outline (accent ink, >= 4.6:1) must reach this
+  // button: a local outline-hidden + 22 % accent ring gave ~1.3:1.
+  it('keeps the global focus outline instead of the faint accent ring', () => {
+    renderWithLocale(<BackToTop />);
+    const button = getButton();
+    expect(button).not.toHaveClass('focus:outline-hidden');
+    expect(button.className).not.toMatch(/ring-accent-ring/);
+  });
+
   it('is hidden initially (opacity-0 + non-interactive)', () => {
     renderWithLocale(<BackToTop />);
     const button = getButton();
