@@ -52,7 +52,7 @@ export const Navigation = () => {
     href === '/' ? pathname === '/' : pathname?.startsWith(href);
 
   return (
-    <nav className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 py-4 flex justify-between items-center">
+    <nav className="max-w-7xl mx-auto py-4 flex justify-between items-center">
       <Link
         href="/"
         className="flex items-center gap-3 group"

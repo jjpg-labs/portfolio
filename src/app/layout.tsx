@@ -141,7 +141,9 @@ export default function RootLayout({ children }: ChildrenProps) {
           <LocaleProvider>
           <ViewportProvider>
             <div id="app-container" className="flex flex-col min-h-screen bg-bg-base text-text-primary">
-              <header className="sticky top-0 z-50 bg-bg-surface border-b border-border-subtle">
+              {/* Same box as every page section: padding outside, max-w-7xl inside,
+                  so the logo lines up with the page content. */}
+              <header className="sticky top-0 z-50 bg-bg-surface border-b border-border-subtle px-4 sm:px-8 lg:px-14">
                 <Navigation />
               </header>
 
