@@ -64,7 +64,7 @@ export const Navigation = () => {
             Issue <span className="text-accent">02</span> · jjpg.dev · 2026
           </span>
           <span className="font-serif text-[17px] text-text-primary group-hover:italic transition-all">
-            Jose Juan Pérez
+            José Juan Pérez
           </span>
         </span>
       </Link>

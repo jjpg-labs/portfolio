@@ -19,7 +19,7 @@ describe('ProjectsPage', () => {
       ).toBeInTheDocument()
     );
     expect(
-      screen.getByText(/Proyectos reales: SaaS multi-tenant/i)
+      screen.getByText(/Proyectos propios, de punta a punta/i)
     ).toBeInTheDocument();
   });
 

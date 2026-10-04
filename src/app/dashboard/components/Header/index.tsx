@@ -14,14 +14,13 @@ export default function Header() {
   const c = t.colophon;
 
   const colophon = [
-    { term: t.ui.issue, value: 'N.º 02', accent: true },
-    { term: c.year, value: '2026' },
-    { term: c.editor, value: 'JJPG' },
-    { term: c.role, value: 'FS Engineer' },
-    { term: c.base, value: 'Almedina, ES' },
+    { term: c.role, value: t.hero.role },
     { term: c.status, value: c.available, accent: true },
+    { term: c.base, value: 'Almedina, ES' },
+    { term: c.mode, value: c.modeValue },
     { term: c.experience, value: c.experienceValue },
-    { term: c.stack, value: 'TS · Next · PG' },
+    { term: c.stack, value: 'PHP · Node · React' },
+    { term: c.languages, value: c.languagesValue },
   ];
 
   return (
@@ -40,7 +39,7 @@ export default function Header() {
             <LiveDot label={t.hero.availability} />
 
             <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-display-xl">
-              {t.hero.greeting} Jose Juan.{' '}
+              {t.hero.greeting} José Juan.{' '}
               <AccentWord underline>{t.hero.role}</AccentWord>.
             </h1>
 

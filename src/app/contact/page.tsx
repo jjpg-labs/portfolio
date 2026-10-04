@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ContactClient from './ContactClient';
 import { dictionaries } from '@/app/i18n/dictionaries';
 
-const TITLE = 'Contacto | Jose Juan';
+const TITLE = 'Contacto | José Juan';
 const DESCRIPTION =
-  'Contacta con Jose Juan, Full Stack Developer abierto a nuevas oportunidades en remoto o híbrido, ' +
+  'Contacta con José Juan, Full Stack Developer abierto a nuevas oportunidades en remoto o híbrido, ' +
   'desde Almedina (Ciudad Real). Formulario, correo directo o llamada de 30 minutos. Respuesta en menos de 24 h.';
 
 export const metadata: Metadata = {

@@ -75,7 +75,7 @@ export const Footer = () => {
 
         <div className="mt-6 pt-5 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-mono text-mono-label uppercase text-text-muted">
-            © {currentYear} Jose Juan Pérez González
+            © {currentYear} José Juan Pérez González
           </p>
           <p className="font-mono text-mono-label uppercase text-text-muted">
             {t.footer.bottomLine}

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Jose Juan — Full Stack Developer';
+export const alt = 'José Juan — Full Stack Developer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -42,7 +42,7 @@ export default function Image() {
           }}
         >
           <div style={{ display: 'flex' }}>// jjpg.dev · portfolio</div>
-          <div style={{ display: 'flex', color: ACCENT }}>DISPONIBLE</div>
+          <div style={{ display: 'flex', color: ACCENT }}>ABIERTO A OFERTAS</div>
         </div>
 
         {/* Center block */}
@@ -71,7 +71,7 @@ export default function Image() {
                 color: PAPER,
               }}
             >
-              Disponible para nuevos proyectos
+              Disponible de inmediato · Remoto desde España
             </div>
           </div>
 
@@ -85,7 +85,7 @@ export default function Image() {
               color: PAPER,
             }}
           >
-            Jose Juan
+            José Juan
           </div>
           <div
             style={{
@@ -108,7 +108,7 @@ export default function Image() {
               lineHeight: 1.4,
             }}
           >
-            SaaS, dashboards e integración de IA con Next.js, NestJS y PostgreSQL.
+            Casi 5 años en PHP/Symfony, Node.js y React/Next.js: facturación recurrente, cobros SEPA y testing de serie.
           </div>
         </div>
 
@@ -126,7 +126,7 @@ export default function Image() {
           }}
         >
           <div style={{ display: 'flex' }}>
-            NEXT.JS · NESTJS · POSTGRESQL · CLAUDE API
+            PHP/SYMFONY · NODE.JS · REACT/NEXT.JS · POSTGRESQL
           </div>
           <div style={{ display: 'flex', color: PAPER }}>jjpg.dev</div>
         </div>

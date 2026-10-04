@@ -48,14 +48,14 @@ describe('HomePage', () => {
 
   it('renders the availability badge', () => {
     renderWithProviders(<HomePage />);
-    const matches = screen.getAllByText(/abierto a nuevas oportunidades/i);
+    const matches = screen.getAllByText(/disponible de inmediato/i);
     expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders the introduction paragraph', () => {
     renderWithProviders(<HomePage />);
     expect(
-      screen.getByText(/casi 5 años de experiencia en php\/symfony/i)
+      screen.getByText(/lo más reciente, en grupie labs/i)
     ).toBeInTheDocument();
   });
 
@@ -71,12 +71,12 @@ describe('HomePage', () => {
     expect(screen.getByText('Tigloo')).toBeInTheDocument();
   });
 
-  it('renders the "Ver mis Proyectos" and "Hablemos" links', () => {
+  it('renders the "Ver mis Proyectos" and "Contactar" links', () => {
     renderWithProviders(<HomePage />);
     expect(
       screen.getByRole('link', { name: /ver mis proyectos/i })
     ).toHaveAttribute('href', '/projects');
-    expect(screen.getByRole('link', { name: /hablemos/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /contactar/i })).toHaveAttribute(
       'href',
       '/contact'
     );
@@ -94,13 +94,13 @@ describe('HomePage', () => {
     expect(screen.getByText(/datos & infra/i)).toBeInTheDocument();
   });
 
-  it('renders the "Mis Proyectos Más Recientes" section with featured projects', () => {
+  it('renders the "Proyectos propios" section with featured projects', () => {
     renderWithProviders(<HomePage />);
     expect(
-      screen.getByRole('heading', { name: /mis proyectos más recientes/i })
+      screen.getByRole('heading', { name: /proyectos propios/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/échale un vistazo a las soluciones/i)
+      screen.getByText(/proyectos personales, de punta a punta/i)
     ).toBeInTheDocument();
     expect(screen.getByText('Accounting Suite')).toBeInTheDocument();
     expect(screen.getByText('Curio')).toBeInTheDocument();
