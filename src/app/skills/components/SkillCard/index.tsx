@@ -106,7 +106,7 @@ export function SkillCard({
               <ul className="flex flex-wrap gap-x-3 gap-y-1">
                 {names.map((name, i) => (
                   <li key={name} className="flex items-baseline gap-3">
-                    {name}
+                    <span>{name}</span>
                     {i < names.length - 1 && (
                       <span aria-hidden="true" className="text-text-muted">
                         ·
