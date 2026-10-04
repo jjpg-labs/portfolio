@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <section className="relative px-4 sm:px-8 lg:px-14 py-10 lg:py-16 bg-bg-base">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-10 font-mono text-mono-label uppercase text-text-muted">
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 mb-10 font-mono text-mono-label uppercase text-text-muted">
           <span>{t.ui.metaHome}</span>
           <span className="flex items-center gap-2">
             <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-accent" />
