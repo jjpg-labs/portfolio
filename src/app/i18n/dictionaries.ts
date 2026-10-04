@@ -74,7 +74,7 @@ export const dictionaries = {
       entries: {
         grupie: {
           role: 'Full Stack Developer',
-          dates: 'Dic 2025 · Oct 2026',
+          dates: 'Dic 2025 – Oct 2026',
           bullets: [
             'Desarrollo del producto core en PHP/Symfony y Next.js/React.',
             'Diseñé e implementé el motor de facturación recurrente de partners: ciclo diario de contratos, prorrateo de cancelaciones y recuperación ante fallos.',
@@ -88,7 +88,7 @@ export const dictionaries = {
         },
         theknot: {
           role: 'Software Engineer (full stack)',
-          dates: 'Nov 2022 · Nov 2025',
+          dates: 'Nov 2022 – Nov 2025',
           bullets: [
             'Producto con más de 1M de visitas/mes en más de 10 países, en una organización de +40 personas en tecnología y un equipo de 6 a 10.',
             'En un proyecto de varios equipos con un plazo muy ajustado, me encargué de la parte web: añadí a una aplicación React de otro equipo una ruta nueva con su página, componentes reutilizables y custom hooks, siguiendo las convenciones del proyecto.',
@@ -100,10 +100,10 @@ export const dictionaries = {
         },
         tigloo: {
           role: 'Full Stack Developer',
-          dates: 'Dic 2021 · Oct 2022',
+          dates: 'Dic 2021 – Oct 2022',
           bullets: [
-            'Mantenimiento y evolución de aplicaciones de una empresa de derechos musicales en PHP 5.4/5.5 y 7.4 con Symfony y AngularJS.',
             'Propuse e implementé el primer pipeline de CI/CD en GitLab de la empresa, sustituyendo un despliegue manual que exigía repetir el cambio a mano en 4 máquinas desde 4 terminales simultáneas.',
+            'Mantenimiento y evolución de aplicaciones de una empresa de derechos musicales en PHP 5.4/5.5 y 7.4 con Symfony y AngularJS.',
             'Diseñé, desarrollé y puse en producción, en solitario, un endpoint de recepción de datos de consumo musical de terceros, con autenticación por token de corta expiración.',
           ],
         },
@@ -462,7 +462,7 @@ export const dictionaries = {
       entries: {
         grupie: {
           role: 'Full Stack Developer',
-          dates: 'Dec 2025 · Oct 2026',
+          dates: 'Dec 2025 – Oct 2026',
           bullets: [
             'Core product development in PHP/Symfony and Next.js/React.',
             'Designed and implemented the recurring billing engine for partners: daily contract cycle, prorating of cancellations and failure recovery.',
@@ -476,7 +476,7 @@ export const dictionaries = {
         },
         theknot: {
           role: 'Software Engineer (full-stack)',
-          dates: 'Nov 2022 · Nov 2025',
+          dates: 'Nov 2022 – Nov 2025',
           bullets: [
             'Product serving 1M+ monthly visits across 10+ countries, within a 40+ person engineering organization and a team of 6 to 10.',
             "In a multi-team project with a very tight deadline, I took charge of the web part: I added to another team's React application a new route with its page, reusable components and custom hooks, following the project's conventions.",
@@ -488,10 +488,10 @@ export const dictionaries = {
         },
         tigloo: {
           role: 'Full Stack Developer',
-          dates: 'Dec 2021 · Oct 2022',
+          dates: 'Dec 2021 – Oct 2022',
           bullets: [
-            'Maintenance and evolution of applications for a music rights company in PHP 5.4/5.5 and 7.4 with Symfony and AngularJS.',
             "Proposed and implemented the company's first GitLab CI/CD pipeline, replacing a manual deploy that meant repeating the change by hand across 4 machines from 4 simultaneous terminals.",
+            'Maintenance and evolution of applications for a music rights company in PHP 5.4/5.5 and 7.4 with Symfony and AngularJS.',
             'Designed, developed and put into production, on my own, an endpoint for receiving third-party music consumption data, with short-lived token authentication.',
           ],
         },
