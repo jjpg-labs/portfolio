@@ -94,7 +94,7 @@ export default function Header() {
 
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border-subtle border-y border-border-subtle">
               {t.hero.figures.map(({ value, label }) => (
-                <li key={value} className="flex flex-col gap-1 bg-bg-base py-4 sm:pr-4">
+                <li key={value} className="flex flex-col gap-1 bg-bg-base py-4 sm:px-5 sm:first:pl-0">
                   <span className="font-serif text-[32px] leading-none text-accent">
                     {value}
                   </span>
