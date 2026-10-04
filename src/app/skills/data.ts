@@ -140,6 +140,7 @@ export const SKILL_PREVIEW_GROUPS: SkillPreviewGroup[] = [
       canonical('MySQL'),
       canonical('OpenSearch'),
       canonical('Docker'),
+      canonical('Playwright'),
     ],
   },
   {

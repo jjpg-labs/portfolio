@@ -41,6 +41,7 @@ describe('skills data — single source of truth', () => {
       'MySQL',
       'OpenSearch',
       'Docker',
+      'Playwright',
     ]);
     expect(byId['messaging-apis']).toEqual(['GraphQL', 'REST', 'RabbitMQ']);
     expect(byId['ai-llms']).toEqual([
