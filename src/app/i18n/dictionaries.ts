@@ -10,8 +10,7 @@ export const dictionaries = {
       contact: 'Contacto',
     },
     footer: {
-      tagline: 'Desarrollado con Next.js y amor',
-      bottomLine: 'Almedina · ES · Exp. casi 5 años',
+      bottomLine: 'Almedina, ES · Casi 5 años de experiencia',
     },
     ui: {
       metaHome: '// portada · home',
@@ -19,20 +18,21 @@ export const dictionaries = {
       metaServices: '// página · servicios',
       metaSkills: '// página · stack',
       metaContact: '// página · contacto',
-      homeSecExperience: '// 03 — experiencia',
+      homeSecExperience: '// 01 — experiencia',
       homeSecServices: '// 03 — índice',
-      homeSecProjects: '// 04 — proyectos',
-      homeSecSkills: '// 05 — stack',
-      discoveryCall: '// discovery call',
+      homeSecProjects: '// 02 — proyectos',
+      homeSecSkills: '// 03 — stack',
+      discoveryCall: '// llamada de 30 min',
       form: '// formulario',
       menu: '// menú',
       contactMarker: '// contacto',
-      heroLive: 'En vivo desde Almedina · ES',
+      heroLive: 'Almedina, España · Remoto',
       issue: 'Issue',
-      ctaContact: 'Hablemos',
+      ctaContact: 'Contactar',
     },
     a11y: {
       home: 'jjpg.dev — Inicio',
+      skipToContent: 'Saltar al contenido',
       openMenu: 'Abrir menú',
       closeMenu: 'Cerrar menú',
       navMenu: 'Menú de navegación',
@@ -46,69 +46,93 @@ export const dictionaries = {
       shotNext: 'Siguiente',
     },
     colophon: {
-      year: 'Año',
-      editor: 'Editor',
       role: 'Rol',
       base: 'Base',
       status: 'Estado',
       experience: 'Exp.',
       experienceValue: 'casi 5 años',
       stack: 'Stack',
-      available: 'Abierto a ofertas',
+      available: 'Disponible de inmediato',
+      mode: 'Modalidad',
+      modeValue: 'Remoto · híbrido',
+      languages: 'Idiomas',
+      languagesValue: 'ES nativo · EN B1',
     },
     hero: {
-      availability: 'Abierto a nuevas oportunidades',
+      availability: 'Disponible de inmediato',
       greeting: 'Hola, soy',
-      role: 'Full-Stack Engineer',
-      tagline: 'Modernizo sistemas legados y diseño arquitecturas distribuidas.',
+      role: 'Full Stack Developer',
+      tagline: 'Backend sólido, frontend en React y el testing de serie.',
       description:
-        'Casi 5 años construyendo y rescatando productos en producción: migraciones críticas con plazo, reducción de deuda técnica, arquitecturas orientadas a eventos y transiciones de stack. Trabajo con Node.js, React/Next.js, PHP/Symfony y PostgreSQL. Remoto desde España, abierto a híbrido.',
-      btnProjects: 'Ver mis Proyectos',
-      btnContact: 'Hablemos',
+        'Casi 5 años de experiencia. Lo más reciente, en Grupie Labs: el motor de facturación recurrente de partners y los cobros SEPA con GoCardless. Antes, en The Knot Worldwide (más de 1M de visitas al mes): entregas con plazo cerrado (exportación contable a Sage 50, migración a GA4 en 2 meses) e integración backend con GraphQL, OpenSearch y RabbitMQ. Remoto desde España, abierto a híbrido.',
+      btnProjects: 'Ver proyectos',
+      btnContact: 'Contactar',
       btnCV: 'Descargar CV',
-      calendlyHint: 'o agenda una entrevista de 30 min directamente',
+      // Key figures from the CV (content.mjs), shown under the description.
+      figures: [
+        { value: '>75 %', label: 'cobertura de tests en frontend, desde 0 %' },
+        { value: '1M+', label: 'visitas al mes en The Knot Worldwide' },
+        { value: '2 meses', label: 'migración a GA4, dentro del plazo de Google' },
+      ],
+      calendlyHint: 'o reserva una llamada de 30 min',
+    },
+    // Quoted with Roberto's permission (2026-10-04); source text in the vault,
+    // busqueda-empleo/recomendaciones.md. Not linked to Malt on purpose.
+    testimonial: {
+      marker: '// recomendación',
+      quoteOpen: '«',
+      quoteClose: '»',
+      title: 'Recomendación',
+      quote:
+        'Si tuviera que volver a formar un equipo mañana, José Juan sería una de las primeras personas a las que llamaría.',
+      name: 'Roberto',
+      role: 'CTO de Grupie Labs, antes CTO de Zankyou Weddings',
+      note: 'Recomendación escrita en octubre de 2026',
     },
     experience: {
       title: 'Experiencia Profesional',
       subtitle: 'Equipos y productos en los que he construido y mantenido software en producción.',
-      current: 'Actualidad',
       entries: {
         grupie: {
           role: 'Full Stack Developer',
-          dates: 'Dic 2025 · Actualidad',
+          dates: 'Dic 2025 – Oct 2026',
           bullets: [
-            'Desarrollo del producto core en PHP/Symfony y Next.js/React, incluyendo decisiones de arquitectura.',
+            'Desarrollo del producto core en PHP/Symfony y Next.js/React.',
+            'Diseñé e implementé el motor de facturación recurrente de partners: ciclo diario de contratos, prorrateo de cancelaciones y recuperación ante fallos.',
             'Desarrollo de servicios backend para clientes externos con Fastify y PostgreSQL.',
-            'Implanté la práctica de testing en un equipo sin cobertura previa, llevándola de 0% a más del 60%.',
-            'Flujos de desarrollo asistidos por IA con verificación en varias capas: revisión automatizada por un agente independiente, revisión manual y code review del equipo antes de integrar.',
+            'Ayudé en la integración de la pasarela de pagos Lemonway (wallets, domiciliaciones, webhooks y KYC) e integré GoCardless para automatizar los cobros SEPA.',
+            'Desarrollé de extremo a extremo el RSVP de eventos y, del resto de la funcionalidad de eventos, el frontend: editor y página pública, lista de invitados, modelo de encuesta e internacionalización en/es/fr.',
+            'Creé dos librerías internas: media-url (imágenes con imgproxy) y ledgers (contabilidad y facturación con integración de Holded).',
+            'En los proyectos de frontend, que no tenían tests, implanté la práctica de testing y llevé la cobertura de 0 % a más del 75 %; además, monté desde cero la suite e2e con Playwright.',
+            'Implementación de flujos de desarrollo asistidos por IA con verificación en varias capas: revisión automatizada por un agente independiente, revisión manual y code review del equipo antes de integrar.',
           ],
         },
         theknot: {
-          role: 'Full Stack Developer',
-          dates: 'Nov 2022 · Dic 2025',
+          role: 'Software Engineer (full stack)',
+          dates: 'Nov 2022 – Nov 2025',
           bullets: [
-            'Incorporación tras la adquisición, con el encargo de estabilizar el ecosistema técnico y reducir la deuda heredada. Producto con más de 1M de visitas/mes en más de 10 países, en una organización de +40 personas en tecnología y un equipo de 6 a 10.',
-            'Migración de Universal Analytics a GA4 en 2 meses, dentro del plazo límite de Google y sin pérdida de continuidad en el reporting.',
-            'Automatización de la exportación contable B2B/B2C hacia Sage 50, eliminando más de 10 horas mensuales de trabajo manual y los errores de carga.',
-            'Construí en React la página que abrió la transición de módulos críticos, y lideré la implementación de tests unitarios con Jest y PHPUnit, extendiendo la práctica en el equipo.',
-            'Diagnóstico y resolución de incidencias en producción sobre ese volumen de tráfico: caídas tras despliegue y degradaciones de rendimiento por consultas pesadas y timeouts.',
-            'Desde 2025, decisiones de arquitectura: integración backend con HapiJS, GraphQL y OpenSearch sobre un índice de millones de documentos, y resolvers en PayloadCMS con el flujo entre más de 8 servicios gestionado por colas de RabbitMQ.',
+            'Producto con más de 1M de visitas/mes en más de 10 países, en una organización de +40 personas en tecnología y un equipo de 6 a 10.',
+            'En un proyecto de varios equipos con un plazo muy ajustado, me encargué de la parte web: añadí a una aplicación React de otro equipo una ruta nueva con su página, componentes reutilizables y custom hooks, siguiendo las convenciones del proyecto.',
+            'Diseñé e implementé parte de la integración backend de un proyecto transversal (HapiJS, GraphQL y OpenSearch sobre un índice de millones de documentos). En una arquitectura de más de 8 servicios comunicados por colas de RabbitMQ, añadí listeners con sus endpoints y esquemas, y creé resolvers GraphQL en PayloadCMS.',
+            'Desarrollé funcionalidades detrás de feature flags y las validé con experimentos A/B en el gestor interno de la empresa.',
+            'Planifiqué y ejecuté la migración de Universal Analytics a GA4 cumpliendo el plazo límite impuesto por Google, en 2 meses y sin pérdida de continuidad en el reporting de negocio.',
+            'Automaticé la exportación contable B2B/B2C hacia Sage 50, eliminando más de 10 horas mensuales de trabajo manual y los errores de carga.',
           ],
         },
         tigloo: {
           role: 'Full Stack Developer',
-          dates: 'Dic 2021 · Oct 2022',
+          dates: 'Dic 2021 – Oct 2022',
           bullets: [
-            'Mantenimiento y evolución de aplicaciones de gestión musical en PHP 5.4/5.5 con Symfony y AngularJS.',
             'Propuse e implementé el primer pipeline de CI/CD en GitLab de la empresa, sustituyendo un despliegue manual que exigía repetir el cambio a mano en 4 máquinas desde 4 terminales simultáneas.',
-            'Lideré el desarrollo del endpoint de recepción de datos de consumo musical de terceros, con autenticación por token de corta expiración.',
+            'Mantenimiento y evolución de aplicaciones de una empresa de derechos musicales en PHP 5.4/5.5 y 7.4 con Symfony y AngularJS.',
+            'Diseñé, desarrollé y puse en producción, en solitario, un endpoint de recepción de datos de consumo musical de terceros, con autenticación por token de corta expiración.',
           ],
         },
       } as Record<string, { role: string; dates: string; bullets: string[] }>,
     },
     dashboardProjects: {
-      title: 'Mis Proyectos Más Recientes',
-      subtitle: 'Échale un vistazo a las soluciones que he diseñado y construido.',
+      title: 'Proyectos propios',
+      subtitle: 'Proyectos personales, de punta a punta y con demo pública.',
       seeAll: 'Ver Todos los Proyectos',
     },
     projectCopy: {
@@ -164,7 +188,7 @@ export const dictionaries = {
         'db-infra': 'Datos & Infra',
         'messaging-apis': 'Mensajería & APIs',
         'ai-llms': 'IA / LLMs',
-        notions: 'Nociones de',
+        notions: 'Conocimientos básicos',
       } as Record<string, string>,
     },
     dashboardServices: {
@@ -198,7 +222,7 @@ export const dictionaries = {
     projectsPage: {
       title: 'Portafolio de Proyectos',
       subtitle:
-        'Proyectos reales: SaaS multi-tenant, plataformas full-stack con Next.js y APIs REST con NestJS.',
+        'Proyectos propios, de punta a punta: SaaS multi-tenant, plataformas full stack con Next.js y APIs REST con NestJS.',
       liveBtn: 'En Vivo',
       codeBtn: 'Código',
       privateRepo: 'Repositorio privado',
@@ -228,15 +252,15 @@ export const dictionaries = {
       // worth its own page instead of a longer version of the home preview.
       categoryIntros: {
         'Back-End':
-          'Es donde más tiempo paso. NestJS es mi opción por defecto para una API nueva —es el back de Nexfit y de Accounting Suite—, pero buena parte de mi carrera ha sido mantener y evolucionar PHP/Symfony heredado, incluido código en PHP 5.4. En The Knot Worldwide integré servicios con HapiJS, GraphQL y resolvers sobre PayloadCMS; hoy en Grupie Labs combino Symfony con servicios en Fastify.',
+          'Es donde más tiempo paso. En empresa: PHP/Symfony —mantener y evolucionar aplicaciones, incluido código en PHP 5.4—; Node.js con HapiJS, GraphQL y OpenSearch en The Knot Worldwide, donde diseñé e implementé mi parte de la integración backend de un proyecto transversal y creé resolvers en PayloadCMS; y Fastify junto a Symfony en Grupie Labs. En mis proyectos propios (Nexfit y Accounting Suite), NestJS es mi opción por defecto para una API nueva.',
         'Front-End':
-          'React con Next.js y TypeScript es donde construyo casi todo el producto visible. He llevado módulos críticos de un stack heredado a React y participé en la migración de los componentes de un equipo a su nueva librería de diseño en Next.js. Fuera de la web, la app móvil de Nexfit está en Expo con React Native y funciona offline-first: el mismo modelo mental, otra caja de herramientas.',
+          'React con Next.js y TypeScript es donde construyo casi todo el producto visible. En The Knot Worldwide, en un proyecto de varios equipos con un plazo muy ajustado, añadí a una aplicación React de otro equipo una ruta nueva con su página, componentes reutilizables y custom hooks, y participé en la migración de los componentes de un equipo a su nueva librería de diseño en Next.js. Fuera de la web, la app móvil de Nexfit está en Expo con React Native y funciona offline-first: el mismo modelo mental, otra caja de herramientas.',
         'Bases de Datos':
-          'PostgreSQL es mi base por defecto, con Prisma cuando el proyecto es TypeScript. La parte menos vistosa —y la que más problemas evita— es el modelado: en un SaaS multi-tenant como Vereda, decidir dónde vive el identificador de tenant condiciona todo lo que viene después. OpenSearch entró por la capa de búsqueda de un backend que integré.',
+          'PostgreSQL es mi base por defecto, con Prisma cuando el proyecto es TypeScript. La parte menos vistosa —y la que más problemas evita— es el modelado: en un SaaS multi-tenant como Vereda, decidir dónde vive el identificador de tenant condiciona todo lo que viene después. OpenSearch entró por la integración backend de un proyecto transversal en The Knot Worldwide.',
         Infraestructura:
-          'Lo suficiente para llevar a producción lo que construyo y mantenerlo vivo. Docker en todos los proyectos; RabbitMQ para desacoplar lo que no debe bloquear una petición; Playwright para las pruebas que de verdad detectan regresiones. En Tigloo propuse e implementé el primer pipeline de CI/CD de la empresa. Kubernetes, AWS y Terraform aparecen en el contexto de proyectos en los que he trabajado; sé moverme en ellos, pero no los vendo como especialidad.',
+          'Lo suficiente para llevar a producción lo que construyo y mantenerlo vivo. Docker en todos los proyectos; Playwright para las pruebas que de verdad detectan regresiones (en Grupie Labs monté desde cero la suite e2e). RabbitMQ lo he usado en una arquitectura de más de 8 servicios ya montada, donde añadí listeners con sus endpoints y esquemas. En Tigloo propuse e implementé el primer pipeline de CI/CD de la empresa. Kubernetes, AWS y Terraform aparecen en el contexto de proyectos en los que he trabajado: los he visto y tocado, pero no los ofrezco como especialidad.',
         'IA / LLMs':
-          'Uso IA dentro del ciclo de desarrollo, no como adorno: Claude Code integrado en el día a día en Grupie Labs, y la Claude API cuando la funcionalidad la necesita de verdad. MCP me interesa por lo que permite —conectar un modelo a herramientas y datos propios con un contrato explícito— y es donde más tiempo estoy invirtiendo ahora.',
+          'Uso IA dentro del ciclo de desarrollo, no como adorno: Claude Code en el día a día —en Grupie Labs, con revisión automatizada por un agente independiente y code review del equipo antes de integrar— y la Claude API cuando la funcionalidad la necesita de verdad.',
       } as Record<string, string>,
       levels: {
         expert: 'Experto',
@@ -333,7 +357,7 @@ export const dictionaries = {
     contactPage: {
       title: 'Ponte en Contacto',
       subtitle:
-        'Estoy abierto a nuevas oportunidades como Full-Stack Engineer: en remoto desde Almedina (Ciudad Real), y abierto a híbrido. Escríbeme por el formulario, por correo directo o reserva media hora en mi calendario: lo que te resulte más cómodo.',
+        'Estoy abierto a nuevas oportunidades como Full Stack Developer: en remoto desde Almedina (Ciudad Real), y abierto a híbrido. Escríbeme por el formulario, por correo directo o reserva media hora en mi calendario: lo que te resulte más cómodo.',
       formTitle: 'Envíame un mensaje',
       calendlyTitle: '¿Prefieres hablar directamente? Reserva una llamada',
       calendlyDescription:
@@ -343,15 +367,19 @@ export const dictionaries = {
       faq: [
         {
           q: '¿Qué tipo de puesto estás buscando?',
-          a: 'Full-Stack Engineer, preferiblemente donde el backend pese tanto como el frontend. Lo que mejor sé hacer es coger un sistema que funciona pero ya no aguanta lo que le piden, entender por qué, y dejarlo en un punto donde el equipo vuelva a moverse rápido sin romper nada: migraciones con plazo, deuda técnica acumulada, transiciones de stack. Ahora mismo me atraen especialmente los equipos que van hacia arquitecturas orientadas a eventos.',
+          a: 'Full Stack Developer, preferiblemente donde el backend pese tanto como el frontend. Donde más aporto es en producto que ya está en producción: entregas con plazo cerrado (la exportación contable a Sage 50, la migración a GA4 en 2 meses), integraciones de pagos y facturación, y funcionalidades completas de extremo a extremo con sus tests.',
         },
         {
           q: '¿Trabajas en remoto o presencial?',
-          a: 'Principalmente en remoto: vivo en Almedina (Ciudad Real) y trabajo así con equipos distribuidos desde hace años. También estoy abierto a un híbrido si el proyecto y las condiciones lo justifican, y puedo desplazarme puntualmente para un arranque o un onboarding.',
+          a: 'Principalmente en remoto: vivo en Almedina (Ciudad Real). También estoy abierto a un híbrido si el proyecto y las condiciones lo justifican, y puedo desplazarme puntualmente para un arranque o un onboarding.',
+        },
+        {
+          q: '¿En qué idiomas trabajas?',
+          a: 'Español nativo e inglés B1.',
         },
         {
           q: '¿Qué necesitas saber para responderme bien?',
-          a: 'Con el producto, el stack y qué problema quieres resolver me sobra para darte una respuesta útil en el primer mensaje. Si hay algo del proyecto que ya sabes que duele —un monolito que nadie toca, una migración pendiente— dímelo: eso es justo lo que quiero oír.',
+          a: 'Con el puesto, el stack y el equipo me basta para responderte con algo útil en el primer mensaje.',
         },
         {
           q: '¿Cuánto tardas en responder?',
@@ -361,7 +389,7 @@ export const dictionaries = {
     },
     contactInfo: {
       title: 'Información de Contacto',
-      subtitle: '¿Buscas un Full-Stack Engineer para tu equipo? ¡Hablemos!',
+      subtitle: '¿Buscas un Full Stack Developer para tu equipo? ¡Hablemos!',
       location: 'Almedina, Ciudad Real · Remoto o híbrido',
       emailLabel: 'Email',
       baseLabel: 'Base',
@@ -395,8 +423,7 @@ export const dictionaries = {
       contact: 'Contact',
     },
     footer: {
-      tagline: 'Built with Next.js and love',
-      bottomLine: 'Almedina, ES · Exp. nearly 5 yrs',
+      bottomLine: 'Almedina, ES · Nearly 5 years of experience',
     },
     ui: {
       metaHome: '// cover · home',
@@ -404,20 +431,21 @@ export const dictionaries = {
       metaServices: '// page · services',
       metaSkills: '// page · stack',
       metaContact: '// page · contact',
-      homeSecExperience: '// 03 — experience',
+      homeSecExperience: '// 01 — experience',
       homeSecServices: '// 03 — index',
-      homeSecProjects: '// 04 — projects',
-      homeSecSkills: '// 05 — stack',
-      discoveryCall: '// discovery call',
+      homeSecProjects: '// 02 — projects',
+      homeSecSkills: '// 03 — stack',
+      discoveryCall: '// 30-min call',
       form: '// form',
       menu: '// menu',
       contactMarker: '// contact',
-      heroLive: 'Live from Almedina · ES',
+      heroLive: 'Almedina, Spain · Remote',
       issue: 'Issue',
-      ctaContact: "Let's talk",
+      ctaContact: 'Get in touch',
     },
     a11y: {
       home: 'jjpg.dev — Home',
+      skipToContent: 'Skip to content',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
       navMenu: 'Navigation menu',
@@ -431,69 +459,90 @@ export const dictionaries = {
       shotNext: 'Next',
     },
     colophon: {
-      year: 'Year',
-      editor: 'Editor',
       role: 'Role',
       base: 'Based',
       status: 'Status',
       experience: 'Exp.',
-      experienceValue: 'nearly 5 yrs',
+      experienceValue: 'nearly 5 years',
       stack: 'Stack',
-      available: 'Open to offers',
+      available: 'Available now',
+      mode: 'Mode',
+      modeValue: 'Remote · hybrid',
+      languages: 'Languages',
+      languagesValue: 'ES native · EN B1',
     },
     hero: {
-      availability: 'Open to new opportunities',
+      availability: 'Available immediately',
       greeting: "Hi, I'm",
-      role: 'Full-Stack Engineer',
-      tagline: 'I modernize legacy systems and design distributed architectures.',
+      role: 'Full Stack Developer',
+      tagline: 'Solid backend, React frontend and testing as standard.',
       description:
-        'Nearly 5 years building and rescuing products in production: deadline-critical migrations, technical debt reduction, event-driven architectures and stack transitions. I work with Node.js, React/Next.js, PHP/Symfony and PostgreSQL. Remote from Spain, open to hybrid.',
-      btnProjects: 'See my Projects',
-      btnContact: "Let's talk",
+        'Nearly 5 years of experience. Most recently, at Grupie Labs: the recurring partner billing engine and SEPA collections with GoCardless. Before that, at The Knot Worldwide (1M+ monthly visits): fixed-deadline deliveries (accounting export to Sage 50, GA4 migration in 2 months) and backend integration with GraphQL, OpenSearch and RabbitMQ. Remote from Spain, open to hybrid.',
+      btnProjects: 'View projects',
+      btnContact: 'Get in touch',
       btnCV: 'Download CV',
-      calendlyHint: 'or book a 30-min interview directly',
+      figures: [
+        { value: '>75%', label: 'frontend test coverage, up from 0%' },
+        { value: '1M+', label: 'monthly visits at The Knot Worldwide' },
+        { value: '2 months', label: "GA4 migration, within Google's deadline" },
+      ],
+      calendlyHint: 'or book a 30-min call',
+    },
+    testimonial: {
+      marker: '// recommendation',
+      quoteOpen: '“',
+      quoteClose: '”',
+      title: 'Recommendation',
+      quote:
+        "If I had to put a team together again tomorrow, José Juan would be one of the first people I'd call.",
+      name: 'Roberto',
+      role: 'CTO at Grupie Labs, previously CTO at Zankyou Weddings',
+      note: 'Translated from Spanish · October 2026',
     },
     experience: {
       title: 'Professional Experience',
       subtitle: 'Teams and products where I have built and maintained software in production.',
-      current: 'Present',
       entries: {
         grupie: {
           role: 'Full Stack Developer',
-          dates: 'Dec 2025 · Present',
+          dates: 'Dec 2025 – Oct 2026',
           bullets: [
-            'Development of the core product in PHP/Symfony and Next.js/React, including architecture decisions.',
+            'Core product development in PHP/Symfony and Next.js/React.',
+            'Designed and implemented the recurring billing engine for partners: daily contract cycle, prorating of cancellations and failure recovery.',
             'Backend services for external clients built with Fastify and PostgreSQL.',
-            'Established testing practice in a team with no prior coverage, taking it from 0% to over 60%.',
+            'Helped integrate the Lemonway payment gateway (wallets, direct debits, webhooks and KYC) and integrated GoCardless to automate SEPA collections.',
+            'Built event RSVP end to end and, for the rest of the events feature, the frontend: editor and public page, guest list, survey model and en/es/fr internationalization.',
+            'Created two internal libraries: media-url (images via imgproxy) and ledgers (accounting and invoicing with Holded integration).',
+            'In the frontend projects, which had no tests, I established testing practice and took coverage from 0% to over 75%; I also built the e2e suite with Playwright from scratch.',
             'AI-assisted development workflows with layered verification: automated review by an independent agent, manual review and team code review before merging.',
           ],
         },
         theknot: {
-          role: 'Full Stack Developer',
-          dates: 'Nov 2022 · Dec 2025',
+          role: 'Software Engineer (full-stack)',
+          dates: 'Nov 2022 – Nov 2025',
           bullets: [
-            'Joined after the acquisition, tasked with stabilizing the technical ecosystem and paying down inherited technical debt. Product serving 1M+ monthly visits across 10+ countries, within a 40+ person engineering organization and a team of 6 to 10.',
-            "Migrated Universal Analytics to GA4 in 2 months, within Google's hard deadline and without any loss of reporting continuity.",
+            'Product serving 1M+ monthly visits across 10+ countries, within a 40+ person engineering organization and a team of 6 to 10.',
+            "In a multi-team project with a very tight deadline, I took charge of the web part: I added to another team's React application a new route with its page, reusable components and custom hooks, following the project's conventions.",
+            'Designed and implemented part of the backend integration of a cross-team project (HapiJS, GraphQL and OpenSearch over an index of millions of documents). In an architecture of 8+ services communicating through RabbitMQ queues, I added listeners with their endpoints and schemas, and created GraphQL resolvers in PayloadCMS.',
+            "Developed features behind feature flags and validated them with A/B experiments in the company's in-house experiment manager.",
+            "Planned and carried out the Universal Analytics to GA4 migration against Google's hard deadline, in 2 months and with no loss of business reporting continuity.",
             'Automated B2B/B2C accounting exports to Sage 50, removing 10+ hours of manual work per month and the data-loading errors.',
-            'Built the React page that opened the migration of critical modules, and led the adoption of unit testing with Jest and PHPUnit, extending the practice across the team.',
-            'Diagnosed and resolved production incidents at that traffic volume: post-deployment outages and performance degradation from heavy queries and timeouts.',
-            'Since 2025, architecture decisions: backend integration with HapiJS, GraphQL and OpenSearch over an index of millions of documents, and resolvers in PayloadCMS with data flowing between 8+ services through RabbitMQ queues.',
           ],
         },
         tigloo: {
           role: 'Full Stack Developer',
-          dates: 'Dec 2021 · Oct 2022',
+          dates: 'Dec 2021 – Oct 2022',
           bullets: [
-            'Maintenance and evolution of music-management applications in PHP 5.4/5.5 with Symfony and AngularJS.',
-            "Proposed and implemented the company's first CI/CD pipeline on GitLab, replacing a manual deploy that meant repeating the change by hand across 4 machines from 4 simultaneous terminals.",
-            'Led development of the ingestion endpoint for third-party music consumption data, with short-lived token authentication.',
+            "Proposed and implemented the company's first GitLab CI/CD pipeline, replacing a manual deploy that meant repeating the change by hand across 4 machines from 4 simultaneous terminals.",
+            'Maintenance and evolution of applications for a music rights company in PHP 5.4/5.5 and 7.4 with Symfony and AngularJS.',
+            'Designed, developed and put into production, on my own, an endpoint for receiving third-party music consumption data, with short-lived token authentication.',
           ],
         },
       } as Record<string, { role: string; dates: string; bullets: string[] }>,
     },
     dashboardProjects: {
-      title: 'My Latest Projects',
-      subtitle: 'Take a look at the solutions I have designed and built.',
+      title: 'Personal projects',
+      subtitle: 'Personal projects, built end to end, with public demos.',
       seeAll: 'See All Projects',
     },
     projectCopy: {
@@ -549,7 +598,7 @@ export const dictionaries = {
         'db-infra': 'Data & Infra',
         'messaging-apis': 'Messaging & APIs',
         'ai-llms': 'AI / LLMs',
-        notions: 'Working knowledge of',
+        notions: 'Basic knowledge',
       } as Record<string, string>,
     },
     dashboardServices: {
@@ -583,7 +632,7 @@ export const dictionaries = {
     projectsPage: {
       title: 'Project Portfolio',
       subtitle:
-        'Real projects: multi-tenant SaaS, full-stack platforms with Next.js, and REST APIs with NestJS.',
+        'Personal projects, end to end: multi-tenant SaaS, full-stack platforms with Next.js, and REST APIs with NestJS.',
       liveBtn: 'Live Demo',
       codeBtn: 'Code',
       privateRepo: 'Private repository',
@@ -611,15 +660,15 @@ export const dictionaries = {
       } as Record<string, string>,
       categoryIntros: {
         'Back-End':
-          'This is where I spend most of my time. NestJS is my default for a new API — it backs Nexfit and Accounting Suite — but much of my career has been maintaining and evolving legacy PHP/Symfony, PHP 5.4 included. At The Knot Worldwide I integrated services with HapiJS, GraphQL and PayloadCMS resolvers; today at Grupie Labs I pair Symfony with Fastify services.',
+          'This is where I spend most of my time. At work: PHP/Symfony — maintaining and evolving applications, PHP 5.4 included; Node.js with HapiJS, GraphQL and OpenSearch at The Knot Worldwide, where I designed and implemented my part of the backend integration of a cross-team project and created resolvers in PayloadCMS; and Fastify alongside Symfony at Grupie Labs. In my personal projects (Nexfit and Accounting Suite), NestJS is my default for a new API.',
         'Front-End':
-          'React with Next.js and TypeScript is where I build almost all of the visible product. I have moved critical modules off a legacy stack onto React and took part in migrating a team\'s components to its new Next.js design library. Off the web, the Nexfit mobile app runs on Expo with React Native and works offline-first: same mental model, different toolbox.',
+          'React with Next.js and TypeScript is where I build almost all of the visible product. At The Knot Worldwide, in a multi-team project with a very tight deadline, I added to another team\'s React application a new route with its page, reusable components and custom hooks, and took part in migrating a team\'s components to its new Next.js design library. Off the web, the Nexfit mobile app runs on Expo with React Native and works offline-first: same mental model, different toolbox.',
         'Bases de Datos':
-          'PostgreSQL is my default, with Prisma when the project is TypeScript. The least glamorous part — and the one that prevents the most pain — is modelling: in a multi-tenant SaaS like Vereda, deciding where the tenant identifier lives shapes everything that comes after. OpenSearch came in through the search layer of a backend I integrated.',
+          'PostgreSQL is my default, with Prisma when the project is TypeScript. The least glamorous part — and the one that prevents the most pain — is modelling: in a multi-tenant SaaS like Vereda, deciding where the tenant identifier lives shapes everything that comes after. OpenSearch came in through the backend integration of a cross-team project at The Knot Worldwide.',
         Infraestructura:
-          'Enough to take what I build to production and keep it alive. Docker on every project; RabbitMQ to decouple whatever must not block a request; Playwright for the tests that actually catch regressions. At Tigloo I proposed and built the company\'s first CI/CD pipeline. Kubernetes, AWS and Terraform show up in the context of projects I have worked on; I can find my way around them, but I do not sell them as a specialty.',
+          'Enough to take what I build to production and keep it alive. Docker on every project; Playwright for the tests that actually catch regressions (at Grupie Labs I built the e2e suite from scratch). I have used RabbitMQ in an existing architecture of 8+ services, where I added listeners with their endpoints and schemas. At Tigloo I proposed and built the company\'s first CI/CD pipeline. Kubernetes, AWS and Terraform show up in the context of projects I have worked on: I have seen and touched them, but I do not offer them as a specialty.',
         'IA / LLMs':
-          'I use AI inside the development cycle, not as decoration: Claude Code wired into the day-to-day at Grupie Labs, and the Claude API when a feature genuinely calls for it. MCP interests me for what it enables — connecting a model to your own tools and data under an explicit contract — and it is where most of my time goes right now.',
+          'I use AI inside the development cycle, not as decoration: Claude Code day to day — at Grupie Labs, with automated review by an independent agent and team code review before merging — and the Claude API when a feature genuinely calls for it.',
       } as Record<string, string>,
       levels: {
         expert: 'Expert',
@@ -716,7 +765,7 @@ export const dictionaries = {
     contactPage: {
       title: 'Get in Touch',
       subtitle:
-        'I am open to new opportunities as a Full-Stack Engineer: remote from Almedina (Ciudad Real, Spain), and open to hybrid. Reach me through the form, by direct email, or book half an hour in my calendar — whichever suits you.',
+        'I am open to new opportunities as a Full Stack Developer: remote from Almedina (Ciudad Real, Spain), and open to hybrid. Reach me through the form, by direct email, or book half an hour in my calendar — whichever suits you.',
       formTitle: 'Send me a message',
       calendlyTitle: 'Prefer to talk directly? Book a call',
       calendlyDescription:
@@ -726,15 +775,19 @@ export const dictionaries = {
       faq: [
         {
           q: 'What kind of role are you looking for?',
-          a: 'Full-Stack Engineer, ideally where the backend carries as much weight as the frontend. What I do best is take a system that works but can no longer handle what is asked of it, understand why, and leave it somewhere the team can move fast again without breaking things: migrations with a deadline, accumulated technical debt, stack transitions. Right now I am especially drawn to teams moving toward event-driven architectures.',
+          a: 'Full Stack Developer, ideally where the backend carries as much weight as the frontend. Where I add the most is on products already in production: fixed-deadline deliveries (the accounting export to Sage 50, the GA4 migration in 2 months), payment and billing integrations, and complete features built end to end with their tests.',
         },
         {
           q: 'Do you work remotely or on-site?',
-          a: 'Primarily remote: I live in Almedina (Ciudad Real, Spain) and have worked this way with distributed teams for years. I am also open to a hybrid setup when the project and the terms justify it, and I can travel occasionally for a kick-off or onboarding.',
+          a: 'Primarily remote: I live in Almedina (Ciudad Real, Spain). I am also open to a hybrid setup when the project and the terms justify it, and I can travel occasionally for a kick-off or onboarding.',
+        },
+        {
+          q: 'Which languages do you work in?',
+          a: 'Spanish (native) and English (B1).',
         },
         {
           q: 'What do you need in order to give me a useful answer?',
-          a: 'The product, the stack and the problem you want solved are enough for me to reply with something useful on the first message. If there is a part of the project you already know hurts — a monolith nobody touches, a migration still pending — say so: that is exactly what I want to hear.',
+          a: 'The role, the stack and the team are enough for me to reply with something useful in my first message.',
         },
         {
           q: 'How quickly do you reply?',
@@ -744,7 +797,7 @@ export const dictionaries = {
     },
     contactInfo: {
       title: 'Contact Information',
-      subtitle: "Looking for a Full-Stack Engineer for your team? Let's talk!",
+      subtitle: "Looking for a Full Stack Developer for your team? Let's talk!",
       location: 'Almedina, Ciudad Real, Spain · Remote or hybrid',
       emailLabel: 'Email',
       baseLabel: 'Based in',

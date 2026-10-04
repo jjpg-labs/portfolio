@@ -22,18 +22,17 @@ describe('skills data — single source of truth', () => {
     );
 
     expect(byId['back-end']).toEqual([
-      'NestJS',
-      'Node.js',
       'PHP / Symfony',
       'API Platform',
+      'Node.js',
       'Fastify',
       'HapiJS',
+      'NestJS',
     ]);
     expect(byId['front-end']).toEqual([
       'React / Next.js',
       'TypeScript',
       'React Admin',
-      'MUI',
       'Tailwind CSS',
       'React Native',
     ]);
@@ -42,6 +41,7 @@ describe('skills data — single source of truth', () => {
       'MySQL',
       'OpenSearch',
       'Docker',
+      'Playwright',
     ]);
     expect(byId['messaging-apis']).toEqual(['GraphQL', 'REST', 'RabbitMQ']);
     expect(byId['ai-llms']).toEqual([

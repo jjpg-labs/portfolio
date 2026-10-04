@@ -1,20 +1,35 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
-export const alt = 'Jose Juan — Full-Stack Engineer';
+export const alt = 'José Juan — Full Stack Developer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-// Shared visual language with the project covers (public/img/p1–p5.svg):
-// dark editorial ground, hairlines, mono labels, a single #FF5C2E accent.
+// Same editorial system as the site in light mode (the canonical theme):
+// paper ground, Instrument Serif display, hairlines and a single accent.
+// Values mirror the :root tokens in globals.css.
+const PAPER = '#F4F1EA';
 const INK = '#0E1014';
-const INK_2 = '#15171C';
-const PAPER = '#E6E6E6';
-const MUTED = '#8A8B90';
-const HAIR = '#23262C';
+const SECONDARY = '#3F4248';
+const MUTED = '#5F626A';
+const HAIR = '#C9C2AE';
 const ACCENT = '#FF5C2E';
+const ACCENT_INK = '#C63A0A';
 
-export default function Image() {
+// Satori only ships a sans fallback, so the serif is vendored (OFL, see
+// assets/fonts/OFL.txt). Being the only font registered, it sets every line,
+// meta strips included. No edge runtime: the image is rendered once at build
+// time and reads the fonts from disk.
+const loadFont = (file: string) =>
+  readFile(join(process.cwd(), 'assets/fonts', file));
+
+export default async function Image() {
+  const [serif, serifItalic] = await Promise.all([
+    loadFont('InstrumentSerif-Regular.ttf'),
+    loadFont('InstrumentSerif-Italic.ttf'),
+  ]);
+
   return new ImageResponse(
     (
       <div
@@ -23,9 +38,10 @@ export default function Image() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          background: `linear-gradient(160deg, ${INK} 0%, ${INK_2} 100%)`,
-          padding: '56px 64px',
           justifyContent: 'space-between',
+          background: PAPER,
+          padding: '56px 72px',
+          color: INK,
         }}
       >
         {/* Top meta strip */}
@@ -36,13 +52,15 @@ export default function Image() {
             alignItems: 'center',
             paddingBottom: 20,
             borderBottom: `1px solid ${HAIR}`,
-            fontSize: 22,
+            fontSize: 20,
             letterSpacing: 4,
             color: MUTED,
           }}
         >
-          <div style={{ display: 'flex' }}>// jjpg.dev · portfolio</div>
-          <div style={{ display: 'flex', color: ACCENT }}>DISPONIBLE</div>
+          <div style={{ display: 'flex' }}>// JJPG.DEV · PORTFOLIO</div>
+          <div style={{ display: 'flex', color: ACCENT_INK }}>
+            ABIERTO A OFERTAS
+          </div>
         </div>
 
         {/* Center block */}
@@ -52,7 +70,9 @@ export default function Image() {
               display: 'flex',
               alignItems: 'center',
               gap: 14,
-              marginBottom: 28,
+              marginBottom: 20,
+              fontSize: 24,
+              color: SECONDARY,
             }}
           >
             <div
@@ -63,52 +83,46 @@ export default function Image() {
                 background: ACCENT,
               }}
             />
-            <div
-              style={{
-                display: 'flex',
-                fontSize: 24,
-                letterSpacing: 1,
-                color: PAPER,
-              }}
-            >
-              Disponible para nuevos proyectos
-            </div>
+            Disponible de inmediato · Remoto desde España
           </div>
 
           <div
             style={{
               display: 'flex',
-              fontSize: 120,
-              fontWeight: 700,
+              fontFamily: 'Instrument Serif',
+              fontSize: 140,
               lineHeight: 1,
-              letterSpacing: -3,
-              color: PAPER,
+              letterSpacing: -2,
             }}
           >
-            Jose Juan
+            José Juan.
           </div>
           <div
             style={{
               display: 'flex',
-              fontSize: 52,
+              fontFamily: 'Instrument Serif',
               fontStyle: 'italic',
-              color: ACCENT,
-              marginTop: 12,
+              fontSize: 68,
+              lineHeight: 1.1,
+              color: ACCENT_INK,
+              marginTop: 4,
             }}
           >
-            Full-Stack Engineer
+            Full Stack Developer.
           </div>
           <div
             style={{
               display: 'flex',
               fontSize: 28,
-              color: '#B6B8BE',
-              marginTop: 26,
-              maxWidth: 900,
               lineHeight: 1.4,
+              color: SECONDARY,
+              marginTop: 24,
+              // Narrow enough to split in two even lines, no widow.
+              maxWidth: 780,
             }}
           >
-            SaaS, dashboards e integración de IA con Next.js, NestJS y PostgreSQL.
+            Casi 5 años en PHP/Symfony, Node.js y React/Next.js: facturación
+            recurrente, cobros SEPA y testing de serie.
           </div>
         </div>
 
@@ -126,12 +140,23 @@ export default function Image() {
           }}
         >
           <div style={{ display: 'flex' }}>
-            NEXT.JS · NESTJS · POSTGRESQL · CLAUDE API
+            PHP/SYMFONY · NODE.JS · REACT/NEXT.JS · POSTGRESQL
           </div>
-          <div style={{ display: 'flex', color: PAPER }}>jjpg.dev</div>
+          <div style={{ display: 'flex', color: INK }}>jjpg.dev</div>
         </div>
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        { name: 'Instrument Serif', data: serif, style: 'normal', weight: 400 },
+        {
+          name: 'Instrument Serif',
+          data: serifItalic,
+          style: 'italic',
+          weight: 400,
+        },
+      ],
+    }
   );
 }

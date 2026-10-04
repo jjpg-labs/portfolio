@@ -9,10 +9,10 @@ const SITE = 'https://jjpg.dev';
 // dates: bump the entry when that page's copy actually changes (a refactor or
 // a dependency bump is not a content change).
 const ROUTES = [
-  { path: '', lastModified: '2026-08-19', changeFrequency: 'monthly', priority: 1 },
-  { path: '/projects', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/skills', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.7 },
-  { path: '/contact', lastModified: '2026-08-22', changeFrequency: 'yearly', priority: 0.5 },
+  { path: '', lastModified: '2026-10-04', changeFrequency: 'monthly', priority: 1 },
+  { path: '/projects', lastModified: '2026-10-04', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/skills', lastModified: '2026-10-04', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/contact', lastModified: '2026-10-04', changeFrequency: 'yearly', priority: 0.5 },
 ] as const satisfies readonly {
   path: string;
   lastModified: string;

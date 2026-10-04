@@ -48,4 +48,12 @@ describe('featured projects', () => {
       expect(project.linkLive).toMatch(/^https:\/\//);
     }
   });
+
+  // /projects numbers its cards 01..N; leading with the featured ones keeps
+  // a project's number the same on the home and on /projects.
+  it('leads /projects with the featured projects, in the same order', () => {
+    expect(PROJECTS.slice(0, FEATURED_PROJECTS.length)).toEqual(
+      FEATURED_PROJECTS
+    );
+  });
 });

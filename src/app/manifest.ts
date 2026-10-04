@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Jose Juan — Full-Stack Engineer',
+    name: 'José Juan — Full Stack Developer',
     short_name: 'jjpg.dev',
     description:
-      'SaaS, dashboards e integración de IA con Next.js, NestJS y PostgreSQL. Disponible para nuevos proyectos.',
+      'Full Stack Developer: PHP/Symfony, Node.js y React/Next.js. Disponible de inmediato, en remoto desde España.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0E1014',

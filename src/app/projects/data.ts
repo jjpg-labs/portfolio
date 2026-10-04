@@ -40,100 +40,6 @@ export interface ProjectMeta {
 
 export const PROJECTS: ProjectMeta[] = [
   {
-    id: 'nexfit',
-    title: 'Nexfit',
-    technologies: [
-      'NestJS',
-      'Next.js 16',
-      'Expo / React Native',
-      'PostgreSQL',
-      'Prisma',
-      'Cloudflare R2',
-      'Redux Toolkit',
-      'TypeScript',
-    ],
-    role: 'Full-Stack',
-    imageCover: '/img/p3.svg',
-    linkLive: '#',
-    linkRepo: 'https://github.com/jjpg-labs/nexfit-web',
-    repoPrivate: true,
-    status: 'beta',
-    screenshots: [
-      {
-        src: '/img/shots/nexfit-1.webp',
-        alt: 'Panel del entrenador de Nexfit: clientes activos, sesiones del día y adherencia media',
-      },
-      {
-        src: '/img/shots/nexfit-2.webp',
-        alt: 'Ficha de cliente en Nexfit: métricas de sesiones, datos personales y plan asignado',
-      },
-      {
-        src: '/img/shots/nexfit-3.webp',
-        alt: 'Progreso del cliente en Nexfit: gráficas de recuperación, bienestar y adherencia',
-      },
-    ],
-  },
-  {
-    id: 'vereda',
-    title: 'Vereda',
-    technologies: [
-      'Next.js 16',
-      'PostgreSQL',
-      'Cloudflare R2',
-      'JWT',
-      'TypeScript',
-      'Tailwind 4',
-      'React 19',
-    ],
-    role: 'Full-Stack',
-    imageCover: '/img/p4.svg',
-    // Same event as the `medina` project below, ~80% identical copy, and Vereda
-    // emits no canonical — Search Console reports it as "duplicate without a
-    // user-selected canonical". Until Vereda declares one, don't endorse it.
-    linkLive: 'https://vereda.jjpg.dev/events/medina-roja',
-    liveNofollow: true,
-    linkRepo: 'https://github.com/jjpg-labs/vereda',
-    repoPrivate: true,
-    status: 'in-dev',
-    screenshots: [
-      {
-        src: '/img/shots/vereda-1.webp',
-        alt: 'Web pública del evento generada con Vereda: portada, modalidades y CTA de inscripción',
-      },
-      {
-        src: '/img/shots/vereda-2.webp',
-        alt: 'Panel de administración no-code de Vereda: configuración del evento por secciones, multi-tenant',
-      },
-    ],
-  },
-  {
-    id: 'medina',
-    title: 'Medina Roja BTT',
-    technologies: [
-      'Next.js 16',
-      'Leaflet',
-      'GPX',
-      'Tailwind 4',
-      'TypeScript',
-      'React 19',
-    ],
-    role: 'Full-Stack',
-    imageCover: '/img/p5.svg',
-    linkLive: 'https://medina-roja-btt.vercel.app',
-    linkRepo: 'https://github.com/jjpg-labs/medina-roja-btt',
-    status: 'live-demo',
-    screenshots: [
-      {
-        src: '/img/shots/medina-1.webp',
-        alt: 'Portada del II Desafío Medina Roja BTT: hero del evento con fecha y CTA de inscripción',
-      },
-      {
-        src: '/img/shots/medina-2.webp',
-        alt: 'Recorrido del evento: rutas GPX (30 y 50 km) sobre mapa Leaflet interactivo',
-      },
-    ],
-  },
-  {
     id: 'accounting',
     title: 'Accounting Suite',
     technologies: [
@@ -187,6 +93,100 @@ export const PROJECTS: ProjectMeta[] = [
       {
         src: '/img/shots/curio-2.webp',
         alt: 'Página de inicio de Curio: aprende a programar jugando, adaptado por edad',
+      },
+    ],
+  },
+  {
+    id: 'vereda',
+    title: 'Vereda',
+    technologies: [
+      'Next.js 16',
+      'PostgreSQL',
+      'Cloudflare R2',
+      'JWT',
+      'TypeScript',
+      'Tailwind 4',
+      'React 19',
+    ],
+    role: 'Full-Stack',
+    imageCover: '/img/p4.svg',
+    // Same event as the `medina` project below, ~80% identical copy, and Vereda
+    // emits no canonical — Search Console reports it as "duplicate without a
+    // user-selected canonical". Until Vereda declares one, don't endorse it.
+    linkLive: 'https://vereda.jjpg.dev/events/medina-roja',
+    liveNofollow: true,
+    linkRepo: 'https://github.com/jjpg-labs/vereda',
+    repoPrivate: true,
+    status: 'in-dev',
+    screenshots: [
+      {
+        src: '/img/shots/vereda-1.webp',
+        alt: 'Web pública del evento generada con Vereda: portada, modalidades y CTA de inscripción',
+      },
+      {
+        src: '/img/shots/vereda-2.webp',
+        alt: 'Panel de administración no-code de Vereda: configuración del evento por secciones, multi-tenant',
+      },
+    ],
+  },
+  {
+    id: 'nexfit',
+    title: 'Nexfit',
+    technologies: [
+      'NestJS',
+      'Next.js 16',
+      'Expo / React Native',
+      'PostgreSQL',
+      'Prisma',
+      'Cloudflare R2',
+      'Redux Toolkit',
+      'TypeScript',
+    ],
+    role: 'Full-Stack',
+    imageCover: '/img/p3.svg',
+    linkLive: '#',
+    linkRepo: 'https://github.com/jjpg-labs/nexfit-web',
+    repoPrivate: true,
+    status: 'beta',
+    screenshots: [
+      {
+        src: '/img/shots/nexfit-1.webp',
+        alt: 'Panel del entrenador de Nexfit: clientes activos, sesiones del día y adherencia media',
+      },
+      {
+        src: '/img/shots/nexfit-2.webp',
+        alt: 'Ficha de cliente en Nexfit: métricas de sesiones, datos personales y plan asignado',
+      },
+      {
+        src: '/img/shots/nexfit-3.webp',
+        alt: 'Progreso del cliente en Nexfit: gráficas de recuperación, bienestar y adherencia',
+      },
+    ],
+  },
+  {
+    id: 'medina',
+    title: 'Medina Roja BTT',
+    technologies: [
+      'Next.js 16',
+      'Leaflet',
+      'GPX',
+      'Tailwind 4',
+      'TypeScript',
+      'React 19',
+    ],
+    role: 'Full-Stack',
+    imageCover: '/img/p5.svg',
+    linkLive: 'https://medina-roja-btt.vercel.app',
+    linkRepo: 'https://github.com/jjpg-labs/medina-roja-btt',
+    status: 'live-demo',
+    screenshots: [
+      {
+        src: '/img/shots/medina-1.webp',
+        alt: 'Portada del II Desafío Medina Roja BTT: hero del evento con fecha y CTA de inscripción',
+      },
+      {
+        src: '/img/shots/medina-2.webp',
+        alt: 'Recorrido del evento: rutas GPX (30 y 50 km) sobre mapa Leaflet interactivo',
       },
     ],
   },

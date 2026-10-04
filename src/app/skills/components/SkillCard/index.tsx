@@ -38,6 +38,22 @@ const getLevelLabel = (
   return { label: labels.basic, bars: 2 };
 };
 
+// Buckets the category's skills by level, strongest first, keeping the order
+// they have in `skills/data.ts` inside each bucket.
+const groupByLevel = (skills: Skill[], labels: LevelLabels) => {
+  const groups = new Map<
+    number,
+    { label: string; bars: number; names: string[] }
+  >();
+  for (const skill of skills) {
+    const { label, bars } = getLevelLabel(skill.level, labels);
+    const group = groups.get(bars) ?? { label, bars, names: [] };
+    group.names.push(skill.name);
+    groups.set(bars, group);
+  }
+  return [...groups.values()].sort((a, b) => b.bars - a.bars);
+};
+
 export function SkillCard({
   category,
   skills,
@@ -48,8 +64,8 @@ export function SkillCard({
   const numLabel = num ? String(num).padStart(2, '0') : '';
 
   return (
-    <section className="border-t border-border py-8">
-      <div className="flex items-baseline gap-4 mb-6">
+    <section className="grid grid-cols-1 lg:grid-cols-[18rem_minmax(0,1fr)] gap-x-14 border-t border-border py-8 lg:py-10">
+      <div className="flex items-baseline gap-4 mb-6 lg:self-start">
         {numLabel && (
           <span className="font-mono text-small tracking-mono-wide text-text-muted">
             {numLabel}
@@ -60,47 +76,57 @@ export function SkillCard({
         </h2>
       </div>
 
-      {intro && (
-        <p className="font-sans text-body text-text-secondary leading-relaxed max-w-[68ch] mb-6">
-          {intro}
-        </p>
-      )}
+      <div className="max-w-[68ch]">
+        {intro && (
+          <p className="font-sans text-body text-text-secondary leading-relaxed max-w-[68ch] mb-6">
+            {intro}
+          </p>
+        )}
 
-      <ul className="flex flex-col">
-        {skills.map((skill) => {
-          const { label, bars } = getLevelLabel(skill.level, levels);
-          return (
-            <li
-              key={skill.name}
-              className="flex items-center gap-3 sm:gap-4 py-3 border-b border-border-subtle last:border-b-0"
+        {/* Grouped by level instead of one bar per skill: with most of the stack
+          at the same level, a repeated bar stopped telling strengths apart.
+          The label column is fluid on mobile (stacked) so long labels like
+          "INTERMEDIATE" never push the page sideways. */}
+        <dl className="flex flex-col">
+          {groupByLevel(skills, levels).map(({ label, bars, names }) => (
+            <div
+              key={bars}
+              className="grid grid-cols-1 sm:grid-cols-[11rem_minmax(0,1fr)] gap-x-6 gap-y-2 py-4 border-b border-border-subtle last:border-b-0"
             >
-              <span className="font-sans text-body text-text-primary min-w-0">
-                {skill.name}
-              </span>
-              <span
-                aria-hidden="true"
-                className="flex-1 h-0 self-center border-b border-dotted border-border min-w-4"
-              />
-              <span
-                className="flex items-center gap-1 w-[80px] sm:w-[120px] shrink-0"
-                aria-hidden="true"
-              >
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span
-                    key={i}
-                    className={`h-1 flex-1 rounded-full ${
-                      i < bars ? 'bg-accent' : 'bg-border-subtle'
-                    }`}
-                  />
-                ))}
-              </span>
-              <span className="font-mono text-mono-label uppercase text-text-muted text-right w-[64px] sm:w-[80px] shrink-0">
+              <dt className="flex items-center gap-3 font-mono text-mono-label uppercase text-text-muted">
+                <span
+                  className="flex items-center gap-0.5 w-12 shrink-0"
+                  aria-hidden="true"
+                >
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className={`h-1 flex-1 rounded-full ${
+                        i < bars ? 'bg-accent' : 'bg-border-subtle'
+                      }`}
+                    />
+                  ))}
+                </span>
                 {label}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
+              </dt>
+              <dd className="font-sans text-body text-text-primary">
+                <ul className="flex flex-wrap gap-x-3 gap-y-1">
+                  {names.map((name, i) => (
+                    <li key={name} className="flex items-baseline gap-3">
+                      <span>{name}</span>
+                      {i < names.length - 1 && (
+                        <span aria-hidden="true" className="text-text-muted">
+                          ·
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </section>
   );
 }

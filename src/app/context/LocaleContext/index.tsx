@@ -25,9 +25,17 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   // a hydration mismatch; the persisted value is applied on mount below.
   const [locale, setLocaleState] = useState<Locale>('es');
 
+  // A saved choice wins; without one, an English browser gets the English
+  // site (recruiters outside Spain). Anything else stays in Spanish.
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === 'en' || stored === 'es') setLocaleState(stored);
+    if (stored === 'en' || stored === 'es') {
+      setLocaleState(stored);
+      return;
+    }
+    if (window.navigator.language?.toLowerCase().startsWith('en')) {
+      setLocaleState('en');
+    }
   }, []);
 
   // Keep <html lang> in sync with the active locale (a11y + SEO).

@@ -4,43 +4,39 @@ import { Footer } from './components/Footer';
 import { ThemeProvider } from './components/ThemeProvider';
 import { BackToTop } from './components/BackToTop';
 import { LocaleProvider } from './context/LocaleContext';
+import { SkipLink } from './components/SkipLink';
 import { fontSans, fontMono, fontSerif } from './fonts';
 import './globals.css';
 import { ChildrenProps } from './types';
 import { ViewportProvider } from './context/ViewportContext';
 
-const SITE_TITLE = 'Jose Juan — Full-Stack Engineer';
+const SITE_TITLE = 'José Juan Pérez — Full Stack Developer · PHP, Node, React';
 const SITE_DESCRIPTION =
-  'Full Stack Developer especializado en modernización de sistemas legados y arquitecturas distribuidas. Node.js, React/Next.js, PHP/Symfony y PostgreSQL. Almedina (Ciudad Real), remoto o híbrido.';
+  'Full Stack Developer con casi 5 años en PHP/Symfony, Node.js y React/Next.js. Facturación recurrente, cobros SEPA y testing de serie. Remoto desde España, abierto a híbrido.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jjpg.dev'),
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
   keywords: [
-    'Full-Stack Engineer',
-    'sistemas legados',
-    'arquitectura de software',
-    'Next.js',
-    'NestJS',
+    'Full Stack Developer',
+    'PHP',
     'Symfony',
-    'GraphQL',
-    'RabbitMQ',
-    'OpenSearch',
-    'Fastify',
+    'Node.js',
+    'React',
+    'Next.js',
     'TypeScript',
     'PostgreSQL',
-    'Prisma',
-    'SaaS',
-    'integración IA',
-    'Claude API',
-    'MCP',
+    'GraphQL',
+    'OpenSearch',
+    'RabbitMQ',
+    'Fastify',
     'Almedina',
     'Ciudad Real',
     'España',
-    'remote',
+    'remoto',
   ],
-  authors: [{ name: 'Jose Juan Pérez González', url: 'https://jjpg.dev' }],
+  authors: [{ name: 'José Juan Pérez González', url: 'https://jjpg.dev' }],
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -53,7 +49,7 @@ export const metadata: Metadata = {
     url: 'https://jjpg.dev',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    siteName: 'Jose Juan — jjpg.dev',
+    siteName: 'José Juan Pérez — jjpg.dev',
     locale: 'es_ES',
     alternateLocale: 'en_US',
     // og:image / twitter:image are emitted automatically from opengraph-image.tsx
@@ -77,47 +73,51 @@ export const viewport: Viewport = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Jose Juan Pérez González',
+  name: 'José Juan Pérez González',
   alternateName: 'JJPG',
   url: 'https://jjpg.dev',
-  jobTitle: 'Full-Stack Engineer',
+  jobTitle: 'Full Stack Developer',
   // Reuses SITE_DESCRIPTION so the JSON-LD blurb can't drift from the meta
   // description/og/twitter copy above.
   description: SITE_DESCRIPTION,
-  email: 'mailto:jose@jjpg.dev',
+  email: 'jose@jjpg.dev',
+  knowsLanguage: ['es', 'en'],
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'CEAC',
+  },
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Almedina',
     addressRegion: 'Ciudad Real',
     addressCountry: 'ES',
   },
+  // Only what the CV's stack backs (~/Documentos/CV/content.mjs). NestJS is
+  // used on personal projects only, so it goes last.
   knowsAbout: [
-    'Next.js',
-    'NestJS',
-    'TypeScript',
-    'React',
-    'Node.js',
     'PHP',
     'Symfony',
     'API Platform',
-    'PostgreSQL',
-    'Prisma',
-    'Redis',
-    'Tailwind CSS',
+    'Node.js',
+    'Fastify',
+    'HapiJS',
+    'TypeScript',
+    'React',
+    'Next.js',
     'React Admin',
-    'Material UI',
-    'React Native',
-    'AWS',
-    'Kubernetes',
-    'Terraform',
+    'Tailwind CSS',
+    'PostgreSQL',
+    'MySQL',
+    'OpenSearch',
+    'GraphQL',
+    'RabbitMQ',
+    'REST APIs',
     'Docker',
     'Playwright',
-    'Claude API',
-    'Model Context Protocol',
-    'SaaS multi-tenant',
-    'DDD',
-    'CQRS',
-    'REST APIs',
+    'Jest',
+    'PHPUnit',
+    'Prisma',
+    'NestJS',
   ],
   sameAs: [
     'https://github.com/jjpg95',
@@ -142,11 +142,16 @@ export default function RootLayout({ children }: ChildrenProps) {
           <LocaleProvider>
           <ViewportProvider>
             <div id="app-container" className="flex flex-col min-h-screen bg-bg-base text-text-primary">
-              <header className="sticky top-0 z-50 bg-bg-surface border-b border-border-subtle">
+              <SkipLink />
+              {/* Same box as every page section: padding outside, max-w-7xl inside,
+                  so the logo lines up with the page content. */}
+              <header className="sticky top-0 z-50 bg-bg-surface border-b border-border-subtle px-4 sm:px-8 lg:px-14">
                 <Navigation />
               </header>
 
-              <main className="grow">{children}</main>
+              <main id="main" tabIndex={-1} className="grow outline-none">
+                {children}
+              </main>
 
               <footer>
                 <Footer />

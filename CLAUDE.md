@@ -25,22 +25,27 @@ Personal portfolio website showcasing projects, skills, and contact information.
 
 ```
 src/app/
-├── components/            # Shared UI (Navigation, Footer, ThemeSwitch, LanguageSwitcher, Logo, LiveDot, AccentWord, BackToTop)
-├── contact/              # /contact page + ContactForm; api/contact/route.ts (Resend)
-├── context/             # LocaleContext (ES/EN, localStorage-persisted) + ViewportContext
-├── dashboard/components/ # Home one-page sections: Header (hero), Services, Projects, Skills. (No /dashboard route.)
+├── components/            # Shared UI (Navigation, Footer, ThemeSwitch, LanguageSwitcher, Logo, LiveDot, AccentWord, BackToTop, SkipLink)
+├── contact/              # /contact page (FAQ → ContactForm + ContactInfo → Calendly); api/contact/route.ts (Resend)
+├── context/             # LocaleContext (ES/EN; localStorage, else navigator.language) + ViewportContext
+├── dashboard/components/ # Home sections: Header (hero), Experience, Testimonial, Projects, Skills. (No /dashboard route.)
+├── experience/          # data.ts — companies and stack per role (≤ 6 technologies); copy in dictionaries
 ├── projects/            # /projects page; data.ts (single source of truth); ProjectShots (screenshot lightbox)
-├── services/            # /services page
-├── skills/              # /skills page
+├── skills/              # /skills page; data.ts (levels + home preview groups)
 ├── i18n/                # dictionaries.ts — ALL user-facing copy (es + en, identical shape)
-├── layout.tsx           # Root layout: metadata, JSON-LD, viewport theme-color, providers
+├── layout.tsx           # Root layout: metadata, JSON-LD, viewport theme-color, providers, skip link
 ├── manifest.ts          # Web app manifest
-├── opengraph-image.tsx  # Branded OG image (dark editorial, single accent)
+├── opengraph-image.tsx  # OG image, static at build: paper + Instrument Serif (TTF in assets/fonts, OFL)
 ├── page.tsx             # Home — composes dashboard/components sections
 └── globals.css          # Design tokens (CSS vars) + Tailwind layers
+public/cv.pdf, cv-en.pdf # Fullstack CV from ~/Documentos/CV (content.mjs); copy both again when the CV changes
 ```
 
-The **home page** (`page.tsx`) and the standalone pages (`/projects`, `/services`, `/skills`) share content: the home renders condensed section previews from `dashboard/components/*`, the standalone pages render the full versions.
+The **home page** (`page.tsx`) and the standalone pages (`/projects`, `/skills`) share content: the home renders condensed section previews from `dashboard/components/*`, the standalone pages render the full versions. The `/services` route was removed when the site moved to job search; its copy (`servicesPage`, `dashboardServices`) stays in the dictionaries, unrendered.
+
+Every section uses the same box: horizontal padding on the outer element (`px-4 sm:px-8 lg:px-14`) and `max-w-7xl mx-auto` inside. Navigation and footer follow it too, so the logo lines up with the content.
+
+The experience copy comes from the CV (`~/Documentos/CV/content.mjs`, fullstack variant) and the decisions in the vault (`busqueda-empleo/revision-hitos-2026-10.md`). Change the CV first, then copy here.
 
 ---
 
@@ -100,12 +105,16 @@ Standalone — no cross-repo dependencies.
 1. Structural data → `src/app/projects/data.ts` (`PROJECTS[]`): id, title,
    technologies, role, imageCover, links, `status`
    (`beta`/`live-demo`/`in-dev`/`production`), optional `screenshots`. Home shows
-   the subset in `FEATURED_IDS`.
+   the subset in `FEATURED_IDS`, which must also lead `PROJECTS` in the same
+   order so a project keeps its number on both pages (a test enforces it), and
+   only projects with a public demo (another test).
 2. Copy → `dictionaries.projectCopy.<id>` (`home` / `full` / `outcome`) in **both**
    `es` and `en`. Never key project copy by array index.
 3. Cover art → `public/img/<pN>.svg`, 600×450, dark editorial system (gradient
-   `#0E1014→#15171C`, hairlines at y=56/394, mono `// pN · slug`, accent status
-   word, serif italic title). Screenshots → `public/img/shots/<id>-N.webp`.
+   `#0E1014→#15171C`, hairlines at y=56/394, serif italic title and a 16 px
+   mono subtitle). No number, status, stack or year on the art: the card
+   already shows them, and below ~10 px they read as broken content.
+   Screenshots → `public/img/shots/<id>-N.webp`.
 
 ### Tweak theming (paper-first · serif accent · single accent #FF5C2E)
 1. Tokens are CSS variables in `globals.css` (`:root` = light, `.dark` = dark),

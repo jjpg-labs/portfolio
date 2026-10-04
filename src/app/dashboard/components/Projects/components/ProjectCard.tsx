@@ -1,6 +1,5 @@
 interface ProjectCardProps {
   num: number;
-  coverNum?: string;
   name: string;
   description: string;
   stack: string;
@@ -9,7 +8,6 @@ interface ProjectCardProps {
 
 export default function ProjectCard({
   num,
-  coverNum,
   name,
   description,
   stack,
@@ -22,7 +20,7 @@ export default function ProjectCard({
     <article className="border border-border rounded-md overflow-hidden bg-bg-surface flex flex-col hover:border-border-strong transition-colors">
       <div className="flex items-center justify-between px-4 pt-3 pb-2 border-b border-border-subtle">
         <span className="font-mono text-mono-label uppercase text-text-muted">
-          // {coverNum ? `p${coverNum} · ` : ''}{slug}
+          // {slug}
         </span>
         <span className="font-mono text-mono-label uppercase text-text-muted">
           {numLabel}

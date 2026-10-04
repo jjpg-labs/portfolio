@@ -36,7 +36,6 @@ export default function Projects() {
             <ProjectCard
               key={project.id}
               num={idx + 1}
-              coverNum={project.imageCover.match(/p(\d+)\.svg/)?.[1] ?? ''}
               name={project.title}
               description={copy[project.id]?.home ?? ''}
               stack={project.technologies.join(', ')}
@@ -48,7 +47,7 @@ export default function Projects() {
         <div className="mt-10 flex justify-end">
           <Link
             href="/projects"
-            className="font-serif italic text-[20px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition"
+            className="inline-flex items-end min-h-12 font-serif italic text-[20px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition"
           >
             {seeAll}
             <span className="font-mono text-accent ml-2">→</span>

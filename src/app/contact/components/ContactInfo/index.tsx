@@ -6,7 +6,7 @@ import {
   LINKEDIN_URL,
 } from '@/app/components/Footer';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { useLocale } from '@/app/context/LocaleContext';
 
 export default function ContactInfo() {
@@ -29,8 +29,8 @@ export default function ContactInfo() {
       </div>
 
       <dl className="flex flex-col">
-        <div className="flex justify-between items-center py-3 border-b border-border-subtle">
-          <dt className="font-mono text-mono-label uppercase text-text-muted">
+        <div className="flex justify-between items-baseline gap-4 py-3 border-b border-border-subtle">
+          <dt className="shrink-0 font-mono text-mono-label uppercase text-text-muted">
             {emailLabel}
           </dt>
           <dd>
@@ -42,17 +42,16 @@ export default function ContactInfo() {
             </a>
           </dd>
         </div>
-        <div className="flex justify-between items-center py-3 border-b border-border-subtle">
-          <dt className="font-mono text-mono-label uppercase text-text-muted">
+        <div className="flex justify-between items-baseline gap-4 py-3 border-b border-border-subtle">
+          <dt className="shrink-0 font-mono text-mono-label uppercase text-text-muted">
             {baseLabel}
           </dt>
-          <dd className="flex items-center gap-2 font-sans text-body text-text-primary">
-            <FaMapMarkerAlt size={12} className="text-accent" />
+          <dd className="font-sans text-body text-text-primary text-right">
             {location}
           </dd>
         </div>
-        <div className="flex justify-between items-center py-3">
-          <dt className="font-mono text-mono-label uppercase text-text-muted">
+        <div className="flex justify-between items-baseline gap-4 py-3">
+          <dt className="shrink-0 font-mono text-mono-label uppercase text-text-muted">
             {responseLabel}
           </dt>
           <dd className="font-sans text-body text-text-primary">
@@ -61,13 +60,13 @@ export default function ContactInfo() {
         </div>
       </dl>
 
-      <div className="flex items-center gap-5 pt-2 border-t border-border-subtle">
+      <div className="flex items-center gap-1 pt-2 border-t border-border-subtle">
         <Link
           href={LINKEDIN_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          className="text-text-muted hover:text-text-primary transition"
+          className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-text-primary transition"
         >
           <FaLinkedin size={22} />
         </Link>
@@ -76,14 +75,14 @@ export default function ContactInfo() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          className="text-text-muted hover:text-text-primary transition"
+          className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-text-primary transition"
         >
           <FaGithub size={22} />
         </Link>
         <Link
           href={`mailto:${EMAIL_ADDRESS}`}
           aria-label={t.a11y.email}
-          className="text-text-muted hover:text-accent transition"
+          className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-accent transition"
         >
           <FaEnvelope size={22} />
         </Link>

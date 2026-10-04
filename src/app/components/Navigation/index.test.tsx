@@ -54,7 +54,7 @@ describe('Navigation', () => {
   it('renders logo and name', () => {
     renderWithProviders(<Navigation />);
     expect(screen.getByTestId('logo')).toBeInTheDocument();
-    expect(screen.getByText('Jose Juan Pérez')).toBeInTheDocument();
+    expect(screen.getByText('José Juan Pérez')).toBeInTheDocument();
   });
 
   it('renders navigation links', () => {

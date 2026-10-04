@@ -16,7 +16,7 @@ export default function SkillsClient() {
 
   return (
     <section className="px-4 sm:px-8 lg:px-14 py-12 lg:py-16 bg-bg-base min-h-screen">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-8 font-mono text-mono-label uppercase text-text-muted">
           <span>{t.ui.metaSkills}</span>
           <span>

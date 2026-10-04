@@ -52,7 +52,7 @@ export const Navigation = () => {
     href === '/' ? pathname === '/' : pathname?.startsWith(href);
 
   return (
-    <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <nav className="max-w-7xl mx-auto py-4 flex justify-between items-center">
       <Link
         href="/"
         className="flex items-center gap-3 group"
@@ -64,7 +64,7 @@ export const Navigation = () => {
             Issue <span className="text-accent">02</span> · jjpg.dev · 2026
           </span>
           <span className="font-serif text-[17px] text-text-primary group-hover:italic transition-all">
-            Jose Juan Pérez
+            José Juan Pérez
           </span>
         </span>
       </Link>
@@ -75,7 +75,7 @@ export const Navigation = () => {
         <ThemeSwitcher />
         <button
           onClick={() => setIsOpen(true)}
-          className="text-text-secondary hover:text-text-primary p-2 rounded-sm transition"
+          className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-secondary hover:text-text-primary rounded-sm transition"
           aria-label={t.a11y.openMenu}
         >
           <IoMenu size={26} />
@@ -102,7 +102,7 @@ export const Navigation = () => {
         })}
         <Link
           href="/contact"
-          className="font-serif italic text-[17px] px-4 py-1.5 rounded-sm bg-accent text-paper hover:bg-accent-hover transition-colors"
+          className="font-serif italic text-[17px] px-4 py-1.5 rounded-sm bg-accent text-ink hover:bg-accent-hover transition-colors"
         >
           {t.ui.ctaContact}
         </Link>
@@ -138,7 +138,7 @@ export const Navigation = () => {
           </span>
           <button
             onClick={closeMenu}
-            className="text-text-secondary hover:text-text-primary p-1.5 rounded-sm transition"
+            className="inline-flex items-center justify-center min-h-12 min-w-12 -mr-3 text-text-secondary hover:text-text-primary rounded-sm transition"
             aria-label={t.a11y.closeMenu}
           >
             <IoClose size={22} />
@@ -161,6 +161,16 @@ export const Navigation = () => {
               </Link>
             );
           })}
+        </div>
+
+        <div className="px-6 pb-6">
+          <Link
+            href="/contact"
+            onClick={closeMenu}
+            className="flex items-center justify-center min-h-12 font-serif italic text-[20px] rounded-sm bg-accent text-ink hover:bg-accent-hover transition-colors"
+          >
+            {t.ui.ctaContact}
+          </Link>
         </div>
 
         <div className="px-6 py-4 border-t border-border-subtle flex items-center gap-3">

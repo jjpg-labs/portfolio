@@ -41,6 +41,10 @@
   --text-mono-label: 10.5px;
   --text-mono-label--line-height: 1.4;
   --text-mono-label--letter-spacing: 0.18em;
+  /* Tech chips: still mono, but large enough to read as content. */
+  --text-mono-chip: 12px;
+  --text-mono-chip--line-height: 1.4;
+  --text-mono-chip--letter-spacing: 0.12em;
   --text-display-xl: 96px;
   --text-display-xl--line-height: 0.96;
   --text-display-xl--letter-spacing: -0.02em;

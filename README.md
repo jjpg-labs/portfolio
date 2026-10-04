@@ -1,6 +1,6 @@
 # portfolio — jjpg.dev
 
-Personal portfolio of **Jose Juan Pérez González** (JJPG), Full-Stack Engineer.
+Personal portfolio of **José Juan Pérez González** (JJPG), Full Stack Developer.
 A one-page editorial site (magazine "Issue" metaphor) showcasing projects,
 services, skills and a contact form. Bilingual (ES/EN), light/dark themed.
 

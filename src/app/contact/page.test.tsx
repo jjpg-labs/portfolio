@@ -50,7 +50,7 @@ describe('ContactPage', () => {
       screen.getByRole('heading', { name: /información de contacto/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/¿buscas un full-stack engineer/i)
+      screen.getByText(/¿buscas un full stack developer/i)
     ).toBeInTheDocument();
     expect(screen.getByText(EMAIL_ADDRESS)).toBeInTheDocument();
     expect(screen.getByText(/almedina, ciudad real/i)).toBeInTheDocument();
@@ -59,7 +59,7 @@ describe('ContactPage', () => {
   it('renders the page subtitle', () => {
     renderWithLocale(<ContactPage />);
     expect(
-      screen.getByText(/abierto a nuevas oportunidades como full-stack engineer/i)
+      screen.getByText(/abierto a nuevas oportunidades como full stack developer/i)
     ).toBeInTheDocument();
   });
 
@@ -77,6 +77,19 @@ describe('ContactPage', () => {
     expect(
       screen.getByText(/¿cuánto tardas en responder\?/i)
     ).toBeInTheDocument();
+  });
+
+  it('orders the page FAQ → form → call, with the form as the main action', () => {
+    renderWithLocale(<ContactPage />);
+    const faq = screen.getByRole('heading', { name: /antes de que escribas/i });
+    const form = screen.getByRole('heading', { name: /envíame un mensaje/i });
+    const call = screen.getByRole('heading', {
+      name: /prefieres hablar directamente/i,
+    });
+    const follows = (a: Node, b: Node) =>
+      Boolean(a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING);
+    expect(follows(faq, form)).toBe(true);
+    expect(follows(form, call)).toBe(true);
   });
 
   it('renders social links with correct aria-labels', () => {

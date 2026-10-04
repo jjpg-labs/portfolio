@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import SkillsClient from './SkillsClient';
 
-const TITLE = 'Skills | Jose Juan';
+const TITLE = 'Skills | José Juan';
 const DESCRIPTION =
-  'Stack técnico de Jose Juan con nivel real por tecnología y el contexto en el que ha usado cada una: ' +
-  'NestJS, PHP/Symfony, React/Next.js, PostgreSQL, RabbitMQ, OpenSearch y Claude API.';
+  'Stack técnico de José Juan con nivel real por tecnología y el contexto en el que ha usado cada una: ' +
+  'PHP/Symfony, Node.js, React/Next.js y PostgreSQL, y NestJS en proyectos propios.';
 
 export const metadata: Metadata = {
   title: TITLE,

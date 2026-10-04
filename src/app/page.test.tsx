@@ -42,20 +42,20 @@ describe('HomePage', () => {
       screen.getByRole('heading', { name: /hola, soy/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: /modernizo sistemas legados/i })
+      screen.getByRole('heading', { name: /backend sólido, frontend en react/i })
     ).toBeInTheDocument();
   });
 
   it('renders the availability badge', () => {
     renderWithProviders(<HomePage />);
-    const matches = screen.getAllByText(/abierto a nuevas oportunidades/i);
+    const matches = screen.getAllByText(/disponible de inmediato/i);
     expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders the introduction paragraph', () => {
     renderWithProviders(<HomePage />);
     expect(
-      screen.getByText(/casi 5 años construyendo y rescatando/i)
+      screen.getByText(/lo más reciente, en grupie labs/i)
     ).toBeInTheDocument();
   });
 
@@ -71,15 +71,43 @@ describe('HomePage', () => {
     expect(screen.getByText('Tigloo')).toBeInTheDocument();
   });
 
-  it('renders the "Ver mis Proyectos" and "Hablemos" links', () => {
+  it("renders Roberto's recommendation right after the experience", () => {
+    renderWithProviders(<HomePage />);
+    const quote = screen.getByText(
+      /si tuviera que volver a formar un equipo mañana/i
+    );
+    const figure = quote.closest('figure') as HTMLElement;
+    expect(figure).toHaveTextContent('Roberto');
+    expect(figure).toHaveTextContent(/CTO de Grupie Labs/);
+    // Placed after the last job, before the projects.
+    expect(
+      screen
+        .getByText('Tigloo')
+        .compareDocumentPosition(quote) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  it('renders the CV, "Contactar" and "Ver proyectos" links', () => {
     renderWithProviders(<HomePage />);
     expect(
-      screen.getByRole('link', { name: /ver mis proyectos/i })
+      screen.getByRole('link', { name: /descargar cv/i })
+    ).toHaveAttribute('href', '/cv.pdf');
+    expect(
+      screen.getByRole('link', { name: /^ver proyectos$/i })
     ).toHaveAttribute('href', '/projects');
-    expect(screen.getByRole('link', { name: /hablemos/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /contactar/i })).toHaveAttribute(
       'href',
       '/contact'
     );
+  });
+
+  it('renders the key figures from the CV', () => {
+    renderWithProviders(<HomePage />);
+    expect(screen.getByText('>75 %')).toBeInTheDocument();
+    expect(screen.getByText('1M+')).toBeInTheDocument();
+    expect(
+      screen.getByText(/migración a GA4, dentro del plazo de Google/i)
+    ).toBeInTheDocument();
   });
 
   it('renders the "Tecnologías Clave y Stack Principal" section', () => {
@@ -94,13 +122,13 @@ describe('HomePage', () => {
     expect(screen.getByText(/datos & infra/i)).toBeInTheDocument();
   });
 
-  it('renders the "Mis Proyectos Más Recientes" section with featured projects', () => {
+  it('renders the "Proyectos propios" section with featured projects', () => {
     renderWithProviders(<HomePage />);
     expect(
-      screen.getByRole('heading', { name: /mis proyectos más recientes/i })
+      screen.getByRole('heading', { name: /proyectos propios/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/échale un vistazo a las soluciones/i)
+      screen.getByText(/proyectos personales, de punta a punta/i)
     ).toBeInTheDocument();
     expect(screen.getByText('Accounting Suite')).toBeInTheDocument();
     expect(screen.getByText('Curio')).toBeInTheDocument();

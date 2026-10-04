@@ -105,7 +105,7 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
                   ? 'noopener noreferrer nofollow'
                   : 'noopener noreferrer'
               }
-              className="flex items-center gap-2 font-serif italic text-[16px] text-text-primary hover:text-accent transition"
+              className="flex items-center gap-2 min-h-12 font-serif italic text-[16px] text-text-primary hover:text-accent transition"
             >
               <FaExternalLinkAlt size={12} /> {p.liveBtn}
             </Link>
@@ -115,7 +115,7 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
               href={project.linkRepo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-mono text-small text-text-secondary hover:text-text-primary transition"
+              className="flex items-center gap-2 min-h-12 font-mono text-small text-text-secondary hover:text-text-primary transition"
             >
               <FaCode size={12} /> {p.codeBtn}
             </Link>
@@ -125,7 +125,7 @@ export default function ProjectCard({ project, num }: ProjectCardProps) {
               href={project.linkRepo2}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-mono text-small text-text-secondary hover:text-text-primary transition"
+              className="flex items-center gap-2 min-h-12 font-mono text-small text-text-secondary hover:text-text-primary transition"
             >
               <FaCode size={12} /> {p.codeBtn} UI
             </Link>

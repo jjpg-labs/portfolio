@@ -6,22 +6,22 @@ import { LiveDot } from '@/app/components/LiveDot';
 import { AccentWord } from '@/app/components/AccentWord';
 import { useLocale } from '@/app/context/LocaleContext';
 
-// TODO: re-enable once the real CV is uploaded to /public/cv.pdf.
-const SHOW_CV_DOWNLOAD = false;
+// The fullstack CV generated from ~/Documentos/CV/content.mjs, one PDF per
+// locale. Regenerate and copy both when the CV changes.
+const CV_HREF = { es: '/cv.pdf', en: '/cv-en.pdf' } as const;
 
 export default function Header() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const c = t.colophon;
 
   const colophon = [
-    { term: t.ui.issue, value: 'N.º 02', accent: true },
-    { term: c.year, value: '2026' },
-    { term: c.editor, value: 'JJPG' },
-    { term: c.role, value: 'FS Engineer' },
-    { term: c.base, value: 'Almedina, ES' },
+    { term: c.role, value: t.hero.role },
     { term: c.status, value: c.available, accent: true },
+    { term: c.base, value: 'Almedina, ES' },
+    { term: c.mode, value: c.modeValue },
     { term: c.experience, value: c.experienceValue },
-    { term: c.stack, value: 'TS · Next · PG' },
+    { term: c.stack, value: 'PHP · Node · React' },
+    { term: c.languages, value: c.languagesValue },
   ];
 
   return (
@@ -39,54 +39,71 @@ export default function Header() {
           <div className="flex flex-col gap-6">
             <LiveDot label={t.hero.availability} />
 
-            <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-display-xl">
-              {t.hero.greeting} Jose Juan.{' '}
+            <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-[80px] leading-[1.02] text-balance">
+              {t.hero.greeting} José Juan.{' '}
               <AccentWord underline>{t.hero.role}</AccentWord>.
             </h1>
+
+            {/* The CV's headline stack, visible without reading a paragraph. */}
+            <p className="font-mono text-small uppercase tracking-mono text-text-primary">
+              PHP/Symfony · Node.js · React/Next.js
+            </p>
 
             <h2 className="font-serif text-[20px] sm:text-h2 lg:text-[34px] text-text-secondary max-w-[40ch] leading-tight">
               {t.hero.tagline}
             </h2>
 
-            <p className="font-sans text-body-lg text-text-secondary max-w-[60ch]">
-              {t.hero.description}
-            </p>
-
-            <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mt-4">
-              <Link
-                href="/projects"
-                className="font-serif italic text-[22px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition w-fit"
-              >
-                {t.hero.btnProjects}
-                <span className="font-mono text-accent ml-2">→</span>
-              </Link>
-              <Link
-                href="/contact"
-                className="font-sans text-small text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
-              >
-                {t.hero.btnContact}
-              </Link>
-              {SHOW_CV_DOWNLOAD && (
+            {/* CTAs before the paragraph so they land in the first mobile
+                screen: the CV first, then contact, then the projects. */}
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-end gap-x-8 gap-y-1">
                 <a
-                  href="/cv.pdf"
-                  download
-                  className="font-sans text-small text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
+                  href={CV_HREF[locale]}
+                  download={`CV-Jose-Juan-Perez-Gonzalez-${locale}.pdf`}
+                  className="inline-flex items-end min-h-12 font-serif italic text-[22px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition w-fit"
                 >
                   {t.hero.btnCV}
+                  <span className="font-mono text-accent ml-2">↓</span>
                 </a>
-              )}
-            </div>
-
-            <p className="font-mono text-mono-label uppercase text-text-muted mt-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-end min-h-12 font-sans text-body text-text-primary border-b border-text-muted pb-1 w-fit hover:text-accent transition"
+                >
+                  {t.hero.btnContact}
+                </Link>
+                <Link
+                  href="/projects"
+                  className="inline-flex items-end min-h-12 font-sans text-body text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
+                >
+                  {t.hero.btnProjects}
+                </Link>
+              </div>
               <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-accent transition"
+                className="inline-flex items-center min-h-12 w-fit font-mono text-mono-label uppercase text-text-secondary hover:text-accent transition"
               >
                 {t.hero.calendlyHint} →
               </a>
+            </div>
+
+            <p className="font-sans text-body-lg text-text-secondary max-w-[62ch]">
+              {t.hero.description}
             </p>
+
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border-subtle border-y border-border-subtle">
+              {t.hero.figures.map(({ value, label }) => (
+                <li key={value} className="flex flex-col gap-1 bg-bg-base py-4 sm:px-5 sm:first:pl-0">
+                  <span className="font-serif text-[32px] leading-none text-accent">
+                    {value}
+                  </span>
+                  <span className="font-sans text-small text-text-secondary">
+                    {label}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <aside className="border-y border-border py-3 self-start w-full lg:max-w-[260px] lg:sticky lg:top-24">
@@ -94,10 +111,12 @@ export default function Header() {
               {colophon.map(({ term, value, accent }) => (
                 <div
                   key={term}
-                  className="flex justify-between items-baseline font-mono text-mono-label uppercase py-1.5 border-b border-border-subtle last:border-b-0"
+                  className="flex justify-between items-baseline gap-4 font-mono text-mono-label uppercase py-1.5 border-b border-border-subtle last:border-b-0"
                 >
-                  <dt className="text-text-muted">{term}</dt>
-                  <dd className={accent ? 'text-accent' : 'text-text-primary'}>
+                  <dt className="shrink-0 text-text-muted">{term}</dt>
+                  <dd
+                    className={`text-right ${accent ? 'text-accent' : 'text-text-primary'}`}
+                  >
                     {value}
                   </dd>
                 </div>
