@@ -104,8 +104,10 @@ Standalone — no cross-repo dependencies.
 2. Copy → `dictionaries.projectCopy.<id>` (`home` / `full` / `outcome`) in **both**
    `es` and `en`. Never key project copy by array index.
 3. Cover art → `public/img/<pN>.svg`, 600×450, dark editorial system (gradient
-   `#0E1014→#15171C`, hairlines at y=56/394, mono `// pN · slug`, accent status
-   word, serif italic title). Screenshots → `public/img/shots/<id>-N.webp`.
+   `#0E1014→#15171C`, hairlines at y=56/394, serif italic title and a 16 px
+   mono subtitle). No number, status, stack or year on the art: the card
+   already shows them, and below ~10 px they read as broken content.
+   Screenshots → `public/img/shots/<id>-N.webp`.
 
 ### Tweak theming (paper-first · serif accent · single accent #FF5C2E)
 1. Tokens are CSS variables in `globals.css` (`:root` = light, `.dark` = dark),
