@@ -10,7 +10,7 @@ export const dictionaries = {
       contact: 'Contacto',
     },
     footer: {
-      bottomLine: 'Almedina · ES · Exp. casi 5 años',
+      bottomLine: 'Almedina, ES · Casi 5 años de experiencia',
     },
     ui: {
       metaHome: '// portada · home',
@@ -461,7 +461,7 @@ export const dictionaries = {
       base: 'Based',
       status: 'Status',
       experience: 'Exp.',
-      experienceValue: 'nearly 5 yrs',
+      experienceValue: 'nearly 5 years',
       stack: 'Stack',
       available: 'Available now',
       mode: 'Mode',
