@@ -39,52 +39,71 @@ export default function Header() {
           <div className="flex flex-col gap-6">
             <LiveDot label={t.hero.availability} />
 
-            <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-display-xl">
+            <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-[80px] leading-[1.02] text-balance">
               {t.hero.greeting} José Juan.{' '}
               <AccentWord underline>{t.hero.role}</AccentWord>.
             </h1>
+
+            {/* The CV's headline stack, visible without reading a paragraph. */}
+            <p className="font-mono text-small uppercase tracking-mono text-text-primary">
+              PHP/Symfony · Node.js · React/Next.js
+            </p>
 
             <h2 className="font-serif text-[20px] sm:text-h2 lg:text-[34px] text-text-secondary max-w-[40ch] leading-tight">
               {t.hero.tagline}
             </h2>
 
-            <p className="font-sans text-body-lg text-text-secondary max-w-[60ch]">
-              {t.hero.description}
-            </p>
-
-            <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mt-4">
-              <Link
-                href="/projects"
-                className="font-serif italic text-[22px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition w-fit"
-              >
-                {t.hero.btnProjects}
-                <span className="font-mono text-accent ml-2">→</span>
-              </Link>
-              <Link
-                href="/contact"
-                className="font-sans text-small text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
-              >
-                {t.hero.btnContact}
-              </Link>
-              <a
-                href={CV_HREF[locale]}
-                download={`CV-Jose-Juan-Perez-Gonzalez-${locale}.pdf`}
-                className="font-sans text-small text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
-              >
-                {t.hero.btnCV}
-              </a>
-            </div>
-
-            <p className="font-mono text-mono-label uppercase text-text-muted mt-3">
+            {/* CTAs before the paragraph so they land in the first mobile
+                screen: the CV first, then contact, then the projects. */}
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-end gap-x-8 gap-y-1">
+                <a
+                  href={CV_HREF[locale]}
+                  download={`CV-Jose-Juan-Perez-Gonzalez-${locale}.pdf`}
+                  className="inline-flex items-end min-h-12 font-serif italic text-[22px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition w-fit"
+                >
+                  {t.hero.btnCV}
+                  <span className="font-mono text-accent ml-2">↓</span>
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-end min-h-12 font-sans text-body text-text-primary border-b border-text-muted pb-1 w-fit hover:text-accent transition"
+                >
+                  {t.hero.btnContact}
+                </Link>
+                <Link
+                  href="/projects"
+                  className="inline-flex items-end min-h-12 font-sans text-body text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
+                >
+                  {t.hero.btnProjects}
+                </Link>
+              </div>
               <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-accent transition"
+                className="inline-flex items-center min-h-12 w-fit font-mono text-mono-label uppercase text-text-secondary hover:text-accent transition"
               >
                 {t.hero.calendlyHint} →
               </a>
+            </div>
+
+            <p className="font-sans text-body-lg text-text-secondary max-w-[62ch]">
+              {t.hero.description}
             </p>
+
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border-subtle border-y border-border-subtle">
+              {t.hero.figures.map(({ value, label }) => (
+                <li key={value} className="flex flex-col gap-1 bg-bg-base py-4 sm:pr-4">
+                  <span className="font-serif text-[32px] leading-none text-accent">
+                    {value}
+                  </span>
+                  <span className="font-sans text-small text-text-secondary">
+                    {label}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <aside className="border-y border-border py-3 self-start w-full lg:max-w-[260px] lg:sticky lg:top-24">

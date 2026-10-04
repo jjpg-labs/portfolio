@@ -71,15 +71,27 @@ describe('HomePage', () => {
     expect(screen.getByText('Tigloo')).toBeInTheDocument();
   });
 
-  it('renders the "Ver mis Proyectos" and "Contactar" links', () => {
+  it('renders the CV, "Contactar" and "Ver proyectos" links', () => {
     renderWithProviders(<HomePage />);
     expect(
-      screen.getByRole('link', { name: /ver mis proyectos/i })
+      screen.getByRole('link', { name: /descargar cv/i })
+    ).toHaveAttribute('href', '/cv.pdf');
+    expect(
+      screen.getByRole('link', { name: /^ver proyectos$/i })
     ).toHaveAttribute('href', '/projects');
     expect(screen.getByRole('link', { name: /contactar/i })).toHaveAttribute(
       'href',
       '/contact'
     );
+  });
+
+  it('renders the key figures from the CV', () => {
+    renderWithProviders(<HomePage />);
+    expect(screen.getByText('>75 %')).toBeInTheDocument();
+    expect(screen.getByText('1M+')).toBeInTheDocument();
+    expect(
+      screen.getByText(/migración a GA4, dentro del plazo de Google/i)
+    ).toBeInTheDocument();
   });
 
   it('renders the "Tecnologías Clave y Stack Principal" section', () => {

@@ -64,9 +64,15 @@ export const dictionaries = {
       tagline: 'Backend sólido, frontend en React y el testing de serie.',
       description:
         'Casi 5 años de experiencia. Lo más reciente, en Grupie Labs: el motor de facturación recurrente de partners y los cobros SEPA con GoCardless. Antes, en The Knot Worldwide (más de 1M de visitas al mes): entregas con plazo cerrado (exportación contable a Sage 50, migración a GA4 en 2 meses) e integración backend con GraphQL, OpenSearch y RabbitMQ. Remoto desde España, abierto a híbrido.',
-      btnProjects: 'Ver mis Proyectos',
+      btnProjects: 'Ver proyectos',
       btnContact: 'Contactar',
       btnCV: 'Descargar CV',
+      // Key figures from the CV (content.mjs), shown under the description.
+      figures: [
+        { value: '>75 %', label: 'cobertura de tests en frontend, desde 0 %' },
+        { value: '1M+', label: 'visitas al mes en The Knot Worldwide' },
+        { value: '2 meses', label: 'migración a GA4, dentro del plazo de Google' },
+      ],
       calendlyHint: 'o reserva una llamada de 30 min',
     },
     experience: {
@@ -457,9 +463,14 @@ export const dictionaries = {
       tagline: 'Solid backend, React frontend and testing as standard.',
       description:
         'Nearly 5 years of experience. Most recently, at Grupie Labs: the recurring partner billing engine and SEPA collections with GoCardless. Before that, at The Knot Worldwide (1M+ monthly visits): fixed-deadline deliveries (accounting export to Sage 50, GA4 migration in 2 months) and backend integration with GraphQL, OpenSearch and RabbitMQ. Remote from Spain, open to hybrid.',
-      btnProjects: 'See my Projects',
+      btnProjects: 'View projects',
       btnContact: 'Get in touch',
       btnCV: 'Download CV',
+      figures: [
+        { value: '>75%', label: 'frontend test coverage, up from 0%' },
+        { value: '1M+', label: 'monthly visits at The Knot Worldwide' },
+        { value: '2 months', label: "GA4 migration, within Google's deadline" },
+      ],
       calendlyHint: 'or book a 30-min call',
     },
     experience: {
