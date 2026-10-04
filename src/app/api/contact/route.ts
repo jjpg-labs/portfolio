@@ -99,13 +99,17 @@ export async function POST(req: Request) {
 
   try {
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    // The SDK does not throw on API errors (e.g. 403 for an unverified sender):
+    // it resolves with `error` set. Without this check the visitor sees
+    // "Mensaje enviado" while the message is dropped.
+    const { error } = await resend.emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: email,
       subject: `[Portfolio] ${subject}`,
       text: `De: ${name} <${email}>\n\n${message}`,
     });
+    if (error) throw error;
   } catch (err) {
     console.error('[contact] Resend send failed:', err);
     return NextResponse.json(
