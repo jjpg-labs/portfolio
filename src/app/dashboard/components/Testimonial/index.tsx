@@ -24,7 +24,7 @@ export default function Testimonial() {
           </span>
         </div>
 
-        <figure className="flex flex-col gap-6 max-w-[40ch]">
+        <figure className="flex flex-col gap-6 max-w-3xl">
           <blockquote className="font-serif italic text-[28px] sm:text-[36px] lg:text-[44px] leading-[1.15] text-text-primary text-balance">
             <span aria-hidden="true" className="text-accent">
               {quoteOpen}
