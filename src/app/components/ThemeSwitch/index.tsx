@@ -21,7 +21,7 @@ export function ThemeSwitcher() {
   return (
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="p-2 rounded-full text-text-secondary hover:text-accent transition-colors"
+      className="inline-flex items-center justify-center max-lg:min-h-12 max-lg:min-w-12 p-2 rounded-full text-text-secondary hover:text-accent transition-colors"
       title={label}
       aria-label={label}
     >

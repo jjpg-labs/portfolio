@@ -61,13 +61,13 @@ export default function ContactInfo() {
         </div>
       </dl>
 
-      <div className="flex items-center gap-5 pt-2 border-t border-border-subtle">
+      <div className="flex items-center gap-1 pt-2 border-t border-border-subtle">
         <Link
           href={LINKEDIN_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          className="text-text-muted hover:text-text-primary transition"
+          className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-text-primary transition"
         >
           <FaLinkedin size={22} />
         </Link>
@@ -76,14 +76,14 @@ export default function ContactInfo() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          className="text-text-muted hover:text-text-primary transition"
+          className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-text-primary transition"
         >
           <FaGithub size={22} />
         </Link>
         <Link
           href={`mailto:${EMAIL_ADDRESS}`}
           aria-label={t.a11y.email}
-          className="text-text-muted hover:text-accent transition"
+          className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-accent transition"
         >
           <FaEnvelope size={22} />
         </Link>

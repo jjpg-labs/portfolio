@@ -33,13 +33,13 @@ export const Footer = () => {
             <LiveDot label={t.hero.availability} />
           </div>
 
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-1">
             <a
               href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-text-muted hover:text-text-primary transition"
+              className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-text-primary transition"
             >
               <FaGithub size={20} />
             </a>
@@ -48,7 +48,7 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-text-muted hover:text-text-primary transition"
+              className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-text-primary transition"
             >
               <FaLinkedin size={20} />
             </a>
@@ -57,14 +57,14 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Calendly"
-              className="text-text-muted hover:text-accent transition"
+              className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-accent transition"
             >
               <FaCalendarAlt size={20} />
             </a>
             <a
               href={`mailto:${EMAIL_ADDRESS}`}
               aria-label={t.a11y.email}
-              className="text-text-muted hover:text-accent transition"
+              className="inline-flex items-center justify-center min-h-12 min-w-12 text-text-muted hover:text-accent transition"
             >
               <FaEnvelope size={20} />
             </a>

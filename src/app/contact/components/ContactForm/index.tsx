@@ -235,7 +235,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full py-3 px-6 font-serif italic text-[20px] border-2 border-accent bg-bg-elevated text-text-primary hover:bg-accent hover:text-paper transition rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-3 px-6 font-serif italic text-[20px] border-2 border-accent bg-bg-elevated text-text-primary hover:bg-accent hover:text-ink transition rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? f.submitting : f.submit}
         <span className="font-mono ml-2">→</span>

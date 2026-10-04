@@ -32,26 +32,26 @@ export default function ContactClient() {
           href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block mb-12 border border-accent bg-accent-tint rounded-md p-6 sm:p-8 hover:bg-accent hover:text-paper transition-all"
+          className="group block mb-12 border border-accent bg-accent-tint rounded-md p-6 sm:p-8 hover:bg-accent hover:text-ink transition-all"
         >
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-start gap-4">
-              <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-md bg-accent text-paper shrink-0">
+              <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-md bg-accent text-ink shrink-0">
                 <FaCalendarAlt size={20} />
               </div>
               <div>
-                <span className="font-mono text-mono-label uppercase text-accent group-hover:text-paper transition">
+                <span className="font-mono text-mono-label uppercase text-accent group-hover:text-ink transition">
                   {t.ui.discoveryCall}
                 </span>
-                <h2 className="font-serif text-[24px] sm:text-[30px] leading-tight text-text-primary group-hover:text-paper transition mt-1">
+                <h2 className="font-serif text-[24px] sm:text-[30px] leading-tight text-text-primary group-hover:text-ink transition mt-1">
                   {t.contactPage.calendlyTitle}
                 </h2>
-                <p className="font-sans text-body text-text-secondary group-hover:text-paper/90 transition mt-2 max-w-[60ch]">
+                <p className="font-sans text-body text-text-secondary group-hover:text-ink/90 transition mt-2 max-w-[60ch]">
                   {t.contactPage.calendlyDescription}
                 </p>
               </div>
             </div>
-            <span className="font-serif italic text-[20px] border-b-2 border-accent group-hover:border-paper pb-1 text-text-primary group-hover:text-paper transition shrink-0">
+            <span className="font-serif italic text-[20px] border-b-2 border-accent group-hover:border-ink pb-1 text-text-primary group-hover:text-ink transition shrink-0">
               {t.contactPage.calendlyCta}
               <span className="font-mono ml-2">→</span>
             </span>

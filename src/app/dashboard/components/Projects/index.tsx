@@ -48,7 +48,7 @@ export default function Projects() {
         <div className="mt-10 flex justify-end">
           <Link
             href="/projects"
-            className="font-serif italic text-[20px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition"
+            className="inline-flex items-end min-h-12 font-serif italic text-[20px] border-b-2 border-accent pb-1 text-text-primary hover:text-accent transition"
           >
             {seeAll}
             <span className="font-mono text-accent ml-2">→</span>
