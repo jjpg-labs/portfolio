@@ -32,6 +32,7 @@ export const dictionaries = {
     },
     a11y: {
       home: 'jjpg.dev — Inicio',
+      skipToContent: 'Saltar al contenido',
       openMenu: 'Abrir menú',
       closeMenu: 'Cerrar menú',
       navMenu: 'Menú de navegación',
@@ -444,6 +445,7 @@ export const dictionaries = {
     },
     a11y: {
       home: 'jjpg.dev — Home',
+      skipToContent: 'Skip to content',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
       navMenu: 'Navigation menu',

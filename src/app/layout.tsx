@@ -4,6 +4,7 @@ import { Footer } from './components/Footer';
 import { ThemeProvider } from './components/ThemeProvider';
 import { BackToTop } from './components/BackToTop';
 import { LocaleProvider } from './context/LocaleContext';
+import { SkipLink } from './components/SkipLink';
 import { fontSans, fontMono, fontSerif } from './fonts';
 import './globals.css';
 import { ChildrenProps } from './types';
@@ -141,13 +142,16 @@ export default function RootLayout({ children }: ChildrenProps) {
           <LocaleProvider>
           <ViewportProvider>
             <div id="app-container" className="flex flex-col min-h-screen bg-bg-base text-text-primary">
+              <SkipLink />
               {/* Same box as every page section: padding outside, max-w-7xl inside,
                   so the logo lines up with the page content. */}
               <header className="sticky top-0 z-50 bg-bg-surface border-b border-border-subtle px-4 sm:px-8 lg:px-14">
                 <Navigation />
               </header>
 
-              <main className="grow">{children}</main>
+              <main id="main" tabIndex={-1} className="grow outline-none">
+                {children}
+              </main>
 
               <footer>
                 <Footer />
