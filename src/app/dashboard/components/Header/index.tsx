@@ -111,10 +111,12 @@ export default function Header() {
               {colophon.map(({ term, value, accent }) => (
                 <div
                   key={term}
-                  className="flex justify-between items-baseline font-mono text-mono-label uppercase py-1.5 border-b border-border-subtle last:border-b-0"
+                  className="flex justify-between items-baseline gap-4 font-mono text-mono-label uppercase py-1.5 border-b border-border-subtle last:border-b-0"
                 >
-                  <dt className="text-text-muted">{term}</dt>
-                  <dd className={accent ? 'text-accent' : 'text-text-primary'}>
+                  <dt className="shrink-0 text-text-muted">{term}</dt>
+                  <dd
+                    className={`text-right ${accent ? 'text-accent' : 'text-text-primary'}`}
+                  >
                     {value}
                   </dd>
                 </div>
