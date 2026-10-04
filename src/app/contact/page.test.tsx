@@ -79,6 +79,19 @@ describe('ContactPage', () => {
     ).toBeInTheDocument();
   });
 
+  it('orders the page FAQ → form → call, with the form as the main action', () => {
+    renderWithLocale(<ContactPage />);
+    const faq = screen.getByRole('heading', { name: /antes de que escribas/i });
+    const form = screen.getByRole('heading', { name: /envíame un mensaje/i });
+    const call = screen.getByRole('heading', {
+      name: /prefieres hablar directamente/i,
+    });
+    const follows = (a: Node, b: Node) =>
+      Boolean(a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING);
+    expect(follows(faq, form)).toBe(true);
+    expect(follows(form, call)).toBe(true);
+  });
+
   it('renders social links with correct aria-labels', () => {
     renderWithLocale(<ContactPage />);
     expect(screen.getByLabelText(/linkedin/i)).toBeInTheDocument();
