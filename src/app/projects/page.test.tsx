@@ -28,11 +28,13 @@ describe('ProjectsPage', () => {
     await waitFor(() => {
       const cards = screen.getAllByTestId('project-card');
       expect(cards).toHaveLength(5);
-      expect(cards[0]).toHaveTextContent('Nexfit');
-      expect(cards[1]).toHaveTextContent('Vereda');
-      expect(cards[2]).toHaveTextContent('Medina Roja BTT');
-      expect(cards[3]).toHaveTextContent('Accounting Suite');
-      expect(cards[4]).toHaveTextContent('Curio');
+      // The home's featured projects first, in the same order, so the
+      // numbering matches between / and /projects.
+      expect(cards[0]).toHaveTextContent('Accounting Suite');
+      expect(cards[1]).toHaveTextContent('Curio');
+      expect(cards[2]).toHaveTextContent('Vereda');
+      expect(cards[3]).toHaveTextContent('Nexfit');
+      expect(cards[4]).toHaveTextContent('Medina Roja BTT');
     });
   });
 });
