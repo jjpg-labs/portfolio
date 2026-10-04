@@ -19,9 +19,10 @@ export interface Skill {
   category: SkillCategory;
 }
 
-// "Experto" (level 5) is reserved for the core stack (NestJS, React/Next,
-// TypeScript, PostgreSQL); everything else is Avanzado/Intermedio so each level
-// reads as earned. Low-signal libs were trimmed to keep the list focused.
+// "Experto" (level 5) is reserved for the core stack (React/Next, TypeScript,
+// PostgreSQL); everything else is Avanzado/Intermedio so each level reads as
+// earned. NestJS sits at Avanzado: it is only used on personal projects (Nexfit,
+// Accounting Suite), never in a job, so it does not meet the "Experto" bar. Low-signal libs were trimmed to keep the list focused.
 //
 // Level 2 ("Básico") is deliberate for the observability, cloud and Redis rows:
 // those are read-only, borrowed or AI-assisted exposure, not tools I have set up
@@ -29,7 +30,7 @@ export interface Skill {
 // used at work, but not enough to defend as a skill, so it sits in "Nociones de".
 // It is what makes the levelled page agree with the home's "Nociones de" group.
 export const SKILLS: Skill[] = [
-  { name: 'NestJS', level: 5, category: 'Back-End' },
+  { name: 'NestJS', level: 4, category: 'Back-End' },
   { name: 'Node.js', level: 4, category: 'Back-End' },
   { name: 'PHP', level: 4, category: 'Back-End' },
   { name: 'Symfony', level: 4, category: 'Back-End' },

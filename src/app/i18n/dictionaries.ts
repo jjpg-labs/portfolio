@@ -231,15 +231,15 @@ export const dictionaries = {
       // worth its own page instead of a longer version of the home preview.
       categoryIntros: {
         'Back-End':
-          'Es donde más tiempo paso. NestJS es mi opción por defecto para una API nueva —es el back de Nexfit y de Accounting Suite—, pero buena parte de mi carrera ha sido mantener y evolucionar PHP/Symfony heredado, incluido código en PHP 5.4. En The Knot Worldwide integré servicios con HapiJS, GraphQL y resolvers sobre PayloadCMS; hoy en Grupie Labs combino Symfony con servicios en Fastify.',
+          'Es donde más tiempo paso. NestJS es mi opción por defecto para una API nueva —es el back de Nexfit y de Accounting Suite—, pero buena parte de mi carrera ha sido mantener y evolucionar PHP/Symfony heredado, incluido código en PHP 5.4. En The Knot Worldwide diseñé e implementé mi parte de la integración backend de un proyecto transversal con HapiJS, GraphQL y OpenSearch, y creé resolvers en PayloadCMS; en Grupie Labs combiné Symfony con servicios en Fastify.',
         'Front-End':
-          'React con Next.js y TypeScript es donde construyo casi todo el producto visible. He llevado módulos críticos de un stack heredado a React y participé en la migración de los componentes de un equipo a su nueva librería de diseño en Next.js. Fuera de la web, la app móvil de Nexfit está en Expo con React Native y funciona offline-first: el mismo modelo mental, otra caja de herramientas.',
+          'React con Next.js y TypeScript es donde construyo casi todo el producto visible. En The Knot Worldwide, en un proyecto de varios equipos con un plazo muy ajustado, añadí a una aplicación React de otro equipo una ruta nueva con su página, componentes reutilizables y custom hooks, y participé en la migración de los componentes de un equipo a su nueva librería de diseño en Next.js. Fuera de la web, la app móvil de Nexfit está en Expo con React Native y funciona offline-first: el mismo modelo mental, otra caja de herramientas.',
         'Bases de Datos':
-          'PostgreSQL es mi base por defecto, con Prisma cuando el proyecto es TypeScript. La parte menos vistosa —y la que más problemas evita— es el modelado: en un SaaS multi-tenant como Vereda, decidir dónde vive el identificador de tenant condiciona todo lo que viene después. OpenSearch entró por la capa de búsqueda de un backend que integré.',
+          'PostgreSQL es mi base por defecto, con Prisma cuando el proyecto es TypeScript. La parte menos vistosa —y la que más problemas evita— es el modelado: en un SaaS multi-tenant como Vereda, decidir dónde vive el identificador de tenant condiciona todo lo que viene después. OpenSearch entró por la integración backend de un proyecto transversal en The Knot Worldwide.',
         Infraestructura:
           'Lo suficiente para llevar a producción lo que construyo y mantenerlo vivo. Docker en todos los proyectos; RabbitMQ para desacoplar lo que no debe bloquear una petición; Playwright para las pruebas que de verdad detectan regresiones. En Tigloo propuse e implementé el primer pipeline de CI/CD de la empresa. Kubernetes, AWS y Terraform aparecen en el contexto de proyectos en los que he trabajado; sé moverme en ellos, pero no los vendo como especialidad.',
         'IA / LLMs':
-          'Uso IA dentro del ciclo de desarrollo, no como adorno: Claude Code integrado en el día a día en Grupie Labs, y la Claude API cuando la funcionalidad la necesita de verdad. MCP me interesa por lo que permite —conectar un modelo a herramientas y datos propios con un contrato explícito— y es donde más tiempo estoy invirtiendo ahora.',
+          'Uso IA dentro del ciclo de desarrollo, no como adorno: Claude Code integrado en el día a día, como hice en Grupie Labs, y la Claude API cuando la funcionalidad la necesita de verdad. MCP me interesa por lo que permite —conectar un modelo a herramientas y datos propios con un contrato explícito— y es donde más tiempo estoy invirtiendo ahora.',
       } as Record<string, string>,
       levels: {
         expert: 'Experto',
@@ -617,15 +617,15 @@ export const dictionaries = {
       } as Record<string, string>,
       categoryIntros: {
         'Back-End':
-          'This is where I spend most of my time. NestJS is my default for a new API — it backs Nexfit and Accounting Suite — but much of my career has been maintaining and evolving legacy PHP/Symfony, PHP 5.4 included. At The Knot Worldwide I integrated services with HapiJS, GraphQL and PayloadCMS resolvers; today at Grupie Labs I pair Symfony with Fastify services.',
+          'This is where I spend most of my time. NestJS is my default for a new API — it backs Nexfit and Accounting Suite — but much of my career has been maintaining and evolving legacy PHP/Symfony, PHP 5.4 included. At The Knot Worldwide I designed and implemented my part of the backend integration of a cross-team project with HapiJS, GraphQL and OpenSearch, and created resolvers in PayloadCMS; at Grupie Labs I paired Symfony with Fastify services.',
         'Front-End':
-          'React with Next.js and TypeScript is where I build almost all of the visible product. I have moved critical modules off a legacy stack onto React and took part in migrating a team\'s components to its new Next.js design library. Off the web, the Nexfit mobile app runs on Expo with React Native and works offline-first: same mental model, different toolbox.',
+          'React with Next.js and TypeScript is where I build almost all of the visible product. At The Knot Worldwide, in a multi-team project with a very tight deadline, I added to another team\'s React application a new route with its page, reusable components and custom hooks, and took part in migrating a team\'s components to its new Next.js design library. Off the web, the Nexfit mobile app runs on Expo with React Native and works offline-first: same mental model, different toolbox.',
         'Bases de Datos':
-          'PostgreSQL is my default, with Prisma when the project is TypeScript. The least glamorous part — and the one that prevents the most pain — is modelling: in a multi-tenant SaaS like Vereda, deciding where the tenant identifier lives shapes everything that comes after. OpenSearch came in through the search layer of a backend I integrated.',
+          'PostgreSQL is my default, with Prisma when the project is TypeScript. The least glamorous part — and the one that prevents the most pain — is modelling: in a multi-tenant SaaS like Vereda, deciding where the tenant identifier lives shapes everything that comes after. OpenSearch came in through the backend integration of a cross-team project at The Knot Worldwide.',
         Infraestructura:
           'Enough to take what I build to production and keep it alive. Docker on every project; RabbitMQ to decouple whatever must not block a request; Playwright for the tests that actually catch regressions. At Tigloo I proposed and built the company\'s first CI/CD pipeline. Kubernetes, AWS and Terraform show up in the context of projects I have worked on; I can find my way around them, but I do not sell them as a specialty.',
         'IA / LLMs':
-          'I use AI inside the development cycle, not as decoration: Claude Code wired into the day-to-day at Grupie Labs, and the Claude API when a feature genuinely calls for it. MCP interests me for what it enables — connecting a model to your own tools and data under an explicit contract — and it is where most of my time goes right now.',
+          'I use AI inside the development cycle, not as decoration: Claude Code wired into the day-to-day, as I did at Grupie Labs, and the Claude API when a feature genuinely calls for it. MCP interests me for what it enables — connecting a model to your own tools and data under an explicit contract — and it is where most of my time goes right now.',
       } as Record<string, string>,
       levels: {
         expert: 'Expert',
