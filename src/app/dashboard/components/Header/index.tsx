@@ -6,11 +6,12 @@ import { LiveDot } from '@/app/components/LiveDot';
 import { AccentWord } from '@/app/components/AccentWord';
 import { useLocale } from '@/app/context/LocaleContext';
 
-// TODO: re-enable once the real CV is uploaded to /public/cv.pdf.
-const SHOW_CV_DOWNLOAD = false;
+// The fullstack CV generated from ~/Documentos/CV/content.mjs, one PDF per
+// locale. Regenerate and copy both when the CV changes.
+const CV_HREF = { es: '/cv.pdf', en: '/cv-en.pdf' } as const;
 
 export default function Header() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const c = t.colophon;
 
   const colophon = [
@@ -65,15 +66,13 @@ export default function Header() {
               >
                 {t.hero.btnContact}
               </Link>
-              {SHOW_CV_DOWNLOAD && (
-                <a
-                  href="/cv.pdf"
-                  download
-                  className="font-sans text-small text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
-                >
-                  {t.hero.btnCV}
-                </a>
-              )}
+              <a
+                href={CV_HREF[locale]}
+                download={`CV-Jose-Juan-Perez-Gonzalez-${locale}.pdf`}
+                className="font-sans text-small text-text-secondary border-b border-text-muted pb-1 w-fit hover:text-text-primary transition"
+              >
+                {t.hero.btnCV}
+              </a>
             </div>
 
             <p className="font-mono text-mono-label uppercase text-text-muted mt-3">
