@@ -18,7 +18,8 @@ const ACCENT = '#FF5C2E';
 const ACCENT_INK = '#C63A0A';
 
 // Satori only ships a sans fallback, so the serif is vendored (OFL, see
-// assets/fonts/OFL.txt). No edge runtime: the image is rendered once at build
+// assets/fonts/OFL.txt). Being the only font registered, it sets every line,
+// meta strips included. No edge runtime: the image is rendered once at build
 // time and reads the fonts from disk.
 const loadFont = (file: string) =>
   readFile(join(process.cwd(), 'assets/fonts', file));
@@ -116,7 +117,8 @@ export default async function Image() {
               lineHeight: 1.4,
               color: SECONDARY,
               marginTop: 24,
-              maxWidth: 940,
+              // Narrow enough to split in two even lines, no widow.
+              maxWidth: 780,
             }}
           >
             Casi 5 años en PHP/Symfony, Node.js y React/Next.js: facturación
