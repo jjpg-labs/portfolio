@@ -133,6 +133,7 @@ describe('HomePage', () => {
     expect(screen.getByText('Accounting Suite')).toBeInTheDocument();
     expect(screen.getByText('Curio')).toBeInTheDocument();
     expect(screen.getByText('Vereda')).toBeInTheDocument();
+    expect(screen.getByText('Nexfit')).toBeInTheDocument();
   });
 
   it('renders the "Ver Todos los Proyectos" link', () => {
