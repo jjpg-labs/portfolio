@@ -137,10 +137,10 @@ export const dictionaries = {
     },
     projectCopy: {
       nexfit: {
-        home: 'SaaS para entrenadores personales y nutricionistas: panel web, app móvil offline-first y API REST. Clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso.',
-        full: 'SaaS multi-repo para entrenadores personales y nutricionistas: panel web, app móvil offline-first (WatermelonDB) y API REST. Gestión de clientes, planes de entreno y nutrición, check-ins y seguimiento de progreso. Desplegado en infra propia self-host (Coolify) con PostgreSQL + Cloudflare R2.',
+        home: 'SaaS para entrenadores personales: panel web, app móvil offline-first y API REST. Planes de entrenamiento, sesiones registradas serie a serie, check-ins y seguimiento de progreso.',
+        full: 'SaaS multi-repo para entrenadores personales: panel web, app móvil offline-first (WatermelonDB) y API REST. El entrenador monta los planes por bloques, semanas y días; el cliente los sigue en el móvil y apunta cada serie. Check-ins semanales, progreso y avisos de clientes en riesgo. En uso real con un entrenador y sus clientes desde septiembre de 2026, sobre infra propia self-host (Coolify) con PostgreSQL + Cloudflare R2.',
         outcome:
-          'Entrenadores gestionando clientes en hojas de cálculo → plataforma multi-repo con app móvil offline-first que centraliza planes, check-ins y progreso.',
+          'Entrenadores enviando planes y pidiendo resultados por WhatsApp → panel y app donde el cliente apunta cada serie y el entrenador lo ve sin pedírselo.',
         stack:
           'Tres repos contra una misma base PostgreSQL con Prisma: API en NestJS, panel en Next.js y app en Expo. La app escribe en local con WatermelonDB y sincroniza después, para que una sesión pueda registrarse sin cobertura. Los archivos van a Cloudflare R2, no al servidor.',
       },
@@ -547,10 +547,10 @@ export const dictionaries = {
     },
     projectCopy: {
       nexfit: {
-        home: 'SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app and REST API. Clients, training and nutrition plans, check-ins and progress tracking.',
-        full: 'Multi-repo SaaS for personal trainers and nutritionists: web dashboard, offline-first mobile app (WatermelonDB) and REST API. Client management, training and nutrition plans, check-ins and progress tracking. Deployed on self-hosted infra (Coolify) with PostgreSQL + Cloudflare R2.',
+        home: 'SaaS for personal trainers: web dashboard, offline-first mobile app and REST API. Training plans, sessions logged set by set, check-ins and progress tracking.',
+        full: 'Multi-repo SaaS for personal trainers: web dashboard, offline-first mobile app (WatermelonDB) and REST API. The trainer builds plans by blocks, weeks and days; the client follows them on their phone and logs every set. Weekly check-ins, progress and at-risk client alerts. In real use with a trainer and their clients since September 2026, on self-hosted infra (Coolify) with PostgreSQL + Cloudflare R2.',
         outcome:
-          'Trainers managing clients in spreadsheets → a multi-repo platform with an offline-first mobile app that centralizes plans, check-ins and progress.',
+          'Trainers sending plans and chasing results over WhatsApp → a dashboard and app where the client logs every set and the trainer sees it without asking.',
         stack:
           'Three repos against one PostgreSQL database with Prisma: a NestJS API, a Next.js dashboard and an Expo app. The app writes locally with WatermelonDB and syncs later, so a session can be logged with no signal. Files go to Cloudflare R2, not to the server.',
       },
