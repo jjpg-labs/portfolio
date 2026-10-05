@@ -1,0 +1,8 @@
+{
+  "portfolio": {
+    "lint": "npm run lint",
+    "types": "npx tsc --noEmit",
+    "test": "npm test",
+    "build": "npm run build"
+  }
+}
