@@ -80,6 +80,17 @@ describe('resolveClientIp', () => {
     },
   );
 
+  it.each(['::FFFF:173.245.48.10'])(
+    'recognises an uppercase IPv4-mapped Cloudflare peer (%s)',
+    (peer) => {
+      expect(
+        resolveClientIp(
+          h({ 'x-forwarded-for': peer, 'cf-connecting-ip': '198.51.100.7' }),
+        ),
+      ).toEqual({ ip: '198.51.100.7', source: 'cf-connecting-ip' });
+    },
+  );
+
   it('takes the peer from the last X-Forwarded-For value', () => {
     const xff = '203.0.113.5, 173.245.48.10';
     expect(
