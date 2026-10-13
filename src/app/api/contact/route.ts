@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { resolveClientIp } from './client-ip';
 import {
   bestEffortRateLimit,
   checkOrigin,
@@ -50,9 +51,11 @@ export async function POST(req: Request) {
     );
   }
 
-  // Layer 3 — best-effort per-IP rate limit (weak in serverless; see guard.ts).
-  const forwardedFor = req.headers.get('x-forwarded-for');
-  const ip = forwardedFor?.split(',')[0]?.trim() || 'unknown';
+  // Layer 3 — best-effort per-IP rate limit (see guard.ts). Behind Cloudflare
+  // the key is CF-Connecting-IP; the log says where the key came from, never
+  // the IP itself.
+  const { ip, source } = resolveClientIp(req.headers);
+  console.info('[contact] rate-limit key source:', source);
   if (!bestEffortRateLimit(ip)) {
     return NextResponse.json(
       { success: false, error: 'Demasiadas solicitudes' },
