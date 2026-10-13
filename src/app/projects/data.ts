@@ -58,7 +58,7 @@ export const PROJECTS: ProjectMeta[] = [
     imageCover: '/img/p1.svg',
     // The demo 307s straight to /login, so every crawl lands on "page with
     // redirect". It is a read-only demo for humans, not an indexable page.
-    linkLive: 'https://demo.accounting.jjpg.dev',
+    linkLive: 'https://demo-accounting.jjpg.dev',
     liveNofollow: true,
     linkRepo: 'https://github.com/jjpg-labs/accounting-server',
     linkRepo2: 'https://github.com/jjpg95/accounting-manager',
