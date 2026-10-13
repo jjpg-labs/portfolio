@@ -184,3 +184,71 @@ describe('POST /api/contact', () => {
     expect(last?.status).toBe(429);
   });
 });
+
+describe('POST /api/contact — rate-limit key behind Cloudflare', () => {
+  const originalKey = process.env.RESEND_API_KEY;
+  const CF_PEER = '173.245.48.10';
+  let infoSpy: jest.SpyInstance;
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    mockSend.mockResolvedValue({ data: { id: 'mock-id' }, error: null });
+    process.env.RESEND_API_KEY = 'dummy';
+    infoSpy = jest.spyOn(console, 'info').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    infoSpy.mockRestore();
+  });
+
+  afterAll(() => {
+    process.env.RESEND_API_KEY = originalKey;
+  });
+
+  it('does not make two clients behind the same Cloudflare edge share a bucket', async () => {
+    const send = (client: string) =>
+      POST(
+        makeRequest(validBody, {
+          ip: CF_PEER,
+          headers: { 'cf-connecting-ip': client },
+        }),
+      );
+
+    let last: Response | undefined;
+    for (let i = 0; i < 6; i++) last = await send('198.51.100.21');
+    expect(last?.status).toBe(429);
+
+    const other = await send('198.51.100.22');
+    expect(other.status).toBe(200);
+  });
+
+  it('ignores CF-Connecting-IP when the peer is not Cloudflare', async () => {
+    let last: Response | undefined;
+    for (let i = 0; i < 6; i++) {
+      last = await POST(
+        makeRequest(validBody, {
+          ip: '203.0.113.77',
+          headers: { 'cf-connecting-ip': `198.51.100.${100 + i}` },
+        }),
+      );
+    }
+    expect(last?.status).toBe(429);
+  });
+
+  it('logs the key source and never the client or peer IP', async () => {
+    await POST(
+      makeRequest(validBody, {
+        ip: CF_PEER,
+        headers: { 'cf-connecting-ip': '198.51.100.31' },
+      }),
+    );
+
+    expect(infoSpy).toHaveBeenCalledWith(
+      '[contact] rate-limit key source:',
+      'cf-connecting-ip',
+    );
+    const logged = JSON.stringify(infoSpy.mock.calls);
+    expect(logged).not.toContain('198.51.100.31');
+    expect(logged).not.toContain(CF_PEER);
+  });
+});
