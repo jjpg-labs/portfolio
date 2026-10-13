@@ -68,6 +68,18 @@ describe('resolveClientIp', () => {
     ).toEqual({ ip: '198.51.100.7', source: 'cf-connecting-ip' });
   });
 
+  it.each([undefined, '198.51.100.7'])(
+    'falls back to the X-Forwarded-For key when the peer is not an IP (CF-Connecting-IP: %s)',
+    (cf) => {
+      const init: Record<string, string> = { 'x-forwarded-for': 'basura' };
+      if (cf) init['cf-connecting-ip'] = cf;
+      expect(resolveClientIp(h(init))).toEqual({
+        ip: 'basura',
+        source: 'x-forwarded-for',
+      });
+    },
+  );
+
   it('takes the peer from the last X-Forwarded-For value', () => {
     const xff = '203.0.113.5, 173.245.48.10';
     expect(

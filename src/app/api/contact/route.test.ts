@@ -43,11 +43,17 @@ const validBody = {
 
 describe('POST /api/contact', () => {
   const originalKey = process.env.RESEND_API_KEY;
+  let infoSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.clearAllMocks();
     mockSend.mockResolvedValue({ data: { id: 'mock-id' }, error: null });
     process.env.RESEND_API_KEY = 'dummy';
+    infoSpy = jest.spyOn(console, 'info').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    infoSpy.mockRestore();
   });
 
   afterAll(() => {
