@@ -155,19 +155,18 @@ export interface RateLimitOptions {
   store?: Map<string, number[]>;
 }
 
-// Module-level store shared across requests handled by the same warm instance.
+// Module-level store shared by all requests handled by this process.
 const globalStore: Map<string, number[]> = new Map();
 
 /**
  * Best-effort in-memory, per-IP rate limit. Returns `true` when the request is
  * allowed and `false` when the limit is exceeded.
  *
- * IMPORTANT (serverless caveat): this is intentionally WEAK. On Vercel each
- * request may run in a separate, ephemeral lambda instance, so this Map is not
- * shared across instances and is wiped on cold start. It only throttles bursts
- * that happen to reuse the same warm instance. It is a cheap first line of
- * defense, not a real rate limiter — for that use a shared store (Vercel KV,
- * Upstash/Redis). Kept dependency-free on purpose.
+ * IMPORTANT: this is intentionally WEAK. The site runs on Coolify as a
+ * long-lived Node process (`output: 'standalone'`), so the Map lives until the
+ * next deploy, when it is lost. It is not shared if there is ever more than
+ * one replica. It is a cheap first line of defense, not a real rate limiter;
+ * for that use a shared store (Redis). Kept dependency-free on purpose.
  */
 export function bestEffortRateLimit(
   ip: string,
