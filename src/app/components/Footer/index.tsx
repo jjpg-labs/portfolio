@@ -16,7 +16,7 @@ export const EMAIL_ADDRESS =
 // event type slug ever changes without a code deploy.
 export const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ??
-  'https://calendly.com/pepeju95/30-min';
+  'https://calendly.com/pepeju95/cuentame-tu-caso';
 
 export const Footer = () => {
   const { t } = useLocale();

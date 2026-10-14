@@ -78,7 +78,7 @@ describe('HomePage', () => {
     expect(screen.getByText('Tigloo')).toBeInTheDocument();
   });
 
-  it("renders Roberto's recommendation right after the experience", () => {
+  it('renders both recommendations right after the experience (ES)', () => {
     renderWithProviders(<HomePage />);
     const quote = screen.getByText(
       /si tuviera que volver a formar un equipo mañana/i
@@ -86,12 +86,52 @@ describe('HomePage', () => {
     const figure = quote.closest('figure') as HTMLElement;
     expect(figure).toHaveTextContent('Roberto');
     expect(figure).toHaveTextContent(/CTO de Grupie Labs/);
+    const enrique = screen
+      .getByText(/es riguroso, entiende bien los sistemas complejos/i)
+      .closest('figure') as HTMLElement;
+    expect(enrique).toHaveTextContent('Enrique D.');
+    expect(enrique).toHaveTextContent(
+      'Software Architect · compañero en Zankyou y Grupie Labs'
+    );
+    expect(enrique.querySelector('a')).toBeNull();
+    expect(figure.querySelector('a')).toBeNull();
+    expect(enrique.querySelector('blockquote')?.className).toBe(
+      figure.querySelector('blockquote')?.className
+    );
+    // Roberto first, Enrique second.
+    expect(
+      figure.compareDocumentPosition(enrique) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
     // Placed after the last job, before the projects.
     expect(
       screen
         .getByText('Tigloo')
         .compareDocumentPosition(quote) & Node.DOCUMENT_POSITION_FOLLOWING
     ).toBeTruthy();
+  });
+
+  describe('in English', () => {
+    beforeEach(() => window.localStorage.setItem('locale', 'en'));
+    afterEach(() => window.localStorage.clear());
+
+    it('renders both recommendations translated', () => {
+      renderWithProviders(<HomePage />);
+      const roberto = screen
+        .getByText(/if i had to put a team together again tomorrow/i)
+        .closest('figure') as HTMLElement;
+      const enrique = screen
+        .getByText(
+          "He's rigorous, has a solid grasp of complex systems, and you can trust him with the delicate parts of a project.",
+          { exact: false }
+        )
+        .closest('figure') as HTMLElement;
+      expect(roberto).toHaveTextContent('Translated from Spanish · October 2026');
+      expect(enrique).toHaveTextContent('Translated from Spanish · October 2026');
+      expect(enrique).toHaveTextContent(
+        'Software Architect · teammate at Zankyou and Grupie Labs'
+      );
+    });
   });
 
   it('renders the CV, "Contactar" and "Ver proyectos" links', () => {

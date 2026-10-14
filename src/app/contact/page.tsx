@@ -5,7 +5,7 @@ import { dictionaries } from '@/app/i18n/dictionaries';
 const TITLE = 'Contacto | José Juan';
 const DESCRIPTION =
   'Contacta con José Juan, Full Stack Developer abierto a nuevas oportunidades en remoto o híbrido, ' +
-  'desde Almedina (Ciudad Real). Formulario, correo directo o llamada de 30 minutos. Respuesta en menos de 24 h.';
+  'desde Almedina (Ciudad Real). Formulario, correo directo o llamada de 20 minutos. Respuesta en menos de 24 h.';
 
 export const metadata: Metadata = {
   title: TITLE,
