@@ -104,7 +104,11 @@ Standalone — no cross-repo dependencies.
 ### Add / edit a project
 1. Structural data → `src/app/projects/data.ts` (`PROJECTS[]`): id, title,
    technologies, role, imageCover, links, `status`
-   (`beta`/`live-demo`/`in-dev`/`production`), optional `screenshots`. Home shows
+   (`beta`/`live-demo`/`in-dev`/`production`), optional `screenshots`.
+   Optional `repoPrivate` hides `linkRepo`/`linkRepo2` in `ProjectCard` and
+   shows `projectsPage.privateRepo` («Repositorio privado») instead; keep the
+   URLs in the data. Optional `liveNofollow` marks the live link
+   `rel="nofollow"` for demos deliberately kept out of the index. Home shows
    the subset in `FEATURED_IDS`, which must also lead `PROJECTS` in the same
    order so a project keeps its number on both pages (a test enforces it), and
    only projects with a public demo (another test).
