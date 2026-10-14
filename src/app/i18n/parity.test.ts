@@ -34,4 +34,8 @@ describe('dictionaries', () => {
     walk(dictionaries, 'dictionaries');
     expect(empties).toEqual([]);
   });
+
+  it('has no leftover 30-minute call copy', () => {
+    expect(JSON.stringify(dictionaries)).not.toMatch(/30[ -]?min/i);
+  });
 });

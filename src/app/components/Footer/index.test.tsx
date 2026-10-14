@@ -39,6 +39,10 @@ describe('Footer', () => {
     expect(getByTestId('calendar-icon')).toBeInTheDocument();
   });
 
+  it('falls back to the 20 min event URL without NEXT_PUBLIC_CALENDLY_URL', () => {
+    expect(CALENDLY_URL).toBe('https://calendly.com/pepeju95/cuentame-tu-caso');
+  });
+
   it('renders correct links and mailto', () => {
     const { getByLabelText } = renderWithLocale(<Footer />);
     expect(getByLabelText('GitHub').getAttribute('href')).toBe(GITHUB_URL);

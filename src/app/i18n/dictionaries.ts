@@ -22,7 +22,7 @@ export const dictionaries = {
       homeSecServices: '// 03 — índice',
       homeSecProjects: '// 02 — proyectos',
       homeSecSkills: '// 03 — stack',
-      discoveryCall: '// llamada de 30 min',
+      discoveryCall: '// 20 min: cuéntame tu caso',
       form: '// formulario',
       menu: '// menú',
       contactMarker: '// contacto',
@@ -72,20 +72,32 @@ export const dictionaries = {
         { value: '1M+', label: 'visitas al mes en The Knot Worldwide' },
         { value: '2 meses', label: 'migración a GA4, dentro del plazo de Google' },
       ],
-      calendlyHint: 'o reserva una llamada de 30 min',
+      calendlyHint: 'o reserva «20 min: cuéntame tu caso»',
     },
-    // Quoted with Roberto's permission (2026-10-04); source text in the vault,
-    // busqueda-empleo/recomendaciones.md. Not linked to Malt on purpose.
+    // Quoted with Roberto's permission (2026-10-04) and Enrique's (verbal,
+    // 2026-10-14); source text in the vault, busqueda-empleo/recomendaciones.md.
+    // Not linked to Malt on purpose.
     testimonial: {
-      marker: '// recomendación',
+      marker: '// recomendaciones',
       quoteOpen: '«',
       quoteClose: '»',
-      title: 'Recomendación',
-      quote:
-        'Si tuviera que volver a formar un equipo mañana, José Juan sería una de las primeras personas a las que llamaría.',
-      name: 'Roberto',
-      role: 'CTO de Grupie Labs, antes CTO de Zankyou Weddings',
-      note: 'Recomendación escrita en octubre de 2026',
+      title: 'Recomendaciones',
+      items: [
+        {
+          quote:
+            'Si tuviera que volver a formar un equipo mañana, José Juan sería una de las primeras personas a las que llamaría.',
+          name: 'Roberto',
+          role: 'CTO de Grupie Labs, antes CTO de Zankyou Weddings',
+          note: 'Recomendación escrita en octubre de 2026',
+        },
+        {
+          quote:
+            'Es riguroso, entiende bien los sistemas complejos y se puede confiar en él para las partes delicadas de un proyecto.',
+          name: 'Enrique D.',
+          role: 'Software Architect · compañero en Zankyou y Grupie Labs',
+          note: 'Recomendación escrita en octubre de 2026',
+        },
+      ],
     },
     experience: {
       title: 'Experiencia Profesional',
@@ -359,7 +371,7 @@ export const dictionaries = {
       formTitle: 'Envíame un mensaje',
       calendlyTitle: '¿Prefieres hablar directamente? Reserva una llamada',
       calendlyDescription:
-        'Una llamada de 30 minutos, sin compromiso, para conocernos y ver si encajo en tu equipo.',
+        'Una llamada de 20 minutos, sin compromiso, para conocernos y ver si encajo en tu equipo.',
       calendlyCta: 'Reservar llamada',
       faqTitle: 'Antes de que escribas',
       faq: [
@@ -381,7 +393,7 @@ export const dictionaries = {
         },
         {
           q: '¿Cuánto tardas en responder?',
-          a: 'Menos de 24 horas en días laborables. Si prefieres saltarte el correo, la llamada de 30 minutos de arriba entra directa en mi calendario.',
+          a: 'Menos de 24 horas en días laborables. Si prefieres saltarte el correo, la llamada de 20 minutos de arriba entra directa en mi calendario.',
         },
       ],
     },
@@ -433,7 +445,7 @@ export const dictionaries = {
       homeSecServices: '// 03 — index',
       homeSecProjects: '// 02 — projects',
       homeSecSkills: '// 03 — stack',
-      discoveryCall: '// 30-min call',
+      discoveryCall: '// 20 min: tell me about your case',
       form: '// form',
       menu: '// menu',
       contactMarker: '// contact',
@@ -482,18 +494,29 @@ export const dictionaries = {
         { value: '1M+', label: 'monthly visits at The Knot Worldwide' },
         { value: '2 months', label: "GA4 migration, within Google's deadline" },
       ],
-      calendlyHint: 'or book a 30-min call',
+      calendlyHint: 'or book “20 min: tell me about your case”',
     },
     testimonial: {
-      marker: '// recommendation',
+      marker: '// recommendations',
       quoteOpen: '“',
       quoteClose: '”',
-      title: 'Recommendation',
-      quote:
-        "If I had to put a team together again tomorrow, José Juan would be one of the first people I'd call.",
-      name: 'Roberto',
-      role: 'CTO at Grupie Labs, previously CTO at Zankyou Weddings',
-      note: 'Translated from Spanish · October 2026',
+      title: 'Recommendations',
+      items: [
+        {
+          quote:
+            "If I had to put a team together again tomorrow, José Juan would be one of the first people I'd call.",
+          name: 'Roberto',
+          role: 'CTO at Grupie Labs, previously CTO at Zankyou Weddings',
+          note: 'Translated from Spanish · October 2026',
+        },
+        {
+          quote:
+            "He's rigorous, has a solid grasp of complex systems, and you can trust him with the delicate parts of a project.",
+          name: 'Enrique D.',
+          role: 'Software Architect · teammate at Zankyou and Grupie Labs',
+          note: 'Translated from Spanish · October 2026',
+        },
+      ],
     },
     experience: {
       title: 'Professional Experience',
@@ -765,7 +788,7 @@ export const dictionaries = {
       formTitle: 'Send me a message',
       calendlyTitle: 'Prefer to talk directly? Book a call',
       calendlyDescription:
-        'A free, no-commitment 30-minute call to get to know each other and see if I would be a good fit for your team.',
+        'A free, no-commitment 20-minute call to get to know each other and see if I would be a good fit for your team.',
       calendlyCta: 'Book a call',
       faqTitle: 'Before you write',
       faq: [
@@ -787,7 +810,7 @@ export const dictionaries = {
         },
         {
           q: 'How quickly do you reply?',
-          a: 'Under 24 hours on working days. If you would rather skip email, the 30-minute call above goes straight into my calendar.',
+          a: 'Under 24 hours on working days. If you would rather skip email, the 20-minute call above goes straight into my calendar.',
         },
       ],
     },
