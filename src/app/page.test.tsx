@@ -48,8 +48,15 @@ describe('HomePage', () => {
 
   it('renders the availability badge', () => {
     renderWithProviders(<HomePage />);
-    const matches = screen.getAllByText(/disponible de inmediato/i);
+    const matches = screen.getAllByText(/en remoto desde españa/i);
     expect(matches.length).toBeGreaterThanOrEqual(1);
+    expect(screen.queryAllByText(/disponible de inmediato/i)).toHaveLength(0);
+  });
+
+  it('colophon has no status row but keeps the mode row', () => {
+    renderWithProviders(<HomePage />);
+    expect(screen.queryByText(/^estado$/i)).toBeNull();
+    expect(screen.getByText(/^modalidad$/i)).toBeInTheDocument();
   });
 
   it('renders the introduction paragraph', () => {

@@ -16,7 +16,6 @@ export default function Header() {
 
   const colophon = [
     { term: c.role, value: t.hero.role },
-    { term: c.status, value: c.available, accent: true },
     { term: c.base, value: 'Almedina, ES' },
     { term: c.mode, value: c.modeValue },
     { term: c.experience, value: c.experienceValue },
@@ -108,17 +107,13 @@ export default function Header() {
 
           <aside className="border-y border-border py-3 self-start w-full lg:max-w-[260px] lg:sticky lg:top-24">
             <dl className="flex flex-col">
-              {colophon.map(({ term, value, accent }) => (
+              {colophon.map(({ term, value }) => (
                 <div
                   key={term}
                   className="flex justify-between items-baseline gap-4 font-mono text-mono-label uppercase py-1.5 border-b border-border-subtle last:border-b-0"
                 >
                   <dt className="shrink-0 text-text-muted">{term}</dt>
-                  <dd
-                    className={`text-right ${accent ? 'text-accent' : 'text-text-primary'}`}
-                  >
-                    {value}
-                  </dd>
+                  <dd className="text-right text-text-primary">{value}</dd>
                 </div>
               ))}
             </dl>

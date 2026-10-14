@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'José Juan — Full Stack Developer',
     short_name: 'jjpg.dev',
     description:
-      'Full Stack Developer: PHP/Symfony, Node.js y React/Next.js. Disponible de inmediato, en remoto desde España.',
+      'Full Stack Developer: PHP/Symfony, Node.js y React/Next.js. En remoto desde España.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0E1014',

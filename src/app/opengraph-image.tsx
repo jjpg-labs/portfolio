@@ -83,7 +83,7 @@ export default async function Image() {
                 background: ACCENT,
               }}
             />
-            Disponible de inmediato · Remoto desde España
+            En remoto desde España
           </div>
 
           <div
