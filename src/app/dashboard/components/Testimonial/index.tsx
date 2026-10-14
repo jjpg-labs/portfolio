@@ -26,7 +26,7 @@ export default function Testimonial() {
         <div className="flex flex-col gap-12">
           {items.map(({ quote, name, role, note }) => (
             <figure key={name} className="flex flex-col gap-6 max-w-3xl">
-              <blockquote className="font-serif italic text-[28px] sm:text-[36px] lg:text-[36px] leading-[1.15] text-text-primary text-balance">
+              <blockquote className="font-serif italic text-[28px] sm:text-[36px] leading-[1.15] text-text-primary text-balance">
                 <span aria-hidden="true" className="text-accent">
                   {quoteOpen}
                 </span>
