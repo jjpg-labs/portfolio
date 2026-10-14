@@ -62,6 +62,7 @@ export const PROJECTS: ProjectMeta[] = [
     liveNofollow: true,
     linkRepo: 'https://github.com/jjpg-labs/accounting-server',
     linkRepo2: 'https://github.com/jjpg95/accounting-manager',
+    repoPrivate: true,
     status: 'live-demo',
   },
   {
@@ -147,7 +148,7 @@ export const PROJECTS: ProjectMeta[] = [
     linkLive: 'https://nexfit.jjpg.dev/',
     linkRepo: 'https://github.com/jjpg-labs/nexfit-web',
     repoPrivate: true,
-    status: 'beta',
+    status: 'production',
     screenshots: [
       {
         src: '/img/shots/nexfit-1.webp',
