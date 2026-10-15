@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "apps": {
+    "portfolio": [
+      { "path": "/", "status": 200, "body": ["Full Stack Developer"], "body_not": ["data-cfemail"] },
+      { "path": "/contact", "status": 200, "body": ["<form"], "body_not": ["data-cfemail"] }
+    ]
+  }
+}
