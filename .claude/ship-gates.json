@@ -3,6 +3,7 @@
     "lint": "npm run lint",
     "types": "npx tsc --noEmit",
     "test": "npm test",
-    "build": "npm run build"
+    "build": "npm run build",
+    "docker": "docker build -t portfolio-gate ."
   }
 }
