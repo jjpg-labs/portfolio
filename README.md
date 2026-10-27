@@ -36,7 +36,7 @@ npm run dev     # start the dev server at http://localhost:3041
 ```
 
 The home page is composed in `src/app/page.tsx` from the sections under
-`src/app/dashboard/components/*`. See `CLAUDE.md` for the full folder map and
+`src/app/dashboard/components/*`. See `AGENTS.md` for the full folder map and
 conventions.
 
 ---
@@ -89,6 +89,6 @@ production. A push to `main` triggers a production deploy.
 
 ## Conventions
 
-See [`CLAUDE.md`](./CLAUDE.md) — folder structure, i18n rules (every user-facing
+See [`AGENTS.md`](./AGENTS.md) — folder structure, i18n rules (every user-facing
 string in both `es` and `en`), theming tokens, and the task patterns for adding a
 page, component or project.

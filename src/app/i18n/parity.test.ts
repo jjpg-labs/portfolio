@@ -1,6 +1,6 @@
 import { dictionaries } from '@/app/i18n/dictionaries';
 
-// `es` and `en` must have an identical shape (CLAUDE.md): a key added to one
+// `es` and `en` must have an identical shape (AGENTS.md): a key added to one
 // locale and forgotten in the other only surfaces as `undefined` rendered on
 // the page once someone switches language. Compare structure, not values.
 const shape = (value: unknown): unknown => {
